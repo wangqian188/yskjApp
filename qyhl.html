@@ -297,6 +297,11 @@
 				}
 			});
 			}
+			if(!localStorage.getItem('qyhlcookie')){
+				localStorage.setItem('qyhlcookie',1);
+				var wobj = plus.webview.getWebviewById("qyhl.html");
+				wobj.reload(true);
+			}
 		</script>
 	</body>
 

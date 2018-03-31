@@ -4,7 +4,7 @@
 		"iPhone",
 		"iPad"
 	],
-	"id": "H5B1EC57F",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"id": "H54DB5283",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "幼狮空间",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
@@ -165,31 +165,31 @@
 			"icons": {
 				"ios": {
 					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
-					 /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
 					"iphone": {
 						"normal": "unpackage/res/icons/57x57.png",/*iPhone普通屏幕程序图标，分辨率：57x57*/
 						"retina": "unpackage/res/icons/114x114.png",/*iPhone高分屏程序图标，分辨率：114x114*/
-						/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
+						"retina7": "unpackage/res/icons/120x120.png",/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
 						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
 						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
-						/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
 						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
-						
-						
-						"app@2x":"unpackage/res/icons/120x120.png","app@3x":"unpackage/res/icons/180x180.png","settings@3x":"unpackage/res/icons/87x87.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","spotlight@3x":"unpackage/res/icons/120x120.png","notification@3x":"unpackage/res/icons/60x60.png","notification@2x":"unpackage/res/icons/40x40.png","retina8":"unpackage/res/icons/180x180.png","retina7":"unpackage/res/icons/120x120.png","settings-retina":"unpackage/res/icons/58x58.png","settings-retina8":"unpackage/res/icons/87x87.png","spotlight-retina7":"unpackage/res/icons/80x80.png"
+						"settings-retina": "unpackage/res/icons/58x58.png",
+						"retina8": "unpackage/res/icons/180x180.png",
+						"settings-retina8": "unpackage/res/icons/87x87.png"
 					},
 					"ipad": {
 						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
 						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
-						 /*iPad iOS7程序图标，分辨率：76x76*/
-						 /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
 						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
 						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
-						/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
-						/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
-						/*iPad设置页面程序图标，分辨率：29x29*/
-						"app":"unpackage/res/icons/76x76.png","app@2x":"unpackage/res/icons/152x152.png","settings":"unpackage/res/icons/29x29.png","proapp@2x":"unpackage/res/icons/167x167.png","spotlight":"unpackage/res/icons/40x40.png","settings@2x":"unpackage/res/icons/58x58.png","notification":"unpackage/res/icons/20x20.png","spotlight@2x":"unpackage/res/icons/80x80.png","notification@2x":"unpackage/res/icons/40x40.png","retina7":"unpackage/res/icons/152x152.png","normal7":"unpackage/res/icons/76x76.png","settings-retina":"unpackage/res/icons/58x58.png","settings-normal":"unpackage/res/icons/29x29.png","spotlight-normal7":"unpackage/res/icons/40x40.png","spotlight-retina7":"unpackage/res/icons/80x80.png"
-					},"appstore":"unpackage/res/icons/1024x1024.png"
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
 				},
 				"android": {
 					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
@@ -205,7 +205,7 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "C:/Users/yuan/Desktop/启动页/welcome.png","retina55":"C:/Users/yuan/Desktop/启动页/welcome.png","retina47":"C:/Users/yuan/Desktop/启动页/welcome.png","retina35":"C:/Users/yuan/Desktop/启动页/welcome.png","retina55l":"C:/Users/yuan/Desktop/启动页/welcome.png","iphonex":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","iphonexl":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png"
+						"retina40": "C:/Users/yuan/Desktop/启动页/welcome.png","retina55":"C:/Users/yuan/Desktop/启动页/welcome.png","retina47":"C:/Users/yuan/Desktop/启动页/welcome.png","retina35":"C:/Users/yuan/Desktop/启动页/welcome.png","retina55l":"C:/Users/yuan/Desktop/启动页/welcome.png"
 					},
 					"ipad": {
 						"portrait": "C:/Users/yuan/Desktop/启动页/welcome.png", /*iPad竖屏启动图片，分辨率：768x1004*/
@@ -226,7 +226,7 @@
 					"xxhdpi": "C:/Users/yuan/Desktop/启动页/welcome.png"
 				}
 			}
-		},"ads":{"rp":false,"splash":false,"push":false,"spot":false},"adid":""
+		}
 	},
 	"dependencies": {
 		"pages": {
@@ -267,8 +267,7 @@
 					"img/fav.png",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/app_config.js",
-					"img/addfwuxiao1.png",
-					"img/sy_kfion.png"
+					"img/addfwuxiao1.png"
 				],
 				"refer": [
 					"page/person.html",
@@ -318,10 +317,7 @@
 					"page/fyTail.html",
 					"page/topNewsInfo.html",
 					"page/login.html",
-					"page/tax.html",
-					"page/fitup.html",
-					"page/added.html",
-					"page/financial.html"
+					"page/tax.html"
 				],
 				"priority": 0
 			},
@@ -336,7 +332,8 @@
 					"css/jxfy.css",
 					"fonts/mui.ttf",
 					"js/lib/jquery-1.10.2.min.js",
-					null
+					null,
+					"page/mysc_list.html"
 				],
 				"refer": [
 					"wd.html",
@@ -358,8 +355,7 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"page/fwsc.css",
 					"css/fwsc.css",
-					"js/seturl.js",
-					"img/sy_kfion.png"
+					"js/seturl.js"
 				],
 				"refer": [
 					"page/financial.html",
@@ -390,10 +386,7 @@
 					"img/tab_bg.png",
 					"img/dacheghezuo.png",
 					null,
-					"img/sy_kfion.png",
-					"img/qy_ion1.png",
-					"img/qy_ion3.png",
-					"img/qy_ion2.png"
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -428,8 +421,7 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/flexible.js",
 					"img/head_img.png",
-					"js/lib/app_config.js",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"page/add_name.html",
@@ -450,8 +442,7 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"css/person.css",
-					"js/lib/app_config.js",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"page/person.html"
@@ -468,8 +459,7 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"img/warming.png",
-					"css/style_a_d.css"
+					"img/warming.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -487,8 +477,7 @@
 					"img/mp_zm.png",
 					"img/mp_bm.png",
 					"img/pz_icon.png",
-					"js/lib/app_config.js",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"page/person.html"
@@ -505,8 +494,7 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"page/setpwd.html",
@@ -543,9 +531,7 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"css/style.css",
-					"css/jxfy.css",
-					"css/style_a_d.css",
-					"img/jxfy_kb.png"
+					"css/jxfy.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -562,8 +548,7 @@
 					"img/fav2.png",
 					"img/shoucdianhuobg.png",
 					"js/lib/castapp.js",
-					"js/lib/app_config.js",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"page/login.html"
@@ -583,8 +568,7 @@
 					"page/mysc_list.html",
 					"js/lib/jquery-1.10.2.min.js",
 					"page/mysc_list1.html",
-					"img/del_ion.png",
-					"css/style_a_d.css"
+					"img/del_ion.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -627,8 +611,7 @@
 					"js/lib/app_config.js",
 					"js/lib/sha1.js",
 					"js/lib/md5.js",
-					"wd.html",
-					"css/style_a_d.css"
+					"wd.html"
 				],
 				"refer": [
 					"page/wj_pwd.html",
@@ -691,9 +674,7 @@
 					"js/mui.min.js",
 					"js/lib/sy.js",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js",
-					"css/mui.min.css",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -722,12 +703,10 @@
 					"img/wz_ion.png",
 					"js/lib/app_config.js",
 					"img/1.jpg",
-					"css/fyxq1.css",
-					"css/style_a_d.css"
+					"css/fyxq1.css"
 				],
 				"refer": [
-					"page/fyTail.html",
-					"page/map.html"
+					"page/fyTail.html"
 				],
 				"priority": 0
 			},
@@ -744,21 +723,7 @@
 					"img/jt_titbg.png",
 					"img/xq_1.png",
 					"img/xq_2.png",
-					"img/xq_3.png",
-					"css/style_a_d.css",
-					"img/financial/jr_bg.png",
-					"img/financial/xq_1.png",
-					"img/financial/xq_2.png",
-					"img/financial/xq_3.png",
-					"img/financial/ksdk_bg2.png",
-					"img/financial/hyyh.png",
-					"img/financial/dydk_bg1.png",
-					"img/financial/dydk_bg2.png",
-					"img/financial/jywyd_bg.png",
-					"img/financial/dklc_bg.png",
-					"img/financial/ksdk_bg1.png",
-					"img/financial/hzjg_bg.png",
-					"img/financial/xyd_bg.png"
+					"img/xq_3.png"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
@@ -774,10 +739,7 @@
 					"js/lib/flexible_css.js",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js",
-					"css/style_a_d.css",
-					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -795,8 +757,7 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -828,9 +789,7 @@
 					"js/lib/flexible_css.js",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js",
-					"fonts/mui.ttf",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -845,8 +804,7 @@
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
 					"fonts/mui.ttf",
-					"js/lib/echarts.js",
-					"css/style_a_d.css"
+					"js/lib/echarts.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -861,8 +819,7 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"img/fwt.png",
-					"css/style_a_d.css"
+					"img/fwt.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -875,9 +832,7 @@
 					"js/lib/flexible.js",
 					"css/mui.min.css",
 					"js/lib/jquery-1.10.2.min.js",
-					"fonts/mui.ttf",
-					"css/style_a_d.css",
-					"img/gongShangZhuCe.png"
+					"fonts/mui.ttf"
 				],
 				"refer": [
 					"page/wYaoZhuCe.html"
@@ -903,8 +858,7 @@
 					"img/addzhifwu.png",
 					"img/addfwuxiao3.png",
 					"fonts/mui.ttf",
-					"js/lib/jquery-1.10.2.min.js",
-					"css/style_a_d.css"
+					"js/lib/jquery-1.10.2.min.js"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
@@ -945,32 +899,7 @@
 					"js/mui.min.js",
 					"js/lib/flexible.js",
 					"fonts/mui.ttf",
-					"js/lib/jquery.lazyload.min.js",
-					"css/style_a_d.css",
-					"img/zxdzpic/zx_h.png",
-					"img/zxdzpic/zx_bt2.png",
-					"img/zxdzpic/zx_bt1.png",
-					"img/zxdzpic/zx_bt.png",
-					"img/zxdzpic/main_list_img2.png",
-					"img/zxdzpic/ul_img5.png",
-					"img/zxdzpic/ul_img4.png",
-					"img/zxdzpic/nav_img1.png",
-					"img/zxdzpic/zx_center.png",
-					"img/zxdzpic/nav_img3.png",
-					"img/zxdzpic/main_list_img3.png",
-					"img/zxdzpic/ul_img.png",
-					"img/zxdzpic/ul_img2.png",
-					"img/zxdzpic/ul_img7.png",
-					"img/zxdzpic/ul_img3.png",
-					"img/zxdzpic/ul_img6.png",
-					"img/zxdzpic/main_list_img5.png",
-					"img/zxdzpic/ul_img1.png",
-					"img/zxdzpic/main_list_img4.png",
-					"img/zxdzpic/zxlc_pic.png",
-					"img/zxdzpic/main_bot_pic.png",
-					"img/zxdzpic/nav_img2.png",
-					"img/zxdzpic/nav_img.png",
-					"img/zxdzpic/main_list_img1.png"
+					"js/lib/jquery.lazyload.min.js"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
@@ -984,11 +913,7 @@
 					"img/refresh.png",
 					"css/person.css",
 					"js/mui.min.js",
-					"js/lib/flexible.js",
-					"fonts/mui.ttf",
-					"css/mui.min.css",
-					"css/style.css",
-					"css/style_a_d.css"
+					"js/lib/flexible.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1002,8 +927,7 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"page/person.html"
@@ -1018,9 +942,7 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"js/mui.min.js",
 					"js/lib/flexible.js",
-					"js/lib/app_config.js",
-					"fonts/mui.ttf",
-					"css/style_a_d.css"
+					"js/lib/app_config.js"
 				],
 				"refer": [
 					"page/person.html"
@@ -1036,8 +958,7 @@
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css",
-					"css/style_a_d.css"
+					"css/mui.min.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -1051,45 +972,25 @@
 					"js/lib/sy.js",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"css/fast_zc.css",
-					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/fast_zc.css"
 				],
 				"refer": [],
 				"priority": 0
 			},
 			"welcome.html": {
 				"resources": [
+					"js/lib/flexible_css.js",
 					"img/w2.png",
 					"js/lib/castapp.js",
 					"img/w3.png",
 					"js/mui.min.js",
 					"img/w1.png",
 					"css/mui.min.css",
-					"js/lib/flexible_css.js",
 					"js/lib/flexible.js"
 				],
 				"refer": [
 					"index.html"
 				],
-				"priority": 0
-			},
-			"page/map.html": {
-				"resources": [
-					"js/lib/flexible_css.js",
-					"css/fyxq.css",
-					"js/lib/castapp.js",
-					"js/lib/jquery-1.10.2.min.js",
-					"js/mui.min.js",
-					"js/lib/flexible.js",
-					"css/style_a_d.css",
-					"css/jxfyList.css",
-					"css/sy.css",
-					"fonts/mui.ttf",
-					"css/mui.min.css",
-					"css/loupan_detail.css"
-				],
-				"refer": [],
 				"priority": 0
 			}
 		},

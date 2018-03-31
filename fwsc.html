@@ -122,6 +122,11 @@
 					id:'fw2'
 				});
 			});
+			if(!localStorage.getItem('fwsccookie')){
+				localStorage.setItem('fwsccookie',1);
+				var wobj = plus.webview.getWebviewById("fwsc.html");
+				wobj.reload(true);
+			}
 		</script>
 	</body>
 

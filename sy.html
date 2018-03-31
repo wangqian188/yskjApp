@@ -710,14 +710,11 @@
 					});
 				}
 			}
-//			if(!localStorage.getItem('shouye')){
-//				alert(123);
-//				localStorage.setItem('shouye',1);
-//				var wobj = plus.webview.getWebviewById("sy.html");
-//				wobj.reload(true);
-//			}else{
-//				alert(456);
-//			}
+			if(!localStorage.getItem('shouye')){
+				localStorage.setItem('shouye',1);
+				var wobj = plus.webview.getWebviewById("sy.html");
+				wobj.reload(true);
+			}
 		</script>
 	</body>
 
