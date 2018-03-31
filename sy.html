@@ -14,6 +14,7 @@
 	</head>
 	<style type="text/css">
 		.mui-input-row:nth-child(2) .mui-input-clear~.mui-icon-clear{right: 25%!important;}
+		#tijiaobtn{border-radius: 0.106666rem;background: #4ca0ee;color:#fff;font-size: 0.4rem;width: 2.173333rem;}
 	</style>
 	<body>
 		<header class="mui-bar mui-bar-transparent bg-color-bg" style="height: 20px;">
@@ -147,7 +148,8 @@
 					<p class="yzwt_tip">请留下您的联系方式，我们会及时与您联系，为您提供专属服务</p>
 					<form class="mui-input-group">
 					    <div class="mui-input-row"> 
-					        <input type="text" class="mui-input-clear yzwtPhone" maxlength="11"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入手机号"  >
+					        <input type="text" class="mui-input-clear yzwtPhone" maxlength="11"  onkeyup="yzwt(this)" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入手机号"  >
+					        <!--this.value=this.value.replace(/\D/g,'')-->
 					    </div>
 					    <div class="mui-input-row">
 					        <input type="text" style="width: 60%;"  class="mui-input-clear yazmcode" placeholder="请输入验证码"  > 
@@ -695,6 +697,19 @@
 					console.info(123465);
 				},'json'
 			);*/
+			function yzwt(e){//获取验证码变色
+				e.value=e.value.replace(/\D/g,'');
+				if(e.value != ''){
+					$('.hqyzm').css({
+						color:'#2b70d8'
+					});
+				}
+				if(e.value == ''){
+					$('.hqyzm').css({
+						color:'#c8c8c8'
+					});
+				}
+			}
 		</script>
 	</body>
 
