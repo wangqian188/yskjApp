@@ -4,7 +4,7 @@
 		"iPhone",
 		"iPad"
 	],
-	"id": "H54DB5283",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"id": "H5B1EC57F",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "幼狮空间",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
@@ -176,7 +176,7 @@
 						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
 						
 						
-						"app@2x":"unpackage/res/icons/120x120.png","app@3x":"unpackage/res/icons/180x180.png","settings@3x":"unpackage/res/icons/87x87.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","spotlight@3x":"unpackage/res/icons/120x120.png","notification@3x":"unpackage/res/icons/60x60.png","notification@2x":"unpackage/res/icons/40x40.png"
+						"app@2x":"unpackage/res/icons/120x120.png","app@3x":"unpackage/res/icons/180x180.png","settings@3x":"unpackage/res/icons/87x87.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","spotlight@3x":"unpackage/res/icons/120x120.png","notification@3x":"unpackage/res/icons/60x60.png","notification@2x":"unpackage/res/icons/40x40.png","retina8":"unpackage/res/icons/180x180.png","retina7":"unpackage/res/icons/120x120.png","settings-retina":"unpackage/res/icons/58x58.png","settings-retina8":"unpackage/res/icons/87x87.png","spotlight-retina7":"unpackage/res/icons/80x80.png"
 					},
 					"ipad": {
 						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
@@ -188,7 +188,7 @@
 						/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
 						/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
 						/*iPad设置页面程序图标，分辨率：29x29*/
-						"app":"unpackage/res/icons/76x76.png","app@2x":"unpackage/res/icons/152x152.png","settings":"unpackage/res/icons/29x29.png","proapp@2x":"unpackage/res/icons/167x167.png","spotlight":"unpackage/res/icons/40x40.png","settings@2x":"unpackage/res/icons/58x58.png","notification":"unpackage/res/icons/20x20.png","spotlight@2x":"unpackage/res/icons/80x80.png","notification@2x":"unpackage/res/icons/40x40.png"
+						"app":"unpackage/res/icons/76x76.png","app@2x":"unpackage/res/icons/152x152.png","settings":"unpackage/res/icons/29x29.png","proapp@2x":"unpackage/res/icons/167x167.png","spotlight":"unpackage/res/icons/40x40.png","settings@2x":"unpackage/res/icons/58x58.png","notification":"unpackage/res/icons/20x20.png","spotlight@2x":"unpackage/res/icons/80x80.png","notification@2x":"unpackage/res/icons/40x40.png","retina7":"unpackage/res/icons/152x152.png","normal7":"unpackage/res/icons/76x76.png","settings-retina":"unpackage/res/icons/58x58.png","settings-normal":"unpackage/res/icons/29x29.png","spotlight-normal7":"unpackage/res/icons/40x40.png","spotlight-retina7":"unpackage/res/icons/80x80.png"
 					},"appstore":"unpackage/res/icons/1024x1024.png"
 				},
 				"android": {
@@ -205,25 +205,25 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","retina55":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","retina47":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","retina35":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","retina55l":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","iphonex":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","iphonexl":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png"
+						"retina40": "C:/Users/yuan/Desktop/启动页/welcome.png","retina55":"C:/Users/yuan/Desktop/启动页/welcome.png","retina47":"C:/Users/yuan/Desktop/启动页/welcome.png","retina35":"C:/Users/yuan/Desktop/启动页/welcome.png","retina55l":"C:/Users/yuan/Desktop/启动页/welcome.png","iphonex":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","iphonexl":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png"
 					},
 					"ipad": {
-						"portrait": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png", /*iPad竖屏启动图片，分辨率：768x1004*/
-						"portrait-retina": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
-						"landscape": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png", /*iPad横屏启动图片，分辨率：1024x748*/
-						"landscape-retina": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
-						"portrait7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
-						"portrait-retina7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
-						"landscape7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
-						"landscape-retina7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png"
+						"portrait": "C:/Users/yuan/Desktop/启动页/welcome.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "C:/Users/yuan/Desktop/启动页/welcome.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "C:/Users/yuan/Desktop/启动页/welcome.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "C:/Users/yuan/Desktop/启动页/welcome.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "C:/Users/yuan/Desktop/启动页/welcome.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "C:/Users/yuan/Desktop/启动页/welcome.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "C:/Users/yuan/Desktop/启动页/welcome.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "C:/Users/yuan/Desktop/启动页/welcome.png"
 					}
 				},
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png"
+					"hdpi": "C:/Users/yuan/Desktop/启动页/welcome.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "C:/Users/yuan/Desktop/启动页/welcome.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "C:/Users/yuan/Desktop/启动页/welcome.png"
 				}
 			}
 		},"ads":{"rp":false,"splash":false,"push":false,"spot":false},"adid":""
