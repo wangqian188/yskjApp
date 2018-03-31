@@ -445,7 +445,7 @@
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 							mui('#pullrefresh').pullRefresh().setStopped(false);
-							var index = plus.webview.getLaunchWebview();
+							var index = plus.webview.getWebviewById('index');
 							zhezhaoxiaoshi();
 							mui.fire(index, "weizhi1",{
 							    idxid:4//1位置
@@ -461,7 +461,7 @@
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 							mui('#pullrefresh').pullRefresh().setStopped(false);
-							var index = plus.webview.getLaunchWebview();
+							var index = plus.webview.getWebviewById('index');
 							zhezhaoxiaoshi();
 							mui.fire(index, "weizhi1",{
 							    idxid:4//1位置
@@ -618,7 +618,7 @@
 				$(".zhezhaoce").removeClass("zhezhaocdisbalo");
 				mui('#pullrefresh').pullRefresh().setStopped(false);
 				zhezhaoxiaoshi();
-				var index = plus.webview.getLaunchWebview();
+				var index = plus.webview.getWebviewById('index');
 				mui.fire(index, "weizhi1",{
 				    idxid:2//1位置
 				})
@@ -671,7 +671,7 @@
 			window.addEventListener("jagggkzqt", function (e) {
 			    //获得事件参数
 			    var idxjiaggge = e.detail.idxjiaggge;
-				var index = plus.webview.getLaunchWebview();
+				var index = plus.webview.getWebviewById('index');
 				mui.fire(index, "weizhi1",{
 				    idxid:2//1位置
 				})
@@ -686,7 +686,7 @@
 				$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 				$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 				mui('#pullrefresh').pullRefresh().setStopped(false);
-				var index = plus.webview.getLaunchWebview();
+				var index = plus.webview.getWebviewById('index');
 				zhezhaoxiaoshi();
 				mui.fire(index, "weizhi1",{
 				    idxid:4//1位置
