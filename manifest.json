@@ -832,7 +832,9 @@
 					"js/lib/flexible.js",
 					"css/mui.min.css",
 					"js/lib/jquery-1.10.2.min.js",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"css/style_a_d.css",
+					"img/gongShangZhuCe.png"
 				],
 				"refer": [
 					"page/wYaoZhuCe.html"
@@ -858,7 +860,8 @@
 					"img/addzhifwu.png",
 					"img/addfwuxiao3.png",
 					"fonts/mui.ttf",
-					"js/lib/jquery-1.10.2.min.js"
+					"js/lib/jquery-1.10.2.min.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/liJiShenQing.html"
