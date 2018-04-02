@@ -297,11 +297,18 @@
 				}
 			});
 			}
-			if(!localStorage.getItem('qyhlcookie')){
-				localStorage.setItem('qyhlcookie',1);
-				var wobj = plus.webview.getWebviewById("qyhl.html");
-				wobj.reload(true);
-			}
+			//接收参数刷新
+			window.addEventListener('qyhl_jz', function(event) {
+			    // mui.fire()传过来的额外的参数，在event.detail中；
+			    var detail = event.detail;
+			    var param = detail.qyhl_jz;
+			    if(param == 3){
+			    	setTimeout(function(){
+			    		var wobj3 = plus.webview.getWebviewById("qyhl.html");
+						wobj3.reload(true);
+			    	},3000);
+			    }
+			});
 		</script>
 	</body>
 

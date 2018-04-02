@@ -496,6 +496,23 @@
 							}
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 10)); //参数为true代表没有更多数据了。
 						}
+						//首页数据
+						var main = plus.webview.getWebviewById('sy.html');
+						mui.fire(main, "sy_jz",{
+						    sy_jz:1//1位置
+						});
+						
+						var main = plus.webview.getWebviewById('fwsc.html');
+						mui.fire(main, "fwsc_jz",{
+						    fwsc_jz:2//1位置
+						});
+						
+						var main = plus.webview.getWebviewById('qyhl.html');
+						mui.fire(main, "qyhl_jz",{
+						    qyhl_jz:3//1位置
+						});
+						
+						
 						
 					}else{
 						mui.alert(data.msg);
