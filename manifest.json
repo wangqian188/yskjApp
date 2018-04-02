@@ -303,7 +303,8 @@
 					"js/lib/app_config.js",
 					null,
 					"img/sy_bxion.png",
-					"img/sy_kfion.png"
+					"img/sy_kfion.png",
+					"js/lib/sy.js"
 				],
 				"refer": [
 					"jxfy.html",
@@ -703,7 +704,8 @@
 					"img/wz_ion.png",
 					"js/lib/app_config.js",
 					"img/1.jpg",
-					"css/fyxq1.css"
+					"css/fyxq1.css",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/fyTail.html"
@@ -820,7 +822,8 @@
 					"css/mui.min.css",
 					"js/lib/flexible.js",
 					"js/lib/app_config.js",
-					"img/fwt.png"
+					"img/fwt.png",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -917,7 +920,8 @@
 					"img/refresh.png",
 					"css/person.css",
 					"js/mui.min.js",
-					"js/lib/flexible.js"
+					"js/lib/flexible.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0

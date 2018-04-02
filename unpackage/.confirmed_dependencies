@@ -57,7 +57,8 @@
 			"img/tab_bg1.png",
 			"js/lib/flexible_css.js",
 			"js/mui.min.js",
-			"js/lib/flexible.js"
+			"js/lib/flexible.js",
+			"js/lib/sy.js"
 		],
 		"refer": [
 			"page/fyTail.html",
@@ -65,7 +66,8 @@
 			"page/enterprise_qy.html",
 			"page/acreage_mj.html",
 			"page/saleFuWu.html",
-			"page/steward.html"
+			"page/steward.html",
+			"page/topNewsInfo.html"
 		]
 	},
 	"wd.html": {
@@ -183,7 +185,8 @@
 			"css/fyxq.css",
 			"css/jxfyList.css",
 			"css/mui.min.css",
-			"css/fyxq1.css"
+			"css/fyxq1.css",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -303,7 +306,9 @@
 			"js/lib/flexible.js",
 			"img/fwt.png",
 			"js/lib/app_config.js",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"css/style_a_d.css",
+			"css/mui.min.css"
 		],
 		"refer": []
 	},
@@ -463,6 +468,16 @@
 		],
 		"refer": [
 			"index.html"
+		]
+	},
+	"page/topNewsInfo.html": {
+		"resources": [
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"css/person.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/lib/flexible.js"
 		]
 	}
 }

@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/sy.css"/>
+		<script type="text/javascript" src="js/lib/sy.js"></script>
 	</head>
 	<style type="text/css">
 		.mui-input-row:nth-child(2) .mui-input-clear~.mui-icon-clear{right: 25%!important;}
@@ -229,6 +230,11 @@
 		</div>
 		<script type="text/javascript" src="js/lib/castapp.js" ></script>
 		<script type="text/javascript">	
+			mui.init();			
+			//网络异常判断
+			mui.plusReady(function(){
+				networkLink();
+			});
 			ca.init();
 			castapp.pictureScroll({
 			    callback:function(pictureNumber){
@@ -298,7 +304,6 @@
 		<script src="js/lib/app_config.js"></script>
 		<script type="text/javascript">
 			mui.init();
-			
 			var area = document.getElementsByClassName('tt_news')[0];
 			console.log($('.tt_news li').height());
 			var iliHeight = $('.tt_news li').height();//单行滚动的高度  
@@ -334,7 +339,7 @@
 			});	
 	 
 			function startScroll(){  
-			    time=setInterval("scrollUp()",speed);  
+			    time=setInterval("scrollUp()",speed);
 			    area.scrollTop++;  
 			}  
 			function scrollUp(){  
@@ -344,7 +349,7 @@
 			    }else{  
 			        area.scrollTop++;  
 			        if(area.scrollTop >= area.scrollHeight/2){  
-			            area.scrollTop =0;  
+			            area.scrollTop = 1.3;
 			        }  
 			    }  
 			}  
