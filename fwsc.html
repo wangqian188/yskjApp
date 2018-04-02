@@ -122,12 +122,7 @@
 					id:'fw2'
 				});
 			});
-//			if(!localStorage.getItem('fwsccookie')){
-//				localStorage.setItem('fwsccookie',1);
-//				alert('服务商城');
-//				var wobj2 = plus.webview.getWebviewById("fwsc.html");
-//				wobj2.reload(true);
-//			}
+			//接收参数刷新
 			window.addEventListener('fwsc_jz', function(event) {
 			    // mui.fire()传过来的额外的参数，在event.detail中；
 			    var detail = event.detail;

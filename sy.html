@@ -710,14 +710,9 @@
 					});
 				}
 			}
-//			if(!localStorage.getItem('shouye')){
-//				localStorage.setItem('shouye',1);
-//				alert('首页');
-//				var wobj1 = plus.webview.getWebviewById("sy.html");
-//				wobj1.reload(true);
-//			}
+			//接收参数刷新
 			window.addEventListener('sy_jz', function(event) {
-			    // mui.fire()传过来的额外的参数，在event.detail中；
+			    // mui.fire()传过来的额外的参数，在event.detail中
 			    var detail = event.detail;
 			    var param = detail.sy_jz;
 			    if(param == 1){
