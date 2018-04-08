@@ -361,9 +361,13 @@
 			"js/mui.min.js",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
-			"img/mp_zm.png"
+			"img/mp_zm.png",
+			"css/style_a_d.css",
+			"css/mui.min.css"
 		],
-		"refer": []
+		"refer": [
+			"page/person.html"
+		]
 	},
 	"page/login.html": {
 		"resources": [
@@ -378,7 +382,9 @@
 			"js/lib/jquery-1.10.2.min.js",
 			"js/mui.min.js",
 			"js/lib/flexible.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"fonts/mui.ttf",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -443,9 +449,13 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/lib/flexible.js",
-			"js/lib/app_config.js"
+			"js/lib/app_config.js",
+			"css/style_a_d.css",
+			"img/head_img.png"
 		],
-		"refer": []
+		"refer": [
+			"page/sfrz.html"
+		]
 	},
 	"page/search.html": {
 		"resources": [

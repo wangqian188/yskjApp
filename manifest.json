@@ -422,7 +422,8 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/flexible.js",
 					"img/head_img.png",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/add_name.html",
@@ -478,7 +479,8 @@
 					"img/mp_zm.png",
 					"img/mp_bm.png",
 					"img/pz_icon.png",
-					"js/lib/app_config.js"
+					"js/lib/app_config.js",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/person.html"
@@ -612,7 +614,8 @@
 					"js/lib/app_config.js",
 					"js/lib/sha1.js",
 					"js/lib/md5.js",
-					"wd.html"
+					"wd.html",
+					"css/style_a_d.css"
 				],
 				"refer": [
 					"page/wj_pwd.html",

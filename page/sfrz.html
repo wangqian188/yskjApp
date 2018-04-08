@@ -237,16 +237,18 @@
 //             	alert("请上传名片反面");
                	mui.alert("请上传名片反面", '提示', function(){});
                }
-              
             } 
              function getBase64Image(img) {
 			    var canvas = document.createElement("canvas");   //创建canvas DOM元素，并设置其宽高和图片一样
+			    alert(img.width);
+			    alert(img.height);
 			    canvas.width = img.width;
 			    canvas.height = img.height;
 			    var ctx = canvas.getContext("2d");
 			    ctx.drawImage(img, 0, 0, img.width, img.height); //使用画布画图
 			    var ext = img.src.substring(img.src.lastIndexOf(".") + 1).toLowerCase();  //动态截取图片的格式
 			    var dataURL = canvas.toDataURL("image/" + ext);  //返回的是一串Base64编码的URL并指定格式
+			    console.log(dataURL);
 			    return dataURL;
 			}
 
