@@ -40,7 +40,7 @@
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
 		    	<li>
-		    		<span class="p_nane">1.1.0版本</span>
+		    		<span class="p_nane" id="version"></span>
 		    		<!--<span class="mui-icon mui-icon-arrowright p_con"></span>-->
 		    	</li>
 		    	<li class="tolink">
@@ -182,6 +182,17 @@
 			    if(param == 1){
 			    	mui.back();
 			    }
+			});
+			
+			var wgtVer=null; 
+			function plusReady(){ // 获取本地应用资源版本号 
+			    plus.runtime.getProperty(plus.runtime.appid,function(inf){ 
+			        wgtVer=inf.version;
+			        $('#version').html(wgtVer+'版本');
+			    }); 
+			} 
+			mui.plusReady(function(){
+				plusReady();	
 			});
 		</script>
 	</body>

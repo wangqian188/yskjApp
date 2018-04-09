@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/sy.css"/>
 		<script type="text/javascript" src="js/lib/sy.js"></script>
+		<script src="js/lib/version.js"></script>
 	</head>
 	<style type="text/css">
 		.mui-input-row:nth-child(2) .mui-input-clear~.mui-icon-clear{right: 25%!important;}
@@ -230,6 +231,7 @@
 		</div>
 		<script type="text/javascript" src="js/lib/castapp.js" ></script>
 		<script type="text/javascript">	
+			version();
 			mui.init();			
 			//网络异常判断
 			mui.plusReady(function(){
@@ -681,6 +683,7 @@
 				}
 			});
 			
+			//首页轮播图跳转
 //			$('.banner1').click(function(){//
 //				var index = plus.webview.getWebviewById('index');
 //				mui.fire(index, "tab_index",{
@@ -729,5 +732,4 @@
 			});
 		</script>
 	</body>
-
 </html>
