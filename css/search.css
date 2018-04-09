@@ -6,6 +6,7 @@
 .mui-icon-clear{line-height: 6px;}
 .suouskongb{position: absolute;top:65px;width: 100%;text-align: center;margin-top: 2.706666rem;}
 .sskbg{background: url(../img/jxfy_kb.png) no-repeat center;background-size: auto 100%;height:2.08rem;}
+.sstjiankbg{background: url(../img/suosuotiajiweikong.png) no-repeat center;background-size: auto 100%;height:2.08rem;}
 .zwsfls{margin-top: 0.533333rem;font-size: 0.4rem;}
 .muhusuosuggg{position: absolute;left: 0;right: 0;bottom: 0;top: 0;padding-top: 65px;background-color: #f0f0f0;}
 .muhusslipa li{padding-left:0.613333rem;border-bottom: 1px solid #e5e5e5;line-height:1.466666rem;font-size: 0.36rem;}
@@ -18,3 +19,4 @@
 .muhusousous{display: none;}
 .lslist{display: none;}
 .suosukongbaiye{display: block;}
+.suosbaiye{display: none;}
