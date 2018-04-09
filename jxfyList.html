@@ -167,10 +167,13 @@
 			 * 下拉刷新具体业务实现
 			 */
 			function pulldownRefresh() {
+				xial = 1;
 				setTimeout(function() {
-					xial = 1;
 					$('.listUl').html('');
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
+					//解决频繁、一直下拉刷新xial没有置为1
+					xial = 1;
+					
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 					//这块是下拉刷新添加数据
@@ -455,7 +458,9 @@
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
-							mui.alert('抱歉，暂无符合条件的房源！');
+							if(xial == 1 && data.data.length == 0){
+								mui.alert('抱歉，暂无符合条件的房源！');								
+							}
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.data.length < 1)); //参数为true代表没有更多数据了。
 						}else{
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
@@ -915,6 +920,8 @@
 				text2 = e.innerText;
 				district = id;
 				if(id == 0){
+					$('.listUl').html('');
+					xial = 1;
 					id = '';
 					district ='';
 					fdcode = '';
@@ -1026,6 +1033,8 @@
 			var subway_str2 = '';
 			function subway_erji(id){
 				if(id == 0){
+					$('.listUl').html('');
+					xial = 1;
 					id = '';
 					station = '';
 					var main = plus.webview.getWebviewById('jxfy.html');
