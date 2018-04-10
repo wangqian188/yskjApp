@@ -54,7 +54,6 @@
 							       }
 							    });	
 							});
-					       //window.location.href="http://192.168.0.126:8080/yskjApp/webApp/dataInfo/appDown.do?appType=android&appVersion=V1.1";
 					    }else if (isIOS) {
 					　　　　   //ios操作系统
 	//				    window.location.href=appUrl;

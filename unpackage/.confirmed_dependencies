@@ -493,7 +493,8 @@
 			"js/mui.min.js",
 			"img/w1.png",
 			"css/mui.min.css",
-			"js/lib/flexible.js"
+			"js/lib/flexible.js",
+			"js/lib/jquery-1.10.2.min.js"
 		],
 		"refer": [
 			"index.html"

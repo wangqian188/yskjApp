@@ -10,6 +10,7 @@
 		<script src="js/lib/castapp.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/lib/flexible.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/lib/flexible_css.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<style>
 		.contents{position: absolute;left: 0;top: 0;right: 0;bottom: 0;overflow: hidden;}
@@ -57,7 +58,23 @@
 				url:'index.html',
 				id:'index'
 			});
-			
+			$('#dy_enter').click(function(){
+				//首页数据
+				var main = plus.webview.getWebviewById('sy.html');
+				mui.fire(main, "sy_jz",{
+				    sy_jz:1//1位置
+				});
+				
+				var main = plus.webview.getWebviewById('fwsc.html');
+				mui.fire(main, "fwsc_jz",{
+				    fwsc_jz:2//1位置
+				});
+				
+				var main = plus.webview.getWebviewById('qyhl.html');
+				mui.fire(main, "qyhl_jz",{
+				    qyhl_jz:3//1位置
+				});
+			});
 		</script>
 	</body>
 
