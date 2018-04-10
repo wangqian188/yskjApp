@@ -8,7 +8,8 @@
 			"css/mui.min.css",
 			"css/style.css",
 			"js/lib/flexible.js",
-			"css/style_a_d.css"
+			"css/style_a_d.css",
+			"css/a_fringe.css"
 		],
 		"refer": [
 			"qyhl.html",
@@ -59,7 +60,8 @@
 			"js/mui.min.js",
 			"js/lib/flexible.js",
 			"js/lib/sy.js",
-			"js/lib/version.js"
+			"js/lib/version.js",
+			"css/a_fringe.css"
 		],
 		"refer": [
 			"page/fyTail.html",
@@ -480,7 +482,8 @@
 			"css/search.css",
 			"css/mui.min.css",
 			"css/jxfy.css",
-			"img/jxfy_kb.png"
+			"img/jxfy_kb.png",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},

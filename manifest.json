@@ -240,7 +240,8 @@
 					"sy.html",
 					"css/style.css",
 					"css/iconfont.css",
-					"css/style_a_d.css"
+					"css/style_a_d.css",
+					"css/a_fringe.css"
 				],
 				"refer": [
 					"wd.html",
@@ -305,7 +306,8 @@
 					"img/sy_bxion.png",
 					"img/sy_kfion.png",
 					"js/lib/sy.js",
-					"js/lib/version.js"
+					"js/lib/version.js",
+					"css/a_fringe.css"
 				],
 				"refer": [
 					"jxfy.html",
@@ -537,7 +539,8 @@
 					"js/lib/flexible.js",
 					"css/style.css",
 					"css/jxfy.css",
-					"img/jxfy_kb.png"
+					"img/jxfy_kb.png",
+					"css/style_a_d.css"
 				],
 				"refer": [],
 				"priority": 0
