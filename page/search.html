@@ -21,7 +21,7 @@
 			
 			<div class="sousu sousuodeerji mui-input-row">
 				<span class="mui-icon mui-icon-search sousudubiao"></span>
-				<span class="sousuwenzi"><input type="text" id="keyword" oninput="soushuo()" onfocus="chxian()" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
+				<span class="sousuwenzi"><input type="text" id="keyword" oninput="soushuo()" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
 			</div>
 			<a class="qvxiao a_d" onclick="qvxiaoss()">取消</a>
 		</header>
@@ -76,7 +76,7 @@
 			
 
 			
-			$('.sousuwenzi input').trigger("click").focus();
+			//$('.sousuwenzi input').trigger("click").focus();
 			var stat = 1;
 			if(localStorage.getItem("sousuolsh")){
 				$('.suosukongbaiye').css("display","none");
@@ -97,24 +97,7 @@
 			
 			//自动获取焦点且弹出软键盘
          	//$("#keyword").trigger("click").focus();
-			if (mui.os.android) {
-				$('#keyword').attr('autofocus','autofocus');
-		        function plusReady(){
-				    var Context = plus.android.importClass("android.content.Context");
-				    var InputMethodManager = plus.android.importClass("android.view.inputmethod.InputMethodManager");
-				    var main = plus.android.runtimeMainActivity();
-				    var imm = main.getSystemService(Context.INPUT_METHOD_SERVICE);
-				    imm.toggleSoftInput(0,InputMethodManager.SHOW_FORCED);
-				}
-				document.addEventListener("plusready",plusReady,false);
-		    } else {
-		        function plusReady(){
-				    var webView = plus.webview.currentWebview().nativeInstanceObject();
-				    webView.plusCallMethod({"setKeyboardDisplayRequiresUserAction":false});
-				    document.getElementById("keyword").focus();
-				}
-				document.addEventListener("plusready",plusReady,false);
-		    }
+			
 			
 			//跳转页面的传递的参数(把房源的名称传到搜索页面)
 			mui.plusReady(function(){
@@ -142,7 +125,6 @@
 						$('.muhusousous').css("display","none");
 						$('.lslist').css("display","none");
 					}
-                	
                 }else{
                 	$('.suosinput').val(lpname);
 					chxian();
@@ -343,6 +325,26 @@
 				$('.lslist').css("display","none");
 			}
 			
+			if (mui.os.android) {
+				$('#keyword').attr('autofocus','autofocus');
+		        function plusReady(){
+				    var Context = plus.android.importClass("android.content.Context");
+				    var InputMethodManager = plus.android.importClass("android.view.inputmethod.InputMethodManager");
+				    var main = plus.android.runtimeMainActivity();
+				    var imm = main.getSystemService(Context.INPUT_METHOD_SERVICE);
+				    imm.toggleSoftInput(0,InputMethodManager.SHOW_FORCED);
+				}
+				document.addEventListener("plusready",plusReady,false);
+		    } else {
+		    	//移除属性和属性值
+		    	$('#keyword').removeAttr('autofocus','autofocus');
+		        function plusReady(){
+				    var webView = plus.webview.currentWebview().nativeInstanceObject();
+				    webView.plusCallMethod({"setKeyboardDisplayRequiresUserAction":false});
+				    document.getElementById("keyword").focus();
+				}
+				document.addEventListener("plusready",plusReady,false);
+		    }
 			
 			
 			
