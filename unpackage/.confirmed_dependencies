@@ -70,7 +70,8 @@
 			"page/acreage_mj.html",
 			"page/saleFuWu.html",
 			"page/steward.html",
-			"page/topNewsInfo.html"
+			"page/topNewsInfo.html",
+			"page/broker.html"
 		]
 	},
 	"wd.html": {
@@ -165,7 +166,8 @@
 			"img/fav2.png",
 			"img/shoucdianhuobg.png",
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"css/style_a_d.css"
 		],
 		"refer": []
 	},
@@ -483,7 +485,14 @@
 			"css/mui.min.css",
 			"css/jxfy.css",
 			"img/jxfy_kb.png",
-			"css/style_a_d.css"
+			"css/style_a_d.css",
+			"js/lib/flexible_css.js",
+			"js/lib/jquery-1.10.2.min.js",
+			"fonts/mui.ttf",
+			"js/lib/flexible.js",
+			"css/style.css",
+			"js/lib/app_config.js",
+			"js/mui.min.js"
 		],
 		"refer": []
 	},
@@ -511,6 +520,16 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"js/lib/flexible.js"
+		]
+	},
+	"page/broker.html": {
+		"resources": [
+			"css/style_a_d.css",
+			"img/his_cs.png",
+			"img/his_js.png",
+			"css/mui.min.css",
+			"img/his_pm.png",
+			"css/broker.css"
 		]
 	}
 }
