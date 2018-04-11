@@ -12,10 +12,11 @@
 		<script type="text/javascript" src="js/lib/flexible.js"></script>
 		<script type="text/javascript" src="js/lib/flexible_css.js"></script>
 		<script src="js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/a_fringe.css"/>
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav jxfy-bg-color" id="jxfyhead">
+		<header class="mui-bar mui-bar-nav jxfy-bg-color ipx_h" id="jxfyhead">
 			<div class="sousu">
 				<span class="mui-icon mui-icon-search sousudubiao"></span>
 				<span class="sousuwenzi">请输入楼盘关键字搜索</span>
@@ -35,12 +36,19 @@
 		</div>
 
 		<script type="text/javascript">
+			var topHeight = '115px';
+	      	if(window.screen.width == 375 && window.screen.height == 812){
+				topHeight = '139px';
+			}else{
+				topHeight = '115px';
+			}
+			
 			mui.init({
 			    subpages:[{
 			      url:'jxfyList.html',//子页面HTML地址，支持本地地址和网络地址
 			      id:'jxfyList',//子页面标志1
 			      styles:{
-			        top:'110px',//子页面顶部位置
+			        top:topHeight,//子页面顶部位置
 			        bottom:'0px',//子页面底部位置
 			        /*width:subpage-width,//子页面宽度，默认为100%
 			        height:subpage-height,//子页面高度，默认为100%

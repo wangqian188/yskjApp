@@ -12,6 +12,7 @@
 		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js" ></script>
 		<link rel="stylesheet" type="text/css" href="../css/person.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
+		<script src="../js/lib/jc_version.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<style>
 		.per_news{
@@ -39,7 +40,7 @@
 		    		<span class="p_nane">修改密码</span>
 		    		<span class="mui-icon mui-icon-arrowright p_con"></span>
 		    	</li>
-		    	<li>
+		    	<li class="version">
 		    		<span class="p_nane" id="version"></span>
 		    		<!--<span class="mui-icon mui-icon-arrowright p_con"></span>-->
 		    	</li>
@@ -193,6 +194,9 @@
 			} 
 			mui.plusReady(function(){
 				plusReady();	
+			});
+			$('.version').click(function(){
+				version();
 			});
 		</script>
 	</body>

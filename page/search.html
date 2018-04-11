@@ -14,49 +14,53 @@
 		<link href="../css/jxfy.css" rel="stylesheet" />
 		<link href="../css/search.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
 	</head>
-
 	<body>
-		<header class="mui-bar mui-bar-nav jxfy-bg-color sserjyemian">
-			
-			<div class="sousu sousuodeerji mui-input-row">
-				<span class="mui-icon mui-icon-search sousudubiao"></span>
-				<span class="sousuwenzi"><input type="text" id="keyword" oninput="soushuo()" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
-			</div>
-			<a class="qvxiao a_d" onclick="qvxiaoss()">取消</a>
-		</header>
-		<div class="mui-content">
-			<!--暂无搜索历史-->
-			<div class="suouskongb suosukongbaiye" id="">
-				<p class="sskbg"></p>
-				<p class="zwsfls">暂无搜索历史</p>
-			</div>
-			<!--对应的搜索条件没有数据-->
-			<div class="suouskongb suosbaiye">
-				<p class="sstjiankbg"></p>
-				<p class="zwsfls">未搜索到相关数据</p>
-			</div>
-			<!--模糊搜索的页面-->
-			<div class="muhusuosuggg muhusousous" id="">
-				<ul class="muhusslipa">
-				        <!--<li class="">
-				            <a class="">苹果</a>
-				        </li>-->
-				    </ul>
-			</div>
-			<!--历史搜索列表-->
-			<div class="muhusuosuggg lslist" id="">
-				<div class="lishissdewezi">
-					<p class="lishisuosudiyi">
-						<span class="lishisuosudiyier">历史搜索</span>
-						<span class="lishisuosudiyisan mui-icon mui-icon-trash" onclick="ssshanchu()"></span>
-					</p>
-					<p id="">
-						<ul class="muhusslipa">
-					        
-					    </ul>
-					</p>
+		<header class="mui-bar mui-bar-nav jxfy-bg-color sserjyemian ipx_h">
+			<div class="ipx_h_box">
+				<div class="sousu sousuodeerji mui-input-row">
+					<span class="mui-icon mui-icon-search sousudubiao" style="top:0.08rem;"></span>
+					<span class="sousuwenzi"><input type="text" id="keyword" oninput="soushuo()" class="mui-input-clear suosinput" placeholder="请输入楼盘关键字搜索"></span>
 				</div>
+				<a class="qvxiao a_d" onclick="qvxiaoss()">取消</a>
+			</div>
+		</header>
+		<div class="mui-content ipx_content">
+			<div class="ipx_box_search">
+				<!--暂无搜索历史-->
+				<div class="suouskongb suosukongbaiye" id="">
+					<p class="sskbg"></p>
+					<p class="zwsfls">暂无搜索历史</p>
+				</div>
+				<!--对应的搜索条件没有数据-->
+				<div class="suouskongb suosbaiye">
+					<p class="sstjiankbg"></p>
+					<p class="zwsfls">未搜索到相关数据</p>
+				</div>
+				<!--模糊搜索的页面-->
+				<div class="muhusuosuggg muhusousous" id="">
+					<ul class="muhusslipa">
+					        <!--<li class="">
+					            <a class="">苹果</a>
+					        </li>-->
+					    </ul>
+				</div>
+				<!--历史搜索列表-->
+				<div class="muhusuosuggg lslist" id="">
+					<div class="lishissdewezi">
+						<p class="lishisuosudiyi">
+							<span class="lishisuosudiyier">历史搜索</span>
+							<span class="lishisuosudiyisan mui-icon mui-icon-trash" onclick="ssshanchu()"></span>
+						</p>
+						<p id="">
+							<ul class="muhusslipa">
+						        
+						    </ul>
+						</p>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 		
