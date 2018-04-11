@@ -341,7 +341,12 @@
       "js/lib/app_config.js",
       "fonts/mui.ttf",
       "css/style_a_d.css",
+<<<<<<< HEAD
       "css/mui.min.css"
+=======
+      "css/mui.min.css",
+      "js/lib/jc_version.js"
+>>>>>>> 793813ad16c3a66c27c1cc3253e133d89a971c6a
     ],
     "refer": [
       "page/disclaimer.html"
