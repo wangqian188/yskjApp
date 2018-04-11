@@ -205,11 +205,7 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-<<<<<<< HEAD
-						"retina40": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","retina55":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","retina47":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","retina35":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","retina55l":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png"
-=======
 						"retina40": "C:/Users/yuan/Desktop/app配置文件/welcome.png","retina55":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina47":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina35":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina55l":"C:/Users/yuan/Desktop/app配置文件/welcome.png","iphonex":"C:/Users/yuan/Desktop/app配置文件/welcome.png","iphonexl":"C:/Users/yuan/Desktop/app配置文件/welcome.png"
->>>>>>> 793813ad16c3a66c27c1cc3253e133d89a971c6a
 					},
 					"ipad": {
 						"portrait": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png", /*iPad竖屏启动图片，分辨率：768x1004*/
