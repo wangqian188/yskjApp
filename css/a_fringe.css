@@ -45,4 +45,27 @@
     	border-bottom: 1px solid  #e5e5e5;
     	z-index: 9999999;
     }
+    /*地图下面快速查找类型菜单*/
+    .lptaldubiao{
+    	height: 1.333333rem!important;
+    }
+    /*房源详情主体距离底部距离*/
+    /*服务商城子页面底部距离*/
+    .fyzhuti,.ipx_public_con{bottom: 34px;}
+    /*map地图标题距离顶部距离*/
+    .fyxqyi{
+    	top: 12px;
+    }
+    /*个人信息页面主题控制*/
+    .ipx_per_zt::before{
+    	content: '';
+    	display: block;
+    	height: 20px;
+    	width: 100%;
+    }
+    /*子页面头部样式*/
+    .ipx_public_h1{
+    	height: 2.053333rem;
+    	padding-top: 0.986666rem;
+    }
 }

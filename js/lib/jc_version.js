@@ -37,9 +37,24 @@ function version(){
 							});
 					    }else if (isIOS) {
 					　　　　   //ios操作系统
-							mui.toast("更新！");
-//					    window.location.href=appUrl;
-//window.location.href='https://itunes.apple.com/cn/app/id1253355672?mt=8';
+							mui.plusReady(function(){
+					       		//获取本地版本号
+								plus.runtime.getProperty(plus.runtime.appid,function(inf){ 
+							        var wgtVer=inf.version; 
+							       if(data.data.versionCode != wgtVer){
+								        var btnArray = ['忽略更新', '立即更新'];
+										mui.confirm('您当前的版本为'+wgtVer+'，发现最新版本'+data.data.versionCode+'，是否下载更新？', '提示', btnArray, function(e) {
+										 	if (e.index == 0) {
+										 		mui.toast("已取消更新！");
+										 	}
+										 	if(e.index == 1){
+										 		mui.toast("发现新版本！");
+										 		window.location.href= 'https://www.pgyer.com/IWef';
+										 	}
+										},'div')
+									       }
+									    });	
+								});
 
 					    }else {
 					        //window.location.href="http://47.92.145.21:81/yskj.apk";

@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/person.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
 	</head>
 	<style>
 		 <style>
@@ -24,17 +25,23 @@
 	</style>
 
 	 <body>
-        <header class="mui-bar mui-bar-nav wd-header_p">
+        <header class="mui-bar mui-bar-nav wd-header_p ipx_public_h1">
             <a class="mui-icon mui-action-back mui-icon-arrowleft mui-icon-back  mui-badge-inverted a_d"></a>
             <h1 class="mui-title">头条详情</h1>
         </header>
-        <div class="mui-content public_con"  id="refLoad" style="display: none;">
+        <div class="mui-content public_con"  id="refLoad" style="display: none;background: #fff;">
 	        <div style="width: 2.666666rem;height: 2.666666rem;background-size: 60% auto;margin: 6.666666rem auto 0;">
 		       <p onclick="refreshInfo()" style="width: 2.666666rem;height: 1.888888rem;background: url(../img/refresh.png) no-repeat center;background-size: 60% auto;margin: 6.666666rem auto 0;"></p> 
 		       <p onclick="refreshInfo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重新加载</p>
 	        </div>
         </div>
         <script type="text/javascript">
+        	var topHeight = '70px';
+	      	if(window.screen.width == 375 && window.screen.height == 812){
+				topHeight = '79px';
+			}else{
+				topHeight = '70px';
+			}
 			 window.onload = function(){
 			 	 var links="";
 	            //业务数据获取完毕，并已插入当前页面DOM；
@@ -62,7 +69,7 @@
 				                    url: links,
 				                    id: 'topNewInfo.html',
 				                    styles: {
-				                        top: '70px',
+				                        top: topHeight,
 				                        bottom: '0px',
 				                    }
 				                }]

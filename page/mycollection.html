@@ -12,11 +12,12 @@
 		<link rel="stylesheet" type="text/css" href="../css/mycollection.css"/>
 		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
 	</head>
 	<style>
 	</style>
 	<body>
-		<header class="mui-bar mui-bar-nav wd-header_p">
+		<header class="mui-bar mui-bar-nav wd-header_p ipx_public_h1">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left a_d"></a>
 		    <h1 class="mui-title">
 		    	<span class="tit">我的收藏</span>
@@ -43,6 +44,13 @@
 		    </div>
 		</div>
 		<script type="text/javascript">
+			var topHeight = '80px';
+	      	if(window.screen.width == 375 && window.screen.height == 812){
+				topHeight = '80px';
+			}else{
+				topHeight = '80px';
+			}
+			
 			var tabid = 0;
 			//tab切换
 			var tabNav = $('.scmenu');
@@ -67,7 +75,7 @@
 			      url:'mysc_list.html',//子页面HTML地址，支持本地地址和网络地址
 			      id:'mysc_list',//子页面标志
 			      styles:{
-			        top:'80px',//子页面顶部位置
+			        top:topHeight,//子页面顶部位置
 			        bottom:'60px',//子页面底部位置 
 			      },
 			      extras:{}//额外扩展参数
