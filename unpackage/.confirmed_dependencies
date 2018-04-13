@@ -63,7 +63,8 @@
 	},
 	"page/loupan_detail.html": {
 		"refer": [
-			"page/map.html"
+			"page/map.html",
+			"page/fyTail.html"
 		]
 	},
 	"page/person.html": {
