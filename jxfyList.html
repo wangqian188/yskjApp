@@ -973,7 +973,9 @@
 				fdcode = id;
 				text3 = e.innerText;
 				if(q == -1){
-					district = districtages;
+					if(district == ''){
+						district = districtages;
+					}
 					fdcode = '';
 					var main = plus.webview.getWebviewById('jxfy.html');
 					mui.fire(main, "weizhineirong",{
@@ -1091,7 +1093,9 @@
 				district = '';
 				fdcode = '';
 				if(q == -1){
-					lineid = lineageg;
+					if(lineid == ''){
+						lineid = lineageg;
+					}
 					station = '';
 					var main = plus.webview.getWebviewById('jxfy.html');
 					mui.fire(main, "weizhineirong",{
