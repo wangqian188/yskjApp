@@ -965,6 +965,7 @@
 				
 			}
 			//行政区域三级
+			var districtages = '';
 			function clk_xz2(id,q,e){
 				xial = 1;
 				$('.listUl').html('');
@@ -972,6 +973,7 @@
 				fdcode = id;
 				text3 = e.innerText;
 				if(q == -1){
+					district = districtages;
 					fdcode = '';
 					var main = plus.webview.getWebviewById('jxfy.html');
 					mui.fire(main, "weizhineirong",{
@@ -979,6 +981,7 @@
 					})
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}else{
+					districtages = district;
 					district = '';
 					fdcode = id;
 					var main = plus.webview.getWebviewById('jxfy.html');
@@ -1036,6 +1039,7 @@
 					$('.listUl').html('');
 					xial = 1;
 					id = '';
+					lineid = '';
 					station = '';
 					district = '';
 					fdcode = '';
@@ -1077,6 +1081,7 @@
 				}
 				
 			}
+			var lineageg = '';
 			//地铁的三级
 			function subway2(id,q,e){//控制最后一级变色及参数传递
 				xial = 1;
@@ -1086,6 +1091,7 @@
 				district = '';
 				fdcode = '';
 				if(q == -1){
+					lineid = lineageg;
 					station = '';
 					var main = plus.webview.getWebviewById('jxfy.html');
 					mui.fire(main, "weizhineirong",{
@@ -1093,6 +1099,7 @@
 					})
 					dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
 				}else{
+					lineageg = lineid;
 					lineid = '';
 					station = id;
 					var main = plus.webview.getWebviewById('jxfy.html');
