@@ -99,5 +99,10 @@
 		"refer": [
 			"page/fyTail.html"
 		]
+	},
+	"page/tax.html": {
+		"refer": [
+			"page/wYaoZhuCe.html"
+		]
 	}
 }
