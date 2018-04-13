@@ -26,8 +26,20 @@ function version(){
 								 		sessionStorage.setItem('version','new');
 								 	}
 								 	if(e.index == 1){
-								 		mui.toast("发现新版本！");
-								 		window.location.href= data.data.appFileUrl;
+								 		var url = data.data.appFileUrl;
+								 		plus.nativeUI.showWaiting('下载更新中...');
+								 		var dd= plus.downloader.createDownload(url, {},function(d, status) {
+				                            if (status == 200) {
+				                            	plus.nativeUI.closeWaiting();
+				                                plus.nativeUI.toast("正在准备环境，请稍后！");
+				                               // sleep(1000);
+				                                var path = d.filename;//下载apk
+				                                plus.runtime.install(path); // 自动安装apk文件
+				                            }else {
+				                                alert('版本更新失败!');
+				                            }
+				                        });
+				                        dd.start();
 								 	}
 								},'div')
 							       }
