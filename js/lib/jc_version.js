@@ -7,7 +7,7 @@ var appUrl="";
 function version(){
   	$.ajax({  
           type:'post',  
-          url:'http://116.62.68.26:8080/yskjApp/webApp/dataInfo/appDown.do?appType=android',
+          url:Interface_url+'/yskjApp/webApp/dataInfo/appDown.do?appType=android',
           dataType:'json',  
           headers:{'Content-Type':'application/json'},	              
           success:function(data){
@@ -26,7 +26,8 @@ function version(){
 								 	}
 								 	if(e.index == 1){
 								 		var url = data.data.appFileUrl;
-								 		plus.nativeUI.showWaiting('下载更新中...');
+//								 		plus.nativeUI.showWaiting('下载更新中...');
+										var w = plus.nativeUI.showWaiting("正在下载,请等待...", {back: "none"});
 								 		var dd= plus.downloader.createDownload(url, {},function(d, status) {
 				                            if (status == 200) {
 				                            	plus.nativeUI.closeWaiting();
@@ -38,7 +39,12 @@ function version(){
 				                                alert('版本更新失败!');
 				                            }
 				                        });
-				                        dd.start();
+				                        dd.addEventListener("statechanged", function(d, status) {
+					                    var total = parseInt(d.totalSize);
+					                    var cur = parseInt(d.downloadedSize);
+					                    w.setTitle("已经下载：" + (cur / (1024 * 1024)).toFixed(2) + "M/" + (total / (1024 * 1024)).toFixed(2) + "M");
+					                }, false);
+					                    dd.start();
 								 	}
 								},'div')
 							       }else{
