@@ -165,7 +165,7 @@
 					
 				</div>				
 			</div>
-			<!--特价房源-->
+			<!--幼狮推荐-->
 			<div class="tjfy">
 				<div class="tit">幼狮推荐</div>
 				 <ul class="fy_list">
@@ -231,8 +231,12 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="js/lib/castapp.js" ></script>
-		<script type="text/javascript">	
-			version();
+		<script type="text/javascript">
+			//控制版本更新
+			if(!sessionStorage.getItem('version')){
+				version();
+			}
+			//
 			mui.init();			
 			//网络异常判断
 			mui.plusReady(function(){
@@ -447,7 +451,7 @@
 			}
 			
 			
-/*			特价房源*/
+/*			幼狮推荐*/
 			mui.ajax(Interface_url+'/yhcms/web/jcsj/getSpecialHouse.do',{
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型

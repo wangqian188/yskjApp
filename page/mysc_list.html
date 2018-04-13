@@ -384,6 +384,17 @@
 				var selsc = e.detail.selsc;
 				del_sc();
 			});
+			//取消收藏刷新收藏列表
+			window.addEventListener("shoucang", function (e) {
+			    //获得事件参数
+			    idx = e.detail.idx;
+				if(idx==888){
+					var wobj = plus.webview.getWebviewById("mysc_list");
+					wobj.reload(true);					
+				}
+			});
+			
+			
 		</script>
 		
 	</body>

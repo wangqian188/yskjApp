@@ -94,5 +94,10 @@
 			"page/fast_zc.html",
 			"page/wj_pwd.html"
 		]
+	},
+	"page/mysc_list.html": {
+		"refer": [
+			"page/fyTail.html"
+		]
 	}
 }
