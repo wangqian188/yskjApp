@@ -7,7 +7,7 @@ var appUrl="";
 function version(){
   	$.ajax({  
           type:'post',  
-          url:Interface_url+'/yskjApp/webApp/dataInfo/appDown.do?appType=android',
+          url:url+'/yskjApp/webApp/dataInfo/appDown.do?appType=android',
           dataType:'json',  
           headers:{'Content-Type':'application/json'},	              
           success:function(data){
