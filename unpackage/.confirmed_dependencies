@@ -1,0 +1,109 @@
+{
+  "index.html": {
+    "resources": [
+      "sy.html"
+    ],
+    "refer": [
+      "qyhl.html",
+      "sy.html",
+      "wd.html",
+      "jxfy.html",
+      "fwsc.html"
+    ]
+  },
+  "jxfy.html": {
+    "resources": [
+      "jxfyList.html"
+    ],
+    "refer": [
+      "jxfyList.html",
+      "page/search.html"
+    ]
+  },
+  "welcome.html": {
+    "refer": [
+      "index.html"
+    ]
+  },
+  "sy.html": {
+    "refer": [
+      "page/acreage_mj.html",
+      "page/enterprise_qy.html",
+      "page/broker.html",
+      "page/steward.html",
+      "page/topNewsInfo.html",
+      "page/loupan_detail.html",
+      "page/fyTail.html",
+      "page/fitup.html",
+      "page/tax.html",
+      "page/login.html",
+      "page/saleFuWu.html"
+    ]
+  },
+  "jxfyList.html": {
+    "refer": [
+      "page/fyTail.html"
+    ]
+  },
+  "fwsc.html": {
+    "refer": [
+      "page/tax.html",
+      "page/fitup.html",
+      "page/financial.html",
+      "page/added.html"
+    ]
+  },
+  "wd.html": {
+    "refer": [
+      "page/login.html",
+      "page/person.html",
+      "page/myset.html",
+      "page/mycollection.html"
+    ]
+  },
+  "page/loupan_detail.html": {
+    "refer": [
+      "page/map.html",
+      "page/fyTail.html"
+    ]
+  },
+  "page/person.html": {
+    "refer": [
+      "page/add_name.html",
+      "page/gh_tel.html",
+      "page/add_sfz.html",
+      "page/qdgs.html",
+      "page/sfrz.html"
+    ]
+  },
+  "page/myset.html": {
+    "refer": [
+      "page/setpwd.html",
+      "page/disclaimer.html"
+    ]
+  },
+  "page/mycollection.html": {
+    "resources": [
+      "page/mysc_list.html"
+    ],
+    "refer": [
+      "page/mysc_list.html"
+    ]
+  },
+  "page/login.html": {
+    "refer": [
+      "page/fast_zc.html",
+      "page/wj_pwd.html"
+    ]
+  },
+  "page/mysc_list.html": {
+    "refer": [
+      "page/fyTail.html"
+    ]
+  },
+  "page/tax.html": {
+    "refer": [
+      "page/wYaoZhuCe.html"
+    ]
+  }
+}
