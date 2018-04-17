@@ -31,7 +31,9 @@
 		"resources": [
 			"js/lib/version.js",
 			"css/sy.css",
-			"css/style.css"
+			"css/style.css",
+			"img/jjr_icon.png",
+			"img/gj_icon.png"
 		]
 	},
 	"wd.html": {
