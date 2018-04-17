@@ -236,8 +236,8 @@ $('#btn1').click(function(){
 		}else{
 			mui.toast('请将密码填写完整',{ duration:'3000', type:'div' });
 		}
-		setTimeout(function () { clicktag = 0; }, 5000);
 	}else{
+		setTimeout(function () { clicktag = 0; }, 2000);
 		mui.toast('点击过于频繁！',{ duration:'2000', type:'div' });
 		return;
 	}
