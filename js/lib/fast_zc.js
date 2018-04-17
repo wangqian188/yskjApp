@@ -78,6 +78,7 @@ document.getElementById("yinc1").addEventListener('input',function(){
 		btnzt1();
 	}
 });
+//按钮变色
 function btnzt1(){
 	if(pwd != '' && pwd1 != ''){
 		$('.btn1').css({'background':'#2b70d8'});
@@ -216,28 +217,38 @@ function clk(){
 //		return;
 //	}
 //};
+var pwdReg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;//8到16位数字与字母组合
+//function checkPassword(){
+//  var value = $('#test').val();
+//  if(!pwdReg.test(value)){
+//      alert('密码校验失败!');
+//  }else{
+//      alert('密码合法!');
+//  }
+//}
 var clicktag = 0;
 $('#btn1').click(function(){
 	if(clicktag == 0){
 		clicktag = 1;
 		if(pwd != '' && pwd1 != ''){
-			if(pwd.length<6||pwd1.length<6){
-				mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
+//			if(pwd.length<6||pwd1.length<6){
+			if(!pwdReg.test(pwd) || !pwdReg.test(pwd1)){
+				mui.toast('密码为6-16位字母、数字组合',{ duration:'3000', type:'div' });
 				return;
 			}else{
-			if(pwd == pwd1){
-				//注册方法	
-				zhuce();
-			}else{
-				mui.toast('两次密码输入不一致',{ duration:'3000', type:'div' });
-				return;
-			}
+				if(pwd == pwd1){
+					//注册方法	
+					zhuce();
+				}else{
+					mui.toast('两次密码输入不一致',{ duration:'3000', type:'div' });
+					return;
+				}
 			}
 		}else{
 			mui.toast('请将密码填写完整',{ duration:'3000', type:'div' });
 		}
-    	setTimeout(function () { clicktag = 0; }, 5000);
 	}else{
+		setTimeout(function () { clicktag = 0; }, 1000);
 		mui.toast('点击过于频繁！',{ duration:'2000', type:'div' });
 		return;
 	}

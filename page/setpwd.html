@@ -70,14 +70,17 @@
 			var ymm = '';
 			var xmm = '';
 			var qrmm = '';
+			var pwdReg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;//8到16位数字与字母组合
 			$('.save').click(function(){
 				ymm = $('#ymm').val();
 				xmm = $('#xmm').val();
 				qrmm = $('#qrmm').val();
-				
 				if(ymm != '' && xmm != '' && qrmm != ''){
 					if(ymm.length<6||xmm.length<6||qrmm.length<6){
 						mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
+						if(!pwdReg.test(xmm) || !pwdReg.test(qrmm)){
+							mui.toast('密码为6-16位字母、数字组合',{ duration:'3000', type:'div' });
+						}
 						return;
 					}else{
 					if(xmm == qrmm){
