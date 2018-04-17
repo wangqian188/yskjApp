@@ -1,0 +1,71 @@
+.bar-h-s{height: 20px;}
+@media only screen and (device-width: 375px) and (device-height: 812px) and 
+(-webkit-device-pixel-ratio: 3) {
+    /*增加头部适配层*/
+    .has-topbar {
+        height: 100%;
+        box-sizing: border-box;
+        padding-top: 44px;
+    }
+ 	.has-topbar-h {
+        height: 44px;
+    }
+   	.sy-content{
+   		position: absolute;
+   		left: 0;
+   		top: 0;
+   		right: 0;
+   		bottom: 85px!important;
+   	}
+    #bottomx{
+    	height: 85px;
+    	z-index: 9999999;
+    	border-top: 1px solid  #e5e5e5;
+    }
+    .mui-bar-tab{
+    	display: initial;    	
+    }
+    .ipx_h{
+    	display: flex;
+    	flex-direction: column;
+    	height: 94px;
+    }
+    .ipx_h::before{
+    	content: '';
+    	display: block;
+    	height: 24px;
+    	width: 100%;
+    }
+    .ipx_content{
+    	position: relative;
+    	top: 24px;
+    }
+    .jxfytjxz{
+    	top: 95px;
+    	border-bottom: 1px solid  #e5e5e5;
+    	z-index: 9999999;
+    }
+    /*地图下面快速查找类型菜单*/
+    .lptaldubiao{
+    	height: 1.333333rem!important;
+    }
+    /*房源详情主体距离底部距离*/
+    /*服务商城子页面底部距离*/
+    .fyzhuti,.ipx_public_con{bottom: 34px;}
+    /*map地图标题距离顶部距离*/
+    .fyxqyi{
+    	top: 12px;
+    }
+    /*个人信息页面主题控制*/
+    .ipx_per_zt::before{
+    	content: '';
+    	display: block;
+    	height: 20px;
+    	width: 100%;
+    }
+    /*子页面头部样式*/
+    .ipx_public_h1{
+    	height: 2.053333rem;
+    	padding-top: 0.986666rem;
+    }
+}
