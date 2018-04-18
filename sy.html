@@ -145,7 +145,7 @@
 			<div class="box_qh">
 				<div class="box_q rmfy_box" style="display: block;">
 					<!--热门房源-->
-					<div class="tit">热门楼盘<span style="float: right;font-size: 0.32rem;color: #999999;padding-right: 0.4rem;">查看更多<span class="mui-icon mui-icon mui-icon-arrowright" style="font-size: 0.426666rem;"></span></span></div>
+					<div class="tit">热门楼盘<span id='chankangogns' onclick="chanseemore()" style="float: right;font-size: 0.32rem;color: #999999;padding-right: 0.4rem;">查看更多<span class="mui-icon mui-icon mui-icon-arrowright" style="font-size: 0.426666rem;"></span></span></div>
 					<ul class="fypics"></ul>
 				</div>
 				<div class="box_q">
@@ -738,6 +738,14 @@
 			    	},3000);
 			    }
 			});
+			
+			//查看更多的跳转
+			function chanseemore(){
+				mui.openWindow({
+					url:'page/loupan.html',
+					id:'loupan'
+				});
+			}
 		</script>
 	</body>
 </html>
