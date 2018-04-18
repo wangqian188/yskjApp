@@ -1,49 +1,49 @@
 {
-	"index.html": {
-		"resources": [
-			"sy.html"
-		],
-		"refer": [
-			"qyhl.html",
-			"sy.html",
-			"wd.html",
-			"jxfy.html",
-			"fwsc.html"
-		]
-	},
-	"jxfy.html": {
-		"resources": [
-			"jxfyList.html"
-		],
-		"refer": [
-			"jxfyList.html"
-		]
-	},
-	"welcome.html": {
-		"refer": [
-			"index.html"
-		]
-	},
-	"sy.html": {
-		"refer": [
-			"page/acreage_mj.html"
-		]
-	},
-	"wd.html": {
-		"refer": [
-			"page/login.html",
-			"page/myset.html",
-			"page/person.html"
-		]
-	},
-	"page/login.html": {
-		"refer": [
-			"page/fast_zc.html"
-		]
-	},
-	"page/myset.html": {
-		"refer": [
-			"page/setpwd.html"
-		]
-	}
+  "index.html": {
+    "resources": [
+      "sy.html"
+    ],
+    "refer": [
+      "qyhl.html",
+      "sy.html",
+      "wd.html",
+      "jxfy.html",
+      "fwsc.html"
+    ]
+  },
+  "jxfy.html": {
+    "resources": [
+      "jxfyList.html"
+    ],
+    "refer": [
+      "jxfyList.html"
+    ]
+  },
+  "welcome.html": {
+    "refer": [
+      "index.html"
+    ]
+  },
+  "sy.html": {
+    "refer": [
+      "page/acreage_mj.html"
+    ]
+  },
+  "wd.html": {
+    "refer": [
+      "page/login.html",
+      "page/myset.html",
+      "page/person.html"
+    ]
+  },
+  "page/login.html": {
+    "refer": [
+      "page/fast_zc.html"
+    ]
+  },
+  "page/myset.html": {
+    "refer": [
+      "page/setpwd.html"
+    ]
+  }
 }
