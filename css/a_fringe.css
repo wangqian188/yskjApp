@@ -1,5 +1,5 @@
 .bar-h-s{height: 20px;}
-/*首页顶部高度*/
+/*首页顶部高度1*/
 .bar-h-s1{height: 65px;}
 .sy_search{display: flex!important;align-items: center;line-height: initial;height: 30px;background: rgba(255,255,255,0.9);border-radius: 3px;top: 27px;text-align: left;padding-left: 12px;color: #bababa;}
 @media only screen and (device-width: 375px) and (device-height: 812px) and 
