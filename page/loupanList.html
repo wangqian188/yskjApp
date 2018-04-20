@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="../css/mui.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/jxfyList.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/loupanList.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/sy.css"/>
 		<script type="text/javascript" src="../js/lib/flexible.js"></script>
 		<script type="text/javascript" src="../js/lib/flexible_css.js"></script>
@@ -63,14 +64,14 @@
 						</div>-->
 					</div>
 					<div class="mjqyfm">
-						产权性质
+						特色标签
 					</div>
 					<div class="xuanxing chanqxz">
-						<div class="xuanxingshuzi">
-							<div class="xiaokchuaq">写字楼</div>
+						<div class="testbq">
+							<!--<div class="xiaokchuaq xiaoktese">写字楼</div>
 							<div class="xiaokchuaq">公寓</div>
 							<div class="xiaokchuaq">商务楼</div>
-							<div class="xiaokchuaq">商业</div>
+							<div class="xiaokchuaq">商业</div>-->
 						</div>
 					</div>
 				</div>
@@ -106,24 +107,29 @@
 					<!--特价房源-->
 					<div class="mui-table-view mui-table-view-chevron">
 						 <ul class="fy_list listUl" id="ulId">
-						 	<li class="listtail">
+						 	<!--<li class="listtail">
 						 		<div class="fy_pic">
 						 			<img src="img/fypic.png" alt="" />
 						 		</div>
-						 		<div class="fy_xx" style="border: 1px solid red;">
-						 			<!--<p class="lp">建外SOHO</p>
-						 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
-						 			<p class="jfList">
-						 				<span class="jzjf">精装交付</span>
-						 				<span class="jzdj">定金</span>
+						 		<div class="fy_xx" style="width: 5.5rem;">
+						 			<p class="lpdiyih lpheigh">
+						 				<span class="lpname">建外SOHO</span>
+						 				<span class="lpdanjia">8.8<i>元/㎡/天</i></span>
 						 			</p>
-						 			<p class="dj">
-						 				<span>6.5<i>元/m2/天</i></span>
-						 			</p>-->
-						 			<p>121212121212121212121121212121212121212121121212121212121212121121212121212121212121</p>
+						 			<p class="lper lpheigh">
+						 				<span class="lpqvyv">朝阳区-国贸</span>
+						 				<span class="lpmianjis">10-888.07㎡</span>
+						 			</p>
+						 			<p class="lpfkezu lpheigh">82套房源可租</p>
+						 			<p class="jfList">
+						 				<span class="jzjf">互联网</span>
+						 				<span class="jzjf">交通便利</span>
+						 				<span class="jzjf">名企业开发商</span>
+						 				<span class="jzdj lpkezhuce">可注册</span>
+						 			</p>
 						 		</div>
-						 	</li>
-						 	<li class="zx"></li>
+						 	</li>-->
+						 	<!--<li class="zx"></li>-->
 						 </ul>
 					</div>
 				<!--</ul>-->
@@ -219,6 +225,31 @@
 					mui('#pullrefresh').pullRefresh().pullupLoading();
 				});
 			}
+			
+			//筛选中特色标签的赋值
+			mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getTsbq.do',{
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:100000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						var data = data.data;
+						var streingtest = '';
+						for(var i=0;i<data.length;i++){
+							streingtest = '<span id="'+data[i].id+'" class="tesebiaqidange xiaoktese">'+data[i].topic+'</span>';
+							$('.testbq').append(streingtest);
+						}
+					}else{
+						mui.alert(data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+			
 			
 			//筛选下面的改变时的样式(闭包)
 			var lirm = $('.xiaokuai');
@@ -481,9 +512,33 @@
 							xial++;
 							var data = data.buildings;
 							var string = '';
+							
 							for(var i=0;i<data.length;i++){
-								string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].building_name+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+								var datatese = [];
+								datatese = data[i].label.split(',');
+//								string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].building_name+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
 								/*document.querySelector('.fypics').innerHTML=string;*/
+								if(datatese.length == 1){
+									if(data[i].zc == '不可注册'){
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx" style="width: 5.5rem;"><p class="lpdiyih lpheigh"><span class="lpname">'+data[i].building_name+'</span><span class="lpdanjia">'+data[i].price+'<i>元/㎡/天</i></span></p><p class="lper lpheigh"><span class="lpqvyv">'+data[i].district+'</span><span class="lpmianjis">'+data[i].min_areas+' - '+ data[i].max_areas +'㎡</span></p><p class="lpfkezu lpheigh">'+ data[i].lpkzfy +'套房源可租</p><p class="jfList"><span class="jzjf">'+datatese[0]+'</span></p></div></li><li class="zx"></li>';
+									}else{
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx" style="width: 5.5rem;"><p class="lpdiyih lpheigh"><span class="lpname">'+data[i].building_name+'</span><span class="lpdanjia">'+data[i].price+'<i>元/㎡/天</i></span></p><p class="lper lpheigh"><span class="lpqvyv">'+data[i].district+'</span><span class="lpmianjis">'+data[i].min_areas+' - '+ data[i].max_areas +'㎡</span></p><p class="lpfkezu lpheigh">'+ data[i].lpkzfy +'套房源可租</p><p class="jfList"><span class="jzjf">'+datatese[0]+'</span><span class="jzdj lpkezhuce">'+data[i].zc+'</span></p></div></li><li class="zx"></li>';
+									}
+
+								}else if(datatese.length == 2){
+									if(data[i].zc == '不可注册'){
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx" style="width: 5.5rem;"><p class="lpdiyih lpheigh"><span class="lpname">'+data[i].building_name+'</span><span class="lpdanjia">'+data[i].price+'<i>元/㎡/天</i></span></p><p class="lper lpheigh"><span class="lpqvyv">'+data[i].district+'</span><span class="lpmianjis">'+data[i].min_areas+' - '+ data[i].max_areas +'㎡</span></p><p class="lpfkezu lpheigh">'+ data[i].lpkzfy +'套房源可租</p><p class="jfList"><span class="jzjf">'+datatese[0]+'</span><span class="jzjf">'+datatese[1]+'</span></p></div></li><li class="zx"></li>';
+									}else{
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx" style="width: 5.5rem;"><p class="lpdiyih lpheigh"><span class="lpname">'+data[i].building_name+'</span><span class="lpdanjia">'+data[i].price+'<i>元/㎡/天</i></span></p><p class="lper lpheigh"><span class="lpqvyv">'+data[i].district+'</span><span class="lpmianjis">'+data[i].min_areas+' - '+ data[i].max_areas +'㎡</span></p><p class="lpfkezu lpheigh">'+ data[i].lpkzfy +'套房源可租</p><p class="jfList"><span class="jzjf">'+datatese[0]+'</span><span class="jzjf">'+datatese[1]+'</span><span class="jzdj lpkezhuce">'+data[i].zc+'</span></p></div></li><li class="zx"></li>';
+									}
+								}else{
+									if(data[i].zc == '不可注册'){
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx" style="width: 5.5rem;"><p class="lpdiyih lpheigh"><span class="lpname">'+data[i].building_name+'</span><span class="lpdanjia">'+data[i].price+'<i>元/㎡/天</i></span></p><p class="lper lpheigh"><span class="lpqvyv">'+data[i].district+'</span><span class="lpmianjis">'+data[i].min_areas+' - '+ data[i].max_areas +'㎡</span></p><p class="lpfkezu lpheigh">'+ data[i].lpkzfy +'套房源可租</p><p class="jfList"><span class="jzjf">'+datatese[0]+'</span><span class="jzjf">'+datatese[1]+'</span><span class="jzjf">'+datatese[2]+'</span></p></div></li><li class="zx"></li>';
+									}else{
+										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx" style="width: 5.5rem;"><p class="lpdiyih lpheigh"><span class="lpname">'+data[i].building_name+'</span><span class="lpdanjia">'+data[i].price+'<i>元/㎡/天</i></span></p><p class="lper lpheigh"><span class="lpqvyv">'+data[i].district+'</span><span class="lpmianjis">'+data[i].min_areas+' - '+ data[i].max_areas +'㎡</span></p><p class="lpfkezu lpheigh">'+ data[i].lpkzfy +'套房源可租</p><p class="jfList"><span class="jzjf">'+datatese[0]+'</span><span class="jzjf">'+datatese[1]+'</span><span class="jzjf">'+datatese[2]+'</span><span class="jzdj lpkezhuce">'+data[i].zc+'</span></p></div></li><li class="zx"></li>';
+									}
+								}
+//								<div class="fy_pic"><img src="img/fypic.png" alt="" /></div><div class="fy_xx" style="width: 5.5rem;"><p class="lpdiyih lpheigh"><span class="lpname">建外SOHO</span><span class="lpdanjia">8.8<i>元/㎡/天</i></span></p><p class="lper lpheigh"><span class="lpqvyv">朝阳区-国贸</span><span class="lpmianjis">10-888.07㎡</span></p><p class="lpfkezu lpheigh">82套房源可租</p><p class="jfList"><span class="jzjf">互联网</span><span class="jzjf">交通便利</span><span class="jzjf">名企业开发商</span><span class="jzdj lpkezhuce">可注册</span></p></div>
 								$('.listUl').append(string);
 							}
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 10)); //参数为true代表没有更多数据了。
