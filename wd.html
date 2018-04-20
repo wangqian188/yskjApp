@@ -17,7 +17,7 @@
 		<header class="mui-bar mui-bar-nav bg-color1">
 		    <h1 class="mui-title wd_h">
 		    	<p class="head_img">
-		    		<img src="img/head_img.png"/>
+		    		<img src="img/head_img.png" id="headImage"/>
 		    	</p>
 		    	<p class="user_news" id="login">
 					<span class="ljdl">立即登录</span>
@@ -100,13 +100,12 @@
 			    // mui.fire()传过来的额外的参数，在event.detail中；
 			    var detail = event.detail;
 			    var param = detail.ttt;
+//			    alert(param1)
 			    if(param == 1){
-			    	var wobj = plus.webview.getWebviewById("wd.html");
-					wobj.reload(true);
+//			    	var wobj = plus.webview.getWebviewById("wd.html");
+//					wobj.reload(true);
+					takeuser();
 			    }
-			    takeuser();
-//			    alert(param);
-			    // 执行相应的ajax或者操作DOM等操作凄凄切切
 			});
 			//跳转页面地址
 			var toUrl = ['page/person.html','page/mycollection.html','page/myset.html'];
@@ -238,6 +237,7 @@
 								$('.wrz').css('display','none');
 								$('.yrz').css('display','block');
 							}
+							return;
 						}else{
 //							mui.toast(data.message,{ duration:'2000', type:'div' }) 
 							return;
@@ -260,7 +260,7 @@
 					$('.yrz').css('display','none');
 				}				
 			}
-			takeuser();
+//			takeuser();
 			$('.wrz').click(function(){
 				//跳转认证页面
 				mui.openWindow({
@@ -268,6 +268,80 @@
 				  id:'add_name4'
 				});
 			});
+			//渲染用户信息
+			function showuserinfo(){
+				var data = JSON.parse(localStorage.getItem('userInfos'));
+		    	$('#headImage').attr('src',data.headimgurl);
+		    	$('.ljdl').html(data.nickname);
+			}
+			
+			//微信登陆
+			mui.plusReady(function() {  
+            plus.oauth.getServices(function(services) {
+                auths = services;
+            }, function(e) {
+                alert("获取登录服务列表失败：" + e.message + " - " + e.code);
+            });
+        })
+        // 登录操作
+        function authLogin(type) {
+            var s;
+            for (var i = 0; i < auths.length; i++) {
+                if (auths[i].id == type) {
+                    s = auths[i];
+                    break;
+                }
+            }
+            if (!s.authResult) {
+                s.login(function(e) {
+                    mui.toast("登录认证成功！");
+                    authUserInfo(type);
+                }, function(e) {
+                    mui.toast("登录认证失败！");
+                });
+            } else {
+                mui.toast("已经登录认证！");
+            }
+        }
+        //注销
+        function authLogout() {
+            for (var i in auths) {
+                var s = auths[i];
+                if (s.authResult) {
+                    s.logout(function(e) {
+                        console.log("注销登录认证成功！");
+                    }, function(e) {
+                        console.log("注销登录认证失败！");
+                    });
+                }
+            }
+        }
+        // 微信登录认证信息
+        function authUserInfo(type) {
+            var s;
+            for (var i = 0; i < auths.length; i++) {
+                if (auths[i].id == type) {
+                    s = auths[i];
+                    break;
+                }
+            }
+            if (!s.authResult) {
+                mui.toast("未授权登录！");
+            } else {
+                s.getUserInfo(function(e) {
+                    var josnStr = JSON.stringify(s.userInfo);
+                    //存储用户信息
+                    localStorage.setItem('userInfos',josnStr);
+                    var jsonObj = s.userInfo;
+                    console.log("获取用户信息成功：" + josnStr);
+                    showuserinfo();
+//                  showData(type,jsonObj);
+                    authLogout();
+                }, function(e) {
+                    alert("获取用户信息失败：" + e.message + " - " + e.code);
+                });
+            }
+        }
 		</script>
 	</body>
 

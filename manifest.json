@@ -105,7 +105,7 @@
 		},
 		"NativeObj": {
 			"description": "原生对象"
-		}
+		},"OAuth":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -205,7 +205,7 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "C:/Users/yuan/Desktop/app配置文件/welcome.png","retina55":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina47":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina35":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina55l":"C:/Users/yuan/Desktop/app配置文件/welcome.png","iphonex":"C:/Users/yuan/Desktop/app配置文件/welcome.png","iphonexl":"C:/Users/yuan/Desktop/app配置文件/welcome.png"
+						"retina40": "C:/Users/yuan/Desktop/app配置文件/welcome.png","retina55":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina47":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina35":"C:/Users/yuan/Desktop/app配置文件测试/welcome.png","retina55l":"C:/Users/yuan/Desktop/app配置文件/welcome.png","iphonex":"C:/Users/yuan/Desktop/app配置文件/welcome.png","iphonexl":"C:/Users/yuan/Desktop/app配置文件/welcome.png"
 					},
 					"ipad": {
 						"portrait": "C:/Users/yuan/Desktop/app配置文件/welcome.png", /*iPad竖屏启动图片，分辨率：768x1004*/
