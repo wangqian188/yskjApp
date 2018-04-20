@@ -5,18 +5,20 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="css/mui.min.css">
-		<link href="css/jxfy.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="js/lib/flexible.js"></script>
-		<script type="text/javascript" src="js/lib/flexible_css.js"></script>
-		<script src="js/mui.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/a_fringe.css"/>
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/loupan.css">
+		<link href="../css/jxfy.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible_css.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav jxfy-bg-color ipx_h" id="jxfyhead">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lpfanhui"></a>
 			<div class="sousu">
 				<span class="mui-icon mui-icon-search sousudubiao"></span>
 				<span class="sousuwenzi">请输入楼盘关键字搜索</span>
@@ -28,7 +30,7 @@
 					<li class="shuixuanweizhi" onclick="weizjihanshu()">位置<span class="mui-icon mui-icon-arrowdown jxfyzxtubiao"></span></li>
 					<li class="shaxuandejiage" onclick="jiageclick()">价格<span class="mui-icon mui-icon-arrowdown jxfyzxtubiao"></span></li>
 					<li class="shiaxuanarea" onclick="miajiclick()">面积<span class="mui-icon mui-icon-arrowdown jxfyzxtubiao"></span></li>
-					<li class="shuxinshux" onclick="siaxuansy()">筛选<span class="mui-icon mui-icon-arrowdown jxfyzxtubiao"></span></li>
+					<li class="shuxinshux" onclick="siaxuansy()">筛选楼盘<span class="mui-icon mui-icon-arrowdown jxfyzxtubiao"></span></li>
 				</ul>
 			</div>
 			
@@ -45,8 +47,8 @@
 			
 			mui.init({
 			    subpages:[{
-			      url:'jxfyList.html',//子页面HTML地址，支持本地地址和网络地址
-			      id:'jxfyList',//子页面标志1
+			      url:'loupanList.html',//子页面HTML地址，支持本地地址和网络地址
+			      id:'loupanList',//子页面标志1
 			      styles:{
 			        top:topHeight,//子页面顶部位置
 			        bottom:'0px',//子页面底部位置
@@ -75,7 +77,7 @@
 					})
 				}
 				mui.openWindow({ 
-					url:'page/search.html', //需要打开页面的url地址 
+					url:'search.html', //需要打开页面的url地址 
 					id:'search',  //需要打开页面的url页面id
 					styles:{ 
 						top:'0px',//新页面顶部位置 
@@ -117,15 +119,15 @@
 				$('.shuxinshux span').removeClass('mui-icon-arrowdown');
 				$('.shuxinshux span').addClass('mui-icon-arrowup muiJiage');
 				$('.shuxinshux').addClass('jiage');
-				var main = plus.webview.getWebviewById('jxfyList');
+				var main = plus.webview.getWebviewById('loupanList');
 				mui.fire(main, "weizhi",{
 				    idx:3//1位置
 				})
-				var index = plus.webview.getWebviewById('index');
-				mui.fire(index, "weizhi1",{
-				    idxid:3//1位置
-				})
-				var main = plus.webview.getWebviewById('jxfyList');
+//				var index = plus.webview.getWebviewById('index');
+//				mui.fire(index, "weizhi1",{
+//				    idxid:3//1位置
+//				})
+				var main = plus.webview.getWebviewById('loupanList');
 				mui.fire(main, "jiagekzqt",{
 				    idxjiage:1//1
 				})
@@ -144,17 +146,17 @@
 				$('.shuixuanweizhi span').removeClass('mui-icon-arrowdown');
 				$('.shuixuanweizhi span').addClass('mui-icon-arrowup muiJiage');
 				$('.shuixuanweizhi').addClass('jiage');
-				var main = plus.webview.getWebviewById('jxfyList');
+				var main = plus.webview.getWebviewById('loupanList');
 				mui.fire(main, "weizhi",{
 				    idx:1//1位置
 				})
 				mui.fire(main, "saixuankzqt",{
 				    idxsaixuan:1//1位置
 				})
-				var index = plus.webview.getWebviewById('index');
-				mui.fire(index, "weizhi1",{
-				    idxid:1//1位置
-				})
+//				var index = plus.webview.getWebviewById('index');
+//				mui.fire(index, "weizhi1",{
+//				    idxid:1//1位置
+//				})
 			}
 			//恢复位置的样式
 			window.addEventListener("weizhifh", function (e) {
@@ -173,7 +175,7 @@
 				chushiweizhi1();
 				chushiweizhi3();
 				chushiweizhi4();
-				var main = plus.webview.getWebviewById('jxfyList');
+				var main = plus.webview.getWebviewById('loupanList');
 				mui.fire(main, "jagggkzqt",{
 				    idxjiaggge:1//1
 				})
@@ -193,7 +195,7 @@
 				chushiweizhi1();
 				chushiweizhi2();
 				chushiweizhi4();
-				var main = plus.webview.getWebviewById('jxfyList');
+				var main = plus.webview.getWebviewById('loupanList');
 				mui.fire(main, "jagggkzqt",{
 				    idxjiaggge:1//1
 				})
@@ -242,7 +244,7 @@
 			
 /*			价格的点击*/
 			function jiageclick(){
-				var main = plus.webview.getWebviewById('jxfyList');
+				var main = plus.webview.getWebviewById('loupanList');
 				if(jiage == 1){
 					mui.fire(main, "jiage",{
 					    idx:5//5价格
@@ -256,7 +258,7 @@
 			}
 /*			面积的点击*/
 			function miajiclick(){
-				var main = plus.webview.getWebviewById('jxfyList');
+				var main = plus.webview.getWebviewById('loupanList');
 				if(area == 1){
 					mui.fire(main, "area",{
 					    idx:7//7面积

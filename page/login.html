@@ -16,6 +16,35 @@
 	</head>
 	<style>
 		.mui-bar-nav~.mui-content{padding-top: 0;}
+		.thied_dl{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 0.5rem;
+		}
+		.thied_dl_tit{
+			display: flex;
+			width: 8.8rem;
+			align-items: center;
+			justify-content: space-between;
+			text-align: center;
+			font-size: 0.346666rem;
+			color: #999999;
+			margin-bottom: 0.266666rem;
+		}
+		.thied_dl_tit span{
+			display: inline-block;
+		}
+		.thied_dl_tit span:first-child,.thied_dl_tit span:last-child{
+			width: 1.733333rem;
+			border-bottom: 1px solid #999;
+		}
+		.thied_dl_ion{
+			width: 0.72rem;
+			height: 0.586666rem;
+			background: url(../img/third_dl_ion.png) no-repeat center;
+			background-size: 98% auto;
+		}
 	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav" style="height: 1.733333rem;background: rgba(0,0,0,0);padding-top: 0.666666rem;box-shadow: none;">
@@ -26,7 +55,7 @@
 		    <div class="login_pic">
 		    	<img src="../img/login_pic.png" alt="" />
 		    </div>
-	    	<ul class="dl_box">
+	    	<ul class="dl_box" style="margin-top: 0;">
 	    		<li>
 	    			<span class="acti">验证码登录</span>
 	    		</li>
@@ -43,7 +72,7 @@
 	    		<div class="mui-input-row inp">
 	    		    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="6" id="hqyzm">
 	    		</div>
-	    		<p class="wj_pwd"></p>
+	    		<p class="wj_pwd" id="fast_zc" style="text-align: left;padding-left: 0.533333rem;color: #2b70d8;">快速注册</p>
 	    		<div class="btn_box">
 		    		<button class="btn">登录</button>	    	
 		    	</div>
@@ -57,13 +86,23 @@
 	    		    <input type="password" class="mui-input-clear" placeholder="请输入密码" autocomplete="off" id="yinc">
 	    		    <span class="ycmm" id="ycmm"></span>
 	    		</div>
-	    		<p class="wj_pwd" id="wj_mm">忘记密码？</p>
+	    		<div style="display: flex;justify-content: space-between;">
+					<p class="wj_pwd" id="fast_zc1" style="text-align: left;padding-left: 0.533333rem;color: #2b70d8;">快速注册</p>	    			
+					<p class="wj_pwd" id="wj_mm">忘记密码？</p>
+	    		</div>
 	    		<div class="btn_box">
-		    		<button class="btn1">登录</button>	    	
+		    		<button class="btn1">登录</button>	
 		    	</div>
 	    	</div>
-	    	
-	    	<div class="fast_zc" id="fast_zc">快速注册</div>
+	    	<!--<div class="fast_zc" id="fast_zc">快速注册</div>-->
+	    	<div class="thied_dl">
+	    		<p class="thied_dl_tit">
+	    			<span></span>
+	    			<span>您可以通过以下方式登录</span>
+	    			<span></span>
+	    		</p>
+	    		<p class="thied_dl_ion" id="weixin"></p>
+	    	</div>
 		</div>
 		<script type="text/javascript">
 			mui.init()
@@ -73,7 +112,7 @@
 			    var target = plus.webview.getWebviewById('wd.html');
 			    // 执行相应的事件
 			    mui.fire(target, 'customEvent', {
-			    	'ttt':1
+			    	'ttt':1,
 			    });
 			    var fyxq = plus.webview.getWebviewById('fyTail');
 			    // 执行相应的事件
@@ -119,6 +158,13 @@
 			    id:'fast_zc'
 			  });
 			});
+			//立即注册
+			document.getElementById('fast_zc1').addEventListener('tap', function() {
+			  mui.openWindow({
+			    url: 'fast_zc.html', 
+			    id:'fast_zc'
+			  });
+			});
 			//忘记密码
 			document.getElementById('wj_mm').addEventListener('tap', function() {
 			  mui.openWindow({
@@ -134,6 +180,9 @@
 			    	mui.back();
 			    }
 			});
+			document.getElementById('weixin').addEventListener('tap',function() {
+	            mui.back();
+	        })
 		</script>
 		<script src="../js/lib/sha1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/lib/md5.js" type="text/javascript" charset="utf-8"></script>

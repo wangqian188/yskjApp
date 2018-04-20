@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "index.html": {
     "resources": [
       "sy.html"
@@ -46,4 +47,70 @@
       "page/setpwd.html"
     ]
   }
+=======
+	"index.html": {
+		"resources": [
+			"sy.html"
+		],
+		"refer": [
+			"qyhl.html",
+			"sy.html",
+			"wd.html",
+			"jxfy.html",
+			"fwsc.html"
+		]
+	},
+	"jxfy.html": {
+		"resources": [
+			"jxfyList.html"
+		],
+		"refer": [
+			"jxfyList.html"
+		]
+	},
+	"welcome.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"sy.html": {
+		"refer": [
+			"page/acreage_mj.html"
+		]
+	},
+	"wd.html": {
+		"refer": [
+			"page/login.html",
+			"page/myset.html",
+			"page/person.html",
+			"page/sfrz.html",
+			"page/mycollection.html"
+		]
+	},
+	"page/login.html": {
+		"refer": [
+			"page/fast_zc.html",
+			"page/wj_pwd.html"
+		]
+	},
+	"page/myset.html": {
+		"refer": [
+			"page/setpwd.html",
+			"page/disclaimer.html"
+		]
+	},
+	"page/mycollection.html": {
+		"resources": [
+			"page/mysc_list.html"
+		],
+		"refer": [
+			"page/mysc_list.html"
+		]
+	},
+	"jxfyList.html": {
+		"refer": [
+			"page/fyTail.html"
+		]
+	}
+>>>>>>> 3074951f5aa94cebd6eff1d31a7aa73dd73794b1
 }

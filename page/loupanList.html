@@ -7,13 +7,13 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title>Hello MUI</title>
-		<link rel="stylesheet" href="css/mui.min.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/jxfyList.css"/>
-		<link rel="stylesheet" type="text/css" href="css/sy.css"/>
-		<script type="text/javascript" src="js/lib/flexible.js"></script>
-		<script type="text/javascript" src="js/lib/flexible_css.js"></script>
-		<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jxfyList.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/sy.css"/>
+		<script type="text/javascript" src="../js/lib/flexible.js"></script>
+		<script type="text/javascript" src="../js/lib/flexible_css.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js"></script>
 	</head>
 	<style type="text/css">
 		/*#sel1 li{border: 1px solid red;}*/
@@ -106,12 +106,12 @@
 					<!--特价房源-->
 					<div class="mui-table-view mui-table-view-chevron">
 						 <ul class="fy_list listUl" id="ulId">
-						 	<!--<li class="listtail">
+						 	<li class="listtail">
 						 		<div class="fy_pic">
 						 			<img src="img/fypic.png" alt="" />
 						 		</div>
-						 		<div class="fy_xx">
-						 			<p class="lp">建外SOHO</p>
+						 		<div class="fy_xx" style="border: 1px solid red;">
+						 			<!--<p class="lp">建外SOHO</p>
 						 			<p class="mjwz">朝阳区-国贸 101.5m2</p>
 						 			<p class="jfList">
 						 				<span class="jzjf">精装交付</span>
@@ -119,10 +119,11 @@
 						 			</p>
 						 			<p class="dj">
 						 				<span>6.5<i>元/m2/天</i></span>
-						 			</p>
+						 			</p>-->
+						 			<p>121212121212121212121121212121212121212121121212121212121212121121212121212121212121</p>
 						 		</div>
 						 	</li>
-						 	<li class="zx"></li>-->
+						 	<li class="zx"></li>
 						 </ul>
 					</div>
 				<!--</ul>-->
@@ -132,8 +133,8 @@
 			<p><a href="tel:400-078-8800"></a></p>
 		</div>-->
 		
-		<script src="js/lib/app_config.js"></script>
-		<script src="js/mui.min.js"></script>
+		<script src="../js/lib/app_config.js"></script>
+		<script src="../js/mui.min.js"></script>
 		<script>
 			mui.init({ 
 				pullRefresh: {
@@ -418,7 +419,7 @@
 				console.log(jiagesanshu);
 				console.log(search);
 				console.log(xial);
-				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
+				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getZdLpjbxx.do',{
 				data:{
 					"parameters":
 						{
@@ -444,58 +445,47 @@
 				success:function(data){
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					if(data.success){
-						if(data.data.length == 0){
+						alert(11111);
+						var data = data.data;
+						if(data.buildings.length == 0){
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 							mui('#pullrefresh').pullRefresh().setStopped(false);
-							var index = plus.webview.getWebviewById('index');
+//							var index = plus.webview.getWebviewById('index');
 							zhezhaoxiaoshi();
-							mui.fire(index, "weizhi1",{
-							    idxid:4//1位置
-							})
+//							mui.fire(index, "weizhi1",{
+//							    idxid:4//1位置
+//							})
 							//点击位置遮罩层取消遮罩层要改变样式
-							var main = plus.webview.getWebviewById('jxfy.html');
+							var main = plus.webview.getWebviewById('loupan.html');
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
-							if(xial == 1 && data.data.length == 0){
+							if(xial == 1 && data.buildings.length == 0){
 								mui.alert('抱歉，暂无符合条件的房源！');								
 							}
-							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.data.length < 1)); //参数为true代表没有更多数据了。
+							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.buildings.length < 1)); //参数为true代表没有更多数据了。
 						}else{
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 							mui('#pullrefresh').pullRefresh().setStopped(false);
-							var index = plus.webview.getWebviewById('index');
+//							var index = plus.webview.getWebviewById('index');
 							zhezhaoxiaoshi();
-							mui.fire(index, "weizhi1",{
-							    idxid:4//1位置
-							})
+//							mui.fire(index, "weizhi1",{
+//							    idxid:4//1位置
+//							})
 							//点击位置遮罩层取消遮罩层要改变样式
-							var main = plus.webview.getWebviewById('jxfy.html');
+							var main = plus.webview.getWebviewById('loupan.html');
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
 							xial++;
-							var data = data.data;
+							var data = data.buildings;
 							var string = '';
+							alert(222222);
+							alert(data.length);
 							for(var i=0;i<data.length;i++){
-								if(data[i].decoration_level == ''){
-									if(data[i].djbsh == 1){
-										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-									}else{
-										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-									}
-	
-								}else{
-									if(data[i].djbsh == 1){
-										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-									}else{
-										string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
-									}
-	
-								}
-								
+								string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].img_path+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].building_name+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
 								/*document.querySelector('.fypics').innerHTML=string;*/
 								$('.listUl').append(string);
 							}
@@ -640,12 +630,12 @@
 				$(".zhezhaoce").removeClass("zhezhaocdisbalo");
 				mui('#pullrefresh').pullRefresh().setStopped(false);
 				zhezhaoxiaoshi();
-				var index = plus.webview.getWebviewById('index');
-				mui.fire(index, "weizhi1",{
-				    idxid:2//1位置
-				})
+//				var index = plus.webview.getWebviewById('index');
+//				mui.fire(index, "weizhi1",{
+//				    idxid:2//1位置
+//				})
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('jxfy.html');
+				var main = plus.webview.getWebviewById('loupan.html');
 				mui.fire(main, "weizhifh",{
 				    idxfh:1//1位置
 				})
@@ -657,7 +647,7 @@
 				$(".zhezhaoce").removeClass("zhezhaocdisbalo");
 				zhezhaoxiaoshiww();
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('jxfy.html');
+				var main = plus.webview.getWebviewById('loupan.html');
 				mui.fire(main, "weizhifh",{
 				    idxfh:1//1位置
 				})
@@ -669,7 +659,7 @@
 				$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 				zhezhaoxiaoshiww();
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('jxfy.html');
+				var main = plus.webview.getWebviewById('loupan.html');
 				mui.fire(main, "saixuanfh",{
 				    idxsxfh:1//1位置
 				})
@@ -693,10 +683,10 @@
 			window.addEventListener("jagggkzqt", function (e) {
 			    //获得事件参数
 			    var idxjiaggge = e.detail.idxjiaggge;
-				var index = plus.webview.getWebviewById('index');
-				mui.fire(index, "weizhi1",{
-				    idxid:2//1位置
-				})
+//				var index = plus.webview.getWebviewById('index');
+//				mui.fire(index, "weizhi1",{
+//				    idxid:2//1位置
+//				})
 				mui('#pullrefresh').pullRefresh().setStopped(false);
 				qxsuxzzcdff();
 				qxzzcdff();
@@ -708,13 +698,13 @@
 				$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 				$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 				mui('#pullrefresh').pullRefresh().setStopped(false);
-				var index = plus.webview.getWebviewById('index');
-				zhezhaoxiaoshi();
-				mui.fire(index, "weizhi1",{
-				    idxid:4//1位置
-				})
+//				var index = plus.webview.getWebviewById('index');
+//				zhezhaoxiaoshi();
+//				mui.fire(index, "weizhi1",{
+//				    idxid:4//1位置
+//				})
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('jxfy.html');
+				var main = plus.webview.getWebviewById('loupan.html');
 				mui.fire(main, "saixuanfh",{
 				    idxsxfh:1//1位置
 				})
@@ -850,7 +840,7 @@
 					});
 					$('#sel2').html('');
 					$('#sel3').html('');
-					var main = plus.webview.getWebviewById('jxfy.html');
+					var main = plus.webview.getWebviewById('loupan.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -926,7 +916,7 @@
 					district ='';
 					fdcode = '';
 					text1 = '位置';
-					var main = plus.webview.getWebviewById('jxfy.html');
+					var main = plus.webview.getWebviewById('loupan.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -977,7 +967,7 @@
 						district = districtages;
 					}
 					fdcode = '';
-					var main = plus.webview.getWebviewById('jxfy.html');
+					var main = plus.webview.getWebviewById('loupan.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text2
 					})
@@ -986,7 +976,7 @@
 					districtages = district;
 					district = '';
 					fdcode = id;
-					var main = plus.webview.getWebviewById('jxfy.html');
+					var main = plus.webview.getWebviewById('loupan.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text3
 					})
@@ -1045,7 +1035,7 @@
 					station = '';
 					district = '';
 					fdcode = '';
-					var main = plus.webview.getWebviewById('jxfy.html');
+					var main = plus.webview.getWebviewById('loupan.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -1097,7 +1087,7 @@
 						lineid = lineageg;
 					}
 					station = '';
-					var main = plus.webview.getWebviewById('jxfy.html');
+					var main = plus.webview.getWebviewById('loupan.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text2
 					})
@@ -1106,7 +1096,7 @@
 					lineageg = lineid;
 					lineid = '';
 					station = id;
-					var main = plus.webview.getWebviewById('jxfy.html');
+					var main = plus.webview.getWebviewById('loupan.html');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text3
 					})
