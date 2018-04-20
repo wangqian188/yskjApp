@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/person.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
+		<script src="../js/lib/sy.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/lib/jc_version.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<style>
@@ -197,7 +198,21 @@
 				plusReady();	
 			});
 			$('.version').click(function(){
-				version();
+				var ua = navigator.userAgent.toLowerCase();           
+				if(networkLink()){
+					//控制版本更新
+					if(!sessionStorage.getItem('version')){
+						if(/iphone|ipad|ipod/.test(ua)) {    //苹果手机  
+							//苹果
+						}
+						if(/android/.test(ua)){
+							//安卓
+							version();							
+						}
+					}					
+				}else{
+					return;
+				}
 			});
 		</script>
 	</body>

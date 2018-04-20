@@ -236,15 +236,24 @@
 		</div>
 		<script type="text/javascript" src="js/lib/castapp.js" ></script>
 		<script type="text/javascript">
-			//控制版本更新
-			if(!sessionStorage.getItem('version')){
-				version();
-			}
-			//
 			mui.init();			
 			//网络异常判断
 			mui.plusReady(function(){
-				networkLink();
+				var ua = navigator.userAgent.toLowerCase();           
+				if(networkLink()){
+					//控制版本更新
+					if(!sessionStorage.getItem('version')){
+						if(/iphone|ipad|ipod/.test(ua)) {    //苹果手机  
+							//苹果
+						}
+						if(/android/.test(ua)){
+							//安卓
+							version();							
+						}
+					}					
+				}else{
+					return;
+				}
 			});
 			ca.init();
 			castapp.pictureScroll({
@@ -746,6 +755,27 @@
 					id:'loupan'
 				});
 			}
+			//搜索跳转
+			$('.sy_search').click(function(){
+		  		//精选房源上面搜索框的值传到搜索页面
+				var jxfsszhi = '';
+				if($('.sy_search').html() == '请输入楼盘关键字搜索'){
+					jxfsszhi = '';
+				}else{
+					jxfsszhi = $('.sy_search').html();
+					var main = plus.webview.getWebviewById('search');
+					mui.fire(main,"jxfychudezhiwed",{
+					    lpname:jxfsszhi
+					})
+				}
+				mui.openWindow({ 
+					url:'page/search.html', //需要打开页面的url地址 
+					id:'search',  //需要打开页面的url页面id
+					extras:{
+				        "newid":'sy'
+				    }
+				});
+			});
 		</script>
 	</body>
 </html>
