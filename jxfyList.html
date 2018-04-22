@@ -38,10 +38,10 @@
 							<div class="xiaokuai">1000-1499</div>
 							<div class="xiaokuai">1500以上</div>
 						</div>
-						<!--<div class="xuanxingshuzi">
-							<div class="xiaokuaiyishang pingangm">㎡</div>
-							<div class="xiaokuaiyishang pingangm">㎡</div>
-						</div>-->
+						<div class="xuanxingshuzi">
+							<div class="xiaokuaiyishang pingangm lpmianjiaru"><input type="text" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
+							<div class="xiaokuaiyishang pingangm lpmianjiachu"><input type="text" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
+						</div>
 					</div>
 					<div class="mjqyfm zjqy">
 						租金区域（元）
@@ -57,10 +57,10 @@
 							<div class="xiaokzujin">10-14.9</div>
 							<div class="xiaokzujin">15以上</div>
 						</div>
-						<!--<div class="xuanxingshuzi">
-							<div class="xiaokuaiyishang pingangm">元</div>
-							<div class="xiaokuaiyishang pingangm">元</div>
-						</div>-->
+						<div class="xuanxingshuzi">
+							<div class="xiaokuaiyishang pingangm lpzujinru"><input type="text" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
+							<div class="xiaokuaiyishang pingangm lpzujinchu"><input type="text" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
+						</div>
 					</div>
 					<div class="mjqyfm">
 						产权性质
@@ -73,6 +73,35 @@
 							<div class="xiaokchuaq">商业</div>
 						</div>
 					</div>
+					<div class="mjqyfm">
+						注册状态
+					</div>
+					<div class="xuanxing chanqxz">
+						<div class="xuanxingshuzi">
+							<div class="xiaokchuaq">写字楼</div>
+							<div class="xiaokchuaq">公寓</div>
+							<div class="xiaokchuaq">商务楼</div>
+							<div class="xiaokchuaq">商业</div>
+						</div>
+					</div>
+					<div class="mjqyfm">
+						装修状态
+					</div>
+					<div class="xuanxing chanqxz">
+						<div class="xuanxingshuzi">
+							<div class="xiaokchuaq">写字楼</div>
+							<div class="xiaokchuaq">公寓</div>
+							<div class="xiaokchuaq">商务楼</div>
+							<div class="xiaokchuaq">商业</div>
+						</div>
+					</div>
+					
+					
+					
+					
+					
+					
+					
 				</div>
 				
 				<div class="czqddig">
@@ -162,6 +191,8 @@
 			var text1 = '';//位置条件显示的文字
 			var text2 = '';//位置条件显示的文字
 			var text3 = '';//位置条件显示的文字
+			var mijdianjstatus = 1;//筛选中输入input框的条件的状态
+			var zujindianjstatus = 1;//筛选中输入input框的条件的状态
 
 			/**
 			 * 下拉刷新具体业务实现
@@ -227,6 +258,11 @@
 					//color: #2a72d8;background-color: #d9effd;
 					lirm[i].onclick = function(){
 						
+						//筛选中输入input框的条件
+						$('.lpmianjiaru input').val('');
+						$('.lpmianjiachu input').val('');
+						mijdianjstatus = 2;
+						
 						for(var j=0;j<lirm.length;j++){
 							lirm[j].className = 'xiaokuai';
 						}
@@ -259,11 +295,29 @@
 					}
 				})(i)
 			}
+			
+			//面积区域获取焦点事件
+			function lphuoqvjiadian(){
+				tag = "mianjiqv";
+				area = '';
+				mijdianjstatus = 1;
+				for(var i=0;i<lirm.length;i++){
+					lirm[i].className = 'xiaokzujin';
+				}
+				
+			}
+			
 			var zujin = $('.xiaokzujin');
 			var tagzj = 'zujinxx';
 			for(var i=0;i<zujin.length;i++){
 				(function(index){
 					zujin[i].onclick = function(){
+						
+						//筛选中输入input框的条件
+						$('.lpzujinru input').val('');
+						$('.lpzujinchu input').val('');
+						zujindianjstatus = 2;
+						
 						for(var j=0;j<zujin.length;j++){
 							zujin[j].className = 'xiaokzujin';
 						}
@@ -297,6 +351,18 @@
 					}
 				})(i)
 			}
+			
+			//租金区域获取焦点事件
+			function lpzujinhuoqvjiadian(){
+				tagzj = 'zujinxx';
+				price_dj = '';
+				zujindianjstatus = 1;
+				for(var i=0;i<zujin.length;i++){
+					zujin[i].className = 'xiaokuai';
+				}
+				
+			}
+			
 			//产权性质的多选和取消选中状态
 			var cq = $('.xiaokchuaq');
 			var tagcq = "cqss";
@@ -380,6 +446,31 @@
 			$('.quding').click(function(){
 				xial = 1;
 				jiangejt = 'D';
+				
+				//筛选中输入input框的条件
+				var start = $('.lpmianjiaru input').val();
+				var end = $('.lpmianjiachu input').val();
+				if((start == '' || end == '') && mijdianjstatus == 1){
+					area = '';
+					$('.lpmianjiaru input').val('');
+					$('.lpmianjiachu input').val('');
+				}
+				if(start != '' && end != ''){
+					area = [parseFloat(start),parseFloat(end)];
+				}
+				
+				//筛选租金区域中输入input框的条件
+				var startzujin = $('.lpzujinru input').val();
+				var endzujin = $('.lpzujinchu input').val();
+				if((startzujin == '' || endzujin == '') && zujindianjstatus == 1){
+					price_dj = '';
+					$('.lpzujinru input').val('');
+					$('.lpzujinchu input').val('');
+				}
+				if(startzujin != '' && endzujin != ''){
+					price_dj = [parseFloat(startzujin),parseFloat(endzujin)];
+				}
+				
 				$('.listUl').html('');
 				huifuupjiazaidata();
 				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search);
@@ -392,6 +483,17 @@
 				tag = "mianjiqv";
 				tagzj = 'zujinxx';
 				tagcq = "cqss";
+				
+				//筛选中输入input框的条件
+				mijdianjstatus = 1;
+				$('.lpmianjiaru input').val('');
+				$('.lpmianjiachu input').val('');
+					
+				//筛选中租金区域输入input框的条件
+				zujindianjstatus = 1;
+				$('.lpzujinru input').val('');
+				$('.lpzujinchu input').val('');
+				
 				qcqitades();
 				chushishij();
 				/*$('.listUl').html('');
