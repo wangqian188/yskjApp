@@ -17,7 +17,7 @@
 	</head>
 	<style type="text/css">
 		/*#sel1 li{border: 1px solid red;}*/
-		.xuanxing .xiaokuai,.xuanxing .xiaokzujin,.xuanxing .xiaokchuaq{font-size: 0.346666rem;}
+		.xuanxing .xiaokuai,.xiaokchuaqzhuce,.xuanxing .xiaokzujin,.xuanxing .xiaokchuaq{font-size: 0.346666rem;}
 	</style>
 	<body>
 		<!--遮罩层1-->
@@ -74,25 +74,24 @@
 						</div>
 					</div>
 					<div class="mjqyfm">
-						注册状态
+						注册
 					</div>
 					<div class="xuanxing chanqxz">
 						<div class="xuanxingshuzi">
-							<div class="xiaokchuaq">写字楼</div>
-							<div class="xiaokchuaq">公寓</div>
-							<div class="xiaokchuaq">商务楼</div>
-							<div class="xiaokchuaq">商业</div>
+							<div class="xiaokchuaqzhuce">可注册</div>
+							<div class="xiaokchuaqzhuce">不可注册</div>
 						</div>
 					</div>
 					<div class="mjqyfm">
 						装修状态
 					</div>
-					<div class="xuanxing chanqxz">
-						<div class="xuanxingshuzi">
-							<div class="xiaokchuaq">写字楼</div>
-							<div class="xiaokchuaq">公寓</div>
-							<div class="xiaokchuaq">商务楼</div>
-							<div class="xiaokchuaq">商业</div>
+					<div class="xuanxing zhuxiusatashang">
+						<div class="">
+							<span class="zhuxiustatus">精装交付</span>
+							<span class="zhuxiustatus">未到期可看</span>
+							<span class="zhuxiustatus">未到期不可看</span>
+							<span class="zhuxiustatus">空房装修中</span>
+							<span class="zhuxiustatus">预租房</span>
 						</div>
 					</div>
 					
@@ -154,7 +153,13 @@
 						 	<li class="zx"></li>-->
 						 </ul>
 					</div>
+					
 				<!--</ul>-->
+			</div>
+			<div class="yvzufdangy">
+				<div class="yvzufdangyneiceng">
+					预租房源	
+				</div>
 			</div>
 		</div> 
 		<!--<div class="sy_kfion">
@@ -188,6 +193,8 @@
 			var fdcode = '';//行政区域下的商圈条件参数
 			var lineid = '';//地铁下的线路条件参数
 			var station = '';//站点条件参数
+			var fjzt = '';//装修状态（）
+			var zc = 2;//是否注册的条件（1可注册 0不可注册 2没有条件）
 			var text1 = '';//位置条件显示的文字
 			var text2 = '';//位置条件显示的文字
 			var text3 = '';//位置条件显示的文字
@@ -442,6 +449,107 @@
 				})(i)
 			}
 			
+			//注册的选择和取消状态
+			var zconj = $('.xiaokchuaqzhuce');
+			var tagzc = 'zhucexx';
+			for(var i=0;i<zconj.length;i++){
+				(function(index){
+					zconj[i].onclick = function(){
+						for(var j=0;j<zconj.length;j++){
+							zconj[j].className = 'xiaokzujin';
+						}
+						
+						if(tagzc == "zhucexx"){
+							zconj[index].className = "xiaokuaisss xiaokzujin";
+//							if(index == 5){
+//								price_dj = [15,10000];
+//							}else{
+								var strs = zconj[index].innerText;
+								if(strs == '可注册'){
+									zc = 1;
+								}
+								if(strs == '可注册'){
+									zc = 0;
+								}
+//							}
+							tagzc = index;
+						}else{
+							if(tagzc == index){
+								zconj[index].className = "xiaokuai";
+								zc = 2;
+								tagzc = "zhucexx";
+							}else{
+								zconj[index].className = "xiaokuaisss xiaokzujin";
+//								if(index == 5){
+//									price_dj = [15,10000];
+//								}else{
+									var strs = zconj[index].innerText;
+									if(strs == '可注册'){
+										zc = 1;
+									}
+									if(strs == '可注册'){
+										zc = 0;
+									}
+//								}
+								tagzc = index;
+							}
+						
+						}
+					}
+				})(i)
+			}
+			
+			//装修状态选择和取消状态
+			var zhxiu = $('.zhuxiustatus');
+			var tagzhxiu = 'zhxiuxx';
+			for(var i=0;i<zhxiu.length;i++){
+				(function(index){
+					zhxiu[i].onclick = function(){
+						for(var j=0;j<zhxiu.length;j++){
+							zhxiu[j].className = 'zhuxiustatus';
+						}
+						
+						if(tagzhxiu == "zhxiuxx"){
+							zhxiu[index].className = "xiaokuaisss zhuxiustatus";
+//							if(index == 5){
+//								price_dj = [15,10000];
+//							}else{
+								var strs = zhxiu[index].innerText;
+								fjzt = strs;
+//							}
+							tagzhxiu = index;
+						}else{
+							if(tagzhxiu == index){
+								zhxiu[index].className = "zhuxiustatus";
+								zc = 2;
+								tagzhxiu = "zhxiuxx";
+							}else{
+								zhxiu[index].className = "xiaokuaisss zhuxiustatus";
+//								if(index == 5){
+//									price_dj = [15,10000];
+//								}else{
+									var strs = zhxiu[index].innerText;
+									fjzt = strs;
+//								}
+								tagzhxiu = index;
+							}
+						
+						}
+						if(fjzt == '精装交付'){
+							fjzt = 1;
+						}else if(fjzt == '未到期可看'){
+							fjzt = 2;
+						}else if(fjzt == '未到期不可看'){
+							fjzt = 4;
+						}else if(fjzt == '空房装修中'){
+							fjzt = 3;
+						}else if(fjzt == '预租房'){
+							fjzt = 5;
+						}
+					}
+				})(i)
+			}
+			
 			//确定事件
 			$('.quding').click(function(){
 				xial = 1;
@@ -483,6 +591,9 @@
 				tag = "mianjiqv";
 				tagzj = 'zujinxx';
 				tagcq = "cqss";
+				tagzc = 'zhucexx';
+				tagzhxiu = 'zhxiuxx';
+				
 				
 				//筛选中输入input框的条件
 				mijdianjstatus = 1;
@@ -505,6 +616,8 @@
 				area = '';
 				price_dj = '';
 				chqxz = '';
+				zc = 2;
+				fjzt = '';
 			}
 			
 	/*		动态数据*/
@@ -520,6 +633,8 @@
 				console.log(jiagesanshu);
 				console.log(search);
 				console.log(xial);
+				console.log(fjzt);
+				console.log(zc);
 				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
 				data:{
 					"parameters":
@@ -537,6 +652,8 @@
 							"chqxz":chqxz,
 							"orderby":jiagesanshu,
 							"curr_page":xial,
+							"zc":zc,
+							"fjzt":fjzt,
 							"items_perpage":10
 						},"foreEndType":2,"code":"30000001"},
 				dataType:'json',//服务器返回json格式数据
@@ -637,6 +754,7 @@
 				var xk = $('.xiaokuai');
 				var zj = $('.xiaokzujin');
 				var cq = $('.xiaokchuaq');
+				var zhuxiu = $('.zhuxiustatus');
 				for(var i=0;i<xk.length;i++){
 					xk[i].className = 'xiaokzujin';
 				}
@@ -645,6 +763,9 @@
 				}
 				for(var i=0;i<cq.length;i++){
 					cq[i].className = 'xiaokzujin';
+				}
+				for(var i=0;i<zhuxiu.length;i++){
+					zhuxiu[i].className = 'zhuxiustatus';
 				}
 			}
 			/*for(var i=0;i<zujin.length;i++){
