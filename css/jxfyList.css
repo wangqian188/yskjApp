@@ -19,10 +19,13 @@
 .zhezhaocdisbaloshx{display: block;}
 .zzcnershx{position:absolute;width:100%;background-color: #ffffff;height: 9.706666rem;padding-left: 0.56rem;}
 .mjqyfm{height: 1.4rem;line-height: 1.4rem;font-size: 0.346666rem;color: #333333;}
-.xuanxing{border-bottom: 1px solid #e5e5e5;min-height: 2rem;height: auto;}
+.xuanxing{border-bottom: 1px solid #e5e5e5;height: auto;}
 .xiaokzujin{border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;width: 1.906666rem;text-align: center;border-radius: 5px;font-size: 0.24rem;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;background-color:#ededed;}
 .xiaokzujinyishang{border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;width: 1.906666rem;text-align: center;border-radius: 5px;font-size: 0.24rem;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;background-color:#ededed;}
 .xiaokchuaq{border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;width: 1.906666rem;text-align: center;border-radius: 5px;font-size: 0.24rem;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;background-color:#ededed;}
+.xiaokchuaqzhuce{border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;width: 1.906666rem;text-align: center;border-radius: 5px;font-size: 0.24rem;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;background-color:#ededed;}
+.zhuxiustatus{display:inline-block;border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;padding-left:0.4rem;padding-right:0.4rem;font-size: 0.346666rem;border-radius: 5px;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;background-color:#ededed;}
+.zhuxiusatashang{height: 3rem;}
 .xiaokuai{border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;width: 1.906666rem;text-align: center;border-radius: 5px;font-size: 0.24rem;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;background-color:#ededed;}
 .xiaokuaiyishang{border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;width: 1.906666rem;text-align: center;border-radius: 5px;font-size: 0.346666rem;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;}
 .xiaokuaiyishang input{border: 1px solid #ededed;text-align: center;height: 0.6rem;background-color:#ededed;color: #898989;}
@@ -53,3 +56,4 @@
 	width: 100%;
 	height: 100%;
 }
+.yvzufdangy{border: 1px solid red;width:1.3rem;height:1.3rem;border-radius: 0.666666rem;-moz-border-radius: 0.666666rem;-webkit-border-radius: 0.666666rem;position: fixed;top: 10rem;right: 0px;background-color:rgb(255,191,142);}

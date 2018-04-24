@@ -71,7 +71,7 @@
 								</li>
 								<li>
 									<p class="stkrgw">
-										<span class="kognwrgwei">房间楼层：</span>
+										<span class="kognwrgwei">房间楼层/总楼层：</span>
 										<span class="neirong lc"></span>
 									</p>
 									<p class="stkrgw">
@@ -210,7 +210,11 @@
 								$(".chx").html(data[i].chx==""?"暂无数据":data[i].chx);
 								$(".kprq").html(data[i].kprq==""?"暂无数据":data[i].kprq);
 								$(".fjzt").html(data[i].fjzt==""?"暂无数据":data[i].fjzt);
-								$(".lc").html(data[i].lc==""?"暂无数据":data[i].lc);
+								if(data[i].zglc == ''){
+									$(".lc").html(data[i].lc==""?"暂无数据":data[i].lc+'/暂无数据');
+								}else{
+									$(".lc").html(data[i].lc==""?"暂无数据":data[i].lc +'/' + data[i].zglc);
+								}
 								$(".fjcg").html(data[i].fjcg==""?"暂无数据":data[i].fjcg+"m");
 								$(".wyf").html(data[i].wyf==""?"暂无数据":data[i].wyf+"元/㎡/月");
 								$(".gnf").html(data[i].gnf==""?"暂无数据":data[i].gnf+"元/㎡/季");
