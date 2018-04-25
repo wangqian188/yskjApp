@@ -8,7 +8,7 @@
 }
 .imglunbo{color: #ffffff;font-size: 0.293333rem;text-align: right;padding-right: 0.626666rem !important;}
 .fuxqxx{border-bottom: 1px solid #dbdbdb;height: 9.906666rem;}
-.fyxqxxyiu{height: 1.666666rem;}
+.fyxqxxyiu{height: 1.666666rem;display: flex;}
 .fyxqxxyiu p{border-bottom: 1px solid #e5e5e5;height: 100%;margin-left: 0.506666rem;color: #282828;line-height: 1.666666rem;font-size:0.453333rem;width: 8.92rem;}
 .fyxqxxer{height: 1.533333rem;}
 .fyxqxxer ul{border-bottom: 1px solid #e5e5e5;height: 100%;margin-left: 0.506666rem;width: 8.92rem;display: flex;align-items: center;}
@@ -51,4 +51,6 @@
 .xmjx a{display: flex;align-items: center!important;text-align: center;}
 .lainxixingmql{font-size: 0.4rem;color: #FFFFFF;text-align:left;}
 .xmjxlx{background:url(../img/shoucdianhuobg.png) no-repeat;background-size: auto 100%;width:0.533333rem;height:0.533333rem;}
-
+.qieryun{height: 0.933333rem;width: 0.8rem;position: absolute;left: 0.133333rem;top: 4.9rem;background: url(../img/fyxqdatiqier.png)no-repeat center;background-size: 100% auto;z-index: 13;}
+.qierldetu{display: flex;align-items: center;margin-right: 0.493333rem;justify-content: flex-end;}
+.qierldetu span{width:2.52rem !important;border-radius:1.3rem;height:0.853333rem;width:100%;display: flex;background: url(../img/fyxqwierlquankf.png)no-repeat center;background-size: auto 100%;box-shadow:0px 0px 5px #333333;}
