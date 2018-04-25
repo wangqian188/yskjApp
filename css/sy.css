@@ -5,8 +5,8 @@
 }
 .zxsj_box{
 	/*最新数据*/
-	height: 4rem;
-	background: #fff;
+	/*height: 4rem;*/
+	/*background: #fff;*/
 }
 .tt_box{
 	/*头条新闻*/
@@ -108,10 +108,16 @@
 	width: 100%;
 }
 .grab li{
-	width: 4.533333rem;
-	height: 2.466666rem;
+	/*width: 4.533333rem;
+	height: 2.466666rem;*/
+	width: 5.986666rem;
+	height: 3.386666rem;
 	display: inline-block;
-	margin-left: 0.066666rem;
+	/*margin-left: 0.066666rem;*/
+	margin-left: 0.186666rem;
+	border-radius: 0.08rem;
+	overflow: hidden;
+	margin-bottom: 0.533333rem;
 }
 .grab li a{
 	height: 100%;
@@ -151,7 +157,7 @@
 .nav_list{
 	display: flex;
 	display: -webkit-flex;
-	height: 3.333333rem;
+	/*height: 3.333333rem;*/
 }
 .nav_list li{
 	display: flex;
@@ -160,7 +166,7 @@
 	align-items: center;
 	-webkit-align-items: center;
 	width: 25%;
-	height: 3.333333rem;
+	/*height: 3.333333rem;*/
 }
 .nav_list .mj{
 	width: 1.146666rem;
@@ -173,9 +179,16 @@
 .meu_txt span{
 	width: 100%;
 	display: block;
-	font-size: 0.346666rem!important;
+	/*font-size: 0.346666rem!important;*/
+	font-size: 0.4rem;
 	text-align: center;
-	color: #000;
+	color: #333;
+	font-weight: bold;
+}
+.meu_txt span i{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 0.373333rem!important;
 }
 .tab_main{
 	position: relative;
@@ -364,4 +377,75 @@
 	display: inline-block;
 	width: 100%;
 	height: 100%;
+}
+.sy_gaiban{
+	position: relative;
+	width: 10rem;
+	height: 6.933333rem;
+	background: #ffffff;
+}
+.sy_gaiban_box{
+	position: absolute;
+	z-index: 1;
+	top: -1.026666rem;
+	left: 50%;
+	margin-left: -4.6rem;
+	width: 9.2rem;
+	height: 7.493333rem;
+	background: #fff;
+	border-radius: 0.133333rem;
+	overflow: hidden;
+	-webkit-box-shadow:0px 2px 8px #E3E3E3; 
+	box-shadow:0px 2px 8px #E3E3E3;
+	padding-top: 0.333333rem;
+}
+.toll_box{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.16rem;
+	margin-top: 0.533333rem;
+}
+.toll_box .toll_box1{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 0.08rem;
+	width: 4.346666rem;
+	height: 4.466666rem;
+	overflow: hidden;
+	background: #f8f8f8;
+}
+.toll_pic{
+	display: inline-block;
+	width: 4.346666rem;
+	height: 2.573333rem;
+}
+.toll_pic img{
+	width: 100%;
+	height: auto;
+}
+.toll_tit{
+	display: inline-block;
+	width: 100%;
+	height: 0.826666rem;
+	line-height: 0.826666rem;
+	font-size: 0.346666rem;
+	color: #333;
+	text-align: center;
+}
+.toll_btns{
+	display: inline-block;
+	width: 3.706666rem;
+	height: 0.666666rem;
+	line-height: 0.666666rem;
+	font-size: 0.426666rem;
+	color: #ffffff;
+	text-align: center;
+	border-radius: 0.08rem;
+}
+.toll_btn1{
+	background: #9ac0ea;
+}
+.toll_btn2{
+	background: #f98080;
 }

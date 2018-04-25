@@ -62,6 +62,7 @@
 		<script type="text/javascript">
 			var cookie=JSON.parse(localStorage.getItem('cookxs_yh'));
 			var lostate=2;
+			var auths = null;
 			(function(){
 				
 			   checkSubmit();
@@ -105,6 +106,8 @@
 //			    	var wobj = plus.webview.getWebviewById("wd.html");
 //					wobj.reload(true);
 					takeuser();
+					//微信登陆测试
+					authLogin('weixin');
 			    }
 			});
 			//跳转页面地址
@@ -277,12 +280,12 @@
 			
 			//微信登陆
 			mui.plusReady(function() {  
-            plus.oauth.getServices(function(services) {
-                auths = services;
-            }, function(e) {
-                alert("获取登录服务列表失败：" + e.message + " - " + e.code);
-            });
-        })
+	            plus.oauth.getServices(function(services) {
+	                auths = services;
+	            }, function(e) {
+	                alert("获取登录服务列表失败：" + e.message + " - " + e.code);
+	            });
+	        })
         // 登录操作
         function authLogin(type) {
             var s;
@@ -336,7 +339,7 @@
                     console.log("获取用户信息成功：" + josnStr);
                     showuserinfo();
 //                  showData(type,jsonObj);
-                    authLogout();
+					authLogout();
                 }, function(e) {
                     alert("获取用户信息失败：" + e.message + " - " + e.code);
                 });
