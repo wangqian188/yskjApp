@@ -489,3 +489,65 @@
 .mb20{
 	margin-top: 0.133rem;
 }
+.lpxqdexianz{
+	border-top: 1px solid #e5e5e5;
+	height: 1.066666rem;
+	display: flex;
+	width: 100%;
+}
+.lpxqdexianz p{
+	display: flex;
+	width: 50%;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.346666rem;
+	color: #0d0d0d;
+	background-color: #ffffff;
+}
+.lpxqxianzf:after{
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -0.133333rem;
+  	width: 0;
+    height: 0;
+    border-left: 0.133333rem solid transparent;
+    border-right: 0.133333rem solid transparent;
+    border-bottom: 0.266666rem solid #e3e3e3;
+}
+.lpxqxiezilgy{
+	background-color: #e3e3e3;
+	height: 1.066666rem;
+}
+.lpxqxiezilgy div{
+	display: flex;
+	margin: 0rem 0.666666rem;
+	height: 100%;
+}
+.lpxqxiezilgy p{
+	padding: 0rem 0.24rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.346666rem;
+	margin-right: 0.36rem;
+	position: relative;
+	color: #666666;
+}
+.lpxqzidhzts{
+	color: #2b70d8!important;
+}
+/*伪类css属性*/
+.lpxqzidhzts:after{
+	content: '';
+	display: block;
+	width: 100%;
+	position: absolute;
+	height: 3px;
+	background-color: #2b70d8;
+	left: 0;
+	bottom: 0;
+}

@@ -31,9 +31,13 @@
 					  </div>
 					  <div class="mui-slider-indicator imglunbo"></div>
 					</div>
+					<div class="qieryun qierlyundelainjie"></div>
 					<div class="fuxqxx">
 						<div class="fyxqxxyiu">
 							<p class="fybh"></p>
+							<p class="qierldetu qierlyundelainjie">
+								<span></span>
+							</p>
 						</div>
 						<div class="fyxqxxer">
 							<ul>
@@ -182,6 +186,9 @@
 			    	var wobj = plus.webview.getWebviewById("fyTail");
 					wobj.reload(true);
 				});
+				
+			var titlet = '';
+			var lianjiedizhi = '';
 			/*房源数据*/
 			function detailData(){
 			mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxFyxx.do',{
@@ -215,6 +222,19 @@
 								}else{
 									$(".lc").html(data[i].lc==""?"暂无数据":data[i].lc +'/' + data[i].zglc);
 								}
+								titlet = data[i].topic;
+								lianjiedizhi = data[i].cloudscape;
+								$('.qierlyundelainjie').click(function(){
+									mui.openWindow({ 
+										url:'qierlyun.html', //需要打开页面的url地址 
+										id:'qierlyun',  //需要打开页面的url页面id
+										extras:{ 
+											lianjie:lianjiedizhi,
+											topic:titlet,
+						//					.....//自定义扩展参数，可以用来处理页面间传值 
+										}
+									});
+								});
 								$(".fjcg").html(data[i].fjcg==""?"暂无数据":data[i].fjcg+"m");
 								$(".wyf").html(data[i].wyf==""?"暂无数据":data[i].wyf+"元/㎡/月");
 								$(".gnf").html(data[i].gnf==""?"暂无数据":data[i].gnf+"元/㎡/季");
@@ -252,7 +272,7 @@
 											v2+=' <div class="mui-slider-item mui-slider-item-duplicate">';
 											v2+='<a href="#">';
 											v2+='<img src="'+img_url+ims+'" alt="" />';
-											v2+=' </a> </div>';
+											v2+=' 123</a> </div>';
 										}
 									}
 									for(var i=0;i<hous_img.length;i++){
