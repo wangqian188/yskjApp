@@ -115,12 +115,12 @@
 		    <!--先租房、与租房、写字楼-->
 		    <div style="margin-top: 0.306666rem;">
 			    <div class="lpxqdexianz">
-			    	<p class="lpxqxianzf" style="border: 1px solid red;">现租房</p>
-			    	<p>预租房</p>
+			    	<p class="lpxqxianzf ">现租房</p>
+			    	<p class="">预租房</p>
 			    </div>
 			    <div class="lpxqxiezilgy">
 			    	<div>
-			    		<p class="lpxqzidhzts" style="border: 1px solid red;">不限</p>
+			    		<p class="lpxqzidhzts">不限</p>
 				    	<p>写字楼</p>
 				    	<p>公寓</p>
 				    	<p>商务楼</p>
@@ -463,13 +463,52 @@
 			//搜索查询房源数据
 		
 			//先租房和预租房的点击事件
-			$('.lpxqdexianz p').click(function(){
-				var obj = $('.lpxqdexianz p');
-				for(var i=0;i<obj.length;i++){
-					obj[i].removeClass('lpxqxianzf');
-				}
-				$(this).addClass('lpxqxianzf');
-			});
+			var obj = $('.lpxqdexianz p');
+			for(var i=0;i<obj.length;i++){
+				(function(index){
+					obj[i].onclick = function(){
+						for (var j=0; j<obj.length; j++) {
+							obj[j].className = '';							
+						}
+						obj[index].className = 'lpxqxianzf';
+						$('.ss_bt').html('');
+						//先租房
+						if(index == 0){
+							lp_leibie = 1;
+						}
+						//与租房
+						if(index == 1){
+							lp_leibie = 0;
+						}
+						page = 1;
+						detailDataHouses(lp_id,page,lp_leibie,lp_leib);
+					}
+				})(i)
+			}
+			
+			//写字楼和公寓等的点击事件
+			var objgy = $('.lpxqxiezilgy p');
+			for(var i=0;i<objgy.length;i++){
+				(function(index){
+					objgy[i].onclick = function(){
+						for (var j=0; j<objgy.length; j++) {
+							objgy[j].className = '';							
+						}
+						objgy[index].className = 'lpxqzidhzts';
+						$('.ss_bt').html('');
+						lp_leib = objgy[index].innerHTML;
+						if(lp_leib == '不限'){
+							lp_leib = '';
+						}
+						page = 1;
+						detailDataHouses(lp_id,page,lp_leibie,lp_leib);
+					}
+				})(i)
+			}
+			
+			
+			
+			
 			
 			
 			  //百度地图

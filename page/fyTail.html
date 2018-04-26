@@ -24,7 +24,7 @@
 		    <div class="fyxqyi">
 		    	<!--轮播1-->
 		    	<div class="liageda">
-		    		<div id="slider" class="mui-slider">
+		    		<div id="slider" class="mui-slider" style="position: relative;">
 					  <div class="mui-slider-group mui-slider-loop">
 					    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) 12-->
 					 
@@ -206,10 +206,21 @@
 						var data = data.data;
 							for(var i=0;i<data.length;i++){
 								var housing_icon=data[i].housing_icon;
-								if(housing_icon!=""){
-									le=housing_icon.split(";").length;
-									$(".imglunbo").html("1/"+le);
+								var qierlstat = 1;//有无720全景图的状态 1 没有 2是有 
+								if(data[i].cloudscape == ''){
+									if(housing_icon!=""){
+										le=housing_icon.split(";").length;
+										$(".imglunbo").html("1/"+le);
+									}
+									qierlstat = 1;
+								}else{
+									if(housing_icon!=""){
+										le=housing_icon.split(";").length + 1;
+										$(".imglunbo").html("1/"+le);
+									}
+									qierlstat = 2;
 								}
+								
 								$(".dj").html(data[i].dj==""?"暂无数据":data[i].dj+"元/㎡/天");
 								$(".yzj").html(data[i].yzj==""?"暂无数据":data[i].yzj+"元/月");
 								$(".fjmj").html(data[i].fjmj==""?"暂无数据":data[i].fjmj+"㎡");
@@ -264,10 +275,19 @@
 									for(var i=0;i<hous_img.length;i++){
 										var ims=hous_img[i];
 										if(i==0){
-											v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
-											v1+='<a href="#">';
-											v1+='<img src="'+img_url+ims+'" alt="" />';
-											v1+=' </a> </div>';
+											if(qierlstat == 1){
+												v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+												v1+='<a href="#">';
+												v1+='<img src="'+img_url+ims+'" alt="" />';
+												v1+=' </a> </div>';
+											}else{
+												v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+												v1+='<a href="#">';
+												v1+='<img src="http://47.92.145.21:81/yskjapp/lb1.png" alt="" />';
+												v1+='<span class="fyxqdebofangan"><i></i></span>';
+												v1+=' </a> </div>';
+											}
+											
 										}else if(i==hous_img.length-1){
 											v2+=' <div class="mui-slider-item mui-slider-item-duplicate">';
 											v2+='<a href="#">';
@@ -276,18 +296,40 @@
 										}
 									}
 									for(var i=0;i<hous_img.length;i++){
-											var ims=hous_img[i];
-											if(i==0){
-												h_img+=v2;
-											} 
-											h_img+=' <div class="mui-slider-item">';
-											h_img+='<a href="#">';
-											h_img+='<img src="'+img_url+ims+'" alt="" />';
-											h_img+=' </a> </div>';
+											if(qierlstat == 1){
+												var ims=hous_img[i];
+												if(i==0){
+													h_img+=v2;
+												} 
+												h_img+=' <div class="mui-slider-item">';
+												h_img+='<a href="#">';
+												h_img+='<img src="'+img_url+ims+'" alt="" />';
+												h_img+=' </a> </div>';
+												
+												if(i==hous_img.length-1){
+													h_img+=v1;
+												}
+											}else{
+												var ims=hous_img[i];
+												if(i==0){
+													h_img+=v2;
+													h_img+=' <div class="mui-slider-item">';
+													h_img+='<a href="#">';
+													h_img+='<img src="http://47.92.145.21:81/yskjapp/lb1.png" alt="" />';
+													h_img+='<span class="fyxqdebofangan"><i></i></span>';
+													h_img+=' </a> </div>';
+												}
+												
+												h_img+=' <div class="mui-slider-item">';
+												h_img+='<a href="#">';
+												h_img+='<img src="'+img_url+ims+'" alt="" />';
+												h_img+=' </a> </div>';
+												
+												if(i==hous_img.length-1){
+													h_img+=v1;
+												}
+											}
 											
-											if(i==hous_img.length-1){
-											h_img+=v1;
-										}
 										
 									}									
 									$(".mui-slider-loop").html(h_img);
