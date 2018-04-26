@@ -73,4 +73,16 @@
     	height: 2.053333rem;
     	padding-top: 0.986666rem;
     }
+    .sy_ipx_content::before{
+    	content: '';
+    	display: block;
+    	width: 100%;
+    	height: 12px;
+    }
+}
+.sy_ipx_content{
+	position: absolute;
+	top: 1.733333rem;
+	width: 100%;
+	padding-top: 0!important;
 }

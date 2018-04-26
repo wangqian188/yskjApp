@@ -323,7 +323,9 @@
 					"page/login.html",
 					"page/tax.html",
 					"page/fitup.html",
-					"page/search.html"
+					"page/search.html",
+					"page/find_house.html",
+					"page/wt_house.html"
 				],
 				"priority": 0
 			},

@@ -39,12 +39,25 @@
 			"page/steward.html",
 			"page/tax.html",
 			"page/fyTail.html",
-			"page/acreage_mj.html"
+			"page/acreage_mj.html",
+			"page/login.html",
+			"page/find_house.html",
+			"page/wt_house.html"
 		]
 	},
 	"page/search.html": {
 		"refer": [
 			"jxfy.html"
+		]
+	},
+	"page/tax.html": {
+		"refer": [
+			"page/wYaoZhuCe.html"
+		]
+	},
+	"fwsc.html": {
+		"refer": [
+			"page/tax.html"
 		]
 	}
 }
