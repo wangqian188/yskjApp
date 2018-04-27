@@ -333,7 +333,18 @@
 										
 									}									
 									$(".mui-slider-loop").html(h_img);
-									
+									//给图片轮播的第一张图加播放按钮
+									$('.fyxqdebofangan i').click(function(){
+										mui.openWindow({ 
+											url:'qierlyun.html', //需要打开页面的url地址 
+											id:'qierlyun',  //需要打开页面的url页面id
+											extras:{ 
+												lianjie:lianjiedizhi,
+												topic:titlet,
+							//					.....//自定义扩展参数，可以用来处理页面间传值 
+											}
+										});
+									});
 									/*图片自动轮播*/
 								ca.init();
 								castapp.pictureScroll({
@@ -356,6 +367,7 @@
 				}
 			});
 			}
+			
 			//获取前端登陆时的cookie,如果有则判断  房源是否已被收藏  改变收藏的样式
 			function jugeHouse(){
 			//alert("cookieId"+cookieId);
