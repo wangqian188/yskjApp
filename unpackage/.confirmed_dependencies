@@ -2,7 +2,8 @@
 	"wd.html": {
 		"refer": [
 			"page/login.html",
-			"page/myset.html"
+			"page/myset.html",
+			"page/mycollection.html"
 		],
 		"resources": []
 	},
@@ -58,6 +59,19 @@
 	"fwsc.html": {
 		"refer": [
 			"page/tax.html"
+		]
+	},
+	"page/mycollection.html": {
+		"resources": [
+			"page/mysc_list.html"
+		],
+		"refer": [
+			"page/mysc_list.html"
+		]
+	},
+	"jxfyList.html": {
+		"refer": [
+			"page/fyTail.html"
 		]
 	}
 }
