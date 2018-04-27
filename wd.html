@@ -103,11 +103,11 @@
 			    var param = detail.ttt;
 //			    alert(param1)
 			    if(param == 1){
-//			    	var wobj = plus.webview.getWebviewById("wd.html");
-//					wobj.reload(true);
-					takeuser();
+			    	var wobj = plus.webview.getWebviewById("wd.html");
+					wobj.reload(true);
+//					takeuser();
 					//微信登陆测试
-					authLogin('weixin');
+//					authLogin('weixin');
 			    }
 			});
 			//跳转页面地址
@@ -263,7 +263,7 @@
 					$('.yrz').css('display','none');
 				}				
 			}
-//			takeuser();
+			takeuser();
 			$('.wrz').click(function(){
 				//跳转认证页面
 				mui.openWindow({
