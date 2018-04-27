@@ -212,12 +212,22 @@
 								if(data.length == 0){
 									xianshidele();
 								}else{
+//									var string = '';
+//									for(var i=0;i<data.length;i++){
+//										console.log(data[i].topic);
+//										string = '<li class=""><a>'+data[i].topic+'</a></li>';
+//										$('.muhusslipa').append(string);
+//									}
+
 									var string = '';
+									string += '<li class=""><a>'+lpname+'</ a></li>';
 									for(var i=0;i<data.length;i++){
 										console.log(data[i].topic);
-										string = '<li class=""><a>'+data[i].topic+'</a></li>';
-										$('.muhusslipa').append(string);
+										string += '<li class=""><a>'+data[i].topic+'</ a></li>';
+										
 									}
+									$('.muhusslipa').append(string);
+									//搜索列表的跳转
 									//搜索列表的跳转
 									$('.muhusslipa li').click(function(){
 										var array = [];
