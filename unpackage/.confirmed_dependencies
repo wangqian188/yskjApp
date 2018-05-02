@@ -3,7 +3,8 @@
 		"refer": [
 			"page/login.html",
 			"page/myset.html",
-			"page/mycollection.html"
+			"page/mycollection.html",
+			"page/sfrz.html"
 		],
 		"resources": []
 	},
@@ -43,7 +44,9 @@
 			"page/acreage_mj.html",
 			"page/login.html",
 			"page/find_house.html",
-			"page/wt_house.html"
+			"page/wt_house.html",
+			"page/saleFuWu.html",
+			"page/financial.html"
 		]
 	},
 	"page/search.html": {
@@ -58,7 +61,8 @@
 	},
 	"fwsc.html": {
 		"refer": [
-			"page/tax.html"
+			"page/tax.html",
+			"page/financial.html"
 		]
 	},
 	"page/mycollection.html": {

@@ -55,7 +55,7 @@
 		    	<p class="wt_fwms_bt">房屋描述</p>
 		    	<p class="wt_texar">
 		    		<textarea name="" rows="" cols="" placeholder="请描述一下房屋基本信息"></textarea>
-		    		<span class="wt_texar_count"><i>0</i>/200</span>
+		    		<span class="wt_texar_count"><i id="textareaCount">0</i>/200</span>
 		    	</p>
 		    </div>
 		    <!--底部-->
@@ -71,5 +71,19 @@
 		</div>
 		<script src="../js/lib/app_config.js"></script>
 	</body>
-
+	<script>
+		$(function(){  
+			//控制文本域输入字数
+	        $('textarea').keyup(function(event) {  
+	            var maxLength = 200;  
+	            var len = $('textarea').val().length;  
+	            $('#textareaCount').html(len);  
+	            if(parseInt($('#textareaCount').text()) > 200){  
+	                $('#textareaCount').html('200');  
+	                var res = $(this).val().substring(0,200);  
+	                $(this).val(res);  
+	            }  
+	        });  
+	    });  
+	</script>
 </html>
