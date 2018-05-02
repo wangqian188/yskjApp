@@ -325,7 +325,8 @@
 					"page/fitup.html",
 					"page/search.html",
 					"page/find_house.html",
-					"page/wt_house.html"
+					"page/wt_house.html",
+					"page/financial.html"
 				],
 				"priority": 0
 			},
