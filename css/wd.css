@@ -85,10 +85,16 @@ body{
 	align-items: center;
 	height: 1.493333rem;
 	background: #fff;
-	border-bottom: 1px solid #e5e5e5;
 	border-top: 1px solid #e5e5e5;
 	margin-bottom: 0.266666rem;
 	padding: 0 0.4rem;
+}
+.after_service p{
+	font-size: 0.453333rem;
+	height: 4.533333rem;
+	background-color: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	color: #000;
 }
 .wd_list li p{
 	line-height: 1.493333rem;
@@ -102,6 +108,15 @@ body{
 	margin-right: 0.266666rem;
 }
 .wd_icon img{
+	height: 100%;
+	width: auto;
+}
+.wodeshofhfwu{
+	display: inline-block;
+	height: 0.6rem;
+	margin-right: 0.266666rem;
+}
+.wodeshofhfwu img{
 	height: 100%;
 	width: auto;
 }
