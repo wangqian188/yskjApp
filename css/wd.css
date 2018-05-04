@@ -89,12 +89,42 @@ body{
 	margin-bottom: 0.266666rem;
 	padding: 0 0.4rem;
 }
-.after_service p{
-	font-size: 0.453333rem;
+.after_service{
+	padding-left: 0.4rem;
 	height: 4.533333rem;
-	background-color: #fff;
 	border-bottom: 1px solid #e5e5e5;
+	background-color: #fff;
+
+}
+.wode_sale{
+	display: flex;
+	font-size: 0.453333rem;
 	color: #000;
+	height: 1.466666rem;
+	line-height: 1.466666rem;
+}
+.bancgird{
+	display: flex;
+	width: 5px;
+	background: url(../img/wode/hsoufuwu.png) no-repeat center;
+	background-size: 100% auto;
+}
+.wode_diyigewenzi{
+	margin-left: 0.226666rem;
+}
+.wode_inmg{
+	border: 1px solid black;
+	height: 2.28rem;
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+.wode_inmg span{
+	border: 1px solid red;
+	display: inline-block;
+	width: 3.466666rem;
+	height: 100%;
 }
 .wd_list li p{
 	line-height: 1.493333rem;
