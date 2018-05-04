@@ -44,6 +44,15 @@
 				topHeight = '115px';
 			}
 			
+			window.addEventListener("find_house", function (e) {
+			    //获得事件参数
+			    var find_houseObj = e.detail.find_houseObj;
+				var main = plus.webview.getWebviewById('jxfyList1');
+				mui.fire(main, "find_house",{
+				    find_houseObj:find_houseObj
+				})
+			});
+			
 			mui.init({
 			    subpages:[{
 			      url:'jxfyList1.html',//子页面HTML地址，支持本地地址和网络地址

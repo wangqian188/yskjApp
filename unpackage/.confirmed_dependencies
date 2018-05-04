@@ -26,7 +26,8 @@
 			"jxfyList.html"
 		],
 		"refer": [
-			"jxfyList.html"
+			"jxfyList.html",
+			"page/search.html"
 		]
 	},
 	"welcome.html": {

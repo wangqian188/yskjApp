@@ -84,6 +84,13 @@
 						oli[j].className = '';
 					}
 					oli[index].className = 'zf_li_active';
+					//是否注册  -1不限   1是
+					if(index == 0){
+						obj.iszc = index+2;
+					}
+					if(index == 1){
+						obj.iszc = index;
+					}
 				};
 			})(i)
 		}
