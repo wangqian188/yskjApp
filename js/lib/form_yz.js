@@ -7,7 +7,7 @@ function checkPhone(id){
    }else{
    		return true;
    }
- }
+}
 //获取验证密码倒计时
 var tag = true;
 var countdown=60; 

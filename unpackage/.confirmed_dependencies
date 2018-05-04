@@ -4,7 +4,8 @@
 			"page/login.html",
 			"page/myset.html",
 			"page/mycollection.html",
-			"page/sfrz.html"
+			"page/sfrz.html",
+			"page/person.html"
 		],
 		"resources": []
 	},
@@ -76,6 +77,21 @@
 	"jxfyList.html": {
 		"refer": [
 			"page/fyTail.html"
+		]
+	},
+	"page/find_house.html": {
+		"refer": [
+			"page/find_fang.html",
+			"jxfy1.html"
+		]
+	},
+	"jxfy1.html": {
+		"resources": [
+			"jxfyList1.html"
+		],
+		"refer": [
+			"jxfyList1.html",
+			"page/search1.html"
 		]
 	}
 }

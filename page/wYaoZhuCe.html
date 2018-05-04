@@ -92,6 +92,11 @@
 		<script type="text/javascript">
 			mui.init();
             var fwscType="";
+			function GetQueryString(name){
+			    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			    var r = window.location.search.substr(1).match(reg);
+			    if(r!=null)return  unescape(r[2]); return null;
+			}
 			 window.onload = function(){
 	            //业务数据获取完毕，并已插入当前页面DOM；
 	            //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
@@ -106,6 +111,7 @@
 	                initBind();
 	            });
 	       }
+			fwscType = GetQueryString('fwscType');
 			//获取验证密码倒计时
 			var tag = true;
 			var countdown=60; 
@@ -207,7 +213,7 @@
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							mui.ajax(url+'/yskjApp/webApp/dataInfo/mallService.do',{
+							mui.ajax('http://192.168.0.126:8080/yskjApp/webApp/dataInfo/mallService.do',{
 								data:{
 									'name':name,
 									'phone':phone,

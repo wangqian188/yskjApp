@@ -30,6 +30,7 @@
 	padding-left: 0.4rem;
 }
 .wt_inpsty{
+	position: relative;
 	display: flex;
 	align-items: center;
 	height: 1.466666rem;
@@ -119,7 +120,8 @@
 	border: none;
 	width: 100%;
 	height: 100%;
-	background: #ffba26;
+	/*background: #ffba26;*/
+	background: #d2d2d2;
 	font-size: 0.4rem;
 	color: #fefefe;
 }
@@ -138,4 +140,14 @@
 }
 .wt_tel{
 	padding-left: 0.133333rem;
+}
+.hqyzm{
+	position: absolute;
+	right: 0.453333rem;
+	display: inline-block;
+	height: 1.466666rem;
+	line-height: 1.466666rem;
+	font-size: 0.4rem;
+	text-align: right;
+	color: #c8c8c8;
 }

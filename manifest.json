@@ -1036,6 +1036,23 @@
 					"index.html"
 				],
 				"priority": 0
+			},
+			"page/find_house.html": {
+				"resources": [],
+				"refer": [
+					"page/find_fang.html",
+					"jxfy1.html"
+				],
+				"priority": 0
+			},
+			"jxfy1.html": {
+				"resources": [
+					"jxfyList1.html"
+				],
+				"refer": [
+					"page/search1.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {
