@@ -35,9 +35,11 @@
 	    			<span class="wode_diyigewenzi">售后服务</span>
 	    		</p>
 	    		<p class="wode_inmg">
-	    			<span class="">123</span>
-	    			<span class="">456</span>
-	    			<span class="">789</span>
+	    			<span class="shebeiweixiu"></span>
+	    			<span class="shebeiweixiu"></span>
+	    			<span class="shebeiweixiu"></span>
+	    			<span class="shebeiweixiu"></span>
+	    			<span class="shebeiweixiu"></span>
 	    		</p>
 	    	</div>
 		    <ul class="wd_list">
@@ -53,6 +55,20 @@
 		    			<img src="img/fav.png" alt="" />
 		    		</span>
 		    		<p>我的收藏</p>
+		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+		    	</li>
+		    	<li id="wdsc" class="tolink">
+		    		<span class="wd_icon">
+		    			<img src="img/wode_fangyuan.png" alt="" />
+		    		</span>
+		    		<p>我的房源</p>
+		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+		    	</li>
+		    	<li id="wdsc" class="tolink">
+		    		<span class="wd_icon">
+		    			<img src="img/wode_guanjian.png" alt="" />
+		    		</span>
+		    		<p>我的管家</p>
 		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
 		    	</li>
 		    	<li id="sz" class="tolink">
@@ -122,7 +138,7 @@
 			    }
 			});
 			//跳转页面地址
-			var toUrl = ['page/person.html','page/mycollection.html','page/myset.html'];
+			var toUrl = ['page/person.html','page/mycollection.html','page/wode_fangyuan.html','page/wode_guanjia.html','page/myset.html'];
 			for(var i=0; i<$('.tolink').length; i++){
 				(function(index){
 					$('.tolink').eq(index).click(function(){
@@ -227,6 +243,8 @@
 						if(data.success){
 							var userData = data.data;
 							//将手机号中间加密
+							var type = userData.typeid;
+							alert(type);
 							var phone = userData.phone;
 							var reg = /^(\d{3})\d{4}(\d{4})$/;
 							phone = phone.replace(reg, "$1****$2");
