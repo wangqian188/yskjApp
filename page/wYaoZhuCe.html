@@ -111,7 +111,8 @@
 	                initBind();
 	            });
 	       }
-			fwscType = GetQueryString('fwscType');
+//			fwscType = GetQueryString('fwscType');
+//			alert(fwscType);
 			//获取验证密码倒计时
 			var tag = true;
 			var countdown=60; 
@@ -200,7 +201,6 @@
 					mui.alert('提交参数有误', '提示', function(){});
 					return false;
 				}
-				
 				mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
 					data:{
 						'code':code,
