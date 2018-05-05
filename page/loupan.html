@@ -71,14 +71,14 @@
 					jxfsszhi = '';
 				}else{
 					jxfsszhi = $('.sousuwenzi').html();
-					var main = plus.webview.getWebviewById('search');
+					var main = plus.webview.getWebviewById('searchLoupan');
 					mui.fire(main,"jxfychudezhiwed",{
 					    lpname:jxfsszhi
 					})
 				}
 				mui.openWindow({ 
-					url:'search.html', //需要打开页面的url地址 
-					id:'search',  //需要打开页面的url页面id
+					url:'searchLoupan.html', //需要打开页面的url地址 
+					id:'searchLoupan',  //需要打开页面的url页面id
 					styles:{ 
 						top:'0px',//新页面顶部位置 
 						bottom:'0px',//新页面底部位置 
