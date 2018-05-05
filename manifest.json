@@ -326,7 +326,8 @@
 					"page/search.html",
 					"page/find_house.html",
 					"page/wt_house.html",
-					"page/financial.html"
+					"page/financial.html",
+					"page/loupan.html"
 				],
 				"priority": 0
 			},
@@ -1051,6 +1052,23 @@
 				],
 				"refer": [
 					"page/search1.html"
+				],
+				"priority": 0
+			},
+			"page/loupan.html": {
+				"resources": [
+					"page/loupanList.html"
+				],
+				"refer": [
+					"page/search.html",
+					"page/searchLoupan.html"
+				],
+				"priority": 0
+			},
+			"page/loupanList.html": {
+				"resources": [],
+				"refer": [
+					"page/loupan_detail.html"
 				],
 				"priority": 0
 			}

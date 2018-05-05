@@ -1,0 +1,38 @@
+.wode_fyblank_display{
+	display: blank;
+	background-color: #ffffff;
+	height: 100%;
+}
+.wode_fangneirong_display{
+	display: none;
+}
+.wode_fyimg{
+	height: 1.84rem;
+	margin-top: 3.16rem;
+	background: url(../img/wode/fangyuanblank.png) no-repeat center;
+	background-size: auto 100%;
+}
+.wode_fywenti{
+	line-height: 0.4rem;
+	font-size: 0.4rem;
+	margin-top: 0.733333rem;
+	text-align: center;
+	color: #999999;
+}
+.wode_fyzitinien{
+	line-height: 0.32rem;
+	font-size: 0.32rem;
+	color: #cccccc;
+	text-align: center;
+	margin-top: 0.266666rem;
+}
+.wode_biankongdiv{
+	width: 100%;
+}
+.wode_biankong{
+	border: 1px solid red;
+	display: flex;
+	height: 0.986666rem;
+	width: 3.52rem;
+	justify-content: center;
+}

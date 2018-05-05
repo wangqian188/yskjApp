@@ -48,7 +48,8 @@
 			"page/find_house.html",
 			"page/wt_house.html",
 			"page/saleFuWu.html",
-			"page/financial.html"
+			"page/financial.html",
+			"page/loupan.html"
 		]
 	},
 	"page/search.html": {
@@ -93,6 +94,21 @@
 		"refer": [
 			"jxfyList1.html",
 			"page/search1.html"
+		]
+	},
+	"page/loupan.html": {
+		"resources": [
+			"page/loupanList.html"
+		],
+		"refer": [
+			"page/loupanList.html",
+			"page/search.html",
+			"page/searchLoupan.html"
+		]
+	},
+	"page/loupanList.html": {
+		"refer": [
+			"page/loupan_detail.html"
 		]
 	}
 }
