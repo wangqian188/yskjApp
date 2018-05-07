@@ -244,7 +244,6 @@
 							var userData = data.data;
 							//将手机号中间加密
 							var type = userData.typeid;
-							alert(type);
 							var phone = userData.phone;
 							var reg = /^(\d{3})\d{4}(\d{4})$/;
 							phone = phone.replace(reg, "$1****$2");

@@ -5,7 +5,8 @@
 			"page/myset.html",
 			"page/mycollection.html",
 			"page/sfrz.html",
-			"page/person.html"
+			"page/person.html",
+			"page/repairs_bx.html"
 		],
 		"resources": []
 	},
@@ -109,6 +110,11 @@
 	"page/loupanList.html": {
 		"refer": [
 			"page/loupan_detail.html"
+		]
+	},
+	"jxfyList1.html": {
+		"refer": [
+			"page/fyTail.html"
 		]
 	}
 }

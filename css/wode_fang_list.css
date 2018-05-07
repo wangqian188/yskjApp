@@ -44,3 +44,22 @@
 	border-radius: 0.066666rem;
 	margin:  0rem auto;
 }
+.release_date{
+	line-height: 0.893333rem;
+	height: 0.893333rem !important;
+	border-bottom: 1px solid #e5e5e5;
+}
+.release_date span{
+	color: #666666;
+	font-size: 0.346666rem;
+}
+.blank_jvli{
+	position: relative;
+	left: -0.4rem;
+	width: 10rem!important;
+	height: 0.266666rem !important;
+	border-bottom: 1px solid #e5e5e5 !important;
+	background-color: #f0f0f0;
+	margin-bottom: 0.533333rem;
+	overflow: hidden;
+}

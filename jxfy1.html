@@ -44,14 +44,7 @@
 				topHeight = '115px';
 			}
 			
-			window.addEventListener("find_house", function (e) {
-			    //获得事件参数
-			    var find_houseObj = e.detail.find_houseObj;
-				var main = plus.webview.getWebviewById('jxfyList1');
-				mui.fire(main, "find_house",{
-				    find_houseObj:find_houseObj
-				})
-			});
+			
 			
 			mui.init({
 			    subpages:[{
@@ -67,6 +60,15 @@
 			      extras:{}//额外扩展参数
 			    }]
 		  	});
+		  	
+		  	window.addEventListener("find_house", function (e) {
+			    //获得事件参数
+			    var find_houseObj = e.detail.find_houseObj;
+				var main = plus.webview.getWebviewById('jxfyList1');
+				mui.fire(main, "find_house1",{
+				    find_houseObj:find_houseObj
+				})
+			});
 		  	
 		  	//页面的跳转12
 		  	mui.init({
