@@ -1,0 +1,28 @@
+.gjfw_h{
+	width: 10rem;
+	height: 4.106666rem;
+}
+.gjfw_h img{
+	width: 100%;
+	height: auto;
+}
+.house_tit{
+	height: 1.666666rem;
+	line-height: 1.666666rem;
+	font-size: 0.453333rem;
+	font-weight: bold;
+	padding-left: 0.4rem;
+}
+.change_list{
+	display: flex;
+	justify-content: space-between;
+	width: 9.2rem;
+	min-height: 3.533333rem;
+	height: auto;
+	margin: 0 auto 0;
+}
+.change_list li{
+	width: 3rem;
+	height: 3.533333rem;
+	border: 1px solid deeppink;
+}

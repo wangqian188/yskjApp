@@ -275,7 +275,8 @@
 					"page/myset.html",
 					"page/mycollection.html",
 					"page/login.html",
-					"page/sfrz.html"
+					"page/sfrz.html",
+					"page/repairs_bx.html"
 				],
 				"priority": 0
 			},
@@ -1069,6 +1070,13 @@
 				"resources": [],
 				"refer": [
 					"page/loupan_detail.html"
+				],
+				"priority": 0
+			},
+			"jxfyList1.html": {
+				"resources": [],
+				"refer": [
+					"page/fyTail.html"
 				],
 				"priority": 0
 			}
