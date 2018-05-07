@@ -1,10 +1,12 @@
 .wode_fyblank_display{
-	display: blank;
+	/*display: blank;*/
+	display: none;
 	background-color: #ffffff;
 	height: 100%;
 }
 .wode_fangneirong_display{
-	display: none;
+	/*display: none;*/
+	display: blank;
 }
 .wode_fyimg{
 	height: 1.84rem;
@@ -28,11 +30,17 @@
 }
 .wode_biankongdiv{
 	width: 100%;
+	margin-top: 0.4rem;
 }
 .wode_biankong{
-	border: 1px solid red;
 	display: flex;
 	height: 0.986666rem;
 	width: 3.52rem;
 	justify-content: center;
+	background-color: #2b70d8;
+	font-size: 0.373333rem;
+	color: #ffffff;
+	align-items: center;
+	border-radius: 0.066666rem;
+	margin:  0rem auto;
 }
