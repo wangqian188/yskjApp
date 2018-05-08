@@ -71,6 +71,13 @@
 		    		<p>我的管家</p>
 		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
 		    	</li>
+		    	<li id="wdsc" class="tolink">
+		    		<span class="wd_icon">
+		    			<img src="img/wode_guanjian.png" alt="" />
+		    		</span>
+		    		<p>通知中心</p>
+		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+		    	</li>
 		    	<li id="sz" class="tolink">
 		    		<span class="wd_icon">
 		    			<img src="img/sz.png" alt="" />
@@ -138,7 +145,7 @@
 			    }
 			});
 			//跳转页面地址
-			var toUrl = ['page/person.html','page/mycollection.html','page/wode_fangyang.html','page/wode_guanjia.html','page/myset.html'];
+			var toUrl = ['page/person.html','page/mycollection.html','page/wode_fangyang.html','page/wode_guanjia.html','page/notice_center.html','page/myset.html'];
 			for(var i=0; i<$('.tolink').length; i++){
 				(function(index){
 					$('.tolink').eq(index).click(function(){
@@ -190,7 +197,7 @@
 			//					height:newpage-height,//新页面高度，默认为100% ...... 
 							}, 
 							extras:{ 
-		
+								
 			//					.....//自定义扩展参数，可以用来处理页面间传值 
 							},show:{ //控制打开页面的类型
 								autoShow:true,
@@ -244,6 +251,8 @@
 							var userData = data.data;
 							//将手机号中间加密
 							var type = userData.typeid;
+							localStorage.setItem('user_type',type);//1 渠道用户 2 业主用户 3 客户用户
+//							var ifsoifo = localStorage.getItem('user_type');
 							var phone = userData.phone;
 							var reg = /^(\d{3})\d{4}(\d{4})$/;
 							phone = phone.replace(reg, "$1****$2");

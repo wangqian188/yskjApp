@@ -237,17 +237,19 @@
 								}
 								titlet = data[i].topic;
 								lianjiedizhi = data[i].cloudscape;
-								$('.qierlyundelainjie').click(function(){
-									mui.openWindow({ 
-										url:'qierlyun.html', //需要打开页面的url地址 
-										id:'qierlyun',  //需要打开页面的url页面id
-										extras:{ 
-											lianjie:lianjiedizhi,
-											topic:titlet,
-						//					.....//自定义扩展参数，可以用来处理页面间传值 
-										}
-									});
-								});
+								
+								//给720坐下面的图标加跳转链接
+//								$('.qierlyundelainjie').click(function(){
+//									mui.openWindow({ 
+//										url:'qierlyun.html', //需要打开页面的url地址 
+//										id:'qierlyun',  //需要打开页面的url页面id
+//										extras:{ 
+//											lianjie:lianjiedizhi,
+//											topic:titlet,
+//						//					.....//自定义扩展参数，可以用来处理页面间传值 
+//										}
+//									});
+//								});
 								$(".fjcg").html(data[i].fjcg==""?"暂无数据":data[i].fjcg+"m");
 								$(".wyf").html(data[i].wyf==""?"暂无数据":data[i].wyf+"元/㎡/月");
 								$(".gnf").html(data[i].gnf==""?"暂无数据":data[i].gnf+"元/㎡/季");
@@ -308,6 +310,7 @@
 											v2+=' 123</a> </div>';
 										}
 									}
+
 									for(var i=0;i<hous_img.length;i++){
 											if(qierlstat == 1){
 												var ims=hous_img[i];
@@ -331,12 +334,13 @@
 													h_img+='<img src="'+img_url+ims+'" alt="" />';
 													h_img+='<span class="fyxqdebofangan"><i></i></span>';
 													h_img+=' </a> </div>';
+												}else{
+													h_img+=' <div class="mui-slider-item">';
+													h_img+='<a href="#">';
+													h_img+='<img src="'+img_url+ims+'" alt="" />';
+													h_img+=' </a> </div>';
 												}
 												
-												h_img+=' <div class="mui-slider-item">';
-												h_img+='<a href="#">';
-												h_img+='<img src="'+img_url+ims+'" alt="" />';
-												h_img+=' </a> </div>';
 												
 												if(i==hous_img.length-1){
 													h_img+=v1;
