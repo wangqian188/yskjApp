@@ -61,14 +61,7 @@
 			    }]
 		  	});
 		  	
-		  	window.addEventListener("find_house", function (e) {
-			    //获得事件参数
-			    var find_houseObj = e.detail.find_houseObj;
-				var main = plus.webview.getWebviewById('jxfyList1');
-				mui.fire(main, "find_house1",{
-				    find_houseObj:find_houseObj
-				})
-			});
+		  	
 		  	
 		  	//页面的跳转12
 		  	mui.init({
@@ -302,6 +295,28 @@
 				var leng = $('.shuixuanweizhi').text().length;
 				var wez = $('.shuixuanweizhi').html().substring(leng);
 				$('.shuixuanweizhi').html(text3 + wez);
+			});
+			mui.plusReady(function(){
+                var self = plus.webview.currentWebview();
+                var find_houseObj = self.find_houseObj;
+                console.log(name);
+                //关闭等待框
+                plus.nativeUI.closeWaiting();
+                //显示当前页面
+                mui.currentWebview.show();
+                var main = plus.webview.getWebviewById('jxfyList1');
+				mui.fire(main, "find_house1",{
+				    find_houseObj:find_houseObj
+				})
+            });
+            
+            window.addEventListener("find_house", function (e) {
+			    //获得事件参数
+			    var find_houseObj = e.detail.find_houseObj;
+				var main = plus.webview.getWebviewById('jxfyList1');
+				mui.fire(main, "find_house1",{
+				    find_houseObj:find_houseObj
+				})
 			});
 		</script>
 	</body>

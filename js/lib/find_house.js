@@ -11,11 +11,15 @@ $('.wt_btn').click(function(){
 	//确认查找跳转
 	mui.openWindow({
 		url: '../jxfy1.html',
-		id:'jxfy1'
+		id:'jxfy1',
+	    extras:{
+	      find_houseObj:JSON.stringify(obj)
+	    }
 	});
 	//
-	var main = plus.webview.getWebviewById('jxfy1');
-	mui.fire(main, "find_house",{
-	    find_houseObj:JSON.stringify(obj)
-	})
+//	var main = plus.webview.getWebviewById('jxfy1');
+//	alert(main);
+//	mui.fire(main, "find_house",{
+//	    find_houseObj:JSON.stringify(obj)
+//	})
 });

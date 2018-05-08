@@ -31,11 +31,11 @@
 					  </div>
 					  <div class="mui-slider-indicator imglunbo"></div>
 					</div>
-					<div class="qieryun qierlyundelainjie"></div>
+					<div class="qieryun qierlyundelainjie qieryundisp"></div>
 					<div class="fuxqxx">
 						<div class="fyxqxxyiu">
 							<p class="fybh"></p>
-							<p class="qierldetu qierlyundelainjie">
+							<p class="qierldetu qierlyundelainjie qierldetudisp">
 								<span></span>
 							</p>
 						</div>
@@ -214,8 +214,10 @@
 									}
 									qierlstat = 1;
 								}else{
+									$('.qieryun').removeClass('qieryundisp');
+									$('.qierldetu').removeClass('qierldetudisp');
 									if(housing_icon!=""){
-										le=housing_icon.split(";").length + 1;
+										le=housing_icon.split(";").length;
 										$(".imglunbo").html("1/"+le);
 									}
 									qierlstat = 2;
@@ -281,11 +283,22 @@
 												v1+='<img src="'+img_url+ims+'" alt="" />';
 												v1+=' </a> </div>';
 											}else{
+												
+												
 												v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
 												v1+='<a href="#">';
-												v1+='<img src="http://47.92.145.21:81/yskjapp/lb1.png" alt="" />';
+												v1+='<img src="'+img_url+ims+'" alt="" />';
 												v1+='<span class="fyxqdebofangan"><i></i></span>';
 												v1+=' </a> </div>';
+												
+												
+												
+												
+//												v1+=' <div class="mui-slider-item mui-slider-item-duplicate">';
+//												v1+='<a href="#">';
+//												v1+='<img src="http://47.92.145.21:81/yskjapp/lb1.png" alt="" />';
+//												v1+='<span class="fyxqdebofangan"><i></i></span>';
+//												v1+=' </a> </div>';
 											}
 											
 										}else if(i==hous_img.length-1){
@@ -315,7 +328,7 @@
 													h_img+=v2;
 													h_img+=' <div class="mui-slider-item">';
 													h_img+='<a href="#">';
-													h_img+='<img src="http://47.92.145.21:81/yskjapp/lb1.png" alt="" />';
+													h_img+='<img src="'+img_url+ims+'" alt="" />';
 													h_img+='<span class="fyxqdebofangan"><i></i></span>';
 													h_img+=' </a> </div>';
 												}
