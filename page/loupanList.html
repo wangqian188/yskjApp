@@ -66,7 +66,7 @@
 					<div class="mjqyfm">
 						特色标签
 					</div>
-					<div class="xuanxing chanqxz">
+					<div class="xuanxing chanqxz" style="border-bottom: 0px solid red;">
 						<div class="testbq">
 							<!--<div class="xiaokchuaq xiaoktese">写字楼</div>
 							-->
@@ -519,17 +519,16 @@
 				tag = "mianjiqv";
 				tagzj = 'zujinxx';
 				tagcq = "cqss";
-				
+
 				//筛选中输入input框的条件
 				mijdianjstatus = 1;
 				$('.lpmianjiaru input').val('');
 				$('.lpmianjiachu input').val('');
-					
+
 				//筛选中租金区域输入input框的条件
 				zujindianjstatus = 1;
 				$('.lpzujinru input').val('');
 				$('.lpzujinchu input').val('');
-				
 				
 				
 				
@@ -602,7 +601,7 @@
 							    idxsxfh:1//1位置
 							})
 							if(xial == 1 && data.buildings.length == 0){
-								mui.alert('抱歉，暂无符合条件的房源！');								
+								mui.alert('抱歉，暂无符合条件的楼盘！');								
 							}
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.buildings.length < 1)); //参数为true代表没有更多数据了。
 					}else{
@@ -694,7 +693,7 @@
 					zj[i].className = 'xiaokzujin';
 				}
 				for(var i=0;i<cq.length;i++){
-					cq[i].className = 'xiaokzujin';
+					cq[i].className = 'tesebiaqidange xiaoktese';
 				}
 			}
 			/*for(var i=0;i<zujin.length;i++){
