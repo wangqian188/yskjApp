@@ -45,7 +45,7 @@
 			<!--在线报修-->
 			<div class="house_change">
 				<h1 class="house_tit">在线报修</h1>
-				<ul class="online_bx">
+				<ul id="online" class="online_bx">
 					<li>
 						<span>门窗维修</span>
 						<span></span>
@@ -153,6 +153,13 @@
 			mui.openWindow({ 
 				url:'./forms_kjcmt.html', //需要打开页面的url地址 
 				id:'forms_kjcmt',  //需要打开页面的url页面id
+			})
+		});
+		//物业对接
+		$('#online li').click(function(){
+			mui.openWindow({ 
+				url:'./forms_zxbx.html', //需要打开页面的url地址 
+				id:'forms_zxbx',  //需要打开页面的url页面id
 			})
 		});
 	</script>
