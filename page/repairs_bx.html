@@ -28,11 +28,125 @@
 			<div class="house_change">
 				<h1 class="house_tit">房屋变更</h1>
 				<ul class="change_list">
-					<li></li>
-					<li></li>
-					<li></li>
+					<li id="xuzu">
+						<p>续租</p>
+						<p></p>
+					</li>
+					<li id="huanfang">
+						<p>换房</p>
+						<p></p>
+					</li>
+					<li id="tuifang">
+						<p>退房</p>
+						<p></p>
+					</li>
 				</ul>
 			</div>
+			<!--在线报修-->
+			<div class="house_change">
+				<h1 class="house_tit">在线报修</h1>
+				<ul class="online_bx">
+					<li>
+						<span>门窗维修</span>
+						<span></span>
+					</li>
+					<li>
+						<span>灯具电路</span>
+						<span></span>
+					</li>
+					<li>
+						<span>空调制冷</span>
+						<span></span>
+					</li>
+					<li>
+						<span>水路管件</span>
+						<span></span>
+					</li>
+				</ul>
+			</div>
+			<!--物业对接-->
+			<div class="house_change">
+				<h1 class="house_tit">物业对接</h1>
+				<ul class="wy_docking">
+					<li>
+						<p>开具出门条</p>
+						<p></p>
+					</li>
+					<li>
+						<p>装修同意函</p>
+						<p></p>
+					</li>
+					<li>
+						<p>网络问题</p>
+						<p></p>
+					</li>
+				</ul>
+			</div>
+			<!--房屋凭证-->
+			<div class="house_change">
+				<h1 class="house_tit">房屋凭证</h1>
+				<ul class="wy_docking zxbx_nav">
+					<li>
+						<p>大产权证</p>
+						<p></p>
+					</li>
+					<li>
+						<p>房本及业主</br>身份证原件</p>
+						<p></p>
+					</li>
+					<li>
+						<p>业主签字</p>
+						<p></p>
+					</li>
+				</ul>
+			</div>
+			<!--房屋费用-->
+			<div class="house_change">
+				<h1 class="house_tit">房屋费用</h1>
+				<ul class="online_bx fwdy_nav">
+					<li>
+						<span>物业费</span>
+						<span></span>
+					</li>
+					<li>
+						<span>取暖费</span>
+						<span></span>
+					</li>
+					<li>
+						<span>遗留水电费</span>
+						<span></span>
+					</li>
+					<li>
+						<span>空调转换费</span>
+						<span></span>
+					</li>
+				</ul>
+			</div>
+			
 		</div>
 	</body>
+	<script type="text/javascript">
+		mui.init();
+		//续租
+		$('#xuzu').click(function(){
+			mui.openWindow({ 
+				url:'./relet_xz.html', //需要打开页面的url地址 
+				id:'relet_xz',  //需要打开页面的url页面id
+			})
+		});
+		//换房
+		$('#huanfang').click(function(){
+			mui.openWindow({ 
+				url:'./room_change.html', //需要打开页面的url地址 
+				id:'room_change',  //需要打开页面的url页面id
+			})
+		});
+		//退房
+		$('#tuifang').click(function(){
+			mui.openWindow({ 
+				url:'./room_tz.html', //需要打开页面的url地址 
+				id:'room_tz',  //需要打开页面的url页面id
+			})
+		});
+	</script>
 </html>

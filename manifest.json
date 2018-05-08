@@ -1079,6 +1079,15 @@
 					"page/fyTail.html"
 				],
 				"priority": 0
+			},
+			"page/repairs_bx.html": {
+				"resources": [],
+				"refer": [
+					"page/relet_xz.html",
+					"page/room_change.html",
+					"page/room_tz.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {

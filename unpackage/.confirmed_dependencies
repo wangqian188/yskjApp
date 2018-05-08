@@ -116,5 +116,12 @@
 		"refer": [
 			"page/fyTail.html"
 		]
+	},
+	"page/repairs_bx.html": {
+		"refer": [
+			"page/relet_xz.html",
+			"page/room_change.html",
+			"page/room_tz.html"
+		]
 	}
 }
