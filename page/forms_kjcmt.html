@@ -31,11 +31,19 @@
 	<body>
 		<header class="mui-bar mui-bar-nav wd-header_p ipx_public_h1">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left a_d"></a>
-		    <h1 class="mui-title">我要退租</h1>
+		    <h1 class="mui-title">开具出门条</h1>
 		</header>
 		<div class="mui-content sy_ipx_content" style="bottom: 0;background: #f0f0f0;overflow: auto;">
 		    <div class="wt_ms">
 		    	<p>请留下您的房屋基本信息与联系方式，我们会及时与您联系，为您提供专属服务。</p>
+		    </div>
+		    <!--房屋信息-->
+		    <div class="wt_fwxx fwxx">
+		    	<div class="mui-input-row wt_inpsty">
+		    	    <label>房屋信息</label>
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入楼盘名称及所在区域" id="house_news">
+		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
+		    	</div>
 		    </div>
 		    <!--基本信息表单-->
 		    <div class="wt_jbxx">
@@ -53,26 +61,12 @@
 		    	    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="6"  id="hqyzm">
 		    	</div>
 		    </div>
-		    <!--现租房源-->
-		    <div class="wt_fwxx fwxx">
-		    	<div class="mui-input-row wt_inpsty">
-		    	    <label>现租房源</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入楼盘名称及所在区域" id="house_news">
-		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
-		    	</div>
-		    </div>
-		    <div class="wt_fwxx fwxx">
-		    	<div class="mui-input-row wt_inpsty">
-		    	    <label>退租时间</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择预计退租时间" id="house_news">
-		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
-		    	</div>
-		    </div>
-		    <!--退租理由-->
+		    
+		    <!--原因说明-->
 		    <div class="wt_fwms">
-		    	<p class="wt_fwms_bt">退租理由</p>
+		    	<p class="wt_fwms_bt">原因说明</p>
 		    	<p class="wt_texar">
-		    		<textarea name="" rows="" cols="" placeholder="请填写退租理由" id="house_ms"></textarea>
+		    		<textarea name="" rows="" cols="" placeholder="请输入详细内容" id="house_ms"></textarea>
 		    		<span class="wt_texar_count"><i id="textareaCount">0</i>/200</span>
 		    	</p>
 		    </div>

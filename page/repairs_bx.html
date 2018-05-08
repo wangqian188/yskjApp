@@ -24,9 +24,9 @@
 			<div class="gjfw_h">
 				<img src="../img/repairs_pic/gjfw_h.png" alt="" />
 			</div>
-			<!--房屋变更-->
+			<!--合同变更-->
 			<div class="house_change">
-				<h1 class="house_tit">房屋变更</h1>
+				<h1 class="house_tit">合同变更</h1>
 				<ul class="change_list">
 					<li id="xuzu">
 						<p>续租</p>
@@ -67,7 +67,7 @@
 			<!--物业对接-->
 			<div class="house_change">
 				<h1 class="house_tit">物业对接</h1>
-				<ul class="wy_docking">
+				<ul class="wy_docking" id="wydj">
 					<li>
 						<p>开具出门条</p>
 						<p></p>
@@ -146,6 +146,13 @@
 			mui.openWindow({ 
 				url:'./room_tz.html', //需要打开页面的url地址 
 				id:'room_tz',  //需要打开页面的url页面id
+			})
+		});
+		//物业对接
+		$('#wydj li').click(function(){
+			mui.openWindow({ 
+				url:'./forms_kjcmt.html', //需要打开页面的url地址 
+				id:'forms_kjcmt',  //需要打开页面的url页面id
 			})
 		});
 	</script>

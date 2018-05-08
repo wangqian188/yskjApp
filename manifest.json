@@ -1085,7 +1085,8 @@
 				"refer": [
 					"page/relet_xz.html",
 					"page/room_change.html",
-					"page/room_tz.html"
+					"page/room_tz.html",
+					"page/forms_kjcmt.html"
 				],
 				"priority": 0
 			}
