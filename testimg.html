@@ -44,6 +44,7 @@
                 overflow: hidden;
             }
             .showimg {
+            	border: 1px solid red;
                 margin: 20px 10px auto 10px;
                 text-align: center;
             }
@@ -56,11 +57,6 @@
             <h1 class="mui-title">上传身份证照片</h1>
             <a class="mui-pull-right mui-icon mui-icon-upload" onclick="imgupgrade()"></a>
         </header>
-        <!--
-    作者：1020450921@qq.com
-    时间：2015-04-24
-    描述：参考 http://ask.dcloud.net.cn/question/2089
--->
         <div class="mui-content">
             <div class="showimg">
 
@@ -70,72 +66,67 @@
             <button type="button" class="mui-btn mui-btn-success mui-btn-block btn_2" onclick="cameraimages()">拍照</button>
         </div>
     </body>
-    <script src="../../../js/mui.min.js"></script>
-    <script src="../../../js/binaryajax.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../../../js/exif.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../../../js/canvasResize.js" type="text/javascript" charset="utf-8"></script>
-
-    <script type="text/javascript">
-        mui.init();
-        mui.plusReady(function() {})
-               //上传单张图片
-        function galleryImg() {
-            //每次拍摄或选择图片前清空数组对象
-            f1.splice(0, f1.length);
+<script type="text/javascript">
+mui.init();
+mui.plusReady(function() {})
+       //上传单张图片
+function galleryImg() {
+    //每次拍摄或选择图片前清空数组对象
+    f1.splice(0, f1.length);
 //          document.getElementsByClassName("showimg")[0].innerHTML = null;
-            // 从相册中选择图片
-            mui.toast("从相册中选择一张图片");
-            plus.gallery.pick(function(path) {
-                showImg(path);
-            }, function(e) {
-                mui.toast("取消选择图片");
-            }, {
-                filter: "image",
-                multiple: false
-            });
+    // 从相册中选择图片
+    mui.toast("从相册中选择一张图片");
+    plus.gallery.pick(function(path) {
+        showImg(path);
+    }, function(e) {
+        mui.toast("取消选择图片");
+    }, {
+        filter: "image",
+        multiple: false
+    });
+}
+
+function galleryImgs() {
+    //每次拍摄或选择图片前清空数组对象
+    f1.splice(0, f1.length);
+	//document.getElementsByClassName("showimg")[0].innerHTML = null;
+    // 从相册中选择图片
+    mui.toast("从相册中选择不超过两张图片");
+    plus.gallery.pick(function(e) {
+    	
+		//  if (e.files.length != 20) {
+		//     mui.toast('请选择身份证正面和背面照片共两张');
+		//     return false;
+		//  }
+        for (var i in e.files) {
+            showImg(e.files[i]);
         }
-
-        function galleryImgs() {
-                //每次拍摄或选择图片前清空数组对象
-                f1.splice(0, f1.length);
-//              document.getElementsByClassName("showimg")[0].innerHTML = null;
-                // 从相册中选择图片
-                mui.toast("从相册中选择不超过两张图片");
-                plus.gallery.pick(function(e) {
-                	
-//                  if (e.files.length != 20) {
-//                      mui.toast('请选择身份证正面和背面照片共两张');
-//                      return false;
-//                  }
-                    for (var i in e.files) {
-                        showImg(e.files[i]);
-                    }
-                }, function(e) {
-                    mui.toast("取消选择图片");
-                }, {
-                    filter: "image",
-                    multiple: true
-                });
-            }
-            // 拍照添加文件
-
-        function cameraimages() {
-                //每次拍摄或选择图片前清空数组对象
-                f1.splice(0, f1.length);
-//              document.getElementsByClassName("showimg")[0].innerHTML = null;
-                var cmr = plus.camera.getCamera();
-                cmr.captureImage(function(p) {
-                    plus.io.resolveLocalFileSystemURL(p, function(entry) {
-                        var localurl = entry.toLocalURL(); //把拍照的目录路径，变成本地url路径，例如file:///........之类的。
-                        showImg(localurl);
-                    });
-                }, function(e) {
-                    mui.toast("很抱歉，获取失败 ",e);
-                });
-            }
-            // 全局数组对象，添加文件,用于压缩上传使用
-        var f1 = new Array();
-
+    }, function(e) {
+        mui.toast("取消选择图片");
+    }, {
+        filter: "image",
+        multiple: true
+    });
+}
+        
+// 拍照添加文件
+function cameraimages() {
+    //每次拍摄或选择图片前清空数组对象
+    f1.splice(0, f1.length);
+//  document.getElementsByClassName("showimg")[0].innerHTML = null;
+    var cmr = plus.camera.getCamera();
+    cmr.captureImage(function(p) {
+        plus.io.resolveLocalFileSystemURL(p, function(entry) {
+            var localurl = entry.toLocalURL(); //把拍照的目录路径，变成本地url路径
+            showImg(localurl);
+        });
+    }, function(e) {
+        mui.toast("很抱歉，获取失败 ",e);
+    });
+}
+        
+// 全局数组对象，添加文件,用于压缩上传使用
+var f1 = new Array();
 
 function showImg(url) {
     // 兼容以“file:”开头的情况
@@ -192,41 +183,16 @@ function showImg(url) {
 };
 
 function imgupgrade() {
-        mui.toast('后台联调时启用上传功能');
-        for(var i in f1){
-        	var  imgArray=[];//通过逗号分割到新的编码
-        	var newImgbase = f1[i].split(",")[1];
-            imgArray.push(newImgbase);//放到imgArray数组里面
-            picupload(imgArray);
-        }
-//              return;
-//              var wt = plus.nativeUI.showWaiting();
-//              var url = 'http://omc.urskongjian.com/yhcms/web/jcsj/uploadPic.do';
-//              var dataType = 'json';
-//              //发送数据  
-//              var data = {
-////                  files1:  //base64数据        
-//                  "parameters":{
-//      				"smallPic":JSON.stringify(imgArray),
-//      				"suffix":".jpeg"
-//      			},
-//      			"foreEndType":2,
-//      			"code":"300000084"
-//              };
-//              console.log(JSON.stringify(data));
-//              mui.post(url, JSON.stringify(data), success, dataType);
-		
+    var wt = plus.nativeUI.showWaiting();
+    for(var i in f1){
+    	var  imgArray=[];//通过逗号分割到新的编码
+    	var newImgbase = f1[i].split(",")[1];
+        imgArray.push(newImgbase);//放到imgArray数组里面
+        picupload(imgArray,i);
+    }
 }
-            //成功响应的回调函数
-//      var success = function(response) {
-//          plus.nativeUI.closeWaiting();
-//          if (response != null) {
-//          	console.log(JSON.stringify(response));
-//              alert("上传成功");
-//          }
-//      }
-//图片上传
-function picupload(imgArray){
+
+function picupload(imgArray,num){
 	mui.ajax("http://omc.urskongjian.com/yhcms/web/jcsj/uploadPic.do",{
 		data:{
 			"parameters":{
@@ -243,9 +209,11 @@ function picupload(imgArray){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				plus.nativeUI.closeWaiting();
-				console.log(JSON.stringify(data))
-				alert("上传成功");
+				console.log(JSON.stringify(data));
+				if(num == f1.length-1){//图片上传完毕后关闭加载图标			
+					plus.nativeUI.closeWaiting();
+					alert("上传成功");
+				}
 			}else{
 				mui.alert("提示信息："+data.message, '提示', function(){});
 			}
@@ -257,7 +225,6 @@ function picupload(imgArray){
 		}
 	});
 }
-
-    </script>
+</script>
 
 </html>
