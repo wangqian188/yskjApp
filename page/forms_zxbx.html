@@ -80,7 +80,7 @@
 		    	<span class="up_img_span up_img_phnoto">
 		    		<img src="../img/addfwuxiao1.png"/ width="100%" height="100%">
 		    	</span>
-		    	<span class="up_img_span">
+		    	<span class="up_img_span" id="add_img">
 		    		<span class="mui-icon mui-icon-plusempty"></span>
 		    	</span>
 		    </div>
@@ -112,5 +112,11 @@
 	            }  
 	        });  
 	    });  
+	    $('#add_img').click(function(){
+			mui.openWindow({ 
+				url:'../testimg.html', //需要打开页面的url地址 
+				id:'testimg',  //需要打开页面的url页面id
+			})
+		});
 	</script>
 </html>

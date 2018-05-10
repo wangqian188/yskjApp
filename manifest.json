@@ -268,7 +268,9 @@
 					"img/fav.png",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/app_config.js",
-					"img/addfwuxiao1.png"
+					"img/addfwuxiao1.png",
+					"img/wode_fangyuan.png",
+					"img/wode_guanjian.png"
 				],
 				"refer": [
 					"page/person.html",
@@ -276,7 +278,10 @@
 					"page/mycollection.html",
 					"page/login.html",
 					"page/sfrz.html",
-					"page/repairs_bx.html"
+					"page/repairs_bx.html",
+					"page/wode_fangyang.html",
+					"page/notice_center.html",
+					"page/wode_guanjia.html"
 				],
 				"priority": 0
 			},
@@ -1086,8 +1091,23 @@
 					"page/relet_xz.html",
 					"page/room_change.html",
 					"page/room_tz.html",
-					"page/forms_kjcmt.html"
+					"page/forms_kjcmt.html",
+					"page/forms_zxbx.html"
 				],
+				"priority": 0
+			},
+			"page/forms_zxbx.html": {
+				"resources": [],
+				"refer": [
+					"testimg.html"
+				],
+				"priority": 0
+			},
+			"page/wode_fangyang.html": {
+				"resources": [
+					"page/wode_fang_list.html"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

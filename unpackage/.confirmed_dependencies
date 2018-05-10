@@ -6,9 +6,15 @@
 			"page/mycollection.html",
 			"page/sfrz.html",
 			"page/person.html",
-			"page/repairs_bx.html"
+			"page/repairs_bx.html",
+			"page/wode_fangyang.html",
+			"page/notice_center.html",
+			"page/wode_guanjia.html"
 		],
-		"resources": []
+		"resources": [
+			"img/wode_fangyuan.png",
+			"img/wode_guanjian.png"
+		]
 	},
 	"index.html": {
 		"resources": [
@@ -122,7 +128,37 @@
 			"page/relet_xz.html",
 			"page/room_change.html",
 			"page/room_tz.html",
-			"page/forms_kjcmt.html"
+			"page/forms_kjcmt.html",
+			"page/forms_zxbx.html"
+		]
+	},
+	"page/forms_zxbx.html": {
+		"refer": [
+			"testimg.html"
+		]
+	},
+	"page/wode_fangyang.html": {
+		"resources": [
+			"page/wode_fang_list.html"
+		],
+		"refer": [
+			"page/wode_fang_list.html"
+		]
+	},
+	"page/sfrz.html": {
+		"refer": [
+			"page/person.html"
+		]
+	},
+	"page/person.html": {
+		"refer": [
+			"page/sfrz.html",
+			"page/add_sfz.html"
+		]
+	},
+	"page/login.html": {
+		"refer": [
+			"page/fast_zc.html"
 		]
 	}
 }
