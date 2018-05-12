@@ -45,20 +45,20 @@
 			<!--在线报修-->
 			<div class="house_change">
 				<h1 class="house_tit">在线报修</h1>
-				<ul id="online" class="online_bx">
-					<li>
+				<ul class="online_bx">
+					<li id="online1">
 						<span>门窗维修</span>
 						<span></span>
 					</li>
-					<li>
+					<li id="online2">
 						<span>灯具电路</span>
 						<span></span>
 					</li>
-					<li>
+					<li id="online3">
 						<span>空调制冷</span>
 						<span></span>
 					</li>
-					<li>
+					<li  id="online4">
 						<span>水路管件</span>
 						<span></span>
 					</li>
@@ -155,11 +155,29 @@
 				id:'forms_kjcmt',  //需要打开页面的url页面id
 			})
 		});
-		//物业对接
-		$('#online li').click(function(){
+		//在线报修
+		$('#online1').click(function(){//门窗报修
 			mui.openWindow({ 
 				url:'./forms_zxbx.html', //需要打开页面的url地址 
 				id:'forms_zxbx',  //需要打开页面的url页面id
+			})
+		});
+		$('#online2').click(function(){//灯具电路
+			mui.openWindow({ 
+				url:'./forms_zxbx1.html', //需要打开页面的url地址 
+				id:'forms_zxbx1',  //需要打开页面的url页面id
+			})
+		});
+		$('#online3').click(function(){//空调制冷
+			mui.openWindow({ 
+				url:'./forms_zxbx2.html', //需要打开页面的url地址 
+				id:'forms_zxbx2',  //需要打开页面的url页面id
+			})
+		});
+		$('#online4').click(function(){//水路管件
+			mui.openWindow({ 
+				url:'./forms_zxbx3.html', //需要打开页面的url地址 
+				id:'forms_zxbx3',  //需要打开页面的url页面id
 			})
 		});
 	</script>

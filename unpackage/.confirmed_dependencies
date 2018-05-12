@@ -129,7 +129,10 @@
 			"page/room_change.html",
 			"page/room_tz.html",
 			"page/forms_kjcmt.html",
-			"page/forms_zxbx.html"
+			"page/forms_zxbx.html",
+			"page/forms_zxbx1.html",
+			"page/forms_zxbx2.html",
+			"page/forms_zxbx3.html"
 		]
 	},
 	"page/forms_zxbx.html": {
