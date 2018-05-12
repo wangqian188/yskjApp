@@ -127,37 +127,81 @@
 			function popdown(){
 				dtpicker.show(function(e) {});
 			}
-			
 			//目标区域的弹出框
 			var picker = new mui.PopPicker({
 			    layer: 2
 			});
-		    picker.setData([{
-		        value: '110000',
-		        text: '北京市',
-		        children: [{
-		                value: "110101",
-		                text: "东城区"
-		        }]
-		    }, {
-		        value: '120000',
-		        text: '天津市',
-		        children: [{
-			        value: "120101",
-		            text: "和平区"
-		        }, {
-		            value: "120102",
-		            text: "河东区"
-		        }, {
-		            value: "120104",
-		            text: "南开区"
-		        }
-		        ]
-		    }]);
+			//获取所有的区域
+			var qvyvData = [];
+			mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpcity.do',{
+				data:{},
+				dataType:'json',
+				type:'post',
+				timeout:10000,
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					if(data.success){
+						var xzqyData = data.data.xzqy;
+						alert(11111);
+						alert(JSON.stringify(xzqyData));
+						for(var i=0;i<xzqyData.length;i++){
+							var obj = {};
+							for(var j in xzqyData[i]){
+								
+								if(j == 'fdname'){
+									obj.text = xzqyData[i][j];
+									obj.children = [];
+								}
+							}
+							qvyvData.push(obj);
+						}
+						picker.setData(qvyvData);
+						alert(JSON.stringify(qvyvData));
+					}else{
+						
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					console.log(type);
+				}
+			});
+			alert(JSON.stringify(qvyvData));
+			//获取所有的商圈
+//			mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
+//				data:{
+//					"parameters":{
+//						"district":id
+//					},
+//					"foreEndType":2,
+//					"code":"300000010"
+//				},
+//				dataType:'json',
+//				type:'post',
+//				timeout:10000,
+//				headers:{'Content-Type':'application/json'},       
+//				success:function(data){
+//					if(data.success){
+//						var xzqy_Data = data.data.xzfq;
+//						for (var i=0; i<xzqy_Data.length; i++) {
+//							xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].fdcode+','+i+',this)">'+xzqy_Data[i].fdname+'</li>';
+//							$('#sel3').append(xzqy_str);
+//						}
+//					}else{
+//						
+//					}
+//				},
+//				error:function(xhr,type,errorThrown){
+//					console.log(type);
+//				}
+//			});
+			
+		   
 			picker.pickers[0].setSelectedIndex(1);
 			picker.pickers[1].setSelectedIndex(1);
 			function target_area(){
 				picker.show(function(SelectedItem) {});
+				var sss = picker.getSelectedItems();
+				alert(JSON.stringify(sss));
 			}
 		</script>
 	</body>
