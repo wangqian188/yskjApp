@@ -152,6 +152,10 @@ $('.wt_btn').click(function(){
 function yz_house_wt(){
 	var code = $('#hqyzm').val();
 	house_ms = $('#house_ms').val();
+	var user_name = $('#user_name').val();
+	var tel = $('#tel').val();
+	var house_news = $('#house_news').val();
+	var qynx = $('#qynx').val();
 	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
 		data:{
 			'code':code,
@@ -164,12 +168,14 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				mui.ajax(url + '/yskjApp/webApp/dataInfo/ownerEntrust.do',{
+				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do?',{
 					data:{
-						'name': user_name,
-						'phone': telnumber,
-						'repairHouse': house_news,
-						'memo': house_ms
+						"type":"5",
+						"category":"BGXZ",
+						"name":user_name,
+						"phone":tel,
+						"renewalYears":qynx,//签约年限
+						"repairHouse":house_news
 					},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型
@@ -178,7 +184,7 @@ function yz_house_wt(){
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							mui.toast('委托成功，我们将会与您联系',{ duration:2000, type:'div' });
+							mui.toast('已提交成功，我们将会与您联系',{ duration:2000, type:'div' });
 							setTimeout(function(){
 								mui.back();								
 							},1000);
