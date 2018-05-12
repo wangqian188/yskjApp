@@ -16,6 +16,9 @@
 		<script src="../mypic/binaryajax.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../mypic/exif.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../mypic/canvasResize.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.dtpicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.picker.min.css"/>
+		<script src="../js/mui.picker.min.js"></script>
 	</head>
 	<style type="text/css">
 		.right_xz{
@@ -77,7 +80,7 @@
 		    <div class="wt_fwxx fwxx">
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>房屋信息</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择楼盘名称及所在区域" id="house_news">
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择楼盘名称及所在区域" id="house_news" readonly onclick="fw_news()">
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    </div>
@@ -138,6 +141,71 @@
 	            }  
 	        });  
 	  });  
+	  var arr = [];//全局数组
+	  var picker = new mui.PopPicker({
+		layer: 1
+	  });
+	  //根据用户id查询当前登陆用户
+	  function cx_fwnews(id){
+		  mui.ajax(url + '/yskjApp/webApp/dataInfo/getHouseCompanyById',{
+				data:{
+					'id': id
+				},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+					if(data.success){
+						var alldata = data.data;//
+						for (var i = 0; i < alldata.length; i++) {
+							var obj = {};
+							var str = '';
+							var str1 = '';
+							var str2 = '';
+							var str3 = '';
+							for(var j in alldata[i]){
+								if(j == 'lpname'){//楼盘名字
+									str1 = alldata[i][j];
+								}
+								if(j == 'zdname'){//座栋
+									str2 = ' ' + alldata[i][j];
+								}
+								if(j == 'fyname'){//房间号
+									str3 = '-' + alldata[i][j];
+								}
+							}
+							str = str1 + str2 + str3;
+							obj.text = str;
+//							obj.value = i;
+							arr.push(obj);
+						}
+					    picker.setData(arr);
+						picker.pickers[0].setSelectedIndex(0);
+						$('#house_news').val(str);
+					}else{
+						mui.alert(data.message);
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					//异常处理；
+					console.log(type);
+				}
+			});
+	  }
+	  if(localStorage.getItem('user_id')){
+	  	var user_id = localStorage.getItem('user_id');
+	  	cx_fwnews(user_id);
+	  }
+
+		//目标区域的弹出框选择
+		function fw_news(){
+			picker.show(function(SelectedItem) {
+				var sel_val = picker.getSelectedItems();
+				$('#house_news').val(sel_val[0].text);
+			});
+		}
 	</script>
 	<script src="../js/lib/upload_pic.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/lib/zxbx3.js" type="text/javascript" charset="utf-8"></script>
