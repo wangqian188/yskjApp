@@ -95,9 +95,9 @@
 						$('.gunajia_bottom a').attr('href','tel:'+data.phone);
 						if(data.pic.indexOf(';')){
 							var array = data.pic.split(';');
-							$('.guaj_img img').attr('src',array[0]);
+							$('.guaj_img img').attr('src',img_url + array[0]);
 						}else{
-							$('.guaj_img img').attr('src',data.pic);
+							$('.guaj_img img').attr('src',img_url + data.pic);
 						}
 					}else{
 //						mui.alert(data.message+'请点击屏幕下方"快速注册"进行注册', '提示', function(){});

@@ -104,5 +104,12 @@
 		</div>
 		<script src="../js/lib/app_config.js"></script>
 		<!--<script src="../js/lib/relet_xz.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+		    var dtPicker = new mui.DtPicker(); 
+		    dtPicker.show(function (selectItems) { 
+		        console.log(selectItems.y);//{text: "2016",value: 2016} 
+		        console.log(selectItems.m);//{text: "05",value: "05"} 
+		    });
+		</script>
 	</body>
 </html>

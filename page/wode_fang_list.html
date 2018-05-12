@@ -530,27 +530,15 @@
 				console.log(fjzt);
 				console.log(zc);
 //				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
-				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getAppLbFyxx.do',{
+				mui.ajax(Interface_url + '/yhcms/web/collecthouse/getAppMyHouse.do',{
 				data:{
-					"parameters":
-						{
-							"search_keywork":search,
-							"district":"",
-							"business":"",
-							"district1":district,
-							"business1":fdcode,
-							"line_id":lineid,
-							"station_id":station,
-							"area":area,
-							"price_dj":price_dj,
-							"label":"",
-							"chqxz":chqxz,
-							"orderby":jiagesanshu,
-							"curr_page":xial,
-							"zc":zc,
-							"fjzt":fjzt,
-							"items_perpage":10
-						},"foreEndType":2,"code":"30000001"},
+					"parameters":{
+						"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
+						"search_keywork":"",
+						"curr_page":"",
+						"items_perpage":"",
+						"sid":""
+					},"foreEndType":2,"code":"16"},
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型
 				timeout:10000,//超时时间设置为10秒；
@@ -593,37 +581,47 @@
 							xial++;
 							var data = data.data;
 							var string = '';//
+							alert(data[i].id);
 							for(var i=0;i<data.length;i++){
+								var datime = [];
+								if(data[i].nxtime == ''){
+									var now = new Date();
+									datime[0] = now.getFullYear();
+									datime[1] = now.getMonth()+1;
+									datime[2] = now.getDate();
+								}else{
+									datime = data[i].nxtime.split("-");
+								}
 								if(data[i].cloudscape == ''){
 									if(data[i].decoration_level == ''){
 										if(data[i].djbsh == 1){
 											
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">2018年3月6日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">2018年3月6日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}
 		
 									}else{
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">2018年3月6日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">2018年3月6日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}
 		
 									}
 								}else{
 									if(data[i].decoration_level == ''){
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">2018年3月6日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">2018年3月6日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}
 		
 									}else{
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">2018年3月6日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">2018年3月6日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}
 		
 									}
@@ -866,10 +864,10 @@
 			});
 			
 			mui("#ulId").on("tap","li",function(){
-				
+				alert(this.id);
 			    // 逻辑代码，例如跳转详情页、ajax
 			 	mui.openWindow({ 
-					url:'page/fyTail.html', //需要打开页面的url地址 
+					url:'fyTail.html', //需要打开页面的url地址 
 					id:'fyTail',  //需要打开页面的url页面id
 					styles:{ 
 						top:'0px',//新页面顶部位置 
