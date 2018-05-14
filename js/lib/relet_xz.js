@@ -2,7 +2,73 @@ var user_name = '';//用户姓名
 var telnumber = '';//手机号
 var yzm = '';//验证码
 var house_news = '';//房屋信息
-var house_ms = '';//房屋描述
+var house_year = '';//签约年限
+var arr = [];//全局数组
+  var picker = new mui.PopPicker({
+	layer: 1
+  });
+  //根据用户id查询当前登陆用户
+  function cx_fwnews(id){
+	  mui.ajax(url + '/yskjApp/webApp/dataInfo/getHouseCompanyById',{
+			data:{
+				'id': id
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'post',//HTTP请求类型
+			timeout:10000,//超时时间设置为10秒；
+			headers:{'Content-Type':'application/json'},	              
+			success:function(data){
+				//服务器返回响应，根据响应结果，分析是否登录成功；
+				if(data.success){
+					var alldata = data.data;//
+					for (var i = 0; i < alldata.length; i++) {
+						var obj = {};
+						var str = '';
+						var str1 = '';
+						var str2 = '';
+						var str3 = '';
+						for(var j in alldata[i]){
+							if(j == 'lpname'){//楼盘名字
+								str1 = alldata[i][j];
+							}
+							if(j == 'zdname'){//座栋
+								str2 = ' ' + alldata[i][j];
+							}
+							if(j == 'fyname'){//房间号
+								str3 = '-' + alldata[i][j];
+							}
+						}
+						str = str1 + str2 + str3;
+						obj.text = str;
+//							obj.value = i;
+						arr.push(obj);
+					}
+				    picker.setData(arr);
+					picker.pickers[0].setSelectedIndex(0);
+					$('#house_news').val(str);
+					house_news = str;
+				}else{
+//						mui.alert(data.message);
+				}
+			},
+			error:function(xhr,type,errorThrown){
+				//异常处理；
+				console.log(type);
+			}
+		});
+  }
+if(localStorage.getItem('user_id')){
+	var user_id = localStorage.getItem('user_id');
+  	cx_fwnews(user_id);
+  }
+
+//目标区域的弹出框选择
+function fw_news(){
+	picker.show(function(SelectedItem) {
+		var sel_val = picker.getSelectedItems();
+		$('#house_news').val(sel_val[0].text);
+	});
+}
 //用户姓名输入
 document.getElementById("user_name").addEventListener('input',function(){
 	if(this.value != ''){
@@ -23,6 +89,17 @@ document.getElementById("house_news").addEventListener('input',function(){
 		btnzt();
 	}
 });
+//签约年限信息输入
+document.getElementById("qynx").addEventListener('input',function(){
+	if(this.value != ''){
+		house_year = this.value;
+		btnzt();
+	}else{
+		house_year = '';
+		btnzt();
+	}
+});
+
 //验证码登陆时判断及交互
 //手机号输入
 document.getElementById("tel").addEventListener('input',function(){
@@ -48,7 +125,7 @@ document.getElementById("hqyzm").addEventListener('input',function(){
 });
 //提交按钮样式变换
 function btnzt(){
-	if(telnumber != '' && yzm != '' && user_name != '' && house_news != ''){
+	if(telnumber != '' && yzm != '' && user_name != '' && house_news != '' && house_year != ''){
 		$('.btn').css({'background':'#2b70d8'});
 	}else{
 		$('.btn').css({'background':'#d2d2d2'});
@@ -146,16 +223,17 @@ $('.wt_btn').click(function(){
 		mui.alert('房屋信息不能为空', '提示', function(){},'div');
 		return;
 	}
+	if(house_year==''){
+		mui.alert('签约年限不能为空', '提示', function(){},'div');
+		return;
+	}
 	yz_house_wt();
 });
 //验证并委托方法
 function yz_house_wt(){
 	var code = $('#hqyzm').val();
-	house_ms = $('#house_ms').val();
 	var user_name = $('#user_name').val();
 	var tel = $('#tel').val();
-	var house_news = $('#house_news').val();
-	var qynx = $('#qynx').val();
 	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
 		data:{
 			'code':code,
@@ -168,13 +246,13 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do?',{
+				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do',{
 					data:{
 						"type":"5",
 						"category":"BGXZ",
 						"name":user_name,
 						"phone":tel,
-						"renewalYears":qynx,//签约年限
+						"renewalYears":house_year,//签约年限
 						"repairHouse":house_news
 					},
 					dataType:'json',//服务器返回json格式数据
@@ -184,7 +262,7 @@ function yz_house_wt(){
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							mui.toast('已提交成功，我们将会与您联系',{ duration:2000, type:'div' });
+							mui.toast('已成功提交，我们将会尽快处理',{ duration:2000, type:'div' });
 							setTimeout(function(){
 								mui.back();								
 							},1000);

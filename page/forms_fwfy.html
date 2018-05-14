@@ -13,20 +13,40 @@
 		<link rel="stylesheet" type="text/css" href="../css/wt_house.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/relet_xz.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.dtpicker.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.picker.min.css"/>
 		<script src="../js/mui.picker.min.js"></script>
 	</head>
+	<style type="text/css">
+		.right_xz{
+			position: absolute;
+			top: 50%;
+			margin-top: -0.213333rem;
+			right: 0.4rem;
+			color: #bbbbbb;
+		}
+		/*取消输入框右侧圆圈清除按钮*/
+		.fwxx .mui-input-row .mui-input-clear~.mui-icon-clear,.qynx .mui-input-row .mui-input-clear~.mui-icon-clear{
+			display: none!important;
+		}
+	</style>
 
 	<body>
 		<header class="mui-bar mui-bar-nav wd-header_p ipx_public_h1">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left a_d"></a>
-		    <h1 class="mui-title">我要续租</h1>
+		    <h1 class="mui-title" id="fwfy_title"></h1>
 		</header>
 		<div class="mui-content sy_ipx_content" style="bottom: 0;background: #f0f0f0;overflow: auto;">
 		    <div class="wt_ms">
 		    	<p>请留下您的房屋基本信息与联系方式，我们会及时与您联系，为您提供专属服务。</p>
+		    </div>
+		    <!--房屋信息-->
+		    <div class="wt_fwxx fwxx">
+		    	<div class="mui-input-row wt_inpsty">
+		    	    <label>房屋信息</label>
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入楼盘名称及所在区域" id="house_news" readonly onclick="fw_news()">
+		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
+		    	</div>
 		    </div>
 		    <!--基本信息表单-->
 		    <div class="wt_jbxx">
@@ -44,23 +64,15 @@
 		    	    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="6"  id="hqyzm">
 		    	</div>
 		    </div>
-		    <!--房屋信息-->
-		    <div class="wt_fwxx fwxx">
-		    	<div class="mui-input-row wt_inpsty">
-		    	    <label>房屋信息</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择楼盘名称及所在区域" id="house_news" readonly onclick="fw_news()">
-		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
-		    	</div>
+		    
+		    <!--原因说明-->
+		    <div class="wt_fwms">
+		    	<p class="wt_fwms_bt">原因说明</p>
+		    	<p class="wt_texar">
+		    		<textarea name="" rows="" cols="" placeholder="请输入详细内容" id="house_ms"></textarea>
+		    		<span class="wt_texar_count"><i id="textareaCount">0</i>/200</span>
+		    	</p>
 		    </div>
-			<!--续签年限-->
-			<div class="wt_fwxx qynx">
-		    	<div class="mui-input-row wt_inpsty">
-		    	    <label>续签年限</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入续签年限" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" id="qynx">
-		    	    <span class="nx_qy">年</span>
-		    	</div>
-		    </div>
-			
 		    <!--底部-->
 		    <div class="wt_bottom">
 		    	<div class="wt_btnbox">
@@ -73,6 +85,41 @@
 		    </div>
 		</div>
 		<script src="../js/lib/app_config.js"></script>
-		<script src="../js/lib/relet_xz.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/fwfy_pub.js" type="text/javascript" charset="utf-8"></script>
 	</body>
+	<script>
+		$(function(){  
+			//控制文本域输入字数
+	        $('textarea').keyup(function(event) {  
+	            var maxLength = 200;  
+	            var len = $('textarea').val().length;  
+	            $('#textareaCount').html(len);  
+	            if(parseInt($('#textareaCount').text()) > 200){  
+	                $('#textareaCount').html('200');  
+	                var res = $(this).val().substring(0,200);  
+	                $(this).val(res);  
+	            }  
+	        });  
+	    });
+	    window.addEventListener("fwfy_to", function (e) {
+		    //获得事件参数
+		    var fwfy_idx = e.detail.fwfy_idx;
+			if(fwfy_idx == '0'){
+				$('#fwfy_title').text('物业费');
+				fwfy_type = 'FYWY'
+			}
+			if(fwfy_idx == '1'){
+				$('#fwfy_title').text('取暖费');
+				fwfy_type = 'FYQN'
+			}
+			if(fwfy_idx == '2'){
+				$('#fwfy_title').text('遗留水电费');
+				fwfy_type = 'FYSD'
+			}
+			if(fwfy_idx == '3'){
+				$('#fwfy_title').text('空调转换费');
+				fwfy_type = 'FYKT'
+			}
+		});
+	</script>
 </html>

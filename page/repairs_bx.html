@@ -37,7 +37,7 @@
 						<p></p>
 					</li>
 					<li id="tuifang">
-						<p>退房</p>
+						<p>退租</p>
 						<p></p>
 					</li>
 				</ul>
@@ -85,7 +85,7 @@
 			<!--房屋凭证-->
 			<div class="house_change">
 				<h1 class="house_tit">房屋凭证</h1>
-				<ul class="wy_docking zxbx_nav">
+				<ul class="wy_docking zxbx_nav" id="fwpz">
 					<li>
 						<p>大产权证</p>
 						<p></p>
@@ -103,7 +103,7 @@
 			<!--房屋费用-->
 			<div class="house_change">
 				<h1 class="house_tit">房屋费用</h1>
-				<ul class="online_bx fwdy_nav">
+				<ul class="online_bx fwdy_nav" id="fwfy">
 					<li>
 						<span>物业费</span>
 						<span></span>
@@ -148,13 +148,6 @@
 				id:'room_tz',  //需要打开页面的url页面id
 			})
 		});
-		//物业对接
-		$('#wydj li').click(function(){
-			mui.openWindow({ 
-				url:'./forms_kjcmt.html', //需要打开页面的url地址 
-				id:'forms_kjcmt',  //需要打开页面的url页面id
-			})
-		});
 		//在线报修
 		$('#online1').click(function(){//门窗报修
 			mui.openWindow({ 
@@ -180,5 +173,53 @@
 				id:'forms_zxbx3',  //需要打开页面的url页面id
 			})
 		});
+		//物业对接
+		var wydj = $('#wydj li');
+		for(var i=0; i<wydj.length; i++){
+			(function(idx){
+				wydj[i].onclick = function(){
+					mui.openWindow({ 
+						url:'./forms_kjcmt.html', //需要打开页面的url地址 
+						id:'forms_kjcmt',  //需要打开页面的url页面id
+					})
+					var main1 = plus.webview.getWebviewById('forms_kjcmt');
+					mui.fire(main1, "wydj_to",{
+					    wydj_idx:idx
+					})
+				}
+			})(i)
+		}
+		//房屋凭证
+		var fwpz = $('#fwpz li');
+		for(var i=0; i<fwpz.length; i++){
+			(function(idx){
+				fwpz[i].onclick = function(){
+					mui.openWindow({ 
+						url:'./forms_fwpz.html', //需要打开页面的url地址 
+						id:'forms_fwpz',  //需要打开页面的url页面id
+					})
+					var main1 = plus.webview.getWebviewById('forms_fwpz');
+					mui.fire(main1, "fwpz_to",{
+					    fwpz_idx:idx
+					})
+				}
+			})(i)
+		}
+		//房屋费用
+		var fwfy = $('#fwfy li');
+		for(var i=0; i<fwfy.length; i++){
+			(function(idx){
+				fwfy[i].onclick = function(){
+					mui.openWindow({ 
+						url:'./forms_fwfy.html', //需要打开页面的url地址 
+						id:'forms_fwfy',  //需要打开页面的url页面id
+					})
+					var main1 = plus.webview.getWebviewById('forms_fwfy');
+					mui.fire(main1, "fwfy_to",{
+					    fwfy_idx:idx
+					})
+				}
+			})(i)
+		}
 	</script>
 </html>

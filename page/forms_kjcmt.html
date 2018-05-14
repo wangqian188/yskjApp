@@ -13,6 +13,9 @@
 		<link rel="stylesheet" type="text/css" href="../css/wt_house.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.dtpicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.picker.min.css"/>
+		<script src="../js/mui.picker.min.js"></script>
 	</head>
 	<style type="text/css">
 		.right_xz{
@@ -31,7 +34,7 @@
 	<body>
 		<header class="mui-bar mui-bar-nav wd-header_p ipx_public_h1">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left a_d"></a>
-		    <h1 class="mui-title">开具出门条</h1>
+		    <h1 class="mui-title" id="wydj_title"></h1>
 		</header>
 		<div class="mui-content sy_ipx_content" style="bottom: 0;background: #f0f0f0;overflow: auto;">
 		    <div class="wt_ms">
@@ -41,7 +44,7 @@
 		    <div class="wt_fwxx fwxx">
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>房屋信息</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入楼盘名称及所在区域" id="house_news">
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入楼盘名称及所在区域" id="house_news" readonly onclick="fw_news()">
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    </div>
@@ -82,7 +85,7 @@
 		    </div>
 		</div>
 		<script src="../js/lib/app_config.js"></script>
-		<script src="../js/lib/room_tz.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/wydj_pub.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 	<script>
 		$(function(){  
@@ -97,6 +100,22 @@
 	                $(this).val(res);  
 	            }  
 	        });  
-	    });  
+	    });
+	    window.addEventListener("wydj_to", function (e) {
+		    //获得事件参数
+		    var wydj_idx = e.detail.wydj_idx;
+			if(wydj_idx == '0'){
+				$('#wydj_title').text('开具出门条');
+				wydj_type = 'WYCM';
+			}
+			if(wydj_idx == '1'){
+				$('#wydj_title').text('装修同意函');
+				wydj_type = 'WYZX';
+			}
+			if(wydj_idx == '2'){
+				$('#wydj_title').text('网络问题');
+				wydj_type = 'WYWL';
+			}
+		});
 	</script>
 </html>

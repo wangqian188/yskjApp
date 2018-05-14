@@ -2,8 +2,12 @@ var user_name = '';//用户姓名
 var telnumber = '';//手机号
 var yzm = '';//验证码
 var house_news = '';//现租房源
-var house_ms = '';//退租理由
-var house_date = '';//退租时间
+var to_area = '';//目标区域
+var to_lp = '';//目标楼盘
+var to_mj = '';//目标面积
+var house_year = '';//租金预算
+var house_date = '';//换房时间
+var to_zc = '';//是否注册
 var arr = [];//全局数组
   var picker = new mui.PopPicker({
 	layer: 1
@@ -115,7 +119,7 @@ document.getElementById("hqyzm").addEventListener('input',function(){
 });
 //提交按钮样式变换
 function btnzt(){
-	if(telnumber != '' && yzm != '' && user_name != '' && house_news != '' && house_date != ''){
+	if(telnumber != '' && yzm != '' && user_name != '' && house_news != ''){
 		$('.btn').css({'background':'#2b70d8'});
 	}else{
 		$('.btn').css({'background':'#d2d2d2'});
@@ -210,11 +214,7 @@ $('.wt_btn').click(function(){
 		return;
 	}
 	if(house_news==''){
-		mui.alert('请选择现租房源', '提示', function(){},'div');
-		return;
-	}
-	if(house_date==''){
-		mui.alert('请选择退租时间', '提示', function(){},'div');
+		mui.alert('现租房源不能为空', '提示', function(){},'div');
 		return;
 	}
 	yz_house_wt();
@@ -222,7 +222,15 @@ $('.wt_btn').click(function(){
 //验证并委托方法
 function yz_house_wt(){
 	var code = $('#hqyzm').val();
-	house_ms = $('#house_ms').val();
+	var user_name = $('#user_name').val();
+	var tel = $('#tel').val();
+	to_lp = $('#to_lp').val();//目标楼盘
+	to_mj = $('#to_mj').val();//目标面积
+	house_year = $('#qynx').val();//租金预算
+//	alert(to_lp + '楼盘');
+//	alert(to_mj + '面积');
+//	alert(house_year + '预算');
+//	alert(house_date + '时间');
 	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
 		data:{
 			'code':code,
@@ -235,20 +243,19 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				alert(user_name)
-				alert(telnumber)
-				alert(house_ms)
-				alert(house_news)
-				alert(house_date)
 				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do',{
 					data:{
-						'type': '5',
-						'category': 'BGTZ',
-						'name': user_name,
-						'phone': telnumber,
-						'memo': house_ms,
-						"repairHouse":house_news,
-						'changeTime': house_date + ' 00:00:00'
+						"type":"5",
+						"category":"BGHZ",
+						"name":user_name,
+						"phone":tel,
+						"changArea": to_area,//目标区域
+						"changeLouPan": to_lp,//目标楼盘
+						"changeMJ": to_mj,//改换面积
+						"changeZuJin":house_year,//租金预算
+						"changeTime": house_date + ' 00:00:00',//换租时间
+						"isZhuce": to_zc,//是否注册
+						"repairHouse":house_news
 					},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型
@@ -257,7 +264,7 @@ function yz_house_wt(){
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							mui.toast('提交成功，我们将会尽快为您处理',{ duration:2000, type:'div' });
+							mui.toast('已成功提交，我们将会尽快处理',{ duration:2000, type:'div' });
 							setTimeout(function(){
 								mui.back();								
 							},1000);

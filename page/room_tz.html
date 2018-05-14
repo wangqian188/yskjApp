@@ -13,6 +13,9 @@
 		<link rel="stylesheet" type="text/css" href="../css/wt_house.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.dtpicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.picker.min.css"/>
+		<script src="../js/mui.picker.min.js"></script>
 	</head>
 	<style type="text/css">
 		.right_xz{
@@ -57,14 +60,14 @@
 		    <div class="wt_fwxx fwxx">
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>现租房源</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入楼盘名称及所在区域" id="house_news">
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择楼盘名称及所在区域" id="house_news" readonly onclick="fw_news()">
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    </div>
 		    <div class="wt_fwxx fwxx">
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>退租时间</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择预计退租时间" id="house_news">
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择预计退租时间" id="house_date" readonly onclick="popdown()">
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    </div>
@@ -104,5 +107,22 @@
 	            }  
 	        });  
 	    });  
+	    //处理弹出的时间日期框
+		var tatadatayear = new Date().getFullYear()-20;
+		var datayear = new Date().getFullYear()+50;
+	    var dtpicker = new mui.DtPicker({
+		    type: "date",//设置日历初始视图模式 
+		    beginDate: new Date(tatadatayear,01,01),//设置开始日期 
+		    endDate: new Date(datayear, 01, 01),//设置结束日期 
+		    labels: ['', '', '', '', ''],//设置默认标签区域提示语 
+		});
+		//日期的弹出框
+		function popdown(){
+			dtpicker.show(function(e) {
+				house_date = e;
+				$('#house_date').val(e);//显示
+				btnzt();
+			});
+		}
 	</script>
 </html>

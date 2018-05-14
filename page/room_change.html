@@ -18,7 +18,56 @@
 		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.dtpicker.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.picker.min.css"/>
 	</head>
-	
+	<style>
+		#area_zzc{
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: rgba(0,0,0,0.3);
+			display: none;
+		}
+		#area_xz{
+			position: fixed;
+			bottom: -5.333333rem;
+			left: 0;
+			right: 0;
+			height: 5.333333rem;
+			background: #fff;
+		}
+		.aerabtn_box{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 1.066666rem;
+			border-bottom: 1px solid #eeeeee;
+			padding: 0 0.266666rem;
+			font-size: 0.4rem;
+			color: #3c90ef;
+		}
+		.area_qybox{
+			display: flex;
+		}
+		.area_qybox p{
+			display: inline-block;
+			width: 50%;
+			height: 4.266666rem;
+			overflow: auto;
+		}
+		.area_qybox p span{
+			display: inline-block;
+			width: 100%;
+			height: 1.066666rem;
+			line-height: 1.066666rem;
+			font-size: 0.373333rem;
+			text-align: center;
+			color: #2d2d2d;
+		}
+		.area_qybox p span:nth-child(1){
+			color: #3c90ef;
+		}
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav wd-header_p ipx_public_h1">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left a_d"></a>
@@ -48,7 +97,7 @@
 		    <div class="wt_fwxx fwxx">
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>现租房源</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择楼盘名称及所在区域" id="house_news">
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择楼盘名称及所在区域" id="house_news" readonly onclick="fw_news()">
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    </div>
@@ -56,26 +105,26 @@
 		    <div class="wt_jbxx">
 		    	<div class="mui-input-row wt_inpsty" onclick="target_area()">
 		    	    <label>目标区域</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择换房目标区域" readonly="readonly">
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择换房目标区域" readonly="readonly" id="to_area">
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>目标楼盘</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入换房目标楼盘">
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入换房目标楼盘" id="to_lp">
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty mbmj">
 		    	    <label>目标面积</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入换房目标面积">
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入换房目标面积" id="to_mj">
 		    	    <span class="input_right">m²</span>
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty zjys">
 		    	    <label>租金预算</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入换房租金预算">
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入换房租金预算" id="qynx">
 		    	    <span class="input_right">元/月</span>
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty" onclick="popdown()">
 		    	    <label>换房时间</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择换房时间" readonly="readonly">
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择换房时间" readonly="readonly" id="house_date">
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    </div>
@@ -84,11 +133,11 @@
 		    	<div class="is_zhuce">是否需要注册</div>
 		    	<div class="mui-input-row mui-radio mui-left danxuan_zc">
 		    	    <label>是</label>
-		    	    <input name="radio" type="radio" checked>
+		    	    <input name="radio" type="radio" checked  onclick="is_zc('1')">
 		    	</div>
 		    	<div class="mui-input-row mui-radio mui-left danxuan_zc">
 		    	    <label>否</label>
-		    	    <input name="radio" type="radio" checked>
+		    	    <input name="radio" type="radio" checked  onclick="is_zc('2')">
 		    	</div>
 		    </div>
 		    
@@ -103,10 +152,24 @@
 		    		<p class="wt_tel"><a href="tel:400-078-8800" class="a_d">400-078-8800</a></p>
 		    	</div>
 		    </div>
+		    <!--区域选择-->
+		    <div id="area_zzc" onclick="on_zzc()">
+		    <!--遮罩层-->
+			    <div id="area_xz" onclick="on_pre(event)">
+			    	<p class="aerabtn_box">
+			    		<span id="area_qx">取消</span>
+			    		<span id="area_qd">确定</span>
+			    	</p>
+			    	<div class="area_qybox">
+			    		<p class="area_left"></p>
+			    		<p class="area_right"></p>
+			    	</div>
+			    </div>
+		    </div>
 		</div>
 		<script src="../js/lib/app_config.js"></script>
 		<script src="../js/mui.picker.min.js"></script>
-		<!--<script src="../js/lib/relet_xz.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../js/lib/room_change.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			//处理弹出的时间日期框
 			var tatadatayear = new Date().getFullYear()-20;
@@ -116,23 +179,15 @@
 			    beginDate: new Date(tatadatayear,01,01),//设置开始日期 
 			    endDate: new Date(datayear, 01, 01),//设置结束日期 
 			    labels: ['', '', '', '', ''],//设置默认标签区域提示语 
-//			    customData: { 
-//			        h: [
-//			            { value: 'AM', text: 'AM' },
-//			            { value: 'PM', text: 'PM' }
-//			        ] 
-//			    }//时间/日期别名 
 			});
 			//日期的弹出框
 			function popdown(){
-				dtpicker.show(function(e) {});
+				dtpicker.show(function(e) {
+					house_date = e;
+					$('#house_date').val(house_date);
+				});
 			}
-			//目标区域的弹出框
-			var picker = new mui.PopPicker({
-			    layer: 2
-			});
 			//获取所有的区域
-			var qvyvData = [];
 			mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpcity.do',{
 				data:{},
 				dataType:'json',
@@ -142,21 +197,12 @@
 				success:function(data){
 					if(data.success){
 						var xzqyData = data.data.xzqy;
-						alert(11111);
-						alert(JSON.stringify(xzqyData));
-						for(var i=0;i<xzqyData.length;i++){
-							var obj = {};
-							for(var j in xzqyData[i]){
-								
-								if(j == 'fdname'){
-									obj.text = xzqyData[i][j];
-									obj.children = [];
-								}
-							}
-							qvyvData.push(obj);
+						var area_leftstr = '';
+						for (var i=0; i<xzqyData.length; i++) {
+							area_leftstr += '<span id="'+xzqyData[i].fdcode+'" onclick="clk('+xzqyData[i].fdcode+','+i+')">'+xzqyData[i].fdname+'</span>';
 						}
-						picker.setData(qvyvData);
-						alert(JSON.stringify(qvyvData));
+						$('.area_left').html(area_leftstr);
+						all_sq('110101');//默认执行东城区
 					}else{
 						
 					}
@@ -165,43 +211,80 @@
 					console.log(type);
 				}
 			});
-			alert(JSON.stringify(qvyvData));
 			//获取所有的商圈
-//			mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
-//				data:{
-//					"parameters":{
-//						"district":id
-//					},
-//					"foreEndType":2,
-//					"code":"300000010"
-//				},
-//				dataType:'json',
-//				type:'post',
-//				timeout:10000,
-//				headers:{'Content-Type':'application/json'},       
-//				success:function(data){
-//					if(data.success){
-//						var xzqy_Data = data.data.xzfq;
-//						for (var i=0; i<xzqy_Data.length; i++) {
-//							xzqy_str = '<li onclick="clk_xz2('+xzqy_Data[i].fdcode+','+i+',this)">'+xzqy_Data[i].fdname+'</li>';
-//							$('#sel3').append(xzqy_str);
-//						}
-//					}else{
-//						
-//					}
-//				},
-//				error:function(xhr,type,errorThrown){
-//					console.log(type);
-//				}
-//			});
-			
-		   
-			picker.pickers[0].setSelectedIndex(1);
-			picker.pickers[1].setSelectedIndex(1);
-			function target_area(){
-				picker.show(function(SelectedItem) {});
-				var sss = picker.getSelectedItems();
-				alert(JSON.stringify(sss));
+			function all_sq(id){
+				mui.ajax(Interface_url + '/yhcms/web/lpjbxx/getLpXzqyFq.do',{
+					data:{
+						"parameters":{
+							"district":id
+						},
+						"foreEndType":2,
+						"code":"300000010"
+					},
+					dataType:'json',
+					type:'post',
+					timeout:10000,
+					headers:{'Content-Type':'application/json'},       
+					success:function(data){
+						if(data.success){
+							var xzqy_Data = data.data.xzfq;
+							var xzqy_str = '';
+							for (var i=0; i<xzqy_Data.length; i++) {
+								xzqy_str += '<span onclick="clk2('+xzqy_Data[i].fdcode+','+i+')">'+xzqy_Data[i].fdname+'</span>';
+							}
+							$('.area_right').html(xzqy_str);
+						}else{
+						
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						console.log(type);
+					}
+				});
+			}
+			function target_area(){//点击区域选择弹出选择框
+				$('#area_zzc').css('display','block');
+				$('#area_xz').animate({
+					'bottom':'0'
+				},'fast')
+			}
+			function on_zzc(){//点击遮罩隐藏
+				$('#area_zzc').css('display','none');
+				$('#area_xz').css('bottom','-5.333333rem');
+			}
+			function on_pre(){//阻止冒泡
+				event.stopPropagation();
+				return false;
+			}
+			var index1 = 0;
+			var index2 = 0;
+			function clk(fdcode,idx){
+//				alert(idx);
+				index1 = idx;
+				index2 = 0;
+				$('.area_left span').css('color','#2d2d2d');
+				$('.area_left span').eq(idx).css('color','#3c90ef');
+				all_sq(fdcode);
+			}
+			function clk2(fdcode,idx){
+//				alert(idx);
+				index2 = idx;
+				$('.area_right span').css('color','#2d2d2d');
+				$('.area_right span').eq(idx).css('color','#3c90ef');
+			}
+			$('#area_qx').click(function(){
+				$('#area_zzc').css('display','none');
+				$('#area_xz').css('bottom','-5.333333rem');
+			});
+			$('#area_qd').click(function(){
+				to_area = $('.area_left span').eq(index1).text() + '  ';
+				to_area += $('.area_right span').eq(index2).text();
+				$('#to_area').val(to_area);
+				$('#area_zzc').css('display','none');
+				$('#area_xz').css('bottom','-5.333333rem');
+			});
+			function is_zc(zcid){//是否注册   1是   2不限
+				to_zc = zcid;
 			}
 		</script>
 	</body>

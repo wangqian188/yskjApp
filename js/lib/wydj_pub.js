@@ -1,14 +1,14 @@
 var user_name = '';//用户姓名
 var telnumber = '';//手机号
 var yzm = '';//验证码
-var house_news = '';//现租房源
-var house_ms = '';//退租理由
-var house_date = '';//退租时间
+var house_news = '';//房屋信息
+var house_ms = '';//房屋描述
+var wydj_type = '';//物业对接类型
 var arr = [];//全局数组
   var picker = new mui.PopPicker({
 	layer: 1
   });
-  //根据用户id查询当前登陆用户
+  //根据用户id查询当前登陆用户  查询用户房屋信息
   function cx_fwnews(id){
 	  mui.ajax(url + '/yskjApp/webApp/dataInfo/getHouseCompanyById',{
 			data:{
@@ -61,8 +61,7 @@ var arr = [];//全局数组
 if(localStorage.getItem('user_id')){
 	var user_id = localStorage.getItem('user_id');
   	cx_fwnews(user_id);
-  }
-
+ }
 //目标区域的弹出框选择
 function fw_news(){
 	picker.show(function(SelectedItem) {
@@ -70,6 +69,7 @@ function fw_news(){
 		$('#house_news').val(sel_val[0].text);
 	});
 }
+
 //用户姓名输入
 document.getElementById("user_name").addEventListener('input',function(){
 	if(this.value != ''){
@@ -115,7 +115,7 @@ document.getElementById("hqyzm").addEventListener('input',function(){
 });
 //提交按钮样式变换
 function btnzt(){
-	if(telnumber != '' && yzm != '' && user_name != '' && house_news != '' && house_date != ''){
+	if(telnumber != '' && yzm != '' && user_name != '' && house_news != ''){
 		$('.btn').css({'background':'#2b70d8'});
 	}else{
 		$('.btn').css({'background':'#d2d2d2'});
@@ -197,25 +197,25 @@ function sendyzm(){
 }
 //委托房源提交
 $('.wt_btn').click(function(){
-	if(user_name==''){
-		mui.alert('姓名不能为空', '提示', function(){},'div');
+	if(user_name=='' && telnumber=='' && yzm=='' && house_news==''){
 		return;
-	}
-	if(telnumber==''){
-		mui.alert('手机号不能为空', '提示', function(){},'div');
-		return;
-	}
-	if(yzm==''){
-		mui.alert('验证码不能为空', '提示', function(){},'div');
-		return;
-	}
-	if(house_news==''){
-		mui.alert('请选择现租房源', '提示', function(){},'div');
-		return;
-	}
-	if(house_date==''){
-		mui.alert('请选择退租时间', '提示', function(){},'div');
-		return;
+	}else{
+		if(user_name==''){
+			mui.alert('姓名不能为空', '提示', function(){},'div');
+			return;
+		}
+		if(telnumber==''){
+			mui.alert('手机号不能为空', '提示', function(){},'div');
+			return;
+		}
+		if(yzm==''){
+			mui.alert('验证码不能为空', '提示', function(){},'div');
+			return;
+		}
+		if(house_news==''){
+			mui.alert('房屋信息不能为空', '提示', function(){},'div');
+			return;
+		}
 	}
 	yz_house_wt();
 });
@@ -235,20 +235,14 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				alert(user_name)
-				alert(telnumber)
-				alert(house_ms)
-				alert(house_news)
-				alert(house_date)
-				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do',{
+				mui.ajax(url + '/yskjApp/webApp/dataInfo/butlerService.do',{
 					data:{
-						'type': '5',
-						'category': 'BGTZ',
+						'type': '2',
+						'category': wydj_type,
 						'name': user_name,
 						'phone': telnumber,
 						'memo': house_ms,
-						"repairHouse":house_news,
-						'changeTime': house_date + ' 00:00:00'
+						'repairHouse': house_news,
 					},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型
@@ -257,7 +251,7 @@ function yz_house_wt(){
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							mui.toast('提交成功，我们将会尽快为您处理',{ duration:2000, type:'div' });
+							mui.toast('提交成功，我们将会尽快处理',{ duration:2000, type:'div' });
 							setTimeout(function(){
 								mui.back();								
 							},1000);
