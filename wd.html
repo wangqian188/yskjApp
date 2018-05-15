@@ -35,11 +35,11 @@
 	    			<span class="wode_diyigewenzi">售后服务</span>
 	    		</p>
 	    		<p class="wode_inmg">
-	    			<span class="shebeiweixiu"></span>
-	    			<span class="shebeiweixiu"></span>
-	    			<span class="shebeiweixiu"></span>
-	    			<span class="shebeiweixiu"></span>
-	    			<span class="shebeiweixiu"></span>
+	    			<span id="1" class="shebeiweixiu hetong_img"></span>
+	    			<span id="2" class="shebeiweixiu zaixianshebei_img"></span>
+	    			<span id="3" class="shebeiweixiu wuye_img"></span>
+	    			<span id="4" class="shebeiweixiu fangwupingz_img"></span>
+	    			<span id="5" class="shebeiweixiu fangwu_img"></span>
 	    		</p>
 	    	</div>
 		    <ul class="wd_list">
@@ -386,9 +386,13 @@
         
         //售后服务的点击事件
         $('.shebeiweixiu').click(function(){
+        	var saleid = this.id;
         	mui.openWindow({
 			  url: './page/repairs_bx.html', 
-			  id:'repairs_bx'
+			  id:'repairs_bx',
+			  extras:{ 
+				 saleid:saleid,
+			  }
 			});
         });
 		</script>
