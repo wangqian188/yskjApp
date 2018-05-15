@@ -126,8 +126,24 @@ body{
 	height: 100%;
 	margin-right: 0.213333rem;
 }
-.shebeiweixiu{
-	background: url(../img/wode/ceshitu.png) no-repeat center;
+.hetong_img{
+	background: url(../img/wode/getong.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.zaixianshebei_img{
+	background: url(../img/wode/zaixian_img.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.wuye_img{
+	background: url(../img/wode/wuye_duijie.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.fangwupingz_img{
+	background: url(../img/wode/fangwu_pingzhjang.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.fangwu_img{
+	background: url(../img/wode/fangwu_fwiyoong.png) no-repeat center;
 	background-size: 100% 100%;
 }
 .wd_list li p{
