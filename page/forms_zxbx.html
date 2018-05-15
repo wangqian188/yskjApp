@@ -130,17 +130,17 @@
 	<script>
 		$(function(){  
 			//控制文本域输入字数
-	        $('textarea').keyup(function(event) {  
-	            var maxLength = 200;  
-	            var len = $('textarea').val().length;  
-	            $('#textareaCount').html(len);  
-	            if(parseInt($('#textareaCount').text()) > 200){  
-	                $('#textareaCount').html('200');  
-	                var res = $(this).val().substring(0,200);  
-	                $(this).val(res);  
-	            }  
-	        });  
-	  }); 
+		    $('textarea').keyup(function(event) {  
+		        var maxLength = 200;  
+		        var len = $('textarea').val().length;  
+		        $('#textareaCount').html(len);  
+		        if(parseInt($('#textareaCount').text()) > 200){  
+		            $('#textareaCount').html('200');  
+		            var res = $(this).val().substring(0,200);  
+		            $(this).val(res);  
+		        }  
+		    });  
+		}); 
 	  var arr = [];//全局数组
 	  var picker = new mui.PopPicker({
 		layer: 1
@@ -186,7 +186,7 @@
 						$('#house_news').val(str);
 						house_news = str;
 					}else{
-//						mui.alert(data.message);
+						mui.alert(data.message);
 					}
 				},
 				error:function(xhr,type,errorThrown){
