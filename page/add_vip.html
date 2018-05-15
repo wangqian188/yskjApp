@@ -20,14 +20,15 @@
 	</head>
 	<style type="text/css">
 		.showimg {
+			position: relative;
         	display: flex;
         	justify-content: flex-start;
         	flex-wrap: wrap;
             text-align: center;
         }
-        .add_img_btn{width: 2.053333rem;height: 2.053333rem;background: url(../img/repairs_pic/z_add.png)no-repeat center;background-size: 100% auto;margin: 0.133333rem 0.133333rem 0 0;}
+        .add_img_btn{position: absolute;top: 50%;margin-top: -1.026666rem;width: 2.053333rem;height: 2.053333rem;border:1px slid #c8c8c8;background: url(../img/repairs_pic/z_add.png)no-repeat center;background-size: 100% auto;}
 		.up_img_phnoto{border: 0px solid #c8c8c8 !important;}
-		.up_img{min-height: 3.2rem;height: auto;background-color: #ffffff;padding-left: 0.4rem;display: flex;padding-bottom: 0.4rem;justify-content: flex-start;flex-wrap: wrap;}
+		.up_img{min-height: 3.2rem;height: auto;background-color: #ffffff;display: flex;padding-bottom: 0.4rem;justify-content: flex-start;flex-wrap: wrap;}
 		.up_img_span{border: 1px solid #c8c8c8;display: flex;width: 2.053333rem;height: 2.053333rem;margin-top: 0.52rem;margin-right: 0.453333rem;}
 		.up_img_span span{display: flex;align-items: center;justify-content: center;width: 100%;font-size: 2rem;color: #c8c8c8;}
 		.del_pic{
@@ -47,6 +48,26 @@
 			color: #fff;
 			text-align: center;
 			transform: rotate(45deg);
+		}
+		.vip_tip{
+			padding: 0.4rem 0.4rem 0 0.213333rem;
+		}
+		.vip_tip h1{
+			font-size: 0.346666rem;
+			color: #666666;
+		}
+		.vip_tip p{
+			display: flex;
+			margin-top: 0.4rem;
+			font-size: 0.346666rem;
+			color: #999;
+			line-height: 0.533333rem;
+		}
+		.vip_tip p span{
+			display: inline-block;
+		}
+		.wt_btnbox{
+			margin: 0.866666rem auto 0;
 		}
 	</style>
 	<body>
@@ -98,23 +119,44 @@
 				    </div>
 		    	</div>
 		    </div>
-		    <!--房屋信息-->
-		    <div class="wt_fwxx fwxx">
+		    <!--行业信息-->
+		    <div class="wt_fwxx fwxx" style="min-height: 2rem;height: auto;">
 		    	<div class="mui-input-row wt_inpsty">
-		    	    <label>房屋信息</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择楼盘名称及所在区域" id="house_news" readonly onclick="fw_news()">
+		    	    <label>所属行业</label>
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择企业所属行业" id="house_news" readonly onclick="fw_news()">
+		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
+		    	</div>
+		    	<div class="mui-input-row wt_inpsty">
+		    	    <label>所在区域</label>
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择企业所在区域" id="add_area" readonly>
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    </div>
-			<!--续签年限-->
-			<div class="wt_fwxx qynx">
-		    	<div class="mui-input-row wt_inpsty">
-		    	    <label>续签年限</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入续签年限" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" id="qynx">
-		    	    <span class="nx_qy">年</span>
-		    	</div>
-		    </div>
-			
+			<!--经营范围-->
+			<div class="wt_fwms" style="border-bottom:0px solid red !important;padding-bottom: 0.666666rem;height: 4.666666rem;">
+		    	<p class="wt_fwms_bt">经营范围</p>
+		    	<p class="wt_texar" style="height: 2.866666rem;">
+		    		<textarea name="" rows="" cols="" placeholder="请输入经营范围" id="jyfw"></textarea>
+		    		<span class="wt_texar_count"><i id="textareaCount">0</i>/50</span>
+		    	</p>
+		   </div>
+			<!--企业简介-->
+			<div class="wt_fwms" style="border-bottom:0px solid red !important;padding-bottom: 0.666666rem;height: 5.466666rem;">
+		    	<p class="wt_fwms_bt">企业简介</p>
+		    	<p class="wt_texar" style="height: 3.733333rem">
+		    		<textarea name="" rows="" cols="" placeholder="请输入企业简介" id="qyjj"></textarea>
+		    		<span class="wt_texar_count"><i id="textareaCount1">0</i>/500</span>
+		    	</p>
+		   </div>
+		   <!--会员须知-->
+		   <div class="vip_tip">
+		   	<h1>会员须知</h1>
+		   	<p><span>1、</span><span>只有幼狮租户才可成为幼狮会员；</span></p>
+		   	<p><span>2、</span><span>企业互联平台旨在为所有幼狮客户提供产品、品牌、服务
+     与需求的对接及交流平台；</span></p>
+		   	<p><span>3、</span><span>申请加入会员则表示同意在幼狮空间平台上展示企业logo
+     及企业信息。</span></p>
+		   </div>
 		    <!--底部-->
 		    <div class="wt_bottom">
 		    	<div class="wt_btnbox">
@@ -128,5 +170,33 @@
 		</div>
 		<script src="../js/lib/app_config.js"></script>
 		<script src="../js/lib/relet_xz.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(){  
+				//控制文本域输入字数
+			    $('#jyfw').keyup(function(event) {  
+			        var maxLength = 50;  
+			        var len = $('#jyfw').val().length;  
+			        $('#textareaCount').html(len);  
+			        if(parseInt($('#textareaCount').text()) > 50){  
+			            $('#textareaCount').html('50');  
+			            var res = $(this).val().substring(0,50);  
+			            $(this).val(res);  
+			        }  
+			    });  
+			});
+			$(function(){  
+				//控制文本域输入字数
+			    $('#qyjj').keyup(function(event) {  
+			        var maxLength = 500;  
+			        var len = $('#qyjj').val().length;  
+			        $('#textareaCount1').html(len);  
+			        if(parseInt($('#textareaCount').text()) > 500){  
+			            $('#textareaCount1').html('500');  
+			            var res = $(this).val().substring(0,500);  
+			            $(this).val(res);  
+			        }  
+			    });  
+			});
+		</script>
 	</body>
 </html>
