@@ -23,6 +23,7 @@
 .wt_jbxx{
 	width: 10rem;
 	min-height: 4.453333rem;
+	height: auto;
 	border-bottom: 1px solid #e5e5e5;
 	border-top: 1px solid #e5e5e5;
 	margin-top: 0.266666rem;

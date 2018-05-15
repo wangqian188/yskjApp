@@ -16,7 +16,19 @@
 			a{
 				text-decoration: none;
 			}
-			
+			.add_vip{
+				position: absolute;
+				right: 0;
+				top: 4rem;
+				width: 1.706666rem;
+				height: 0.533333rem;
+				line-height: 0.533333rem;
+				background: url(img/qyhl/add_vip.png) no-repeat center;
+				background-size: 100% auto;
+				font-size: 0.346666rem;
+				color: #fff;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
@@ -24,7 +36,9 @@
 		    <h1 class="mui-title"></h1>
 		</header>
 		<div class="mui-content">
-			<div class="qiyehulimg"></div>
+			<div class="qiyehulimg">
+				<div class="add_vip">加入会员</div>
+			</div>
 		  	<div class="qiyehuler">
 			    <div class="huiyuanqyyi">
 			    	<span class="huiyueing"></span>
@@ -309,6 +323,13 @@
 						wobj3.reload(true);
 			    	},3000);
 			    }
+			});
+			//加入会员跳转
+			$('.add_vip').click(function(){
+				mui.openWindow({ 
+					url:'page/add_vip.html', //需要打开页面的url地址 
+					id:'add_vip',  //需要打开页面的url页面id
+				})				
 			});
 		</script>
 	</body>

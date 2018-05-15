@@ -165,5 +165,10 @@
 		"refer": [
 			"page/fast_zc.html"
 		]
+	},
+	"qyhl.html": {
+		"refer": [
+			"page/add_vip.html"
+		]
 	}
 }
