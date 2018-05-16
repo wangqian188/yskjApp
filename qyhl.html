@@ -110,7 +110,7 @@
 			    		<span class="huiyueing"></span>
 			    		<span class="huiyuanqiyr">会员企业</span>				    
 			    	</p>
-			    	<p>
+			    	<p id="more_qy">
 			    		<span>更多企业</span>
 			    		<span class="mui-icon mui-icon-arrowright"></span>
 			    	</p>
@@ -433,6 +433,13 @@
 				mui.openWindow({ 
 					url:'page/fb_need.html',
 					id:'fb_need',
+				})
+			});
+			//更多企业
+			$('#more_qy').click(function(){
+				mui.openWindow({ 
+					url:'page/more_qy.html',
+					id:'more_qy',
 				})
 			});
 		</script>

@@ -290,7 +290,8 @@
 		"refer": [
 			"page/add_vip.html",
 			"page/fb_ser.html",
-			"page/fb_need.html"
+			"page/fb_need.html",
+			"page/more_qy.html"
 		],
 		"resources": [
 			"img/tab_bg1.png",
