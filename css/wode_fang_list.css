@@ -1,8 +1,11 @@
 .wode_fyblank_display{
-	/*display: blank;*/
-	display: none;
+	display: blank;
 	background-color: #ffffff;
 	height: 100%;
+}
+.wode_fyblank_displaynone{
+	/*display: blank;*/
+	display: none;
 }
 .wode_fangneirong_display{
 	/*display: none;*/
@@ -47,7 +50,6 @@
 .release_date{
 	line-height: 0.893333rem;
 	height: 0.893333rem !important;
-	border-bottom: 1px solid #e5e5e5;
 }
 .release_date span{
 	color: #666666;
@@ -59,6 +61,7 @@
 	width: 10rem!important;
 	height: 0.266666rem !important;
 	border-bottom: 1px solid #e5e5e5 !important;
+	border-top: 1px solid #e5e5e5 !important;
 	background-color: #f0f0f0;
 	margin-bottom: 0.533333rem;
 	overflow: hidden;

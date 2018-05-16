@@ -46,7 +46,7 @@
 						</ul>
 					</div>
 					<!--在线报修-->
-					<div class="house_change">
+					<div class="house_change  online_sale">
 						<h1 class="house_tit">在线报修</h1>
 						<ul class="online_bx">
 							<li id="online1">
@@ -68,7 +68,7 @@
 						</ul>
 					</div>
 					<!--物业对接-->
-					<div class="house_change">
+					<div class="house_change wuye_duijie">
 						<h1 class="house_tit">物业对接</h1>
 						<ul class="wy_docking" id="wydj">
 							<li>
@@ -138,17 +138,19 @@
 			var self = plus.webview.currentWebview();
             var sale = self.saleid;
             if(sale == 1){
-            	
+            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,0);
             }else if(sale == 2){
-            	alert($('.house_change').offset().top);
-            	var topscr = 
-            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,-400,0);
+            	var online_sale_height = -$('.online_sale').offset().top + $('.house_tit').height();
+            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
             }else if(sale == 3){
-            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,-650,0);
+            	var online_sale_height = -$('.wuye_duijie').offset().top + $('.house_tit').height();
+            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
             }else if(sale == 4){
-            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,-750,0);
+            	var online_sale_height = -$('.wuye_duijie').offset().top;
+            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
             }else if(sale == 5){
-            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,-750,0);
+            	var online_sale_height = -$('.wuye_duijie').offset().top;
+            	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
             }
 		});
 		//续租
