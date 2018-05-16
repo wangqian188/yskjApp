@@ -101,21 +101,44 @@
 	            }  
 	        });  
 	    });
-	    window.addEventListener("fwpz_to", function (e) {
-		    //获得事件参数
-		    var fwpz_idx = e.detail.fwpz_idx;
-			if(fwpz_idx == '0'){
+	    
+	    window.onload = function(){
+            //从服务器获取数据            
+            //业务数据获取完毕，并已插入当前页面DOM；
+            //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+            mui.plusReady(function(){
+                var self = plus.webview.currentWebview();
+                var fwpz_idx = self.fwpz_idx;
+                if(fwpz_idx == '0'){
 				$('#fwpz_title').text('大产权证');
-				fwpz_type = 'PZCX';
-			}
-			if(fwpz_idx == '1'){
-				$('#fwpz_title').text('房本及业主身份证原件');
-				fwpz_type = 'PZFB';
-			}
-			if(fwpz_idx == '2'){
-				$('#fwpz_title').text('业主签字');
-				fwpz_type = 'BZYZ';
-			}
-		});
+					fwpz_type = 'PZCX';
+				}
+				if(fwpz_idx == '1'){
+					$('#fwpz_title').text('房本及业主身份证原件');
+					fwpz_type = 'PZFB';
+				}
+				if(fwpz_idx == '2'){
+					$('#fwpz_title').text('业主签字');
+					fwpz_type = 'BZYZ';
+				}
+            });
+       	}
+	    
+//	    window.addEventListener("fwpz_to", function (e) {
+//		    //获得事件参数
+//		    var fwpz_idx = e.detail.fwpz_idx;
+//			if(fwpz_idx == '0'){
+//				$('#fwpz_title').text('大产权证');
+//				fwpz_type = 'PZCX';
+//			}
+//			if(fwpz_idx == '1'){
+//				$('#fwpz_title').text('房本及业主身份证原件');
+//				fwpz_type = 'PZFB';
+//			}
+//			if(fwpz_idx == '2'){
+//				$('#fwpz_title').text('业主签字');
+//				fwpz_type = 'BZYZ';
+//			}
+//		});
 	</script>
 </html>

@@ -163,7 +163,8 @@
 	},
 	"page/login.html": {
 		"refer": [
-			"page/fast_zc.html"
+			"page/fast_zc.html",
+			"page/wj_pwd.html"
 		]
 	},
 	"qyhl.html": {

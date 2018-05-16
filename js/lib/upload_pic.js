@@ -156,6 +156,7 @@ function imgupgrade() {
     	var  imgArray=[];//通过逗号分割到新的编码
     	var newImgbase = f1[i].split(",")[1];
         imgArray.push(newImgbase);//放到imgArray数组里面
+//      alert(i+'tupian');
         picupload(imgArray,i);
     }
 }
@@ -178,9 +179,13 @@ function picupload(imgArray,num){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
 				arr_src.push(data.data);
+				var upload_sus = '1';
+//				alert(f1.length);
+//				alert(JSON.stringify(data.data))
 				if(num == f1.length-1){//图片上传完毕后关闭加载图标			
 					plus.nativeUI.closeWaiting();
 //							alert("上传成功");
+					pic_tijiao();
 				}
 			}else{
 				mui.alert("提示信息："+data.message, '提示', function(){});

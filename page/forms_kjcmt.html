@@ -101,21 +101,43 @@
 	            }  
 	        });  
 	    });
-	    window.addEventListener("wydj_to", function (e) {
-		    //获得事件参数
-		    var wydj_idx = e.detail.wydj_idx;
-			if(wydj_idx == '0'){
-				$('#wydj_title').text('开具出门条');
-				wydj_type = 'WYCM';
-			}
-			if(wydj_idx == '1'){
-				$('#wydj_title').text('装修同意函');
-				wydj_type = 'WYZX';
-			}
-			if(wydj_idx == '2'){
-				$('#wydj_title').text('网络问题');
-				wydj_type = 'WYWL';
-			}
-		});
+	    window.onload = function(){
+            //从服务器获取数据            
+            //业务数据获取完毕，并已插入当前页面DOM；
+            //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+            mui.plusReady(function(){
+                var self = plus.webview.currentWebview();
+                var wydj_idx = self.wydj_idx;
+                if(wydj_idx == '0'){
+					$('#wydj_title').text('开具出门条');
+					wydj_type = 'WYCM';
+				}
+				if(wydj_idx == '1'){
+					$('#wydj_title').text('装修同意函');
+					wydj_type = 'WYZX';
+				}
+				if(wydj_idx == '2'){
+					$('#wydj_title').text('网络问题');
+					wydj_type = 'WYWL';
+				}
+            });
+       	}
+//	    window.addEventListener("wydj_to", function (e) {
+//	    	alert(123);
+//		    //获得事件参数
+//		    var wydj_idx = e.detail.wydj_idx;
+//			if(wydj_idx == '0'){
+//				$('#wydj_title').text('开具出门条');
+//				wydj_type = 'WYCM';
+//			}
+//			if(wydj_idx == '1'){
+//				$('#wydj_title').text('装修同意函');
+//				wydj_type = 'WYZX';
+//			}
+//			if(wydj_idx == '2'){
+//				$('#wydj_title').text('网络问题');
+//				wydj_type = 'WYWL';
+//			}
+//		});
 	</script>
 </html>

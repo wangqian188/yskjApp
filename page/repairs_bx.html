@@ -205,11 +205,14 @@
 					mui.openWindow({ 
 						url:'./forms_kjcmt.html', //需要打开页面的url地址 
 						id:'forms_kjcmt',  //需要打开页面的url页面id
+						extras:{
+					    	'wydj_idx':idx
+					    },
 					})
-					var main1 = plus.webview.getWebviewById('forms_kjcmt');
-					mui.fire(main1, "wydj_to",{
-					    wydj_idx:idx
-					})
+//					var main1 = plus.webview.getWebviewById('forms_kjcmt');
+//					mui.fire(main1, "wydj_to",{
+//					    wydj_idx:idx
+//					})
 				}
 			})(i)
 		}
@@ -221,11 +224,14 @@
 					mui.openWindow({ 
 						url:'./forms_fwpz.html', //需要打开页面的url地址 
 						id:'forms_fwpz',  //需要打开页面的url页面id
+						extras:{
+					    	'fwpz_idx':idx
+					    },
 					})
-					var main1 = plus.webview.getWebviewById('forms_fwpz');
-					mui.fire(main1, "fwpz_to",{
-					    fwpz_idx:idx
-					})
+//					var main1 = plus.webview.getWebviewById('forms_fwpz');
+//					mui.fire(main1, "fwpz_to",{
+//					    fwpz_idx:idx
+//					})
 				}
 			})(i)
 		}
@@ -237,11 +243,14 @@
 					mui.openWindow({ 
 						url:'./forms_fwfy.html', //需要打开页面的url地址 
 						id:'forms_fwfy',  //需要打开页面的url页面id
+						extras:{
+					    	'fwfy_idx':idx
+					    },
 					})
-					var main1 = plus.webview.getWebviewById('forms_fwfy');
-					mui.fire(main1, "fwfy_to",{
-					    fwfy_idx:idx
-					})
+//					var main1 = plus.webview.getWebviewById('forms_fwfy');
+//					mui.fire(main1, "fwfy_to",{
+//					    fwfy_idx:idx
+//					})
 				}
 			})(i)
 		}

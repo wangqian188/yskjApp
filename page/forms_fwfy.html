@@ -101,25 +101,52 @@
 	            }  
 	        });  
 	    });
-	    window.addEventListener("fwfy_to", function (e) {
-		    //获得事件参数
-		    var fwfy_idx = e.detail.fwfy_idx;
-			if(fwfy_idx == '0'){
-				$('#fwfy_title').text('物业费');
-				fwfy_type = 'FYWY'
-			}
-			if(fwfy_idx == '1'){
-				$('#fwfy_title').text('取暖费');
-				fwfy_type = 'FYQN'
-			}
-			if(fwfy_idx == '2'){
-				$('#fwfy_title').text('遗留水电费');
-				fwfy_type = 'FYSD'
-			}
-			if(fwfy_idx == '3'){
-				$('#fwfy_title').text('空调转换费');
-				fwfy_type = 'FYKT'
-			}
-		});
+	    window.onload = function(){
+            //从服务器获取数据            
+            //业务数据获取完毕，并已插入当前页面DOM；
+            //注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+            mui.plusReady(function(){
+                var self = plus.webview.currentWebview();
+                var fwfy_idx = self.fwfy_idx;
+                if(fwfy_idx == '0'){
+					$('#fwfy_title').text('物业费');
+					fwfy_type = 'FYWY'
+				}
+				if(fwfy_idx == '1'){
+					$('#fwfy_title').text('取暖费');
+					fwfy_type = 'FYQN'
+				}
+				if(fwfy_idx == '2'){
+					$('#fwfy_title').text('遗留水电费');
+					fwfy_type = 'FYSD'
+				}
+				if(fwfy_idx == '3'){
+					$('#fwfy_title').text('空调转换费');
+					fwfy_type = 'FYKT'
+				}
+            });
+       	}
+	    
+	    
+//	    window.addEventListener("fwfy_to", function (e) {
+//		    //获得事件参数
+//		    var fwfy_idx = e.detail.fwfy_idx;
+//			if(fwfy_idx == '0'){
+//				$('#fwfy_title').text('物业费');
+//				fwfy_type = 'FYWY'
+//			}
+//			if(fwfy_idx == '1'){
+//				$('#fwfy_title').text('取暖费');
+//				fwfy_type = 'FYQN'
+//			}
+//			if(fwfy_idx == '2'){
+//				$('#fwfy_title').text('遗留水电费');
+//				fwfy_type = 'FYSD'
+//			}
+//			if(fwfy_idx == '3'){
+//				$('#fwfy_title').text('空调转换费');
+//				fwfy_type = 'FYKT'
+//			}
+//		});
 	</script>
 </html>

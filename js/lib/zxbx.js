@@ -159,6 +159,10 @@ function yz_house_wt(){
 	}else{
 		imgupgrade();//上传图片		
 	}
+//	alert(JSON.stringify(arr_src)+'shuzu')
+	
+}
+function pic_tijiao(){
 	var code = $('#hqyzm').val();
 	house_ms = $('#house_ms').val();
 	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
