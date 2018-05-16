@@ -6,8 +6,8 @@ var to_area = '';//目标区域
 var to_lp = '';//目标楼盘
 var to_mj = '';//目标面积
 var house_year = '';//租金预算
-var house_date = '';//换房时间
-var to_zc = '';//是否注册
+var house_date = null;//换房时间
+var to_zc = null;//是否注册
 var arr = [];//全局数组
   var picker = new mui.PopPicker({
 	layer: 1
@@ -128,7 +128,7 @@ function btnzt(){
 //手机号码验证
 function checkPhone(id){
    var phone = document.getElementById(id).value;
-   if(!(/^1[34578]\d{9}$/.test(phone))){
+   if(!(/^1[345786]\d{9}$/.test(phone))){
    		mui.alert('请确认填写手机号是否正确', '提示', function(){});
    		return false;
    }else{
@@ -243,6 +243,7 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
+				alert(house_date);
 				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do',{
 					data:{
 						"type":"5",
@@ -253,7 +254,7 @@ function yz_house_wt(){
 						"changeLouPan": to_lp,//目标楼盘
 						"changeMJ": to_mj,//改换面积
 						"changeZuJin":house_year,//租金预算
-						"changeTime": house_date + ' 00:00:00',//换租时间
+						"changeTime": house_date,//换租时间
 						"isZhuce": to_zc,//是否注册
 						"repairHouse":house_news
 					},

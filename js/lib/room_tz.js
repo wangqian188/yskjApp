@@ -3,7 +3,7 @@ var telnumber = '';//手机号
 var yzm = '';//验证码
 var house_news = '';//现租房源
 var house_ms = '';//退租理由
-var house_date = '';//退租时间
+var house_date = null;//退租时间
 var arr = [];//全局数组
   var picker = new mui.PopPicker({
 	layer: 1
@@ -248,7 +248,7 @@ function yz_house_wt(){
 						'phone': telnumber,
 						'memo': house_ms,
 						"repairHouse":house_news,
-						'changeTime': house_date + ' 00:00:00'
+						'changeTime': house_date
 					},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型

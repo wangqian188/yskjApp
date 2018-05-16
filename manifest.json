@@ -270,7 +270,14 @@
 					"js/lib/app_config.js",
 					"img/addfwuxiao1.png",
 					"img/wode_fangyuan.png",
-					"img/wode_guanjian.png"
+					"img/wode_guanjian.png",
+					"img/wode/tongzhi_center.png",
+					"img/wode/hsoufuwu.png",
+					"img/wode/getong.png",
+					"img/wode/zaixian_img.png",
+					"img/wode/wuye_duijie.png",
+					"img/wode/fangwu_fwiyoong.png",
+					"img/wode/fangwu_pingzhjang.png"
 				],
 				"refer": [
 					"page/person.html",
@@ -313,7 +320,9 @@
 					"img/sy_kfion.png",
 					"js/lib/sy.js",
 					"js/lib/version.js",
-					"css/a_fringe.css"
+					"css/a_fringe.css",
+					"img/toll_pic1.png",
+					"img/toll_pic2.png"
 				],
 				"refer": [
 					"jxfy.html",
@@ -371,7 +380,8 @@
 					"js/lib/jquery-1.10.2.min.js",
 					"page/fwsc.css",
 					"css/fwsc.css",
-					"js/seturl.js"
+					"js/seturl.js",
+					"css/a_fringe.css"
 				],
 				"refer": [
 					"page/financial.html",
@@ -402,10 +412,16 @@
 					"img/tab_bg.png",
 					"img/dacheghezuo.png",
 					null,
-					"css/style_a_d.css"
+					"css/style_a_d.css",
+					"img/qyhl/add_vip.png",
+					"css/a_fringe.css",
+					"img/qyhl/fb_ion1.png",
+					"img/qyhl/fb_ion2.png"
 				],
 				"refer": [
-					"page/add_vip.html"
+					"page/add_vip.html",
+					"page/fb_ser.html",
+					"page/fb_need.html"
 				],
 				"priority": 0
 			},
@@ -422,7 +438,8 @@
 					"css/style.css",
 					"js/lib/jquery-1.10.2.min.js",
 					"js/lib/app_config.js",
-					"img/sy_kfion.png"
+					"img/sy_kfion.png",
+					"img/fylistqierl.png"
 				],
 				"refer": [
 					"page/fyTail.html"
@@ -640,7 +657,8 @@
 					"js/lib/sha1.js",
 					"js/lib/md5.js",
 					"wd.html",
-					"css/style_a_d.css"
+					"css/style_a_d.css",
+					"img/third_dl_ion.png"
 				],
 				"refer": [
 					"page/wj_pwd.html",
@@ -1088,7 +1106,35 @@
 				"priority": 0
 			},
 			"page/repairs_bx.html": {
-				"resources": [],
+				"resources": [
+					"img/repairs_pic/zxbx1_ion.png",
+					"js/lib/flexible_css.js",
+					"img/repairs_pic/zxbx3_ion.png",
+					"img/repairs_pic/fwfy2_ion.png",
+					"img/repairs_pic/zxbx2_ion.png",
+					"img/repairs_pic/gjfw_h.png",
+					"img/repairs_pic/fwpz3_ion.png",
+					"img/repairs_pic/house_tf.png",
+					"img/repairs_pic/slgj_ion.png",
+					"img/repairs_pic/fwfy3_ion.png",
+					"img/repairs_pic/fwfy1_ion.png",
+					"img/repairs_pic/house_hf.png",
+					"img/repairs_pic/ktzl_ion.png",
+					"js/lib/jquery-1.10.2.min.js",
+					"img/repairs_pic/djdl_ion.png",
+					"img/repairs_pic/fwfy4_ion.png",
+					"img/repairs_pic/house_xz.png",
+					"js/mui.min.js",
+					"img/repairs_pic/mcwx_ion.png",
+					"js/lib/flexible.js",
+					"img/repairs_pic/fwpz1_ion.png",
+					"img/repairs_pic/fwpz2_ion.png",
+					"css/repairs_bx.css",
+					"css/a_fringe.css",
+					"css/style_a_d.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
 				"refer": [
 					"page/relet_xz.html",
 					"page/room_change.html",
@@ -1113,6 +1159,102 @@
 			"page/wode_fangyang.html": {
 				"resources": [
 					"page/wode_fang_list.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/add_vip.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"img/repairs_pic/z_add.png",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.picker.min.js",
+					"css/relet_xz.css",
+					"css/wt_house.css",
+					"js/mui.min.js",
+					"css/pickers/mui.dtpicker.css",
+					"js/lib/flexible.js",
+					"css/pickers/mui.picker.min.css",
+					"js/lib/relet_xz.js",
+					"js/lib/app_config.js",
+					"css/style_a_d.css",
+					"css/a_fringe.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/relet_xz.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.picker.min.js",
+					"css/relet_xz.css",
+					"css/wt_house.css",
+					"js/mui.min.js",
+					"css/pickers/mui.dtpicker.css",
+					"js/lib/flexible.js",
+					"css/pickers/mui.picker.min.css",
+					"js/lib/relet_xz.js",
+					"js/lib/app_config.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/room_tz.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.picker.min.js",
+					"js/mui.min.js",
+					"js/lib/room_tz.js",
+					"js/lib/flexible.js",
+					"js/lib/app_config.js",
+					"css/wt_house.css",
+					"css/pickers/mui.dtpicker.css",
+					"css/pickers/mui.picker.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/fb_ser.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.picker.min.js",
+					"css/wt_house.css",
+					"js/mui.min.js",
+					"js/lib/room_tz.js",
+					"css/pickers/mui.dtpicker.css",
+					"js/lib/flexible.js",
+					"css/pickers/mui.picker.min.css",
+					"js/lib/app_config.js",
+					"css/style_a_d.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/a_fringe.css",
+					"js/lib/fb_ser.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/room_change.html": {
+				"resources": [
+					"js/lib/flexible_css.js",
+					"js/lib/jquery-1.10.2.min.js",
+					"js/mui.picker.min.js",
+					"css/relet_xz.css",
+					"js/mui.min.js",
+					"js/lib/room_change.js",
+					"js/lib/flexible.js",
+					"css/room_change.css",
+					"js/lib/app_config.js",
+					"css/wt_house.css",
+					"css/pickers/mui.dtpicker.css",
+					"css/pickers/mui.picker.min.css",
+					"css/style_a_d.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/a_fringe.css"
 				],
 				"refer": [],
 				"priority": 0

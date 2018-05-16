@@ -52,6 +52,48 @@
 				background: #ffffff;
 				padding: 0 0.4rem;
 			}
+			#fb{
+				height: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			#fb li{
+				display: flex;
+			}
+			#fb .fb_ion{
+				width: 1.013333rem;
+				height: 1.013333rem;
+				margin-right: 0.133333rem;
+			}
+			#fb li:first-child .fb_ion{
+				background: url(img/qyhl/fb_ion1.png)no-repeat center;
+				background-size: 100% auto;
+			}
+			#fb li:last-child .fb_ion{
+				background: url(img/qyhl/fb_ion2.png)no-repeat center;
+				background-size: 100% auto;
+			}
+			#fb .fb_tit{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			#fb .fb_tit p{
+				line-height: 0.533333rem;
+			}
+			#fb .fb_tit p:first-child{
+				font-size: 0.4rem;
+				color: #333333;
+			}
+			#fb .fb_tit p:last-child{
+				font-size: 0.32rem;
+				color: #999;
+			}
+			.fb_jt{
+				color: #999;
+				margin-left: 0.133333rem;
+			}
 		</style>
 	</head>
 	<body>
@@ -80,7 +122,22 @@
 		    </div>
 			<!--发布服务-->
 			<div class="qyfw_fbfw">
-				
+				<ul id="fb">
+					<li id="fb_ser">
+						<div class="fb_ion"></div>
+						<div class="fb_tit">
+							<p><span>发布服务</span><span class="mui-icon mui-icon-arrowright fb_jt"></span></p>
+							<p>您的服务在这里推广</p>
+						</div>
+					</li>
+					<li id="fb_need">
+						<div class="fb_ion"></div>
+						<div class="fb_tit">
+							<p><span>发布需求</span><span class="mui-icon mui-icon-arrowright fb_jt"></span></p>
+							<p>您的需求在这里发布</p>
+						</div>
+					</li>
+				</ul>
 			</div>
 
 		    <!--Tab切换1-->
@@ -363,6 +420,20 @@
 					url:'page/add_vip.html', //需要打开页面的url地址 
 					id:'add_vip',  //需要打开页面的url页面id
 				})				
+			});
+			//发布服务跳转
+			$('#fb_ser').click(function(){
+				mui.openWindow({ 
+					url:'page/fb_ser.html',
+					id:'fb_ser',
+				})
+			});
+			//发布需求跳转
+			$('#fb_need').click(function(){
+				mui.openWindow({ 
+					url:'page/fb_need.html',
+					id:'fb_need',
+				})
 			});
 		</script>
 	</body>
