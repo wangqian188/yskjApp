@@ -186,7 +186,6 @@ function picupload(imgArray,num){
 				console.log(JSON.stringify(data.data));
 				if(num == f1.length-1){//图片上传完毕后关闭加载图标			
 					plus.nativeUI.closeWaiting();
-//							alert("上传成功");
 					pic_tijiao();
 				}
 			}else{
