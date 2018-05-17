@@ -32,7 +32,8 @@ mui.plusReady(function() {})
 function galleryImg() {
     //每次拍摄或选择图片前清空数组对象
     f1.splice(0, f1.length);
-            document.getElementsByClassName("showimg")[0].innerHTML = null;
+	//   document.getElementsByClassName("showimg")[0].innerHTML = null;
+	$('.showimg').siblings().remove();
     // 从相册中选择图片
     mui.toast("请从相册中选择图片");
     plus.gallery.pick(function(path) {
@@ -48,13 +49,14 @@ function galleryImg() {
 function galleryImgs() {
     //每次拍摄或选择图片前清空数组对象
     f1.splice(0, f1.length);
-	document.getElementsByClassName("showimg")[0].innerHTML = null;
+//	document.getElementsByClassName("showimg")[0].innerHTML = null;
+	$('.showimg').siblings().remove();
     // 从相册中选择图片
-    mui.toast("请从相册中选择图片");
+    mui.toast("请从相册中选择您的企业logo图片");
     plus.gallery.pick(function(e) {
     	
 		  if (e.files.length != 1) {
-		     mui.toast('请选择一张图片作为您的企业log');
+		     mui.toast('请选择您的企业logo图片');
 		     return false;
 		  }
         for (var i in e.files) {
@@ -72,7 +74,8 @@ function galleryImgs() {
 function cameraimages() {
     //每次拍摄或选择图片前清空数组对象
     f1.splice(0, f1.length);
-    document.getElementsByClassName("showimg")[0].innerHTML = null;
+//  document.getElementsByClassName("showimg")[0].innerHTML = null;
+	$('.showimg').siblings().remove();
     var cmr = plus.camera.getCamera();
     cmr.captureImage(function(p) {
         plus.io.resolveLocalFileSystemURL(p, function(entry) {
@@ -156,7 +159,6 @@ function imgupgrade() {
     	var  imgArray=[];//通过逗号分割到新的编码
     	var newImgbase = f1[i].split(",")[1];
         imgArray.push(newImgbase);//放到imgArray数组里面
-//      alert(i+'tupian');
         picupload(imgArray,i);
     }
 }
@@ -181,7 +183,7 @@ function picupload(imgArray,num){
 				arr_src.push(data.data);
 				var upload_sus = '1';
 //				alert(f1.length);
-//				alert(JSON.stringify(data.data))
+				console.log(JSON.stringify(data.data));
 				if(num == f1.length-1){//图片上传完毕后关闭加载图标			
 					plus.nativeUI.closeWaiting();
 //							alert("上传成功");

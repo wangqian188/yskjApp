@@ -132,6 +132,7 @@ function createcookie(){
 }
 //委托房源提交
 $('.wt_btn').click(function(){
+	yz_house_wt();
 	if(user_name=='' && telnumber=='' && qy_name == ''&& qy_tel == ''&& qy_bt == ''&& qy_logo == '' && house_news==''&& add_area == ''&& jyfw == ''&& qyjj == ''){
 		return;
 	}else{
@@ -156,7 +157,7 @@ $('.wt_btn').click(function(){
 			return;
 		}
 		if(qy_logo == ''){
-			mui.alert('企业logo不能为空', '提示', function(){},'div');
+			mui.alert('请选择您的企业logo', '提示', function(){},'div');
 			return;
 		}
 		if(house_news==''){
@@ -178,8 +179,16 @@ $('.wt_btn').click(function(){
 		yz_house_wt();
 	}
 });
-//验证并委托方法
+//验证图片是否为空
 function yz_house_wt(){
+	if(f1.length == 0){//如果没有图片不执行上传
+		
+	}else{
+		imgupgrade();//上传图片		
+	}	
+}
+//验证并委托方法
+function pic_tijiao(){
 	var code = $('#hqyzm').val();
 	house_ms = $('#house_ms').val();
 	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
