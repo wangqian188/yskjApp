@@ -82,19 +82,34 @@
 	margin-right: 0.16rem;
 }
 .zc_box{
-	position: absolute;
+	position: fixed;
 	z-index: 9;
 	left: 0;
 	right: 0;
-	top: 0;
+	top: 2.933333rem;
 	bottom: 0;
 	background: rgba(0,0,0,0.1);
+	display: none;
 }
-.tj_box{
+.tj_box,.tj_box1{
+	position: absolute;
+	flex-direction: column;
 	height: 8rem;
 	width: 10rem;
-	/*background: #fff;*/
-	border: 1px solid red;
+	background: #fff;
+	display: none;
+	overflow: auto;
+	padding-left: 0.4rem;
+}
+.tj_box span,.tj_box1 span{
+	display: block;
+	font-size: 0.373333rem;
+	color: #666666;
+	height: 1.333333rem;
+	width: 100%;
+	line-height: 1.333333rem;
+	padding-left: 0.066666rem;
+	border-bottom: 1px solid #e5e5e5;
 }
 /*测试*/
 #vip_list li{

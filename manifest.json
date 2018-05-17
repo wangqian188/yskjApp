@@ -1259,6 +1259,13 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"page/more_qy.html": {
+				"resources": [],
+				"refer": [
+					"page/qy_detail.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {

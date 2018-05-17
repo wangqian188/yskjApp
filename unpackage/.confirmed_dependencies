@@ -401,5 +401,10 @@
 			"css/mui.min.css",
 			"css/a_fringe.css"
 		]
+	},
+	"page/more_qy.html": {
+		"refer": [
+			"page/qy_detail.html"
+		]
 	}
 }

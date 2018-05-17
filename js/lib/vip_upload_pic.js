@@ -32,7 +32,7 @@ mui.plusReady(function() {})
 function galleryImg() {
     //每次拍摄或选择图片前清空数组对象
     f1.splice(0, f1.length);
-//          document.getElementsByClassName("showimg")[0].innerHTML = null;
+            document.getElementsByClassName("showimg")[0].innerHTML = null;
     // 从相册中选择图片
     mui.toast("请从相册中选择图片");
     plus.gallery.pick(function(path) {
@@ -48,15 +48,15 @@ function galleryImg() {
 function galleryImgs() {
     //每次拍摄或选择图片前清空数组对象
     f1.splice(0, f1.length);
-	//document.getElementsByClassName("showimg")[0].innerHTML = null;
+	document.getElementsByClassName("showimg")[0].innerHTML = null;
     // 从相册中选择图片
     mui.toast("请从相册中选择图片");
     plus.gallery.pick(function(e) {
     	
-		//  if (e.files.length != 20) {
-		//     mui.toast('请选择身份证正面和背面照片共两张');
-		//     return false;
-		//  }
+		  if (e.files.length != 1) {
+		     mui.toast('请选择一张图片作为您的企业log');
+		     return false;
+		  }
         for (var i in e.files) {
             showImg(e.files[i]);
         }
@@ -72,7 +72,7 @@ function galleryImgs() {
 function cameraimages() {
     //每次拍摄或选择图片前清空数组对象
     f1.splice(0, f1.length);
-//  document.getElementsByClassName("showimg")[0].innerHTML = null;
+    document.getElementsByClassName("showimg")[0].innerHTML = null;
     var cmr = plus.camera.getCamera();
     cmr.captureImage(function(p) {
         plus.io.resolveLocalFileSystemURL(p, function(entry) {

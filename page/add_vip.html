@@ -14,6 +14,9 @@
 		<link rel="stylesheet" type="text/css" href="../css/style_a_d.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/a_fringe.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/relet_xz.css"/>
+		<script src="../mypic/binaryajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../mypic/exif.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../mypic/canvasResize.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.dtpicker.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/pickers/mui.picker.min.css"/>
 		<script src="../js/mui.picker.min.js"></script>
@@ -41,13 +44,11 @@
 			z-index: 9;
 			width: 0.533333rem;
 			height: 0.533333rem;
+			line-height: 0.533333rem;
 			border-radius: 50%;
 			overflow: hidden;
-			background: #C7C7CC;
-			font-size: 0.453333rem;
-			color: #fff;
-			text-align: center;
-			transform: rotate(45deg);
+			background: #C7C7CC url(../img/qyhl/del_ion.png) no-repeat center;
+			background-size: 80% auto;
 		}
 		.vip_tip{
 			padding: 0.4rem 0.4rem 0 0.213333rem;
@@ -88,12 +89,7 @@
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>手机号</label>
 		    	    <input type="text" class="mui-input-clear" placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" maxlength="11"  id="tel">
-		    	    <!--<span class="hqyzm">获取验证码</span>-->
 		    	</div>
-		    	<!--<div class="mui-input-row wt_inpsty">
-		    	    <label>验证码</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="6"  id="hqyzm">
-		    	</div>-->
 		    </div>
 		    <!--企业信息-->
 		    <div class="wt_jbxx" style="min-height: 2rem;height: auto;">
@@ -103,7 +99,7 @@
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>企业电话</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入企业电话" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" id="qy_tel">
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入企业电话"  autocomplete="off" id="qy_tel">
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>企业网址</label>
@@ -123,12 +119,12 @@
 		    <div class="wt_fwxx fwxx" style="min-height: 2rem;height: auto;">
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>所属行业</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择企业所属行业" id="house_news" readonly onclick="fw_news()">
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择企业所属行业" id="house_news" onclick="sshy()" readonly>
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>所在区域</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请选择企业所在区域" id="add_area" readonly>
+		    	    <input type="text" class="mui-input-clear" placeholder="请选择企业所在区域" id="add_area" onclick="szqy()" readonly>
 		    	    <span class="mui-icon mui-icon-arrowright right_xz"></span>
 		    	</div>
 		    </div>
@@ -169,13 +165,16 @@
 		    </div>
 		</div>
 		<script src="../js/lib/app_config.js"></script>
-		<script src="../js/lib/relet_xz.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/add_vip.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/vip_upload_pic.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$(function(){  
 				//控制文本域输入字数
 			    $('#jyfw').keyup(function(event) {  
 			        var maxLength = 50;  
 			        var len = $('#jyfw').val().length;  
+			        jyfw = $('#jyfw').val();
+			        btnzt();
 			        $('#textareaCount').html(len);  
 			        if(parseInt($('#textareaCount').text()) > 50){  
 			            $('#textareaCount').html('50');  
@@ -189,6 +188,8 @@
 			    $('#qyjj').keyup(function(event) {  
 			        var maxLength = 500;  
 			        var len = $('#qyjj').val().length;  
+			        qyjj = $('#qyjj').val();
+			        btnzt();
 			        $('#textareaCount1').html(len);  
 			        if(parseInt($('#textareaCount').text()) > 500){  
 			            $('#textareaCount1').html('500');  
