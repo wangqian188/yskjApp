@@ -2,6 +2,8 @@ var nav = $('.top_nav li');
 //所属行业
 $('.sshy').click(function(){
 	hy();
+	$(this).css('color','#2a72d8');
+	$('.ssqy').css('color','#666666');
 	$('.zc_box').css('display','block');
 	$('.bottom_box').css('overflow','hidden');
 	$('.tj_box1').css('display','none');
@@ -12,6 +14,8 @@ $('.sshy').click(function(){
 //所属区域
 $('.ssqy').click(function(){
 	qy();
+	$(this).css('color','#2a72d8');
+	$('.sshy').css('color','#666666');
 	$('.zc_box').css('display','block');
 	$('.bottom_box').css('overflow','hidden');
 	$('.tj_box').css('display','none');
@@ -25,6 +29,8 @@ function nav_reset(){
 	for (var i=0; i<jt_res.length; i++) {
 		$('.nav_jt').eq(i).attr('class','mui-icon mui-icon-arrowdown nav_jt');
 	}
+	$('.ssqy').css('color','#666666');
+	$('.sshy').css('color','#666666');
 }
 //点击遮罩隐藏筛选
 $('.zc_box').click(function(){
@@ -34,6 +40,9 @@ $('.zc_box').click(function(){
 });
 //阻止事件冒泡
 $('.tj_box').click(function(){
+	return false;
+});
+$('.tj_box1').click(function(){
 	return false;
 });
 function qy(){
@@ -48,10 +57,11 @@ function qy(){
 			if(data.success){
 				var xzqyData = data.data.xzqy;
 				var area_leftstr = '';
+				var osp = '<span onclick="clks(0)">不限</span>';
 				for (var i=0; i<xzqyData.length; i++) {
-					area_leftstr += '<span id="'+xzqyData[i].fdcode+'" onclick="clk('+xzqyData[i].fdcode+','+i+')">'+xzqyData[i].fdname+'</span>';
+					area_leftstr += '<span id="'+xzqyData[i].fdcode+'" onclick="clks('+(i+1)+')">'+xzqyData[i].fdname+'</span>';
 				}
-				$('.tj_box1').html(area_leftstr);
+				$('.tj_box1').html(osp + area_leftstr);
 			}else{
 				
 			}
@@ -62,6 +72,7 @@ function qy(){
 	});
 }
 var hy_arr = [
+{value:'bx',text:'不限'},
 {value:'wh',text:'文化'},
 {value:'zx',text:'咨询'},
 {value:'cm',text:'传媒'},
@@ -76,13 +87,64 @@ var hy_arr = [
 function hy(){
 	var area_leftstr = '';
 	for (var i=0; i<hy_arr.length; i++) {
-		area_leftstr += '<span onclick="clk('+hy_arr[i].text+','+i+')">'+hy_arr[i].text+'</span>';
+		area_leftstr += '<span onclick="clk_hy('+i+')">'+hy_arr[i].text+'</span>';
 	}
 	$('.tj_box').html(area_leftstr);
 }
-$('#vip_list li').click(function(){
+//选择所属行业
+function clk_hy(idx){
+	$('.tj_box span').css('color','#666666');
+	$('.tj_box span').eq(idx).css('color','#2a72d8');
+	$('.sshy span').eq(0).html($('.tj_box span').eq(idx).text());
+	if(idx == 0){
+		$('.sshy span').eq(0).html('所属行业');
+	}
+}
+//选择所属区域
+function clks(idx){
+	$('.tj_box1 span').css('color','#666666');
+	$('.tj_box1 span').eq(idx).css('color','#2a72d8');
+	$('.ssqy span').eq(0).html($('.tj_box1 span').eq(idx).text());
+	if(idx == 0){
+		$('.ssqy span').eq(0).html('所属区域');
+	}
+}
+//列表数据请求
+function vip_list(){
+	mui.ajax(Interface_url + '/yskjApp/webApp/dataInfo/listMemberEnterprise.do',{
+		data:{},
+		dataType:'json',
+		type:'post',
+		timeout:10000,
+		headers:{'Content-Type':'application/json'},	              
+		success:function(data){
+			if(data.success){
+				var allData = data.data;
+				var str = '';
+				for (var i=0; i<allData.length; i++) {
+					str += '<li style="background: url('+allData[i].logoImg+')no-repeat center;background-size: 100% auto;" onclick="list_detail('+allData[i].id+')"><div class="qy_news"><p class="qy_name">'+allData[i].enterpriseName+'</p><p class="qy_tip"><span></span><span>'+allData[i].category+'</span></p></div></li>';
+					
+				}
+				$('#vip_list').append(str);
+				console.log(JSON.stringify(allData));
+			}else{
+				
+			}
+		},
+		error:function(xhr,type,errorThrown){
+			console.log(type);
+		}
+	});
+}
+vip_list();//默认执行
+//点击查看详情
+function list_detail(qy_id){
+//	alert(id);
 	mui.openWindow({ 
 		url:'./qy_detail.html',
-		id:'qy_detail'
+		id:'qy_detail',
+		extras:{
+	    	'qy_id':qy_id
+	    }
 	})
-});
+}

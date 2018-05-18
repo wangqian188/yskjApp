@@ -90,6 +90,7 @@ function cameraimages() {
 // 全局数组对象，添加文件,用于压缩上传使用
 var f1 = new Array();
 var arr_src = [];
+var qy_logo = '';//企业logo
 function showImg(url) {
     // 兼容以“file:”开头的情况
     if (0 != url.toString().indexOf("file://")) {
@@ -181,6 +182,8 @@ function picupload(imgArray,num){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
 				arr_src.push(data.data);
+				qy_logo = arr_src[0];//企业logo
+				alert(qy_logo);
 				var upload_sus = '1';
 //				alert(f1.length);
 				console.log(JSON.stringify(data.data));
@@ -199,7 +202,7 @@ function picupload(imgArray,num){
 		}
 	});
 }
-
+//点击删除图片
 function fun1(){
 	var img_src = $(this).parent().find('.pic_img').attr('src');//查找当前删除按钮下的图片地址
 	for (var i=0; i<f1.length; i++) {//与数组图片地址进行对比删除

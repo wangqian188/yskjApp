@@ -3,7 +3,7 @@ var telnumber = '';//手机号
 var qy_name = '';//企业名称
 var qy_tel = '';//企业电话
 var qy_bt = '';//企业网址
-var qy_logo = '';//企业logo
+//var qy_logo = '';//企业logo
 var house_news = '';//所属行业
 var add_area = '';//所在区域
 var jyfw = '';//经营范围
@@ -131,52 +131,63 @@ function createcookie(){
 	return cookyezhi;
 }
 //委托房源提交
+var clicktag = 0;
 $('.wt_btn').click(function(){
-	yz_house_wt();
-	if(user_name=='' && telnumber=='' && qy_name == ''&& qy_tel == ''&& qy_bt == ''&& qy_logo == '' && house_news==''&& add_area == ''&& jyfw == ''&& qyjj == ''){
+	if(user_name=='' && telnumber=='' && qy_name == ''&& qy_tel == ''&& qy_bt == ''&& f1.length == '0' && house_news==''&& add_area == ''&& jyfw == ''&& qyjj == ''){
 		return;
 	}else{
-		if(user_name==''){
-			mui.alert('姓名不能为空', '提示', function(){},'div');
-			return;
+		if(clicktag == 0){
+			clicktag = 1;
+			if(user_name==''){
+				mui.alert('姓名不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(telnumber==''){
+				mui.alert('手机号不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(qy_name == ''){
+				mui.alert('企业名称不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(qy_tel == ''){
+				mui.alert('企业电话不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(qy_bt == ''){
+				mui.alert('企业网址不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(f1.length == '0'){
+				mui.alert('请选择您的企业logo', '提示', function(){},'div');
+				return;
+			}
+			if(house_news==''){
+				mui.alert('请选择企业所属行业', '提示', function(){},'div');
+				return;
+			}
+			if(add_area == ''){
+				mui.alert('请选择企业所在区域', '提示', function(){},'div');
+				return;
+			}
+			if(jyfw == ''){
+				mui.alert('请填写企业经营范围', '提示', function(){},'div');
+				return;
+			}
+			if(qyjj == ''){
+				mui.alert('请填写企业简介', '提示', function(){},'div');
+				return;
+			}
+			yz_house_wt();
+		}else{
+			if(user_name=='' || telnumber=='' || qy_name == ''|| qy_tel == '' || qy_bt == '' || f1.length == '0' || house_news=='' || add_area == '' || jyfw == '' || qyjj == ''){
+				return;
+			}else{				
+				setTimeout(function () { clicktag = 0; }, 5000);
+				mui.toast('已提交，请勿重复提交！',{ duration:'2000', type:'div' });
+				return;
+			}
 		}
-		if(telnumber==''){
-			mui.alert('手机号不能为空', '提示', function(){},'div');
-			return;
-		}
-		if(qy_name == ''){
-			mui.alert('企业名称不能为空', '提示', function(){},'div');
-			return;
-		}
-		if(qy_tel == ''){
-			mui.alert('企业电话不能为空', '提示', function(){},'div');
-			return;
-		}
-		if(qy_bt == ''){
-			mui.alert('企业网址不能为空', '提示', function(){},'div');
-			return;
-		}
-		if(qy_logo == ''){
-			mui.alert('请选择您的企业logo', '提示', function(){},'div');
-			return;
-		}
-		if(house_news==''){
-			mui.alert('请选择企业所属行业', '提示', function(){},'div');
-			return;
-		}
-		if(add_area == ''){
-			mui.alert('请选择企业所在区域', '提示', function(){},'div');
-			return;
-		}
-		if(jyfw == ''){
-			mui.alert('请填写企业经营范围', '提示', function(){},'div');
-			return;
-		}
-		if(qyjj == ''){
-			mui.alert('请填写企业简介', '提示', function(){},'div');
-			return;
-		}
-		yz_house_wt();
 	}
 });
 //验证图片是否为空
@@ -189,12 +200,34 @@ function yz_house_wt(){
 }
 //验证并委托方法
 function pic_tijiao(){
-	var code = $('#hqyzm').val();
-	house_ms = $('#house_ms').val();
-	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
+	console.log('==============================================');
+	console.log(user_name);
+	console.log(telnumber);
+	console.log(qy_name);
+	console.log(qy_tel);
+	console.log(qy_bt);
+	console.log(qy_logo);
+	console.log(house_news);
+	console.log(add_area);
+	console.log(jyfw);
+	console.log(qyjj);
+	console.log(localStorage.getItem('user_id'));
+	console.log('==============================================');
+	//加入会员
+	mui.ajax(url + '/yskjApp/webApp/dataInfo/membership.do',{
 		data:{
-			'code':code,
-			'cookie': JSON.parse(localStorage.getItem('cookyezhi'))
+			'name': user_name,
+			'phone': telnumber,
+			'enterpriseName': qy_name,
+			'enterprisePhone': qy_tel,
+			'enterpriseWebsite': qy_bt,
+			'logoImg': qy_logo,
+			'industry': house_news,
+			'location': add_area,
+			'ranges': jyfw,
+			'enterpriseDesc': qyjj,
+			'house': '',
+			'uid': localStorage.getItem('user_id')
 		},
 		dataType:'json',//服务器返回json格式数据
 		type:'post',//HTTP请求类型
@@ -203,36 +236,10 @@ function pic_tijiao(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do',{
-					data:{
-						'type': '5',
-						'category': 'BGTZ',
-						'name': user_name,
-						'phone': telnumber,
-						'memo': house_ms,
-						"repairHouse":house_news,
-						'changeTime': house_date + ' 00:00:00'
-					},
-					dataType:'json',//服务器返回json格式数据
-					type:'post',//HTTP请求类型
-					timeout:10000,//超时时间设置为10秒；
-					headers:{'Content-Type':'application/json'},	              
-					success:function(data){
-						//服务器返回响应，根据响应结果，分析是否登录成功；
-						if(data.success){
-							mui.toast('提交成功，我们将会尽快为您处理',{ duration:2000, type:'div' });
-							setTimeout(function(){
-								mui.back();								
-							},1000);
-						}else{
-							mui.alert(data.message);
-						}
-					},
-					error:function(xhr,type,errorThrown){
-						//异常处理；
-						console.log(type);
-					}
-				});	
+				mui.toast('提交成功，我们将会尽快为您处理',{ duration:2000, type:'div' });
+				setTimeout(function(){
+					mui.back();								
+				},1000);
 			}else{
 				mui.alert(data.message);
 			}
@@ -241,7 +248,8 @@ function pic_tijiao(){
 			//异常处理；
 			console.log(type);
 		}
-	});
+	});	
+			
 }
 function qy(){
 	//获取所有的区域
@@ -272,3 +280,39 @@ function qy(){
 		}
 	});
 }
+//根据用户id查询当前登陆用户
+  function cx_fwnews(id){
+	  mui.ajax(url + '/yskjApp/webApp/dataInfo/getHouseCompanyById',{
+			data:{
+				'id': id
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'post',//HTTP请求类型
+			timeout:10000,//超时时间设置为10秒；
+			headers:{'Content-Type':'application/json'},	              
+			success:function(data){
+				//服务器返回响应，根据响应结果，分析是否登录成功；
+				if(data.success){
+					var alldata = data.data[0];
+					console.log(JSON.stringify(alldata));
+					for (var i in alldata) {
+						if(i == 'companyname'){
+							$('#qy_name').val(alldata[i]);
+							qy_name = $('#qy_name').val();
+							btnzt();
+						}
+					}
+				}else{
+					mui.alert(data.message);
+				}
+			},
+			error:function(xhr,type,errorThrown){
+				//异常处理；
+				console.log(type);
+			}
+		});
+  }
+  if(localStorage.getItem('user_id')){
+  	var user_id = localStorage.getItem('user_id');
+  	cx_fwnews(user_id);
+  }

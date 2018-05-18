@@ -4,7 +4,7 @@ var house_news = '';//所属行业
 var house_ms = '';//服务描述
 var qy_name = '';//企业名称
 var yusuan = '';//预算
-var yxq_date = '';//有效期（天）
+var yxq_date = null;//有效期（天）
 var arr = [
 {value:'wh',text:'文化'},
 {value:'zx',text:'咨询'},
@@ -90,9 +90,19 @@ document.getElementById("yusuan").addEventListener('input',function(){
 		btnzt();
 	}
 });
+//服务描述
+document.getElementById("house_ms").addEventListener('input',function(){
+	if(this.value != ''){
+		house_ms = this.value;
+		btnzt();
+	}else{
+		house_ms = '';
+		btnzt();
+	}
+});
 //提交按钮样式变换
 function btnzt(){
-	if(telnumber != '' || user_name != '' || house_news != '' || qy_name != '' || yxq_date != '' || yusuan != ''){
+	if(telnumber != '' || user_name != '' || house_news != '' || qy_name != '' || yxq_date != '' || yusuan != '' || house_ms != ''){
 		$('.btn').css({'background':'#2b70d8'});
 	}else{
 		$('.btn').css({'background':'#d2d2d2'});
@@ -101,11 +111,9 @@ function btnzt(){
 //手机号码验证
 function checkPhone(id){
    var phone = document.getElementById(id).value;
-   if(!(/^1[34578]\d{9}$/.test(phone))){
+   if(!(/^1[345786]\d{9}$/.test(phone))){
    		mui.alert('请确认填写手机号是否正确', '提示', function(){});
    		return false;
-   }else{
-   		return true;
    }
 }
 //生成cookie
@@ -115,45 +123,65 @@ function createcookie(){
 	return cookyezhi;
 }
 //委托房源提交
+var clicktag = 0;
 $('.wt_btn').click(function(){
-	if(user_name=='' && telnumber=='' && qy_name == '' && house_news==''){
+	if(user_name=='' && telnumber=='' && qy_name == '' && house_news=='' && house_ms == '' && yusuan == '' && yxq_date == ''){
 		return;
 	}else{
-		if(user_name == ''){
-			mui.alert('姓名不能为空', '提示', function(){},'div');
-			return;
+		if(clicktag == 0){
+			clicktag = 1;
+			if(user_name == ''){
+				mui.alert('姓名不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(telnumber == ''){
+				mui.alert('手机号不能为空', '提示', function(){},'div');
+				return;
+			}else{
+				checkPhone('tel');
+			}
+			if(qy_name == ''){
+				mui.alert('企业名称不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(house_news == ''){
+				mui.alert('请选择企业所属行业', '提示', function(){},'div');
+				return;
+			}
+			if(yusuan == ''){
+				mui.alert('预算不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(yxq_date == ''){
+				mui.alert('有效期不能为空', '提示', function(){},'div');
+				return;
+			}
+			yz_house_wt();
+		}else{
+			if(user_name=='' || telnumber=='' || qy_name == '' || house_news=='' || house_ms == '' || yusuan == '' || yxq_date == ''){
+				return;
+			}else{
+				setTimeout(function () { clicktag = 0; }, 5000);
+				mui.toast('已提交，请勿重复提交！',{ duration:'2000', type:'div' });
+				return;				
+			}
 		}
-		if(telnumber == ''){
-			mui.alert('手机号不能为空', '提示', function(){},'div');
-			return;
-		}
-		if(qy_name == ''){
-			mui.alert('企业名称不能为空', '提示', function(){},'div');
-			return;
-		}
-		if(house_news == ''){
-			mui.alert('请选择企业所属行业', '提示', function(){},'div');
-			return;
-		}
-		if(yusuan == ''){
-			mui.alert('预算不能为空', '提示', function(){},'div');
-			return;
-		}
-		if(yxq_date == ''){
-			mui.alert('有效期不能为空', '提示', function(){},'div');
-			return;
-		}
-		yz_house_wt();
 	}
 });
 //验证并委托方法
 function yz_house_wt(){
-	var code = $('#hqyzm').val();
-	house_ms = $('#house_ms').val();
-	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
+	mui.ajax(url + '/yskjApp/webApp/dataInfo/releaseDemand.do',{
 		data:{
-			'code':code,
-			'cookie': JSON.parse(localStorage.getItem('cookyezhi'))
+			'demandCategory': '2',
+			'enterName': user_name,
+			'enterPhone': telnumber,
+			'enterpriseName': qy_name,
+			'house': '',
+			"demandType": house_news,
+			'demandDesc': house_ms,
+			'uid': localStorage.getItem('user_id'),
+			'budget': yusuan,
+			'effectiveTime': yxq_date
 		},
 		dataType:'json',//服务器返回json格式数据
 		type:'post',//HTTP请求类型
@@ -162,36 +190,10 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do',{
-					data:{
-						'type': '5',
-						'category': 'BGTZ',
-						'name': user_name,
-						'phone': telnumber,
-						'memo': house_ms,
-						"repairHouse":house_news,
-						'changeTime': house_date + ' 00:00:00'
-					},
-					dataType:'json',//服务器返回json格式数据
-					type:'post',//HTTP请求类型
-					timeout:10000,//超时时间设置为10秒；
-					headers:{'Content-Type':'application/json'},	              
-					success:function(data){
-						//服务器返回响应，根据响应结果，分析是否登录成功；
-						if(data.success){
-							mui.toast('提交成功，我们将会尽快为您处理',{ duration:2000, type:'div' });
-							setTimeout(function(){
-								mui.back();								
-							},1000);
-						}else{
-							mui.alert(data.message);
-						}
-					},
-					error:function(xhr,type,errorThrown){
-						//异常处理；
-						console.log(type);
-					}
-				});	
+				mui.toast('提交成功，我们将会尽快为您处理',{ duration:2000, type:'div' });
+				setTimeout(function(){
+					mui.back();								
+				},1000);
 			}else{
 				mui.alert(data.message);
 			}
@@ -202,3 +204,39 @@ function yz_house_wt(){
 		}
 	});
 }
+//根据用户id查询当前登陆用户
+  function cx_fwnews(id){
+	  mui.ajax(url + '/yskjApp/webApp/dataInfo/getHouseCompanyById',{
+			data:{
+				'id': id
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'post',//HTTP请求类型
+			timeout:10000,//超时时间设置为10秒；
+			headers:{'Content-Type':'application/json'},	              
+			success:function(data){
+				//服务器返回响应，根据响应结果，分析是否登录成功；
+				if(data.success){
+					var alldata = data.data[0];
+					console.log(JSON.stringify(alldata));
+					for (var i in alldata) {
+						if(i == 'companyname'){
+							$('#qy_name').val(alldata[i]);
+							qy_name = $('#qy_name').val();
+							btnzt();
+						}
+					}
+				}else{
+					mui.alert(data.message);
+				}
+			},
+			error:function(xhr,type,errorThrown){
+				//异常处理；
+				console.log(type);
+			}
+		});
+  }
+  if(localStorage.getItem('user_id')){
+  	var user_id = localStorage.getItem('user_id');
+  	cx_fwnews(user_id);
+  }
