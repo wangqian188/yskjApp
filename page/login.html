@@ -181,7 +181,11 @@
 			    }
 			});
 			document.getElementById('weixin').addEventListener('tap',function() {
-	            mui.back();
+//	            mui.back();
+	            mui.openWindow({
+				    url: 'wechat_log.html', 
+				    id:'wechat_log'
+			  	});
 	        })
 		</script>
 		<script src="../js/lib/sha1.js" type="text/javascript" charset="utf-8"></script>

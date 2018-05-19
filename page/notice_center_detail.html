@@ -82,23 +82,57 @@
 					<div class="hetongtuizdis qiyehuldis">
 						<p>
 							<span class="xxingmspan fangywidt">退租时间：</span>
-							<span class="sansspan">无</span>
+							<span class="sansspan heotn_tuoifang"></span>
 						</p>
 					</div>
-					
+
 					<!--合同变更-续租独有的-->
 					<div class="hetongxzudis qiyehuldis">
 						<p>
 							<span class="xxingmspan fangywidt">续租时间：</span>
-							<span class="sansspan">2年</span>
+							<span class="sansspan hetong_xzhu"></span>
 						</p>
 					</div>
 				</div>
-				<div class="compete"></div>
+				<div class="compete">
+					<img src="" width="100%" height="100%"/>
+				</div>
 			</div>
 			<div class="fangwumiashu fangyuanweituo qiyehuldis">
-				<h1>房屋描述</h1>
+				<h1></h1>
 				<div class="xycontent fangwufont fangdewnzi">
+					
+				</div>
+			</div>
+
+			<!--合同变更-换房独有的-->
+			<div class="fangwumiashu hetonghuangfanzdis qiyehuldis">
+				<h1>换房需求</h1>
+				<div class="xycontent">
+					<p>
+						<span class="xxingmspan fangywidt">目标区域：</span>
+						<span class="sansspan mubiao_qvyv"></span>
+					</p>
+					<p>
+						<span class="xxingmspan fangywidt">目标楼盘：</span>
+						<span class="sansspan mubiao_lupan"></span>
+					</p>
+					<p>
+						<span class="xxingmspan fangywidt">目标面积：</span>
+						<span class="sansspan mubioa_area"></span>
+					</p>
+					<p>
+						<span class="xxingmspan fangywidt">目标租金：</span>
+						<span class="sansspan mubiao_zijin"></span>
+					</p>
+					<p>
+						<span class="xxingmspan fangywidt">换房时间：</span>
+						<span class="sansspan huangfan_time"></span>
+					</p>
+					<p>
+						<span class="xxingmspan">是否需要注册：</span>
+						<span class="sansspan shifou_zhuce"></span>
+					</p>
 					
 				</div>
 			</div>
@@ -182,6 +216,25 @@
 					success:function(data){
 						if(data.success){
 							var data = data.data;
+							if(data[0].statusName == '达成合作'){
+								$(".compete img").attr('src','../img/notice_ceter/compete1.png');
+							}else if(data[0].statusName == '已完成'){
+								$(".compete img").attr('src','../img/notice_ceter/compete2.png');
+							}else if(data[0].statusName == '已发布'){
+								$(".compete img").attr('src','../img/notice_ceter/compete3.png');
+							}else if(data[0].statusName == '待审批'){
+								$(".compete img").attr('src','../img/notice_ceter/compete4.png');
+							}else if(data[0].statusName == '待接单'){
+								$(".compete img").attr('src','../img/notice_ceter/compete5.png');
+							}else if(data[0].statusName == '审批通过'){
+								$(".compete img").attr('src','../img/notice_ceter/compete6.png');
+							}else if(data[0].statusName == '已接单'){
+								$(".compete img").attr('src','../img/notice_ceter/compete7.png');
+							}else if(data[0].statusName == '已拒绝'){
+								$(".compete img").attr('src','../img/notice_ceter/compete8.png');
+							}else if(data[0].statusName == '已过期'){
+								$(".compete img").attr('src','../img/notice_ceter/compete9.png');
+							}
 							if(buess_type == 1){
 				            	alert('业主委托///房源委托');
 				            	$('.fuwushench').removeClass('qiyehuldis');
@@ -193,7 +246,7 @@
 								$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
 				            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
 				            	$(".fangdewnzi").html(data[0].memo==''?"无":data[0].memo);
-				            	
+				            	$(".fangyuanweituo h1").html('房屋描述');
 				            }else if(buess_type == 2){
 				            	alert('升级服务///服务商城');
 				            	alert(data[0].memo);
@@ -204,21 +257,52 @@
 								$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
 								$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
 				            	$(".fangdewnzi").html(data[0].memo==''?"无":data[0].memo);
+				            	$(".fangyuanweituo h1").html('其他信息');
 				            }else if(buess_type == 3){
 				            	if(type == 5){
 				            		if(category == 1){
 				            			alert('续租');
 				            			$('.fuwushench').removeClass('qiyehuldis');
 				            			$('.hetongxzudis').removeClass('qiyehuldis');
+				            			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
+						            	$(".name").html(data[0].name==null?"无":data[0].name);
+										$(".phone").html(data[0].phone==null?"无":data[0].phone);
+										$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
+										$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
+						            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
+						            	$(".hetong_xzhu").html(data[0].renewalYears==''?"无":data[0].renewalYears + '年');
 				            		}else if(category == 2){
 				            			alert('换房');
+				            			alert(data[0].isZhuce);
 				            			$('.fuwushench').removeClass('qiyehuldis');
-				            			$('.hetongxzudis').removeClass('qiyehuldis');
+				            			$('.hetonghuangfanzdis').removeClass('qiyehuldis');
+				            			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
+						            	$(".name").html(data[0].name==null?"无":data[0].name);
+										$(".phone").html(data[0].phone==null?"无":data[0].phone);
+										$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
+										$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
+						            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
+						            	$(".mubiao_qvyv").html(data[0].changArea==''?"无":data[0].changArea);
+						            	$(".mubiao_lupan").html(data[0].changeLouPan==''?"无":data[0].changeLouPan);
+						            	$(".mubioa_area").html(data[0].changeMJ==''?"无":data[0].changeMJ + '㎡');
+						            	$(".mubiao_zijin").html(data[0].changeZuJin==''?"无":data[0].changeZuJin + '元/月');
+						            	$(".huangfan_time").html(data[0].changeTime==''?"无":data[0].changeTime);
+						            	$(".shifou_zhuce").html(data[0].isZhuce==null?"无":data[0].isZhuce);
+						            	
 				            		}else if(category == 3){
 				            			alert('退房///退租');
 				            			$('.fuwushench').removeClass('qiyehuldis');
 				            			$('.hetongtuizdis').removeClass('qiyehuldis');
 				            			$('.fangyuanweituo').removeClass('qiyehuldis');
+				            			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
+						            	$(".name").html(data[0].name==null?"无":data[0].name);
+										$(".phone").html(data[0].phone==null?"无":data[0].phone);
+										$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
+										$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
+						            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
+						            	$(".heotn_tuoifang").html(data[0].changeTime==''?"无":data[0].changeTime);
+						            	$(".fangdewnzi").html(data[0].memo==''?"无":data[0].memo);
+						            	$(".fangyuanweituo h1").html('退租理由');
 				            		}
 				            	}else{
 				//          		在线报修   物业对接   房屋凭证      房屋费用是一个页面
@@ -249,7 +333,7 @@
 				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);
 				        			$(".fabu_qiuqi").html(data[0].enterpriseName==''?"无":data[0].enterpriseName);
 				        			$(".fabu_qiuqi_hey").html(data[0].demandType==''?"无":data[0].demandType);
-				        			$(".fangyuanweituo h1").html("发布服务");
+				        			$(".fangyuanweituo h1").html("服务描述");
 				        			$(".fangdewnzi").html(data[0].demandDesc==''?"无":data[0].demandDesc);
 				            	}else if(type == 2){
 				            		
