@@ -1,3 +1,5 @@
+var sel_industry = '';//行业
+var sel_location = '';//区域
 var nav = $('.top_nav li');
 //所属行业
 $('.sshy').click(function(){
@@ -93,26 +95,39 @@ function hy(){
 }
 //选择所属行业
 function clk_hy(idx){
+	$('.zc_box').css('display','none');
+	$('.bottom_box').css('overflow','auto');
 	$('.tj_box span').css('color','#666666');
 	$('.tj_box span').eq(idx).css('color','#2a72d8');
 	$('.sshy span').eq(0).html($('.tj_box span').eq(idx).text());
+	sel_industry = $('.tj_box span').eq(idx).text();
 	if(idx == 0){
 		$('.sshy span').eq(0).html('所属行业');
+		sel_industry = '';
 	}
+	vip_list();
 }
 //选择所属区域
 function clks(idx){
+	$('.zc_box').css('display','none');
+	$('.bottom_box').css('overflow','auto');
 	$('.tj_box1 span').css('color','#666666');
 	$('.tj_box1 span').eq(idx).css('color','#2a72d8');
 	$('.ssqy span').eq(0).html($('.tj_box1 span').eq(idx).text());
+	sel_location = $('.tj_box1 span').eq(idx).text();
 	if(idx == 0){
 		$('.ssqy span').eq(0).html('所属区域');
+		sel_location = '';
 	}
+	vip_list();
 }
 //列表数据请求
 function vip_list(){
 	mui.ajax(Interface_url + '/yskjApp/webApp/dataInfo/listMemberEnterprise.do',{
-		data:{},
+		data:{
+			'industry': sel_industry,//行业
+			'location': sel_location//区域
+		},
 		dataType:'json',
 		type:'post',
 		timeout:10000,
@@ -120,9 +135,13 @@ function vip_list(){
 		success:function(data){
 			if(data.success){
 				var allData = data.data;
+				$('#vip_list').html('');
+				if(allData.length == 0){
+					$('#vip_list').html('没有符合该条件的会员企业')
+				}
 				var str = '';
 				for (var i=0; i<allData.length; i++) {
-					str += '<li style="background: url('+allData[i].logoImg+')no-repeat center;background-size: 100% auto;" onclick="list_detail('+allData[i].id+')"><div class="qy_news"><p class="qy_name">'+allData[i].enterpriseName+'</p><p class="qy_tip"><span></span><span>'+allData[i].category+'</span></p></div></li>';
+					str += '<li style="background: url('+allData[i].logoImg+')no-repeat center;background-size: 100% auto;" onclick="list_detail('+allData[i].id+')"><div class="qy_news"><p class="qy_name">'+allData[i].enterpriseName+'</p><p class="qy_tip"><span></span><span>'+allData[i].ranges+'</span></p></div></li>';
 					
 				}
 				$('#vip_list').append(str);

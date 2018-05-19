@@ -25,7 +25,7 @@
 				<p class="qy_logo"><img src=""/></p>
 				<p class="qy_xx">
 					<span></span>
-					<span>www.cctv.com</span>
+					<span></span>
 				</p>
 			</div>
 			<!--企业信息-->
@@ -36,15 +36,15 @@
 				</p>
 				<p class="qy_mes">
 					<span>所属行业：</span>
-					<span>传媒类企业</span>
+					<span></span>
 				</p>
 				<p class="qy_mes">
 					<span>所在区域：</span>
-					<span>朝阳区</span>
+					<span></span>
 				</p>
 				<p class="qy_mes">
 					<span>经营范围：</span>
-					<span>企业宣传片，广告，企业活动，商业汇演，年会，纪录片，微电影</span>
+					<span></span>
 				</p>
 			</div>
 			<!--企业简介-->
@@ -75,13 +75,15 @@
 					success:function(data){
 						if(data.success){
 							var allData = data.data;
-							$('.qy_xx span').eq(0).html(allData.enterpriseName);
-							$('.qy_xx span').eq(1).html(allData.enterpriseName);
-							$('.qy_mes:eq(0) span:eq(1)').text(allData.phone);
-							$('.qy_logo img').attr('src',allData.logoImg);
-							$('.qy_mc').text(allData.enterpriseName);
+							$('.qy_xx span').eq(0).text(allData.enterpriseName);//企业名称
+							$('.qy_xx span').eq(1).text(allData.enterpriseWebsite);//企业网站
+							$('.qy_mes:eq(0) span:eq(1)').text(allData.phone);//企业电话
+							$('.qy_mes:eq(1) span:eq(1)').text(allData.industry);//所属行业
+							$('.qy_mes:eq(2) span:eq(1)').text(allData.location);//所在区域
+							$('.qy_mes:eq(3) span:eq(1)').text(allData.ranges);//经营范围
+							$('.qy_logo img').attr('src',allData.logoImg);//企业logo
+							$('.qy_mc').text(allData.enterpriseName);//企业名称  页面标题
 							$('.intro_detail').text(allData.enterpriseDesc);//企业简介
-							console.log(JSON.stringify(allData));
 						}else{
 							
 						}
