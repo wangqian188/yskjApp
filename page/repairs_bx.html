@@ -86,7 +86,7 @@
 						</ul>
 					</div>
 					<!--房屋凭证-->
-					<div class="house_change">
+					<!--<div class="house_change">
 						<h1 class="house_tit">房屋凭证</h1>
 						<ul class="wy_docking zxbx_nav" id="fwpz">
 							<li>
@@ -102,7 +102,7 @@
 								<p></p>
 							</li>
 						</ul>
-					</div>
+					</div>-->
 					<!--房屋费用-->
 					<div class="house_change">
 						<h1 class="house_tit">房屋费用</h1>
@@ -143,13 +143,16 @@
             	var online_sale_height = -$('.online_sale').offset().top + $('.house_tit').height();
             	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
             }else if(sale == 3){
-            	var online_sale_height = -$('.wuye_duijie').offset().top + $('.house_tit').height();
+//          	var online_sale_height = -$('.wuye_duijie').offset().top + $('.house_tit').height();
+//          	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
+            	
+            	var online_sale_height = -$('.online_bx').offset().top;
             	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
             }else if(sale == 4){
             	var online_sale_height = -$('.wuye_duijie').offset().top;
             	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
             }else if(sale == 5){
-            	var online_sale_height = -$('.wuye_duijie').offset().top;
+            	var online_sale_height = -$('.online_bx').offset().top;
             	mui('.mui-scroll-wrapper').scroll().scrollTo(0,online_sale_height,0);
             }
 		});
@@ -219,24 +222,20 @@
 			})(i)
 		}
 		//房屋凭证
-		var fwpz = $('#fwpz li');
-		for(var i=0; i<fwpz.length; i++){
-			(function(idx){
-				fwpz[i].onclick = function(){
-					mui.openWindow({ 
-						url:'./forms_fwpz.html', //需要打开页面的url地址 
-						id:'forms_fwpz',  //需要打开页面的url页面id
-						extras:{
-					    	'fwpz_idx':idx
-					    },
-					})
-//					var main1 = plus.webview.getWebviewById('forms_fwpz');
-//					mui.fire(main1, "fwpz_to",{
-//					    fwpz_idx:idx
+//		var fwpz = $('#fwpz li');
+//		for(var i=0; i<fwpz.length; i++){
+//			(function(idx){
+//				fwpz[i].onclick = function(){
+//					mui.openWindow({ 
+//						url:'./forms_fwpz.html', //需要打开页面的url地址 
+//						id:'forms_fwpz',  //需要打开页面的url页面id
+//						extras:{
+//					    	'fwpz_idx':idx
+//					    },
 //					})
-				}
-			})(i)
-		}
+//				}
+//			})(i)
+//		}
 		//房屋费用
 		var fwfy = $('#fwfy li');
 		for(var i=0; i<fwfy.length; i++){
