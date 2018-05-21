@@ -116,7 +116,10 @@
 							console.log("用户登录状态： "+data.success);
 							if(data.success){
 								lostate=1;
+								//
+								localStorage.setItem('lostate', lostate);
 								//已登录
+								
 							}else{
 								//未登录
 								
@@ -143,15 +146,17 @@
 					
 			    }
 			});
+			
+			
 			//跳转页面地址
 			var toUrl = ['page/person.html','page/notice_center.html','page/mycollection.html','page/wode_fangyang.html','page/wode_guanjia.html','page/myset.html'];
 			for(var i=0; i<$('.tolink').length; i++){
 				(function(index){
 					$('.tolink').eq(index).click(function(){
-						if(index==0||index==1){
+						if(index==0||index==1||index==2||index==3||index==4){
 							if(lostate==1){
 								//登录状态
-									mui.openWindow({ 
+									mui.openWindow({
 							url:toUrl[index], //需要打开页面的url地址 
 							id:'person'+index,  //需要打开页面的url页面id
 							styles:{ 
@@ -253,6 +258,13 @@
 							var type = userData.typeid;
 							localStorage.setItem('user_type',type);//1 渠道用户 2 业主用户 3 客户用户
 //							var ifsoifo = localStorage.getItem('user_type');
+							
+							//售后服务这块判断登没有登录
+							if(lostate==1 && type==2){
+								$('.after_service').css('display','none');
+							}else{
+								$('.after_service').css('display','block');
+							}
 							var phone = userData.phone;
 							var reg = /^(\d{3})\d{4}(\d{4})$/;
 							phone = phone.replace(reg, "$1****$2");
@@ -300,7 +312,12 @@
 					$('.yrz').css('display','none');
 				}				
 			}
-			takeuser();
+			//判断他的登录方式
+			if(localStorage.getItem('weinxin_shouquan')){
+				showuserinfo();
+			}else{
+				takeuser();
+			}
 			$('.wrz').click(function(){
 				//跳转认证页面
 				mui.openWindow({
@@ -309,25 +326,25 @@
 				});
 			});
 			//渲染用户信息
-//			function showuserinfo(){
-//				var data = JSON.parse(localStorage.getItem('userInfos'));
-//		    	$('#headImage').attr('src',data.headimgurl);
-//		    	$('.ljdl').html(data.nickname);
-//			}
-			
-			
-        
-        //售后服务的点击事件
-        $('.shebeiweixiu').click(function(){
-        	var saleid = this.id;
-        	mui.openWindow({
-			  url: './page/repairs_bx.html', 
-			  id:'repairs_bx',
-			  extras:{ 
-				 saleid:saleid,
-			  }
-			});
-        });
+			function showuserinfo(){
+				var data = JSON.parse(localStorage.getItem('userInfos'));
+		    	$('#headImage').attr('src',data.headimgurl);
+		    	$('.ljdl').html(data.nickname);
+			}
+
+	        //售后服务的点击事件
+	        $('.shebeiweixiu').click(function(){
+	        	var saleid = this.id;
+	        	mui.openWindow({
+				  url: './page/repairs_bx.html', 
+				  id:'repairs_bx',
+				  extras:{ 
+					 saleid:saleid,
+				  }
+				});
+	        });
+	        
+	        
 		</script>
 	</body>
 

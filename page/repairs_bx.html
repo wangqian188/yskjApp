@@ -157,63 +157,169 @@
             }
 		});
 		//续租
+		var lostate = localStorage.getItem('lostate');
+		var user_type = localStorage.getItem('user_type')
 		$('#xuzu').click(function(){
-			mui.openWindow({ 
-				url:'./relet_xz.html', //需要打开页面的url地址 
-				id:'relet_xz',  //需要打开页面的url页面id
-			})
+			//续租中点击之后判断登录的状态和登录用户的类型
+			if(lostate == 1){
+				if(user_type == 1){
+					mui.toast('1212132132');
+				}else{
+					mui.openWindow({ 
+						url:'./relet_xz.html', //需要打开页面的url地址 
+						id:'relet_xz',  //需要打开页面的url页面id
+					})
+				}
+			}else{
+				mui.openWindow({ 
+					url:'login.html', //需要打开页面的url地址 
+					id:'login',  //需要打开页面的url页面id
+				})
+			}
+			
 		});
 		//换房
 		$('#huanfang').click(function(){
-			mui.openWindow({ 
-				url:'./room_change.html', //需要打开页面的url地址 
-				id:'room_change',  //需要打开页面的url页面id
-			})
+			//换房中点击之后判断登录的状态和登录用户的类型
+			if(lostate == 1){
+				if(user_type == 1){
+					mui.toast('1212132132');
+				}else{
+					mui.openWindow({ 
+						url:'./room_change.html', //需要打开页面的url地址 
+						id:'room_change',  //需要打开页面的url页面id
+					})
+				}
+			}else{
+				mui.openWindow({ 
+					url:'login.html', //需要打开页面的url地址 
+					id:'login',  //需要打开页面的url页面id
+				})
+			}
+			
 		});
 		//退房
 		$('#tuifang').click(function(){
-			mui.openWindow({ 
-				url:'./room_tz.html', //需要打开页面的url地址 
-				id:'room_tz',  //需要打开页面的url页面id
-			})
+			//退房中点击之后判断登录的状态和登录用户的类型
+			if(lostate == 1){
+				if(user_type == 1){
+					mui.toast('1212132132');
+				}else{
+					mui.openWindow({ 
+						url:'./room_tz.html', //需要打开页面的url地址 
+						id:'room_tz',  //需要打开页面的url页面id
+					})
+				}
+			}else{
+				mui.openWindow({ 
+					url:'login.html', //需要打开页面的url地址 
+					id:'login',  //需要打开页面的url页面id
+				})
+			}
+			
 		});
 		//在线报修
 		$('#online1').click(function(){//门窗报修
-			mui.openWindow({ 
-				url:'./forms_zxbx.html', //需要打开页面的url地址 
-				id:'forms_zxbx',  //需要打开页面的url页面id
-			})
+			//在线报修中点击之后判断登录的状态和登录用户的类型
+			if(lostate == 1){
+				if(user_type == 1){
+					mui.toast('1212132132');
+				}else{
+					mui.openWindow({ 
+						url:'./forms_zxbx.html', //需要打开页面的url地址 
+						id:'forms_zxbx',  //需要打开页面的url页面id
+					})
+				}
+			}else{
+				mui.openWindow({ 
+					url:'login.html', //需要打开页面的url地址 
+					id:'login',  //需要打开页面的url页面id
+				})
+			}
+			
 		});
 		$('#online2').click(function(){//灯具电路
-			mui.openWindow({ 
-				url:'./forms_zxbx1.html', //需要打开页面的url地址 
-				id:'forms_zxbx1',  //需要打开页面的url页面id
-			})
+			//在线报修中点击之后判断登录的状态和登录用户的类型
+			if(lostate == 1){
+				if(user_type == 1){
+					mui.toast('1212132132');
+				}else{
+					mui.openWindow({ 
+						url:'./forms_zxbx1.html', //需要打开页面的url地址 
+						id:'forms_zxbx1',  //需要打开页面的url页面id
+					})
+				}
+			}else{
+				mui.openWindow({ 
+					url:'login.html', //需要打开页面的url地址 
+					id:'login',  //需要打开页面的url页面id
+				})
+			}
+			
 		});
 		$('#online3').click(function(){//空调制冷
-			mui.openWindow({ 
-				url:'./forms_zxbx2.html', //需要打开页面的url地址 
-				id:'forms_zxbx2',  //需要打开页面的url页面id
-			})
+			//在线报修中点击之后判断登录的状态和登录用户的类型
+			if(lostate == 1){
+				if(user_type == 1){
+					mui.toast('1212132132');
+				}else{
+					mui.openWindow({ 
+						url:'./forms_zxbx2.html', //需要打开页面的url地址 
+						id:'forms_zxbx2',  //需要打开页面的url页面id
+					})
+				}
+			}else{
+				mui.openWindow({ 
+					url:'login.html', //需要打开页面的url地址 
+					id:'login',  //需要打开页面的url页面id
+				})
+			}
+			
 		});
 		$('#online4').click(function(){//水路管件
-			mui.openWindow({ 
-				url:'./forms_zxbx3.html', //需要打开页面的url地址 
-				id:'forms_zxbx3',  //需要打开页面的url页面id
-			})
+			//在线报修中点击之后判断登录的状态和登录用户的类型
+			if(lostate == 1){
+				if(user_type == 1){
+					mui.toast('1212132132');
+				}else{
+					mui.openWindow({ 
+						url:'./forms_zxbx3.html', //需要打开页面的url地址 
+						id:'forms_zxbx3',  //需要打开页面的url页面id
+					})
+				}
+			}else{
+				mui.openWindow({ 
+					url:'login.html', //需要打开页面的url地址 
+					id:'login',  //需要打开页面的url页面id
+				})
+			}
+			
 		});
 		//物业对接
 		var wydj = $('#wydj li');
 		for(var i=0; i<wydj.length; i++){
 			(function(idx){
 				wydj[i].onclick = function(){
-					mui.openWindow({ 
-						url:'./forms_kjcmt.html', //需要打开页面的url地址 
-						id:'forms_kjcmt',  //需要打开页面的url页面id
-						extras:{
-					    	'wydj_idx':idx
-					    },
-					})
+					//物业对接中点击之后判断登录的状态和登录用户的类型
+					if(lostate == 1){
+						if(user_type == 1){
+							mui.toast('1212132132');
+						}else{
+							mui.openWindow({ 
+								url:'./forms_kjcmt.html', //需要打开页面的url地址 
+								id:'forms_kjcmt',  //需要打开页面的url页面id
+								extras:{
+							    	'wydj_idx':idx
+							    },
+							})
+						}
+					}else{
+						mui.openWindow({ 
+							url:'login.html', //需要打开页面的url地址 
+							id:'login',  //需要打开页面的url页面id
+						})
+					}
+					
 //					var main1 = plus.webview.getWebviewById('forms_kjcmt');
 //					mui.fire(main1, "wydj_to",{
 //					    wydj_idx:idx
@@ -241,13 +347,26 @@
 		for(var i=0; i<fwfy.length; i++){
 			(function(idx){
 				fwfy[i].onclick = function(){
-					mui.openWindow({ 
-						url:'./forms_fwfy.html', //需要打开页面的url地址 
-						id:'forms_fwfy',  //需要打开页面的url页面id
-						extras:{
-					    	'fwfy_idx':idx
-					    },
-					})
+					//房屋费用中点击之后判断登录的状态和登录用户的类型
+					if(lostate == 1){
+						if(user_type == 1){
+							mui.toast('1212132132');
+						}else{
+							mui.openWindow({ 
+								url:'./forms_fwfy.html', //需要打开页面的url地址 
+								id:'forms_fwfy',  //需要打开页面的url页面id
+								extras:{
+							    	'fwfy_idx':idx
+							    },
+							})
+						}
+					}else{
+						mui.openWindow({ 
+							url:'login.html', //需要打开页面的url地址 
+							id:'login',  //需要打开页面的url页面id
+						})
+					}
+					
 //					var main1 = plus.webview.getWebviewById('forms_fwfy');
 //					mui.fire(main1, "fwfy_to",{
 //					    fwfy_idx:idx
