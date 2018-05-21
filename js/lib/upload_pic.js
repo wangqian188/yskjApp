@@ -160,7 +160,6 @@ function imgupgrade() {
         picupload(imgArray,i);
     }
 }
-
 function picupload(imgArray,num){
 	mui.ajax(Interface_url + "/yhcms/web/jcsj/uploadPic.do",{
 		data:{
