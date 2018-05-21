@@ -39,6 +39,23 @@
 		<script src="../js/lib/app_config.js"></script>
 	</body>
 	<script>
+		mui.init();
+		var old_back = mui.back;
+		mui.back = function() {
+		    // 获取目标口窗口对象
+		    var target = plus.webview.getWebviewById('wd.html');
+		    // 执行相应的事件
+		    mui.fire(target, 'customEvent', {
+		    	'ttt':1,
+		    });
+//		    var fyxq = plus.webview.getWebviewById('fyTail');
+//		    // 执行相应的事件
+//		    mui.fire(fyxq, 'fanhuidaofxqq', {
+//		    	'ttt':1
+//		    });
+		    // 执行关闭
+		    old_back();
+		};
 		var auths = null;
 		document.addEventListener( "plusready", function(){  
 			
@@ -52,8 +69,7 @@
 		//微信登陆测试
 		
 		
-		//刚进入这个页面就去验证是否微信授权成功
-		yanzha_weinshouquan();
+		
 		
 		//手机号码验证
 		function checkPhone(id){
@@ -192,7 +208,7 @@
 				success:function(data){
 					if(data.success){
 						check_tel()//验证
-						console.log(data.message)			
+						console.log(data.message);
 					}else{
 						mui.toast('验证码输入有误',{ duration:'3000', type:'div' }) 
 						return;
@@ -220,11 +236,12 @@
 						mui.toast('登陆成功',{ duration:'2000', type:'div' }) 
 						console.log(data.message)	
 						//登陆成功后跳转'我的'页面
-//						mui.back();
-//						mui.openWindow({
-//							url: 'wechat_log.html', 
-//							id:'wechat_log',
-//						});
+						mui.back();
+						localStorage.setItem('weinxin_shouquan',1);
+						var main = plus.webview.getWebviewById('login');
+						mui.fire(main, "wixinshouqian",{
+						    idxsxfh:1//1位置
+						})
 						return;
 				}else{
 						mui.toast(data.message,{ duration:'2000', type:'div' }) 
@@ -369,8 +386,21 @@
                 mui.toast("已经登录认证！"); 
             } 
         } 
+
+        //注销的监听
+        window.addEventListener("zhuxiao_weixin", function (e) {
+		    //获得事件参数
+			alert(222222);
+		    var idxjiaggge = e.detail.idxsxfh;
+			authLogout();
+		});
+		var signout_monitor = localStorage.getItem('signout_monitor');
+		if(signout_monitor == 1){
+			authLogout();
+		}
         //注销 
         function authLogout() { 
+        	alert(111111);
             for (var i in auths) { 
                 var s = auths[i]; 
                 if (s.authResult) { 
@@ -392,14 +422,19 @@
                 } 
             } 
             if (!s.authResult) { 
-                mui.toast("未授权登录！"); 
+                mui.toast("未授权登录！");
             } else {
                 s.getUserInfo(function(e) { 
                     var josnStr = JSON.stringify(s.userInfo); 
-                    var jsonObj = s.userInfo; 
+                    var jsonObj = s.userInfo;
                     console.log("获取用户信息成功：" + josnStr); 
+                    //存储用户信息
+                    localStorage.setItem('userInfos',josnStr);
+                    
+                    //刚进入这个页面就去验证是否微信授权成功
+					yanzha_weinshouquan();
 //                  showData(type,jsonObj); 
-                    authLogout(); 
+//                  authLogout(); 
                 }, function(e) { 
                     alert("获取用户信息失败：" + e.message + " - " + e.code); 
                 }); 
@@ -448,23 +483,30 @@
 
 		//yskjApp/appYskj/V1/getOpenid.do这个接口是验证是否第三方微信授权登录
 		function yanzha_weinshouquan(){
+			var opendd = JSON.parse(localStorage.getItem('userInfos'));
 			mui.ajax(url + '/yskjApp/appYskj/V1/getOpenid.do',{
-				data:{"openid ":JSON.parse(localStorage.getItem('userInfos'))},
+				data:{"openid":opendd.openid,"cookie":createcookie_yh()},
 				dataType:'json',
 				type:'post',
 				timeout:10000,
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
-					if(data.success){
-						
+					if(data.success == true && data.flag == 2){
+						//直接登录
+						mui.back();
+						var main = plus.webview.getWebviewById('login');
+						mui.fire(main, "wixinshouqian",{
+						    idxsxfh:1//1位置
+						})
+						localStorage.setItem('weinxin_shouquan',1);
+					}else if(data.success == true && data.flag == 1){
+						//弹出绑定手机号页面
 					}else{
-						mui.toast('微信授权失败！');
-						alert(12131231231);
+						mui.toast(data.message);
 						mui.openWindow({
 							url: 'login.html', 
 							id:'login',
 						});
-						return;
 					}
 				},
 				error:function(xhr,type,errorThrown){
@@ -476,8 +518,9 @@
 		//点击绑定事件调用判断用户存不存的的接口，不存在去强制注册（后台已经写了），存在去绑定
 		function check_tel(){
 			telnumber = $('#tel').val();
+			var opendd = JSON.parse(localStorage.getItem('userInfos'));
 			mui.ajax(url + '/yskjApp/appYskj/V1/authBind.do',{
-				data:{"phone":telnumber},
+				data:{"phone":telnumber,"openid":opendd.openid,"cookie":createcookie_yh()},
 				dataType:'json',
 				type:'post',
 				timeout:10000,
@@ -486,6 +529,7 @@
 					if(data.success){
 						signin();//登陆
 					}else{
+						mui.toast(data.message);
 						return;
 					}
 				},

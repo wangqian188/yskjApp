@@ -4,7 +4,7 @@
 		"iPhone",
 		"iPad"
 	],
-	"id": "H54DB5283",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"id": "YSKJ",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "幼狮空间",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
@@ -115,7 +115,7 @@
 		},
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
-		"distribute": {"plugins":{"oauth":{"weixin":{"appid":"wx132f5a23934bcc33","appsecret":"APPSecretf0873f51bf1beaffbf87da103af8bff0"}}},
+		"distribute": {"plugins":{"oauth":{"weixin":{"appid":"wx7f158aec5dcedfd4","appsecret":"eb3958dcb9e1738839619a600f36b4c7"}}},
 			"apple": {
 				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
 				"mobileprovision": "",/*iOS应用打包配置文件*/
@@ -205,25 +205,25 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "C:/Users/yuan/Desktop/app配置文件测试/ipone5.png","retina55":"C:/Users/yuan/Desktop/app配置文件/welcome.png","retina47":"C:/Users/yuan/Desktop/app配置文件测试/welcome1.png","retina35":"C:/Users/yuan/Desktop/app配置文件测试/ipone4.png","retina55l":"C:/Users/yuan/Desktop/app配置文件/welcome.png","iphonex":"C:/Users/yuan/Desktop/app配置文件测试/welcome.png","iphonexl":"C:/Users/yuan/Desktop/app配置文件/welcome.png"
+						"retina40": "C:/Users/Administrator/Desktop/设计图/App/启动页/ipone5.png","retina55":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png","retina47":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png","retina35":"C:/Users/Administrator/Desktop/设计图/App/启动页/ipone4.png","retina55l":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png","iphonex":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","iphonexl":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png"
 					},
 					"ipad": {
-						"portrait": "C:/Users/yuan/Desktop/app配置文件/welcome.png", /*iPad竖屏启动图片，分辨率：768x1004*/
-						"portrait-retina": "C:/Users/yuan/Desktop/app配置文件/welcome.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
-						"landscape": "C:/Users/yuan/Desktop/app配置文件/welcome.png", /*iPad横屏启动图片，分辨率：1024x748*/
-						"landscape-retina": "C:/Users/yuan/Desktop/app配置文件/welcome.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
-						"portrait7": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
-						"portrait-retina7": "C:/Users/yuan/Desktop/app配置文件/welcome.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
-						"landscape7": "C:/Users/yuan/Desktop/app配置文件/welcome.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
-						"landscape-retina7": "C:/Users/yuan/Desktop/app配置文件/welcome.png"
+						"portrait": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png"
 					}
 				},
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png"
+					"hdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png"
 				}
 			}
 		},"ads":{"rp":false,"splash":false,"push":false},"adid":""
@@ -241,12 +241,12 @@
 					"css/style.css",
 					"css/iconfont.css",
 					"css/style_a_d.css",
-					"css/a_fringe.css"
+					"css/a_fringe.css",
+					"fwsc.html"
 				],
 				"refer": [
 					"wd.html",
 					"jxfy.html",
-					"fwsc.html",
 					"qyhl.html",
 					null
 				],

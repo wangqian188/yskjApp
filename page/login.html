@@ -186,7 +186,14 @@
 				    url: 'wechat_log.html', 
 				    id:'wechat_log'
 			  	});
-	        })
+	        });
+	        
+	        //
+	        window.addEventListener("wixinshouqian", function (e) {
+			    //获得事件参数
+			    var wixinshouq = e.detail.idxsxfh;
+				mui.back();
+			});
 		</script>
 		<script src="../js/lib/sha1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/lib/md5.js" type="text/javascript" charset="utf-8"></script>

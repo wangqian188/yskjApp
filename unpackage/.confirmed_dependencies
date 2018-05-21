@@ -43,7 +43,8 @@
 			"css/style_a_d.css",
 			"css/iconfont.css",
 			"css/style.css",
-			"css/a_fringe.css"
+			"css/a_fringe.css",
+			"fwsc.html"
 		],
 		"refer": [
 			"qyhl.html",
