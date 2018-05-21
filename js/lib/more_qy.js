@@ -137,7 +137,7 @@ function vip_list(){
 				var allData = data.data;
 				$('#vip_list').html('');
 				if(allData.length == 0){
-					$('#vip_list').html('没有符合该条件的会员企业')
+					$('#vip_list').html('<p class="kong">没有符合该条件的会员企业</p>')
 				}
 				var str = '';
 				for (var i=0; i<allData.length; i++) {

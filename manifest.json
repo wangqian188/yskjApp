@@ -665,7 +665,8 @@
 				"refer": [
 					"page/wj_pwd.html",
 					"page/fast_zc.html",
-					"index.html"
+					"index.html",
+					"page/wechat_log.html"
 				],
 				"priority": 0
 			},

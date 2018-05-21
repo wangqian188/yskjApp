@@ -266,7 +266,8 @@
 	"page/login.html": {
 		"refer": [
 			"page/fast_zc.html",
-			"page/wj_pwd.html"
+			"page/wj_pwd.html",
+			"page/wechat_log.html"
 		],
 		"resources": [
 			"js/lib/flexible_css.js",
