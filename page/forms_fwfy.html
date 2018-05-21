@@ -56,7 +56,7 @@
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>手机号</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" maxlength="11"  id="tel">
+		    	    <input type="text" class="mui-input" placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" maxlength="11"  id="tel">
 		    	    <span class="hqyzm">获取验证码</span>
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
@@ -125,28 +125,6 @@
 					fwfy_type = 'FYKT'
 				}
             });
-       	}
-	    
-	    
-//	    window.addEventListener("fwfy_to", function (e) {
-//		    //获得事件参数
-//		    var fwfy_idx = e.detail.fwfy_idx;
-//			if(fwfy_idx == '0'){
-//				$('#fwfy_title').text('物业费');
-//				fwfy_type = 'FYWY'
-//			}
-//			if(fwfy_idx == '1'){
-//				$('#fwfy_title').text('取暖费');
-//				fwfy_type = 'FYQN'
-//			}
-//			if(fwfy_idx == '2'){
-//				$('#fwfy_title').text('遗留水电费');
-//				fwfy_type = 'FYSD'
-//			}
-//			if(fwfy_idx == '3'){
-//				$('#fwfy_title').text('空调转换费');
-//				fwfy_type = 'FYKT'
-//			}
-//		});
+       }
 	</script>
 </html>

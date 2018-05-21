@@ -51,7 +51,8 @@ var arr = [];//全局数组
 				    picker.setData(arr);
 					picker.pickers[0].setSelectedIndex(0);
 					$('#house_news').val(str);
-					house_news = str;
+					house_news = $('#house_news').val();
+					btnzt();
 				}else{
 //						mui.alert(data.message);
 				}
@@ -119,7 +120,7 @@ document.getElementById("hqyzm").addEventListener('input',function(){
 });
 //提交按钮样式变换
 function btnzt(){
-	if(telnumber != '' && yzm != '' && user_name != '' && house_news != ''){
+	if(telnumber != '' || yzm != '' || user_name != '' || house_news != ''){
 		$('.btn').css({'background':'#2b70d8'});
 	}else{
 		$('.btn').css({'background':'#d2d2d2'});
@@ -199,25 +200,42 @@ function sendyzm(){
 		}
 	});	
 }
-//委托房源提交
+//换租提交
+var clicktag = 0;
 $('.wt_btn').click(function(){
-	if(user_name==''){
-		mui.alert('姓名不能为空', '提示', function(){},'div');
+	house_news = $('#house_news').val();
+	if(telnumber == '' && yzm == '' && user_name == '' && house_news == ''){
 		return;
+	}else{
+		if(clicktag == 0){
+			clicktag = 1;
+			if(user_name==''){
+				mui.alert('姓名不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(telnumber==''){
+				mui.alert('手机号不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(yzm==''){
+				mui.alert('验证码不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(house_news==''){
+				mui.alert('现租房源不能为空', '提示', function(){},'div');
+				return;
+			}
+			yz_house_wt();
+		}else{
+			if(telnumber == '' || yzm == '' || user_name == '' || house_news == ''){
+				return;
+			}else{
+				setTimeout(function () { clicktag = 0; }, 5000);
+				mui.toast('已提交，请勿重复提交！',{ duration:'2000', type:'div' });
+				return;
+			}
+		}
 	}
-	if(telnumber==''){
-		mui.alert('手机号不能为空', '提示', function(){},'div');
-		return;
-	}
-	if(yzm==''){
-		mui.alert('验证码不能为空', '提示', function(){},'div');
-		return;
-	}
-	if(house_news==''){
-		mui.alert('现租房源不能为空', '提示', function(){},'div');
-		return;
-	}
-	yz_house_wt();
 });
 //验证并委托方法
 function yz_house_wt(){
@@ -227,10 +245,6 @@ function yz_house_wt(){
 	to_lp = $('#to_lp').val();//目标楼盘
 	to_mj = $('#to_mj').val();//目标面积
 	house_year = $('#qynx').val();//租金预算
-//	alert(to_lp + '楼盘');
-//	alert(to_mj + '面积');
-//	alert(house_year + '预算');
-//	alert(house_date + '时间');
 	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
 		data:{
 			'code':code,
@@ -243,7 +257,6 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				alert(house_date);
 				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do',{
 					data:{
 						"type":"5",
@@ -256,7 +269,8 @@ function yz_house_wt(){
 						"changeZuJin":house_year,//租金预算
 						"changeTime": house_date,//换租时间
 						"isZhuce": to_zc,//是否注册
-						"repairHouse":house_news
+						"repairHouse":house_news,
+						'uid': localStorage.getItem('user_id')
 					},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型
@@ -265,7 +279,7 @@ function yz_house_wt(){
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							mui.toast('已成功提交，我们将会尽快处理',{ duration:2000, type:'div' });
+							mui.toast('已提交成功，我们将会尽快为您处理',{ duration:2000, type:'div' });
 							setTimeout(function(){
 								mui.back();								
 							},1000);

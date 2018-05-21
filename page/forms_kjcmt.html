@@ -56,7 +56,7 @@
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>手机号</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" maxlength="11"  id="tel">
+		    	    <input type="text" class="mui-input" placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" maxlength="11"  id="tel">
 		    	    <span class="hqyzm">获取验证码</span>
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
@@ -121,23 +121,6 @@
 					wydj_type = 'WYWL';
 				}
             });
-       	}
-//	    window.addEventListener("wydj_to", function (e) {
-//	    	alert(123);
-//		    //获得事件参数
-//		    var wydj_idx = e.detail.wydj_idx;
-//			if(wydj_idx == '0'){
-//				$('#wydj_title').text('开具出门条');
-//				wydj_type = 'WYCM';
-//			}
-//			if(wydj_idx == '1'){
-//				$('#wydj_title').text('装修同意函');
-//				wydj_type = 'WYZX';
-//			}
-//			if(wydj_idx == '2'){
-//				$('#wydj_title').text('网络问题');
-//				wydj_type = 'WYWL';
-//			}
-//		});
+       }
 	</script>
 </html>
