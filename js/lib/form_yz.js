@@ -197,10 +197,11 @@ function signin(){
 		headers:{'Content-Type':'application/json'},	              
 		success:function(data){
 			if(data.success){
-				mui.toast('登陆成功',{ duration:'2000', type:'div' }) 
+				mui.toast('登陆成功',{ duration:'2000', type:'div' });
+				huoqv_yonghuxix();
 				console.log(data.message)	
 				//登陆成功后跳转'我的'页面
-				mui.back();
+				
 //				mui.openWindow({
 //					url: '../wd.html', 
 //					id:'wd1',
@@ -269,9 +270,10 @@ function denglu(){
 		success:function(data){
 			if(data.success){
 				mui.toast('登陆成功',{ duration:'2000', type:'div' }) 
+				huoqv_yonghuxix();
 				console.log(data.message)	
 				//登陆成功后跳转'我的'页面
-				mui.back();
+//				mui.back();
 //				mui.openWindow({
 //					url: '../wd.html', 
 //					id:'wd'
@@ -289,3 +291,58 @@ function denglu(){
 $('.btn1').click(function(){
 	check_tel1();//账号密码验证及登陆
 });
+
+//登录成功之后存到缓存里
+function huoqv_yonghuxix(){
+	var cookie=JSON.parse(localStorage.getItem('cookxs_yh'));
+	mui.ajax(url + '/yskjApp/appYskj/V1/landState.do',{
+		data:{
+			"cookie":cookie
+		},
+		dataType:'json',
+		type:'post',
+		timeout:10000,
+		headers:{'Content-Type':'application/json'},	              
+		success:function(data){
+			console.log("用户登录状态： "+data.success);
+			if(data.success){
+				var lostate=1;
+				localStorage.setItem('lostate', lostate);
+				mui.ajax(url + '/yskjApp/appYskj/V1/getCookieInfo.do',{
+					data:{
+						"cookie":JSON.parse(localStorage.getItem('cookxs_yh'))
+					},
+					dataType:'json',
+					type:'post',
+					timeout:10000,
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						if(data.success){
+							var userData = data.data;
+							localStorage.setItem('user_id',userData.id);//1 渠道用户 2 业主用户 3 客户用户
+							//将手机号中间加密
+							var type = userData.typeid;
+							localStorage.setItem('user_type',type);//1 渠道用户 2 业主用户 3 客户用户
+							mui.back();
+//							var ifsoifo = localStorage.getItem('user_type');
+						}else{
+//							mui.toast(data.message,{ duration:'2000', type:'div' }) 
+							return;
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						console.log(type);
+					}
+				});
+				//已登录
+				
+			}else{
+				//未登录
+				
+			}
+		},
+		error:function(xhr,type,errorThrown){
+			console.log(type);
+		}
+	});
+}
