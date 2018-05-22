@@ -368,10 +368,10 @@
                     s = auths[i]; 
                     break; 
                 } 
-            } 
+            }
 
             if (!s.authResult) { 
-                s.login(function(e) { 
+                s.login(function(e) {
                     mui.toast("登录认证成功！");
                     authUserInfo(type); 
 //                  mui.openWindow({
@@ -383,25 +383,28 @@
                     mui.toast("登录认证失败！" + e.message + " - " + e.code); 
                 }); 
             } else { 
-                mui.toast("已经登录认证！"); 
+                mui.toast("已经登录认证！");
+                authUserInfo(type);
             } 
         } 
 
         //注销的监听
-        window.addEventListener("zhuxiao_weixin", function (e) {
-		    //获得事件参数
-			alert(222222);
-		    var idxjiaggge = e.detail.idxsxfh;
-			authLogout();
-		});
+//      window.addEventListener("zhuxiao_weixin", function (e) {
+//		    //获得事件参数
+//			alert(222222);
+//		    var idxjiaggge = e.detail.idxsxfh;
+//			authLogout();
+//		});
 		var signout_monitor = localStorage.getItem('signout_monitor');
-		if(signout_monitor == 1){
+		if(localStorage.getItem('signout_monitor')){
 			authLogout();
+		}else{
+			
 		}
         //注销 
         function authLogout() { 
-        	alert(111111);
-            for (var i in auths) { 
+        	alert('注销微信');
+            for (var i in auths) {
                 var s = auths[i]; 
                 if (s.authResult) { 
                     s.logout(function(e) { 
@@ -430,7 +433,6 @@
                     console.log("获取用户信息成功：" + josnStr); 
                     //存储用户信息
                     localStorage.setItem('userInfos',josnStr);
-                    
                     //刚进入这个页面就去验证是否微信授权成功
 					yanzha_weinshouquan();
 //                  showData(type,jsonObj); 
@@ -498,7 +500,6 @@
 						mui.fire(main, "wixinshouqian",{
 						    idxsxfh:1//1位置
 						})
-						localStorage.setItem('weinxin_shouquan',1);
 					}else if(data.success == true && data.flag == 1){
 						//弹出绑定手机号页面
 					}else{
@@ -527,6 +528,7 @@
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
 					if(data.success){
+						localStorage.setItem('signout_monitor',1);
 						signin();//登陆
 					}else{
 						mui.toast(data.message);
