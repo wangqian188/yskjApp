@@ -137,7 +137,6 @@ $('.wt_btn').click(function(){
 		return;
 	}else{
 		if(clicktag == 0){
-			clicktag = 1;
 			if(user_name==''){
 				mui.alert('姓名不能为空', '提示', function(){},'div');
 				return;
@@ -178,6 +177,7 @@ $('.wt_btn').click(function(){
 				mui.alert('请填写企业简介', '提示', function(){},'div');
 				return;
 			}
+			clicktag = 1;
 			yz_house_wt();
 		}else{
 			if(user_name=='' || telnumber=='' || qy_name == ''|| qy_tel == '' || qy_bt == '' || f1.length == '0' || house_news=='' || add_area == '' || jyfw == '' || qyjj == ''){

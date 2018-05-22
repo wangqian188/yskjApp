@@ -205,7 +205,6 @@ $('.wt_btn').click(function(){
 		return;
 	}else{
 		if(clicktag == 0){
-			clicktag = 1;
 			if(user_name==''){
 				mui.alert('姓名不能为空', '提示', function(){},'div');
 				return;
@@ -222,6 +221,11 @@ $('.wt_btn').click(function(){
 				mui.alert('房屋信息不能为空', '提示', function(){},'div');
 				return;
 			}
+			if(!localStorage.getItem('cookyezhi')){
+				mui.alert('请重新获取验证码', '提示', function(){},'div');
+				return;
+			}
+			clicktag = 1;
 			yz_house_wt();
 		}else{
 			if(telnumber == '' || yzm == '' || user_name == '' || house_news == ''){
@@ -251,6 +255,7 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
+				localStorage.removeItem('cookyezhi');
 				mui.ajax(url + '/yskjApp/webApp/dataInfo/butlerService.do',{
 					data:{
 						'type': '4',

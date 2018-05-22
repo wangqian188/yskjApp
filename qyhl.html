@@ -60,6 +60,7 @@
 			}
 			#fb li{
 				display: flex;
+				align-items: center;
 			}
 			#fb .fb_ion{
 				width: 1.013333rem;
@@ -91,6 +92,7 @@
 				color: #999;
 			}
 			.fb_jt{
+				font-size: 0.5rem;
 				color: #999;
 				margin-left: 0.133333rem;
 			}
@@ -112,7 +114,7 @@
 			    	</p>
 			    	<p id="more_qy">
 			    		<span>更多企业</span>
-			    		<span class="mui-icon mui-icon-arrowright"></span>
+			    		<span class="mui-icon mui-icon-arrowright fb_jt"></span>
 			    	</p>
 			    </div>
 			    
@@ -259,10 +261,10 @@
 			}
 			//企业服务
 			function enterpriseService(){
-				mui.ajax(url+'/yskjApp/webApp/dataInfo/enterpriseDemand.do',{
+				mui.ajax(url+'/yskjApp/webApp/dataInfo/listReleaseDemand.do',{
 				data:{
-							"demandCategory":1
-						},
+					"demandCategory":1
+				},
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型
 				timeout:10000,//超时时间设置为10秒；
@@ -322,7 +324,7 @@
 			}
 			//企业需求
 			function enterpriseDemand(){
-				mui.ajax(url+'/yskjApp/webApp/dataInfo/enterpriseDemand.do',{
+				mui.ajax(url+'/yskjApp/webApp/dataInfo/listReleaseDemand.do',{
 				data:{
 							"demandCategory":2
 						},
@@ -333,6 +335,7 @@
 				success:function(data){
 					if(data.success){
 						var data=data.data;
+						console.log(JSON.stringify(data));
 						//[{"butlerName":"付恒", "butlerPhone":"18864310111", 
 						//"createTime":"2018-03-06 14:52:03","id":2, 
 						//"demandType":"咨询服务", "demandDesc":"房屋装修设计", "status":1, "budget":null}]
@@ -342,6 +345,7 @@
 							for(var i=0;i<le;i++){
 								var demandType=data[i].demandType;
 								var demandDesc=data[i].demandDesc;
+								var dtDay = data[i].dtDay;
 								var createTime=data[i].createTime.substring(0,10);
 								var butlerPhone=data[i].butlerPhone;
 								var imgUrl=(data[i].imgUrl==null?"":data[i].imgUrl);
@@ -381,8 +385,8 @@
 									 dhtml+='<span class="shijanrqhise">';
 								}
 		    			        
-		    				    dhtml+=createTime;
-		    				    dhtml+='</span></div>';
+		    				    dhtml+='剩余'+dtDay;
+		    				    dhtml+='天到期</span></div>';
 		    				    dhtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;" > </div>';
 		    			        //dhtml+='<div style="background: url('+imgUrl+' ) no-repeat;" > </div>';
 		    			        if(status==2){

@@ -214,7 +214,6 @@ $('.wt_btn').click(function(){
 		return;
 	}else{
 		if(clicktag == 0){
-			clicktag = 1;
 			if(user_name==''){
 				mui.alert('姓名不能为空', '提示', function(){},'div');
 				return;
@@ -235,6 +234,7 @@ $('.wt_btn').click(function(){
 				mui.alert('签约年限不能为空', '提示', function(){},'div');
 				return;
 			}
+			clicktag = 1;
 			yz_house_wt();
 		}else{
 			if(telnumber == '' || yzm == '' || user_name == '' || house_news == '' || house_year == ''){
