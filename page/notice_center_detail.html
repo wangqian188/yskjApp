@@ -236,7 +236,7 @@
 								$(".compete img").attr('src','../img/notice_ceter/compete9.png');
 							}
 							if(buess_type == 1){
-				            	alert('业主委托///房源委托');
+//				            	alert('业主委托///房源委托');
 				            	$('.fuwushench').removeClass('qiyehuldis');
 				            	$('.fangyuanweituo').removeClass('qiyehuldis');
 				            	$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
@@ -248,8 +248,8 @@
 				            	$(".fangdewnzi").html(data[0].memo==''?"无":data[0].memo);
 				            	$(".fangyuanweituo h1").html('房屋描述');
 				            }else if(buess_type == 2){
-				            	alert('升级服务///服务商城');
-				            	alert(data[0].memo);
+//				            	alert('升级服务///服务商城');
+//				            	alert(data[0].memo);
 				            	$('.fangyuanweituo').removeClass('qiyehuldis');
 				            	$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
 				            	$(".name").html(data[0].name==null?"无":data[0].name);
@@ -261,7 +261,7 @@
 				            }else if(buess_type == 3){
 				            	if(type == 5){
 				            		if(category == 1){
-				            			alert('续租');
+//				            			alert('续租');
 				            			$('.fuwushench').removeClass('qiyehuldis');
 				            			$('.hetongxzudis').removeClass('qiyehuldis');
 				            			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
@@ -272,8 +272,8 @@
 						            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
 						            	$(".hetong_xzhu").html(data[0].renewalYears==''?"无":data[0].renewalYears + '年');
 				            		}else if(category == 2){
-				            			alert('换房');
-				            			alert(data[0].isZhuce);
+//				            			alert('换房');
+//				            			alert(data[0].isZhuce);
 				            			$('.fuwushench').removeClass('qiyehuldis');
 				            			$('.hetonghuangfanzdis').removeClass('qiyehuldis');
 				            			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
@@ -290,7 +290,7 @@
 						            	$(".shifou_zhuce").html(data[0].isZhuce==null?"无":data[0].isZhuce);
 						            	
 				            		}else if(category == 3){
-				            			alert('退房///退租');
+//				            			alert('退房///退租');
 				            			$('.fuwushench').removeClass('qiyehuldis');
 				            			$('.hetongtuizdis').removeClass('qiyehuldis');
 				            			$('.fangyuanweituo').removeClass('qiyehuldis');
@@ -306,7 +306,7 @@
 				            		}
 				            	}else{
 				//          		在线报修   物业对接   房屋凭证      房屋费用是一个页面
-				            		alert('设备报修///在线报修');//
+//				            		alert('设备报修///在线报修');
 				            		$('.fuwushench').removeClass('qiyehuldis');
 				        			$('.zaixianbaoxius').removeClass('qiyehuldis');
 				        			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
@@ -321,7 +321,7 @@
 				            	}
 				            }else if(buess_type == 4){
 				            	if(type == 1){
-				            		alert('发布服务');
+//				            		alert('发布服务');
 				            		$('.fuwushench').removeClass('qiyehuldis');
 				            		$('.qiyehul').removeClass('qiyehuldis');
 				        			$('.fangyuanweituo').removeClass('qiyehuldis');
@@ -338,7 +338,7 @@
 				            	}else if(type == 2){
 				            		
 //				            		还没有接口
-				            		alert('发布需求');
+//				            		alert('发布需求');
 				            		$('.fuwushench').removeClass('qiyehuldis');
 				        			$('.qiyehulxqfb').removeClass('qiyehuldis');
 				        			$('.fangyuanweituo').removeClass('qiyehuldis');
@@ -353,8 +353,8 @@
 				        			$(".fangyuanweituo h1").html("发布服务");
 				        			$(".fangdewnzi").html(data[0].demandDesc==''?"无":data[0].demandDesc);
 				            	}else if(type == 3){
-				            		alert('加入会员');
-				            		alert(data[0].enterpriseName);
+//				            		alert('加入会员');
+//				            		alert(data[0].enterpriseName);
 				            		$('.fuwushench').removeClass('qiyehuldis');
 				        			$('.jiaruhuiyuan').removeClass('qiyehuldis');
 				        			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
