@@ -22,9 +22,9 @@
 		    	<p class="user_news" id="login">
 					<span class="ljdl">立即登录</span>
 					<span class="dlcz">登录后可进行更多操作</span>
-					<span class="wrz" style="display: none;">未认证 <span class="jt">＞</span></span> 
-					<span class="yrz" style="display: none;">已认证</span>
-					<span class="sh" style="display: none;">认证审核中</span>
+					<span class="wrz" style="display: none;">渠道用户 <!--<span class="jt">＞</span>--></span> 
+					<span class="yrz" style="display: none;">租户</span>
+					<span class="sh" style="display: none;">业主</span>
 		    	</p>
 		    </h1>
 		</header>
@@ -95,8 +95,7 @@
 		<script type="text/javascript" src="js/lib/app_config.js" ></script>
 		<script type="text/javascript">
 			var cookie=JSON.parse(localStorage.getItem('cookxs_yh'));
-			var lostate=2;
-			
+			var lostate = localStorage.getItem('lostate');
 			(function(){
 				
 			   checkSubmit();
@@ -104,31 +103,7 @@
 			mui.init();
 			function checkSubmit(){
 				if(cookie){
-						mui.ajax(url + '/yskjApp/appYskj/V1/landState.do',{
-						data:{
-							"cookie":cookie
-						},
-						dataType:'json',
-						type:'post',
-						timeout:10000,
-						headers:{'Content-Type':'application/json'},	              
-						success:function(data){
-							console.log("用户登录状态： "+data.success);
-							if(data.success){
-								lostate=1;
-								//
-								localStorage.setItem('lostate', lostate);
-								//已登录
-								
-							}else{
-								//未登录
-								
-							}
-						},
-						error:function(xhr,type,errorThrown){
-							console.log(type);
-						}
-					});     
+					var lostate = localStorage.getItem('lostate');  
 					
 				}else{
 					
@@ -253,11 +228,8 @@
 					success:function(data){
 						if(data.success){
 							var userData = data.data;
-							localStorage.setItem('user_id',userData.id);//1 渠道用户 2 业主用户 3 客户用户
 							//将手机号中间加密
 							var type = userData.typeid;
-							localStorage.setItem('user_type',type);//1 渠道用户 2 业主用户 3 客户用户
-//							var ifsoifo = localStorage.getItem('user_type');
 							
 							//售后服务这块判断登没有登录
 							if(lostate==1 && type==2){
@@ -273,18 +245,18 @@
 							}else{
 								$('.ljdl').html(userData.name);
 							}
-							if(userData.status2 == 0){
+							if(type==1){
 								$('.dlcz').css('display','none');
 								$('.yrz').css('display','none');
 								$('.wrz').css('display','block');
 							}
-							if(userData.status2 == 1){
+							if(type==2){
 								$('.dlcz').css('display','none');
 								$('.wrz').css('display','none');
 								$('.yrz').css('display','none');
 								$('.sh').css('display','block');
 							}
-							if(userData.status2 == 2){
+							if(type==3){
 								$('.dlcz').css('display','none');
 								$('.wrz').css('display','none');
 								$('.yrz').css('display','block');
@@ -318,13 +290,13 @@
 			}else{
 				takeuser();
 			}
-			$('.wrz').click(function(){
-				//跳转认证页面
-				mui.openWindow({
-				  url: './page/sfrz.html', 
-				  id:'add_name4'
-				});
-			});
+//			$('.wrz').click(function(){
+//				//跳转认证页面
+//				mui.openWindow({
+//				  url: './page/sfrz.html', 
+//				  id:'add_name4'
+//				});
+//			});
 			//渲染用户信息
 			function showuserinfo(){
 				var data = JSON.parse(localStorage.getItem('userInfos'));
