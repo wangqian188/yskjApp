@@ -345,7 +345,10 @@
 							for(var i=0;i<le;i++){
 								var demandType=data[i].demandType;
 								var demandDesc=data[i].demandDesc;
-								var dtDay = data[i].dtDay;
+								var dtDay = '剩余'+ data[i].dtDay + '天到期';
+								if(data[i].dtDay == 0){
+									dtDay = '今日到期';
+								}
 								var createTime=data[i].createTime.substring(0,10);
 								var butlerPhone=data[i].butlerPhone;
 								var imgUrl=(data[i].imgUrl==null?"":data[i].imgUrl);
@@ -385,8 +388,8 @@
 									 dhtml+='<span class="shijanrqhise">';
 								}
 		    			        
-		    				    dhtml+='剩余'+dtDay;
-		    				    dhtml+='天到期</span></div>';
+		    				    dhtml+=dtDay;
+		    				    dhtml+='</span></div>';
 		    				    dhtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;" > </div>';
 		    			        //dhtml+='<div style="background: url('+imgUrl+' ) no-repeat;" > </div>';
 		    			        if(status==2){
@@ -418,26 +421,105 @@
 			    	},3000);
 			    }
 			});
+			//查询用户是否是会员
+			function cx_hy_zt(){
+				if(localStorage.getItem('user_id')){
+				  	var user_id = localStorage.getItem('user_id');
+				  	mui.ajax(url + '/yskjApp/webApp/dataInfo/checkMembership.do',{
+						data:{
+							"uid": user_id
+						},
+						dataType:'json',//服务器返回json格式数据
+						type:'post',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒；
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							if(data.success){
+								if(data.data){
+									vip_state = data.data.type;
+									if(vip_state == 1){
+										mui.alert('正在审核中，请耐心等待','提示','确定',function(){},'div');
+										return;
+									}
+									if(vip_state == 2){
+										mui.alert('您已加入会员','提示','确定',function(){},'div');
+										return;
+									}
+									if(vip_state == 4){
+										mui.alert('您已加入会员','提示','确定',function(){},'div');
+										return;
+									}
+									mui.openWindow({ 
+										url:'page/add_vip.html', //需要打开页面的url地址 
+										id:'add_vip',  //需要打开页面的url页面id
+									})
+								}else{
+									//data返回为null
+									mui.openWindow({ 
+										url:'page/add_vip.html', //需要打开页面的url地址 
+										id:'add_vip',  //需要打开页面的url页面id
+									})
+								}
+							}else{
+								mui.alert(data.message);
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							//异常处理；
+							console.log(type);
+						}
+					});
+				}
+			}
+			
+			
 			//加入会员跳转
 			$('.add_vip').click(function(){
-				mui.openWindow({ 
-					url:'page/add_vip.html', //需要打开页面的url地址 
-					id:'add_vip',  //需要打开页面的url页面id
-				})				
+				if(localStorage.getItem('lostate')){
+					if(localStorage.getItem('user_type') == '2' || localStorage.getItem('user_type') == '3'){
+						cx_hy_zt();						
+					}else{
+						mui.alert('您还不是我们的业主或租户','提示','确定',function(){},'div');
+						return;
+					}
+				}else{
+					mui.openWindow({
+					  url: './page/login.html', 
+					  id:'login'
+					});					
+				}
 			});
 			//发布服务跳转
 			$('#fb_ser').click(function(){
-				mui.openWindow({ 
-					url:'page/fb_ser.html',
-					id:'fb_ser',
-				})
+				if(localStorage.getItem('lostate')){
+					if(localStorage.getItem('user_type') == '2' || localStorage.getItem('user_type') == '3'){//业主和租户
+						mui.openWindow({ 
+							url:'page/fb_ser.html',
+							id:'fb_ser',
+						})						
+					}else{
+						mui.alert('您还不是我们的业主或租户','提示','确定',function(){},'div');
+					}
+				}else{
+					mui.openWindow({
+					  url: './page/login.html', 
+					  id:'login'
+					});					
+				}
 			});
 			//发布需求跳转
 			$('#fb_need').click(function(){
-				mui.openWindow({ 
-					url:'page/fb_need.html',
-					id:'fb_need',
-				})
+				if(localStorage.getItem('lostate')){
+					mui.openWindow({ 
+						url:'page/fb_need.html',
+						id:'fb_need',
+					})	
+				}else{
+					mui.openWindow({
+					  url: './page/login.html', 
+					  id:'login'
+					});					
+				}
 			});
 			//更多企业
 			$('#more_qy').click(function(){
@@ -456,6 +538,8 @@
 				    }
 				})
 			}
+//			alert(localStorage.getItem('lostate'));//登陆状态
+//			alert(localStorage.getItem('user_type'));//用户身份
 		</script>
 	</body>
 

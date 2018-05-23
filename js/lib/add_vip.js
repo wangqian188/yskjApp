@@ -241,7 +241,7 @@ function pic_tijiao(){
 					mui.back();								
 				},1000);
 			}else{
-				mui.alert(data.message);
+				mui.alert(data.message,'提示','确定',function(){},'div');
 			}
 		},
 		error:function(xhr,type,errorThrown){
@@ -303,7 +303,8 @@ function qy(){
 						}
 					}
 				}else{
-					mui.alert(data.message);
+//					mui.alert(data.message);
+					mui.toast('暂无数据',{ duration:2000, type:'div' });
 				}
 			},
 			error:function(xhr,type,errorThrown){

@@ -183,7 +183,6 @@ function picupload(imgArray,num){
 			if(data.success){
 				arr_src.push(data.data);
 				qy_logo = arr_src[0];//企业logo
-				alert(qy_logo);
 				var upload_sus = '1';
 //				alert(f1.length);
 				console.log(JSON.stringify(data.data));

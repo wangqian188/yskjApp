@@ -155,6 +155,10 @@ $('.wt_btn').click(function(){
 				mui.alert('有效期不能为空', '提示', function(){},'div');
 				return;
 			}
+			if(house_ms == ''){
+				mui.alert('请填写需求描述', '提示', function(){},'div');
+				return;
+			}
 			clicktag = 1;
 			yz_house_wt();
 		}else{
@@ -227,7 +231,8 @@ function yz_house_wt(){
 						}
 					}
 				}else{
-					mui.alert(data.message);
+//					mui.alert(data.message);
+					mui.toast('暂无数据',{ duration:2000, type:'div' });
 				}
 			},
 			error:function(xhr,type,errorThrown){

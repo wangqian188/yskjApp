@@ -113,6 +113,10 @@
 							</li>
 						</ul>
 					</div>-->
+					<div class="latest_data">
+						<p><span class="latest_data_tit">北京市场行情</span><span class="latest_data_ion">进入</span><i></i></p>
+						<p>本月均价<b>4.8</b><i>元/m²/天</i></p>
+					</div>
 					<!--我要找房、委托房源-->
 					<div class="toll_box">
 						<p class="toll_box1">
@@ -816,6 +820,27 @@
 				mui.openWindow({
 					url:'page/wt_house.html',
 					id:'wt_house',
+				});
+			});
+			$('.latest_data').click(function(){
+				mui.openWindow({
+					url:'page/latest_datas.html', 
+					id:'latest_datas',
+					extras:{topNewsUrl:url},
+					show:{
+							autoShow:true,
+							aniShow:'slide-in-right',
+							duration:'300'
+						},
+					 waiting:{ 
+						autoShow:true,
+						title:'加载中...',
+						options:{ 
+							align:'center',
+							width:'100px',
+							height:'100px'
+						} 
+					}
 				});
 			});
 		</script>

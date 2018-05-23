@@ -423,7 +423,8 @@
 					"page/fb_ser.html",
 					"page/fb_need.html",
 					"page/more_qy.html",
-					"page/qy_detail.html"
+					"page/qy_detail.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},
@@ -1148,7 +1149,8 @@
 					"page/forms_zxbx2.html",
 					"page/forms_zxbx3.html",
 					"page/forms_fwpz.html",
-					"page/forms_fwfy.html"
+					"page/forms_fwfy.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},

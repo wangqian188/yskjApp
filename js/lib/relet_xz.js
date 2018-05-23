@@ -234,6 +234,10 @@ $('.wt_btn').click(function(){
 				mui.alert('签约年限不能为空', '提示', function(){},'div');
 				return;
 			}
+			if(!localStorage.getItem('cookyezhi')){
+				mui.alert('请重新获取验证码', '提示', function(){},'div');
+				return;
+			}
 			clicktag = 1;
 			yz_house_wt();
 		}else{
@@ -264,6 +268,7 @@ function yz_house_wt(){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
+				localStorage.removeItem('cookyezhi');
 				mui.ajax(url + '/yskjApp/webApp/dataInfo/housingChange.do',{
 					data:{
 						"type":"5",
