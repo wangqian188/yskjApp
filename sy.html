@@ -114,8 +114,8 @@
 						</ul>
 					</div>-->
 					<div class="latest_data">
-						<p><span class="latest_data_tit">北京市场行情</span><span class="latest_data_ion">进入</span><i></i></p>
-						<p>本月均价<b>4.8</b><i>元/m²/天</i></p>
+						<p><span class="latest_data_tit"></span><span class="latest_data_ion">进入</span><i></i></p>
+						<p></p>
 					</div>
 					<!--我要找房、委托房源-->
 					<div class="toll_box">
@@ -850,6 +850,29 @@
 					}
 				});
 			});
+			function latest_data(){
+				mui.ajax('http://192.168.0.126:8080/yskjApp/webApp/dataInfo/quotationData.do',{
+					data:{},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(data.success){
+							$('.latest_data_tit').html(data.data.memo);
+							$('.latest_data p:last-child').html(data.data.value);
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});
+			}
+			latest_data();
 		</script>
 	</body>
 </html>
