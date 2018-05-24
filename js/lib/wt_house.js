@@ -169,7 +169,8 @@ function yz_house_wt(){
 						'name': user_name,
 						'phone': telnumber,
 						'repairHouse': house_news,
-						'memo': house_ms
+						'memo': house_ms,
+						'uid': localStorage.getItem('user_id')
 					},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型

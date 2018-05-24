@@ -218,17 +218,25 @@
 			var zujindianjstatus = 1;//筛选中输入input框的条件的状态
 			var house_kongzt = false;//搜索为空的显示状态
 			//我要找房条件监听查找
-			window.addEventListener("find_house1", function (e) {
-				alert('监听！！！！！！！！！！！！')
-			    //获得事件参数
-			    var find_houseObj = e.detail.find_houseObj;
-				console.log(find_houseObj);
+//			window.addEventListener("find_house1", function (e) {
+//				alert('监听！！！！！！！！！！！！')
+//			    //获得事件参数
+//			    var find_houseObj = e.detail.find_houseObj;
+//				console.log(find_houseObj);
+//				area = JSON.parse(find_houseObj).house_mj;//面积
+//				price_zj = JSON.parse(find_houseObj).house_fund;//资金预算
+//				zc = JSON.parse(find_houseObj).iszc;//是否注册
+//				search = JSON.parse(find_houseObj).place;//搜索区域、商圈
+////				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search,price_zj);
+//			});
+			(function(){
+				var find_houseObj = localStorage.getItem('find_houseObj');
+				alert(find_houseObj);
 				area = JSON.parse(find_houseObj).house_mj;//面积
 				price_zj = JSON.parse(find_houseObj).house_fund;//资金预算
 				zc = JSON.parse(find_houseObj).iszc;//是否注册
 				search = JSON.parse(find_houseObj).place;//搜索区域、商圈
-//				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search,price_zj);
-			});
+			})()
 			
 			/**
 			 * 下拉刷新具体业务实现

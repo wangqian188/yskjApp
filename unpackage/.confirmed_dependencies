@@ -44,7 +44,8 @@
 			"css/iconfont.css",
 			"css/style.css",
 			"css/a_fringe.css",
-			"fwsc.html"
+			"fwsc.html",
+			"jxfy.html"
 		],
 		"refer": [
 			"qyhl.html",
@@ -57,7 +58,8 @@
 	"jxfy.html": {
 		"resources": [
 			"jxfyList.html",
-			"css/jxfy.css"
+			"css/jxfy.css",
+			"fonts/mui.ttf"
 		],
 		"refer": [
 			"jxfyList.html",
@@ -94,7 +96,8 @@
 			"page/saleFuWu.html",
 			"page/financial.html",
 			"page/loupan.html",
-			"page/topNewsInfo.html"
+			"page/topNewsInfo.html",
+			"page/latest_datas.html"
 		],
 		"resources": [
 			"img/yzwt.png",
@@ -117,7 +120,8 @@
 			"css/mui.min.css",
 			"js/lib/flexible.js",
 			"js/lib/app_config.js",
-			"css/a_fringe.css"
+			"css/a_fringe.css",
+			"img/data_ion.png"
 		]
 	},
 	"page/search.html": {

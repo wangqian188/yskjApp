@@ -817,10 +817,17 @@
 			});
 			//委托房源
 			$('.toll_btn2').click(function(){
-				mui.openWindow({
-					url:'page/wt_house.html',
-					id:'wt_house',
-				});
+				if(localStorage.getItem('lostate')){
+					mui.openWindow({
+						url:'page/wt_house.html',
+						id:'wt_house',
+					});
+				}else{
+					mui.openWindow({
+					  url: './page/login.html', 
+					  id:'login'
+					});					
+				}
 			});
 			$('.latest_data').click(function(){
 				mui.openWindow({

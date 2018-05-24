@@ -299,15 +299,17 @@
 			mui.plusReady(function(){
                 var self = plus.webview.currentWebview();
                 var find_houseObj = self.find_houseObj;
-                console.log(name);
-                //关闭等待框
-                plus.nativeUI.closeWaiting();
-                //显示当前页面
-                mui.currentWebview.show();
-                var main = plus.webview.getWebviewById('jxfyList1');
-				mui.fire(main, "find_house1",{
-				    find_houseObj:find_houseObj
-				})
+                localStorage.setItem('find_houseObj',find_houseObj);
+//              alert(localStorage.getItem('find_houseObj'));
+//              console.log(name);
+//              //关闭等待框
+//              plus.nativeUI.closeWaiting();
+//              //显示当前页面
+//              mui.currentWebview.show();
+//              var main = plus.webview.getWebviewById('jxfyList1');
+//				mui.fire(main, "find_house1",{
+//				    find_houseObj:find_houseObj
+//				})
             });
             
             window.addEventListener("find_house", function (e) {
