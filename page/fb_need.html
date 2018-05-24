@@ -88,7 +88,7 @@
 		    <div class="wt_fwms" style="height: auto;padding-bottom: 0.666666rem;">
 		    	<p class="wt_fwms_bt">需求描述</p>
 		    	<p class="wt_texar" style="height: 3.733333rem;">
-		    		<textarea name="" rows="" cols="" placeholder="请描述您的需求" id="house_ms"></textarea>
+		    		<textarea name="" rows="" cols="" placeholder="请描述您的需求" oninput="checkLength()" maxlength="200" id="house_ms"></textarea>
 		    		<span class="wt_texar_count"><i id="textareaCount">0</i>/200</span>
 		    	</p>
 		    </div>
@@ -107,18 +107,32 @@
 		<script src="../js/lib/fb_need.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 	<script>
-		$(function(){  
+//		$(function(){  
+//			//控制文本域输入字数
+//	        $('textarea').keyup(function(event) {  
+//	            var maxLength = 200;  
+//	            var len = $('textarea').val().length;  
+//	            $('#textareaCount').html(len);  
+//	            if(parseInt($('#textareaCount').text()) > 200){  
+//	                $('#textareaCount').html('200');  
+//	                var res = $(this).val().substring(0,200);  
+//	                $(this).val(res);  
+//	            }  
+//	        });  
+//	   });
+	    $(function(){  
 			//控制文本域输入字数
 	        $('textarea').keyup(function(event) {  
-	            var maxLength = 200;  
-	            var len = $('textarea').val().length;  
-	            $('#textareaCount').html(len);  
-	            if(parseInt($('#textareaCount').text()) > 200){  
-	                $('#textareaCount').html('200');  
-	                var res = $(this).val().substring(0,200);  
-	                $(this).val(res);  
-	            }  
-	        });  
-	   });  
+	            checkLength()
+	        }); 
+	    }); 
+	    function checkLength(){
+	    	var maxLength = 200;  
+	        var len = $('textarea').val().length;  
+	        $('#textareaCount').html(len);  
+	        if(parseInt($('#textareaCount').text()) > 200){  
+	            $('#textareaCount').html('200');
+	        }  
+	    }
 	</script>
 </html>

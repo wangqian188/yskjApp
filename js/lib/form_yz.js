@@ -207,8 +207,7 @@ function signin(){
 //					id:'wd1',
 //				});
 				return;
-			}else{
-				alert(123)
+		}else{
 				mui.toast(data.message,{ duration:'2000', type:'div' }) 
 			}
 		},

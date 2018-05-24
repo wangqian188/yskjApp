@@ -145,11 +145,11 @@
 						法就是疯狂就开始对方就开始打房间爱开始交付带看上级大方块房间爱卡圣诞节疯
 					</p>
 					<p class="menchwei_p">
+						<!--<span class="menchwei_img"><img src="../img/notice_ceter/menchwei_img.jpg" width="100%"/>123</span>
 						<span class="menchwei_img"></span>
 						<span class="menchwei_img"></span>
 						<span class="menchwei_img"></span>
-						<span class="menchwei_img"></span>
-						<span class="menchwei_img"></span>
+						<span class="menchwei_img"></span>-->
 					</p>
 					
 				</div>
@@ -316,13 +316,14 @@
 									$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
 					            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
 					            	$(".content_class").html(data[0].memo==''?"无":data[0].memo);
-
+					            	var str = '<span class="menchwei_img"><img src="'+img_url+data[0].pic+'" width="100%" height="100%"/></span>';
+					            	$('.menchwei_p').append(str);
 					            	//差原因说明的图片没有
 				            	}
 				            }else if(buess_type == 4){
 				            	if(type == 1){
 //				            		alert('发布服务');
-				            		$('.fuwushench').removeClass('qiyehuldis');
+//				            		$('.fuwushench').removeClass('qiyehuldis');
 				            		$('.qiyehul').removeClass('qiyehuldis');
 				        			$('.fangyuanweituo').removeClass('qiyehuldis');
 				        			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
@@ -330,7 +331,7 @@
 									$(".phone").html(data[0].enterPhone==null?"无":data[0].enterPhone);
 									$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
 									$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
-				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);
+//				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);
 				        			$(".fabu_qiuqi").html(data[0].enterpriseName==''?"无":data[0].enterpriseName);
 				        			$(".fabu_qiuqi_hey").html(data[0].demandType==''?"无":data[0].demandType);
 				        			$(".fangyuanweituo h1").html("服务描述");
@@ -339,7 +340,7 @@
 				            		
 //				            		还没有接口
 //				            		alert('发布需求');
-				            		$('.fuwushench').removeClass('qiyehuldis');
+//				            		$('.fuwushench').removeClass('qiyehuldis');
 				        			$('.qiyehulxqfb').removeClass('qiyehuldis');
 				        			$('.fangyuanweituo').removeClass('qiyehuldis');
 				        			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
@@ -347,7 +348,7 @@
 									$(".phone").html(data[0].enterPhone==null?"无":data[0].enterPhone);
 									$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
 									$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
-				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);
+//				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);
 				        			$(".fabu_qiuqi").html(data[0].enterpriseName==''?"无":data[0].enterpriseName);
 				        			$(".fabu_qiuqi_hey").html(data[0].demandType==''?"无":data[0].demandType);
 				        			$(".fangyuanweituo h1").html("发布服务");
@@ -355,14 +356,14 @@
 				            	}else if(type == 3){
 //				            		alert('加入会员');
 //				            		alert(data[0].enterpriseName);
-				            		$('.fuwushench').removeClass('qiyehuldis');
+//				            		$('.fuwushench').removeClass('qiyehuldis');
 				        			$('.jiaruhuiyuan').removeClass('qiyehuldis');
 				        			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
 				        			$(".name").html(data[0].name==null?"无":data[0].name);
 									$(".phone").html(data[0].phone==null?"无":data[0].phone);
 									$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
 									$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
-				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);//
+//				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);//
 				        			$(".qy_logo img").attr('src',img_url + data[0].logoImg==null?"无":data[0].logoImg);
 				        			$(".cmpate").html(data[0].enterpriseName==null?"无":data[0].enterpriseName);
 				        			$(".wangzhi").html(data[0].enterpriseWebsite==null?"无":data[0].enterpriseWebsite);

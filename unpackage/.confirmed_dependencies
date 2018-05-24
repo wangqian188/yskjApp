@@ -417,5 +417,18 @@
 		"refer": [
 			"page/qy_detail.html"
 		]
+	},
+	"page/notice_center.html": {
+		"resources": [
+			"page/notice_center_list.html"
+		],
+		"refer": [
+			"page/notice_center_list.html"
+		]
+	},
+	"page/notice_center_list.html": {
+		"refer": [
+			"page/notice_center_detail.html"
+		]
 	}
 }

@@ -31,7 +31,7 @@
 					  </div>
 					  <div class="mui-slider-indicator imglunbo"></div>
 					</div>
-					<div class="qieryun qierlyundelainjie qieryundisp"></div>
+					<div class="qieryun qieryundisp"></div>
 					<div class="fuxqxx">
 						<div class="fyxqxxyiu">
 							<p class="fybh"></p>
@@ -239,17 +239,17 @@
 								lianjiedizhi = data[i].cloudscape;
 								
 								//给720坐下面的图标加跳转链接
-//								$('.qierlyundelainjie').click(function(){
-//									mui.openWindow({ 
-//										url:'qierlyun.html', //需要打开页面的url地址 
-//										id:'qierlyun',  //需要打开页面的url页面id
-//										extras:{ 
-//											lianjie:lianjiedizhi,
-//											topic:titlet,
-//						//					.....//自定义扩展参数，可以用来处理页面间传值 
-//										}
-//									});
-//								});
+								$('.qierlyundelainjie').click(function(){
+									mui.openWindow({ 
+										url:'qierlyun.html', //需要打开页面的url地址 
+										id:'qierlyun',  //需要打开页面的url页面id
+										extras:{ 
+											lianjie:lianjiedizhi,
+											topic:titlet,
+						//					.....//自定义扩展参数，可以用来处理页面间传值 
+										}
+									});
+								});
 								$(".fjcg").html(data[i].fjcg==""?"暂无数据":data[i].fjcg+"m");
 								$(".wyf").html(data[i].wyf==""?"暂无数据":data[i].wyf+"元/㎡/月");
 								$(".gnf").html(data[i].gnf==""?"暂无数据":data[i].gnf+"元/㎡/季");
