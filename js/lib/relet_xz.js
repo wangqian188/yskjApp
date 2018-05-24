@@ -231,7 +231,7 @@ $('.wt_btn').click(function(){
 				return;
 			}
 			if(house_year==''){
-				mui.alert('签约年限不能为空', '提示', function(){},'div');
+				mui.alert('续签年限不能为空', '提示', function(){},'div');
 				return;
 			}
 			if(!localStorage.getItem('cookyezhi')){
