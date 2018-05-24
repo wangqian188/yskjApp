@@ -1272,6 +1272,20 @@
 					"page/qy_detail.html"
 				],
 				"priority": 0
+			},
+			"page/notice_center.html": {
+				"resources": [
+					"page/notice_center_list.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/notice_center_list.html": {
+				"resources": [],
+				"refer": [
+					"page/notice_center_detail.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {

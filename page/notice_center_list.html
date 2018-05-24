@@ -28,7 +28,7 @@
 					 	<!--<li class="listtail notice_list" onclick="dianjishijian()">
 					 		<div class="list_repair">
 					 			<p class="repair_p">
-					 				<span class="repair_img"></span>
+					 				<span class="repair_img" style="border: 1px solid red;"></span>
 					 				<span class="repair_font">在线报修</span>
 					 			</p>
 					 			<p class="repair_djd repair_clor">待接单</p>
@@ -129,7 +129,25 @@
 						}else{
 							var string = '';//
 							for(var i=0;i<data.length;i++){
-								string = '<li id="'+data[i].id+'-'+data[i].type+'-'+data[i].bussinessType+'-'+data[i].category+'" class="listtail notice_list" onclick="dianjishijian()"><div class="list_repair"><p class="repair_p"><span class="repair_img"></span><span class="repair_font">'+data[i].typeName+'</span></p>';
+								string = '<li id="'+data[i].id+'-'+data[i].type+'-'+data[i].bussinessType+'-'+data[i].category+'" class="listtail notice_list" onclick="dianjishijian()"><div class="list_repair"><p class="repair_p">';
+								if(data[i].typeName == '在线报修'){
+									string += '<span class="repair_cssstyle repair_img"></span>';
+								}else if(data[i].typeName == '合同变更'){
+									string += '<span class="repair_cssstyle repair_img7"></span>';
+								}else if(data[i].typeName == '物业对接'){
+									string += '<span class="repair_cssstyle repair_img6"></span>';
+								}else if(data[i].typeName == '房屋凭证'){
+									string += '<span class="repair_cssstyle repair_img3"></span>';
+								}else if(data[i].typeName == '房屋费用'){
+									string += '<span class="repair_cssstyle repair_img1"></span>';
+								}else if(data[i].typeName == '企业互联'){
+									string += '<span class="repair_cssstyle repair_img2"></span>';
+								}else if(data[i].typeName == '服务商城'){
+									string += '<span class="repair_cssstyle repair_img4"></span>';
+								}else if(data[i].typeName == '委托房源'){
+									string += '<span class="repair_cssstyle repair_img5"></span>';
+								}
+								string += '<span class="repair_font">'+data[i].typeName+'</span></p>';
 								if(data[i].statusName == '达成合作' || data[i].statusName == '已完成' || data[i].statusName == '已发布'){
 									string += '<p class="repair_djd repair_clor_compelte">'+data[i].statusName+'</p>';
 								}

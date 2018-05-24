@@ -18,7 +18,7 @@
 			<div class="wode_fywenti">暂无房源</div>
 			<div class="wode_fyzitinien">您还没有在幼狮委托房源哦</div>
 			<div class="wode_biankongdiv">
-				<span class="wode_biankong">去委托</span>
+				<span class="wode_biankong" onclick="qvertuo()">去委托</span>
 			</div>
 		</div>
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper sy_ipx_content wode_fangyukbnr wode_fangneirong_display" style="bottom: 0;background: #ffffff;overflow: auto;">
@@ -195,32 +195,32 @@
 									if(data[i].decoration_level == ''){
 										if(data[i].djbsh == 1){
 											
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].fyid+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].fyid+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}
 		
 									}else{
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].fyid+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].fyid+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}
 		
 									}
 								}else{
 									if(data[i].decoration_level == ''){
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].fyid+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].fyid+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}
 		
 									}else{
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].fyid+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
+											string = '<li class="listtail" id="'+data[i].fyid+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx" style="margin-bottom: 0rem;"></li><li class="release_date"><span class="">发布时间：</span><span class="">'+datime[0]+'年'+datime[1]+'月'+datime[2]+'日</span></li><li class="blank_jvli"></li>';
 										}
 		
 									}
@@ -301,14 +301,13 @@
 			 	mui('#pullrefresh').pullRefresh().refresh(true);
 			}
 
-			
 			//给我的房源空白页面添加点击事件
-			$('.wode_biankong').click(function(){
+			function qvertuo(){
 				mui.openWindow({ 
 					url:'wt_house.html', //需要打开页面的url地址 
 					id:'wt_house', 
 				});
-			});
+			}
 			
 			
 		</script>
