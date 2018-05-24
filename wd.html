@@ -22,7 +22,7 @@
 		    	<p class="user_news" id="login">
 					<span class="ljdl">立即登录</span>
 					<span class="dlcz">登录后可进行更多操作</span>
-					<span class="wrz" style="display: none;">渠道用户 <!--<span class="jt">＞</span>--></span> 
+					<span class="wrz" style="display: none;">普通用户 <!--<span class="jt">＞</span>--></span> 
 					<span class="yrz" style="display: none;">租户</span>
 					<span class="sh" style="display: none;">业主</span>
 		    	</p>
@@ -114,7 +114,7 @@
 					headers:{'Content-Type':'application/json'},	              
 					success:function(data){
 						if(data.success){
-							
+							return true;
 						}else{
 							localStorage.removeItem('cookxs_yh');
 							localStorage.removeItem('userInfos');
@@ -162,8 +162,10 @@
 			for(var i=0; i<$('.tolink').length; i++){
 				(function(index){
 					$('.tolink').eq(index).click(function(){
-						if(!liang_demglu()){
+						if(liang_demglu()){
 							return;
+						}else{
+							
 						}
 						if(index==0||index==1||index==2||index==3||index==4){
 							if(lostate==1){
