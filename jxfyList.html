@@ -39,8 +39,8 @@
 							<div class="xiaokuai">1500以上</div>
 						</div>
 						<div class="xuanxingshuzi">
-							<div class="xiaokuaiyishang pingangm lpmianjiaru"><input type="text" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
-							<div class="xiaokuaiyishang pingangm lpmianjiachu"><input type="text" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
+							<div class="xiaokuaiyishang pingangm lpmianjiaru"><input type="number" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
+							<div class="xiaokuaiyishang pingangm lpmianjiachu"><input type="number" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
 						</div>
 					</div>
 					<div class="mjqyfm zjqy">
@@ -58,8 +58,8 @@
 							<div class="xiaokzujin">15以上</div>
 						</div>
 						<div class="xuanxingshuzi">
-							<div class="xiaokuaiyishang pingangm lpzujinru"><input type="text" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
-							<div class="xiaokuaiyishang pingangm lpzujinchu"><input type="text" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
+							<div class="xiaokuaiyishang pingangm lpzujinru"><input type="number" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
+							<div class="xiaokuaiyishang pingangm lpzujinchu"><input type="number" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
 						</div>
 					</div>
 					<div class="mjqyfm">
@@ -847,6 +847,8 @@
 			/*点击出现遮罩层*/
 			window.addEventListener("weizhi", function (e) {
 			    //获得事件参数
+//				alert(11111);
+//				jiantingindex();
 			    var idx = e.detail.idx;
 				var hegh = window.screen.availHeight - 160;
 				/*var scroll = mui('.mui-scroll-wrapper').scroll();
@@ -1401,6 +1403,24 @@
 				$('#sel3 li').css({'color':'#666666'});
 				$('#sel3 li').eq(q+1).css({'color':'#2c71d8'});
 			}
+			
+			//监听首页底部选项卡的事件(隐藏选项卡)
+			function jiantingindex(){
+				alert(22222);
+				var index = plus.webview.getWebviewById('index');
+				alert(index);
+				mui.fire(index, "jiantingishoyeindex",{
+				    text3:this.text1
+				})
+			}
+			//监听首页底部选项卡的事件(显示选项卡)
+			function jiantingindexxianshi(){
+				var index = plus.webview.getWebviewById('index');
+				mui.fire(index, "jiantingishoyeindexxianshi",{
+				    text3:this.text1
+				})
+			}
+			
 			
 			
 		</script>
