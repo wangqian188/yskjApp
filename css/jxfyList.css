@@ -28,7 +28,7 @@
 .zhuxiusatashang{height: 3rem;}
 .xiaokuai{border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;width: 1.906666rem;text-align: center;border-radius: 5px;font-size: 0.24rem;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;background-color:#ededed;}
 .xiaokuaiyishang{border: 1px solid #ededed;height: 0.6rem;line-height:0.6rem;width: 1.906666rem;text-align: center;border-radius: 5px;font-size: 0.346666rem;color: #898989;margin-right: 0.36rem;margin-bottom: 0.36rem;}
-.xiaokuaiyishang input{border: 1px solid #ededed;text-align: center;height: 0.6rem;background-color:#ededed;color: #898989;}
+.xiaokuaiyishang input{border: 1px solid #ededed;text-align: center;height: 0.6rem;background-color:#ededed;color: #898989;padding: 0rem;}
 .xuanxingshuzi{display: flex;}
 .pingangm{color: #c7c7c7;}
 .zjqy{height: 1.426666rem;line-height: 1.426666rem;}
