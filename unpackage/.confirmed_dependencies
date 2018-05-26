@@ -436,5 +436,10 @@
 		"refer": [
 			"page/liJiShenQing.html"
 		]
+	},
+	"page/myset.html": {
+		"refer": [
+			"page/setpwd.html"
+		]
 	}
 }
