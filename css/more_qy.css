@@ -63,6 +63,9 @@
 	left: 0.24rem;
 }
 .qy_name{
+	width: 100%;
+	height: 0.56rem;
+	overflow: hidden;
 	font-size: 0.293333rem;
 	color: #666666;
 }

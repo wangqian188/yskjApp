@@ -277,6 +277,7 @@
 				success:function(data){
 					if(data.success){
 						var data=data.data;
+						console.log(JSON.stringify(data));
 						//[{"butlerName":"付恒", "butlerPhone":"18864310111", 
 						//"createTime":"2018-03-06 14:52:03","id":2, 
 						//"demandType":"咨询服务", "demandDesc":"房屋装修设计", "status":1, "budget":null}]
@@ -285,6 +286,8 @@
 						if(le!=0){
 							for(var i=0;i<le;i++){
 								var demandType=data[i].demandType;
+								var butlerName=data[i].butlerName;
+								var enterpriseName=data[i].enterpriseName
 								var demandDesc=data[i].demandDesc;
 								var createTime=data[i].createTime.substring(0,10);
 								var butlerPhone=data[i].butlerPhone;
@@ -293,7 +296,7 @@
 		    			        shtml+='<div class="beijmggj">';
 		    				    shtml+='<span class="guojilxgs"></span>';
 		    				    shtml+='<span class="lvyouxaigsfont">';
-		    				    shtml+=demandType;
+		    				    shtml+=enterpriseName;
 		    				    shtml+='</span>';
 		    			        shtml+='</div>';
                 		    	shtml+='<div class="gnlyyw">';
@@ -340,7 +343,6 @@
 				success:function(data){
 					if(data.success){
 						var data=data.data;
-						console.log(JSON.stringify(data));
 						//[{"butlerName":"付恒", "butlerPhone":"18864310111", 
 						//"createTime":"2018-03-06 14:52:03","id":2, 
 						//"demandType":"咨询服务", "demandDesc":"房屋装修设计", "status":1, "budget":null}]
@@ -349,6 +351,8 @@
 						if(le!=0){
 							for(var i=0;i<le;i++){
 								var demandType=data[i].demandType;
+								var butlerName=data[i].butlerName;
+								var enterpriseName=data[i].enterpriseName
 								var demandDesc=data[i].demandDesc;
 								var dtDay = '剩余'+ data[i].dtDay + '天到期';
 								if(data[i].dtDay == 0){
@@ -368,7 +372,7 @@
 		    			        dhtml+='<div class="beijmggj">';
 		    				    dhtml+='<span class="guojilxgs"></span>';
 		    				    dhtml+='<span class="xitongruanjianhuise">';
-		    				    dhtml+=demandType;
+		    				    dhtml+=enterpriseName;
 		    				    dhtml+='</span>';
 		    				    if(status==1&&budget!=""){
 		    				    	dhtml+='<span class="ycsahan">';
