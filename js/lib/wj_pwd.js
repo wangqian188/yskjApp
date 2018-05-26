@@ -1,4 +1,5 @@
 //手机号码验证
+var pwdReg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;//8到16位数字与字母组合
 function checkPhone(id){
    var phone = document.getElementById(id).value;
    if(!(/^1[345678]\d{9}$/.test(phone))){
@@ -78,12 +79,12 @@ document.getElementById("hqyzm").addEventListener('input',function(){
 document.getElementById("yinc").addEventListener('input',function(){
 	if(this.value != ''){
 		pwd = this.value;
-		if(pwd.length>=6){
-			$('.tip3').html('正确');
-			$('.tip3').addClass('tip_color');
-		}else{
+		if(!pwdReg.test(pwd)){
+			$('.tip3').html('密码为6-16位字母、数字组合');
 			$('.tip3').removeClass('tip_color');
-			$('.tip3').html('密码最少为6位');
+		}else{
+			$('.tip3').addClass('tip_color');
+			$('.tip3').html('正确');
 		}
 		btnzt();
 	}else{
@@ -97,9 +98,9 @@ document.getElementById("yinc1").addEventListener('input',function(){
 	if(this.value != ''){
 		if(this.value.length>=6){
 		pwd1 = this.value;
-		if(pwd1.length<6){ 
+		if(!pwdReg.test(pwd1)){ 
 			$('.tip4').removeClass('tip_color');
-			$('.tip4').html('密码最少为6位');
+			$('.tip4').html('密码为6-16位字母、数字组合');
 		}else{
 		if(pwd == pwd1){
 			$('.tip4').html('正确');
@@ -236,8 +237,8 @@ function checkoutyzm(code){
 //提交
 $('#btn1').click(function(){
 	if(telnumber !='' && yzm !='' && pwd != '' && pwd1 != ''){
-		if(pwd.length<6||pwd1.length<6){
-						mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
+		if(!pwdReg.test(pwd1)||!pwdReg.test(pwd)){
+						mui.toast('密码为6-16位字母、数字组合',{ duration:'3000', type:'div' });
 						return;
 			}else{
 					if(pwd == pwd1){
