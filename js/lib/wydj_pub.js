@@ -123,7 +123,7 @@ function btnzt(){
 	}
 }
 //手机号码验证
-function checkPhone(id){
+function check(id){
    var phone = document.getElementById(id).value;
    if(!(/^1[345786]\d{9}$/.test(phone))){
    		mui.alert('请确认填写手机号是否正确', '提示', function(){});
