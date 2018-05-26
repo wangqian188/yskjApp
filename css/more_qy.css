@@ -81,6 +81,12 @@
 	background-size: 100% auto;
 	margin-right: 0.16rem;
 }
+.qy_tip span:last-child{
+	display: inline-block;
+	width: 3.48rem;
+	height:  0.413333rem;
+	overflow: hidden;
+}
 .zc_box{
 	position: fixed;
 	z-index: 9;

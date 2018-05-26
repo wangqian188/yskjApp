@@ -96,6 +96,11 @@
 				color: #999;
 				margin-left: 0.133333rem;
 			}
+			.qiyehuilianssan .jiaoyv{
+				display: inline-block;
+				width: 4.48rem;
+				overflow: hidden;
+			}
 		</style>
 	</head>
 	<body>
@@ -229,7 +234,7 @@
 							var category=data[i].category
 							var enterpriseName=data[i].enterpriseName
 							var enterpriseDesc=data[i].enterpriseDesc
-							hyhtml+='<li style="background:url('+data[i].logoImg+') no-repeat center;background-size:100% auto;" onclick="list_detail('+data[i].id+')">';
+							hyhtml+='<li style="background:url('+img_url+data[i].logoImg+') no-repeat center;background-size:100% auto;" onclick="list_detail('+data[i].id+')">';
 				   			hyhtml+='<div class="qiyehuilianyyi">';
 				   			hyhtml+='<div>';
 	//					    hyhtml+='<img src="';

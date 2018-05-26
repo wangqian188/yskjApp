@@ -829,11 +829,13 @@
 					});					
 				}
 			});
+			
+			var latest_data_url = null;//最新数据地址
 			$('.latest_data').click(function(){
 				mui.openWindow({
 					url:'page/latest_datas.html', 
 					id:'latest_datas',
-					extras:{topNewsUrl:'https://mp.weixin.qq.com/s?__biz=MzI0NjY4ODM5OQ==&tempkey=OTU4XzRWV1czNVk3WG9La3d0K29XSzdwRTlIMWNxSkFZbHRjS1NLQzd0SlVEeXVBZk85cXhWWkoxTE5FTmdDd2JmSnVoNEdpZkJ2Mjg3WDRCTHA5clcyZGhZTlk4YkR1MW9IWDJ4dzdkQXprRVU3MmxZSl8tRlJfOC1Ua0I1RnpNWDFMbm1oYzhVV0xSSjQ2SFNIdjhZa0NEVGNJMG1YSExYSXM3bUxUQmd%2Bfg%3D%3D&chksm=69ba3d035ecdb415aeca528509e530579ef7cca5a70d62760abef87baed9dfbb179189de3f83##'},
+					extras:{topNewsUrl:latest_data_url},
 					show:{
 							autoShow:true,
 							aniShow:'slide-in-right',
@@ -860,8 +862,10 @@
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
+							console.log(JSON.stringify(data));
 							$('.latest_data_tit').html(data.data.memo);
 							$('.latest_data p:last-child').html(data.data.value);
+							latest_data_url = data.data.url;
 						}else{
 							mui.alert(data.message);
 						}

@@ -141,7 +141,7 @@ function vip_list(){
 				}
 				var str = '';
 				for (var i=0; i<allData.length; i++) {
-					str += '<li style="background: url('+allData[i].logoImg+')no-repeat center;background-size: 100% auto;" onclick="list_detail('+allData[i].id+')"><div class="qy_news"><p class="qy_name">'+allData[i].enterpriseName+'</p><p class="qy_tip"><span></span><span>'+allData[i].ranges+'</span></p></div></li>';
+					str += '<li style="background: url('+img_url+allData[i].logoImg+')no-repeat center;background-size: 100% auto;" onclick="list_detail('+allData[i].id+')"><div class="qy_news"><p class="qy_name">'+allData[i].enterpriseName+'</p><p class="qy_tip"><span></span><span>'+allData[i].ranges+'</span></p></div></li>';
 					
 				}
 				$('#vip_list').append(str);

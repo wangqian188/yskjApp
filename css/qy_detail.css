@@ -35,7 +35,8 @@
 	color: #999;
 }
 .qy_message{
-	height: 4.666666rem;
+	min-height: 4.666666rem;
+	height: auto;
 	background: #fff;
 	border-top: 1px solid #e5e5e5;
 	border-bottom: 1px solid #e5e5e5;
@@ -45,6 +46,7 @@
 	display: flex;
 	padding: 0 0.4rem;
 	margin-top: 0.4rem;
+	margin-bottom: 0.4rem;
 }
 .qy_mes span{
 	display: inline-block;
