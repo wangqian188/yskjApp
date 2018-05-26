@@ -307,6 +307,7 @@
 				            	}else{
 				//          		在线报修   物业对接   房屋凭证      房屋费用是一个页面
 //				            		alert('设备报修///在线报修');
+									var array = data[0].pic.split(";");
 				            		$('.fuwushench').removeClass('qiyehuldis');
 				        			$('.zaixianbaoxius').removeClass('qiyehuldis');
 				        			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
@@ -316,9 +317,15 @@
 									$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
 					            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
 					            	$(".content_class").html(data[0].memo==''?"无":data[0].memo);
-					            	var str = '<span class="menchwei_img"><img src="'+img_url+data[0].pic+'" width="100%" height="100%"/></span>';
-					            	$('.menchwei_p').append(str);
-					            	//差原因说明的图片没有
+					            	if(array.length == 1){
+										var str = '<span class="menchwei_img"><img src="'+img_url+data[0].pic+'" width="100%" height="100%"/></span>';
+					            		$('.menchwei_p').append(str);
+									}else if(array.length > 1){
+										for(var i=0;i<array.length;i++){
+											var str = '<span class="menchwei_img"><img src="'+img_url+array[i]+'" width="100%" height="100%"/></span>';
+											$('.menchwei_p').append(str);
+										}
+									}
 				            	}
 				            }else if(buess_type == 4){
 				            	if(type == 1){
