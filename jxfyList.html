@@ -394,7 +394,7 @@
 									tagcq = 'cqss';
 									chqxz = '';
 								}else{
-									tagcq = index;
+									tagcq = 'ziji';
 									for(var i=0;i<chaqshuz.length;i++){
 										if(chaqshuz[i] == cq[index].innerText){
 											cq[index].className = "xiaokchuaq";
@@ -416,7 +416,7 @@
 								for(var i=0;i<chaqshuz.length;i++){
 									if(chaqshuz[i] == cq[index].innerText){
 										ss = 2;
-										tagcq = index;
+										tagcq = 'ziji';
 										cq[index].className = "xiaokchuaq";
 										var strs = cq[index].innerText;
 										chqxz = '';
@@ -469,7 +469,7 @@
 								if(strs == '可注册'){
 									zc = 1;
 								}
-								if(strs == '可注册'){
+								if(strs == '不可注册'){
 									zc = 0;
 								}
 //							}
@@ -488,7 +488,7 @@
 									if(strs == '可注册'){
 										zc = 1;
 									}
-									if(strs == '可注册'){
+									if(strs == '不可注册'){
 										zc = 0;
 									}
 //								}
@@ -519,10 +519,10 @@
 								fjzt = strs;
 //							}
 							tagzhxiu = index;
-						}else{
+					}else{
 							if(tagzhxiu == index){
 								zhxiu[index].className = "zhuxiustatus";
-								zc = 2;
+								fjzt = '';
 								tagzhxiu = "zhxiuxx";
 							}else{
 								zhxiu[index].className = "xiaokuaisss zhuxiustatus";
@@ -535,7 +535,7 @@
 								tagzhxiu = index;
 							}
 						
-						}
+					}
 						if(fjzt == '精装交付'){
 							fjzt = 1;
 						}else if(fjzt == '未到期可看'){
@@ -546,6 +546,8 @@
 							fjzt = 3;
 						}else if(fjzt == '预租房'){
 							fjzt = 5;
+						}else{
+							fjzt = '';
 						}
 					}
 				})(i)
@@ -704,32 +706,71 @@
 								if(data[i].cloudscape == ''){
 									if(data[i].decoration_level == ''){
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											if(data[i].zc == 1){
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj lpkezhuce">可注册</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}else{
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											if(data[i].zc == 1){
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj lpkezhuce">可注册</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}else{
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}
+
 										}
 		
 									}else{
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											if(data[i].zc == 1){
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj lpkezhuce">可注册</span><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}else{
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}
+
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											if(data[i].zc == 1){
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj lpkezhuce">可注册</span><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}else{
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}
+
 										}
 		
 									}
 								}else{
 									if(data[i].decoration_level == ''){
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											if(data[i].zc == 1){
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj lpkezhuce">可注册</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}else{
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}
+
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											if(data[i].zc == 1){
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj lpkezhuce">可注册</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}else{
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}
+
 										}
 		
 									}else{
 										if(data[i].djbsh == 1){
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											if(data[i].zc == 1){
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj lpkezhuce">可注册</span><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}else{
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span><span class="jzdj">定金</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}
+
 										}else{
-											string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											if(data[i].zc == 1){
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzdj lpkezhuce">可注册</span><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}else{
+												string = '<li class="listtail" id="'+data[i].id+'"><div id="fyid">'+data[i].id+'</div><div class="fy_pic"><img src="'+img_url+data[i].housing_icon+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].district+'&nbsp;'+data[i].housing_area+'㎡'+'</p><p class="jfList"><span class="jzjf">'+data[i].decoration_level+'</span></p><p class="dj"><span>'+data[i].daily_price+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+											}
+
 										}
 		
 									}
