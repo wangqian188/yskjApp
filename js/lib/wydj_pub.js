@@ -122,6 +122,18 @@ function btnzt(){
 		$('.btn').css({'background':'#d2d2d2'});
 	}
 }
+
+//手机号码验证
+function checkPhone(id){
+   var phone = document.getElementById(id).value;
+   if(!(/^1[345786]\d{9}$/.test(phone))){
+   		mui.alert('请确认填写手机号是否正确', '提示', function(){});
+   		return false;
+   }else{
+   		return true;
+   }
+}
+
 //手机号码验证
 function check(id){
    var phone = document.getElementById(id).value;

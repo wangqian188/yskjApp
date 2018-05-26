@@ -278,9 +278,6 @@
 					if(data.success){
 						var data=data.data;
 						console.log(JSON.stringify(data));
-						//[{"butlerName":"付恒", "butlerPhone":"18864310111", 
-						//"createTime":"2018-03-06 14:52:03","id":2, 
-						//"demandType":"咨询服务", "demandDesc":"房屋装修设计", "status":1, "budget":null}]
 						var le=data.length;
 						var shtml="";
 						if(le!=0){
@@ -291,7 +288,34 @@
 								var demandDesc=data[i].demandDesc;
 								var createTime=data[i].createTime.substring(0,10);
 								var butlerPhone=data[i].butlerPhone;
-								var imgUrl=(data[i].imgUrl==null?"":data[i].imgUrl);
+								var imgUrl = '';
+								if(demandType == '文化'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/1.png';
+								}
+								if(demandType == '咨询'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/2.png';
+								}
+								if(demandType == '传媒'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/3.png';
+								}
+								if(demandType == '互联'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/4.png';
+								}
+								if(demandType == '教育'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/5.png';
+								}
+								if(demandType == '金融'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/6.png';
+								}
+								if(demandType == '科教'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/7.png';
+								}
+								if(demandType == '旅游'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/8.png';
+								}
+								if(demandType == '其他'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/9.png';
+								}
 							    shtml+='<li>';
 		    			        shtml+='<div class="beijmggj">';
 		    				    shtml+='<span class="guojilxgs"></span>';
@@ -337,15 +361,12 @@
 							"demandCategory":2
 						},
 				dataType:'json',//服务器返回json格式数据
-				type:'post',//HTTP请求类型
+				type:'post',//HTTP请求类型；
 				timeout:10000,//超时时间设置为10秒；
 				headers:{'Content-Type':'application/json'},	              
 				success:function(data){
 					if(data.success){
 						var data=data.data;
-						//[{"butlerName":"付恒", "butlerPhone":"18864310111", 
-						//"createTime":"2018-03-06 14:52:03","id":2, 
-						//"demandType":"咨询服务", "demandDesc":"房屋装修设计", "status":1, "budget":null}]
 						var le=data.length;
 						var dhtml="";
 						if(le!=0){
@@ -360,7 +381,34 @@
 								}
 								var createTime=data[i].createTime.substring(0,10);
 								var butlerPhone=data[i].butlerPhone;
-								var imgUrl=(data[i].imgUrl==null?"":data[i].imgUrl);
+								var imgUrl = '';
+								if(demandType == '文化'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/1.png';
+								}
+								if(demandType == '咨询'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/2.png';
+								}
+								if(demandType == '传媒'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/3.png';
+								}
+								if(demandType == '互联'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/4.png';
+								}
+								if(demandType == '教育'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/5.png';
+								}
+								if(demandType == '金融'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/6.png';
+								}
+								if(demandType == '科教'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/7.png';
+								}
+								if(demandType == '旅游'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/8.png';
+								}
+								if(demandType == '其他'){
+									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/9.png';
+								}
 								//budget
 							    var budget=(data[i].budget==null?"":data[i].budget);
 							    var status=(data[i].status==null?"":data[i].status);
