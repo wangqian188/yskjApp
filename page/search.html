@@ -74,7 +74,7 @@
 			     if(r!=null)return  unescape(r[2]); return null;
 			}
 //			alert(GetQueryString('newid'));
-			
+		
 			/*$("#keyword").on('keypress',function(e) {  
                 var keycode = e.keyCode;  
                 var searchName = $(this).val();  
@@ -252,6 +252,10 @@
 											localStorage.setItem('sousuolsh',JSON.stringify(array));
 										}
 										if(GetQueryString('newid') == 'sy'){
+											var index = plus.webview.getWebviewById('index');
+											mui.fire(index, "tab_index",{
+											    tab_idx:1//
+											})
 											mui.openWindow({
 												url: 'jxfy.html', 
 												id:'jxfy.html'
@@ -331,6 +335,10 @@
 					localStorage.setItem('sousuolsh',JSON.stringify(array));
 				}
 				if(GetQueryString('newid') == 'sy'){
+					var index = plus.webview.getWebviewById('index');
+					mui.fire(index, "tab_index",{
+					    tab_idx:1//
+					})
 					mui.openWindow({
 						url: 'jxfy.html', 
 						id:'jxfy.html'
