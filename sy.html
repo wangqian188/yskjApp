@@ -485,7 +485,12 @@
 						console.log(data)
 						var string = '';
 						for(var i=0;i<data.length;i++){
-							string = '<li onclick="linktodetail('+data[i].id+')"><div class="fy_pic"><img src="'+img_url+data[i].pic+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].ywqy+'&nbsp;&nbsp;'+data[i].fjmj+'㎡'+'</p><p class="jzjf">'+data[i].fjztate+'</p><p class="dj"><span>'+data[i].newPrice+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+							if(data[i].cloudscape == ''){
+								string = '<li onclick="linktodetail('+data[i].id+')"><div class="fy_pic"><img src="'+img_url+data[i].pic+'" alt="" /></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].ywqy+'&nbsp;&nbsp;'+data[i].fjmj+'㎡'+'</p><p class="jzdj lpkezhuce">'+data[i].zc+'</p><p class="jzjf">'+data[i].fjztate+'</p><p class="dj"><span>'+data[i].newPrice+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+							}else{
+								string = '<li style="position:relative;" onclick="linktodetail('+data[i].id+')"><div class="fy_pic"><img src="'+img_url+data[i].pic+'" alt="" /></div><div class="qieryun"></div><div class="fy_xx"><p class="lp">'+data[i].topic+'&nbsp;&nbsp;'+data[i].zdh+'-'+data[i].fybh+'</p><p class="mjwz">'+data[i].ywqy+'&nbsp;&nbsp;'+data[i].fjmj+'㎡'+'</p><p class="jzdj lpkezhuce">'+data[i].zc+'</p><p class="jzjf">'+data[i].fjztate+'</p><p class="dj"><span>'+data[i].newPrice+'<i>元/㎡/天</i></span></p></div></li><li class="zx"></li>';
+							}
+
 							/*document.querySelector('.fypics').innerHTML=string;*/
 							$('.fy_list').append(string);
 						}
