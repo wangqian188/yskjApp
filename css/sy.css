@@ -317,6 +317,7 @@
 	border-radius: 0.053333rem;
     display: inline-block;
     padding: 0 0.133333rem;
+    margin-left: 0.133333rem;
 }
 .fy_xx .dj{
 	font-size: 0.426666rem;
@@ -500,3 +501,4 @@
 	color: #e65050;
 	padding: 0 0.133333rem;
 }
+.lpkezhuce{color: #f06656 !important;background-color: #ffecec !important;padding: 0 0.133333rem !important;font-size: 0.32rem !important;margin-left: 0px;}

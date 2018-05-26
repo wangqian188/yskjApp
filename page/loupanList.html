@@ -249,6 +249,7 @@
 									/*for(var j=0;j<cq.length;j++){
 										cq[j].className = 'xiaokchuaq';
 									}*/
+									alert(tagcq);
 									if(tagcq == 'cqss'){
 										cq[index].className = "xiaokuaisss tesebiaqidange";
 										var strs = $(this).attr("id");
@@ -262,7 +263,7 @@
 												tagcq = 'cqss';
 												label = '';
 											}else{
-												tagcq = index;
+												tagcq = 'ziji';
 												for(var i=0;i<chaqshuz.length;i++){
 													if(chaqshuz[i] == $(this).attr("id")){
 														cq[index].className = "tesebiaqidange";
@@ -284,7 +285,7 @@
 											for(var i=0;i<chaqshuz.length;i++){
 												if(chaqshuz[i] == $(this).attr("id")){
 													ss = 2;
-													tagcq = index;
+													tagcq = 'ziji';
 													cq[index].className = "tesebiaqidange";
 													var strs = $(this).attr("id");
 													label = '';
@@ -317,6 +318,35 @@
 								}
 							})(i)
 						}
+						
+						//重置事件
+						$('.czsyhk').click(function(){
+							xial = 1;
+							jiangejt = 'D';
+							chaqshuz = [];
+							tag = "mianjiqv";
+							tagzj = 'zujinxx';
+							tagcq = "cqss";
+							alert(tagcq);
+			
+							//筛选中输入input框的条件
+							mijdianjstatus = 1;
+							$('.lpmianjiaru input').val('');
+							$('.lpmianjiachu input').val('');
+			
+							//筛选中租金区域输入input框的条件
+							zujindianjstatus = 1;
+							$('.lpzujinru input').val('');
+							$('.lpzujinchu input').val('');
+							
+							
+							
+							
+							qcqitades();
+							chushishij();
+							/*$('.listUl').html('');
+							dthqdata(district,fdcode,lineid,station,area,price_dj,label,jiangejt,search);*/
+						});
 					}else{
 						mui.alert(data.message);
 					}
@@ -511,33 +541,7 @@
 				huifuupjiazaidata();
 				dthqdata(district,fdcode,lineid,station,area,price_dj,label,jiangejt,search);
 			});
-			//重置事件
-			$('.czsyhk').click(function(){
-				xial = 1;
-				jiangejt = 'D';
-				chaqshuz = [];
-				tag = "mianjiqv";
-				tagzj = 'zujinxx';
-				tagcq = "cqss";
-
-				//筛选中输入input框的条件
-				mijdianjstatus = 1;
-				$('.lpmianjiaru input').val('');
-				$('.lpmianjiachu input').val('');
-
-				//筛选中租金区域输入input框的条件
-				zujindianjstatus = 1;
-				$('.lpzujinru input').val('');
-				$('.lpzujinchu input').val('');
-				
-				
-				
-				
-				qcqitades();
-				chushishij();
-				/*$('.listUl').html('');
-				dthqdata(district,fdcode,lineid,station,area,price_dj,label,jiangejt,search);*/
-			});
+			
 			
 			//筛选的重置条件
 			function chushishij(){
@@ -983,6 +987,7 @@
 			}
 			
 			sel_qy();
+			var districtages = '';
 			function selsx(sel){
 				$('#sel1 li').css({
 					'background':'none',
@@ -1070,6 +1075,7 @@
 				huifuupjiazaidata();
 				text2 = e.innerText;
 				district = id;
+				districtages = id;
 				if(id == 0){
 					$('.listUl').html('');
 					xial = 1;
@@ -1116,7 +1122,8 @@
 				
 			}
 			//行政区域三级
-			var districtages = '';
+			var lineageg = '';
+			
 			function clk_xz2(id,q,e){
 				xial = 1;
 				$('.listUl').html('');
@@ -1134,7 +1141,6 @@
 					})
 					dthqdata(district,fdcode,lineid,station,area,price_dj,label,jiangejt,search);
 				}else{
-					districtages = district;
 					district = '';
 					fdcode = id;
 					var main = plus.webview.getWebviewById('loupan.html');
@@ -1178,6 +1184,7 @@
 			//位置中地铁的二级点击事件
 			function subway1(id,q,e){
 				lineid = id;
+				lineageg = id;
 				text2 = e.innerText;
 				$('#sel3').html('');
 				huifuupjiazaidata();
@@ -1234,7 +1241,7 @@
 				}
 				
 			}
-			var lineageg = '';
+			
 			//地铁的三级
 			function subway2(id,q,e){//控制最后一级变色及参数传递
 				xial = 1;
@@ -1254,7 +1261,6 @@
 					})
 					dthqdata(district,fdcode,lineid,station,area,price_dj,label,jiangejt,search);
 				}else{
-					lineageg = lineid;
 					lineid = '';
 					station = id;
 					var main = plus.webview.getWebviewById('loupan.html');
