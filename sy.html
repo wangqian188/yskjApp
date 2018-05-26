@@ -817,7 +817,7 @@
 			});
 			//委托房源
 			$('.toll_btn2').click(function(){
-				if(localStorage.getItem('lostate')){
+				if(localStorage.getItem('lostate') == '1'){
 					mui.openWindow({
 						url:'page/wt_house.html',
 						id:'wt_house',
@@ -833,7 +833,7 @@
 				mui.openWindow({
 					url:'page/latest_datas.html', 
 					id:'latest_datas',
-					extras:{topNewsUrl:url},
+					extras:{topNewsUrl:'https://mp.weixin.qq.com/s?__biz=MzI0NjY4ODM5OQ==&tempkey=OTU4XzRWV1czNVk3WG9La3d0K29XSzdwRTlIMWNxSkFZbHRjS1NLQzd0SlVEeXVBZk85cXhWWkoxTE5FTmdDd2JmSnVoNEdpZkJ2Mjg3WDRCTHA5clcyZGhZTlk4YkR1MW9IWDJ4dzdkQXprRVU3MmxZSl8tRlJfOC1Ua0I1RnpNWDFMbm1oYzhVV0xSSjQ2SFNIdjhZa0NEVGNJMG1YSExYSXM3bUxUQmd%2Bfg%3D%3D&chksm=69ba3d035ecdb415aeca528509e530579ef7cca5a70d62760abef87baed9dfbb179189de3f83##'},
 					show:{
 							autoShow:true,
 							aniShow:'slide-in-right',
@@ -851,7 +851,7 @@
 				});
 			});
 			function latest_data(){
-				mui.ajax('http://192.168.0.126:8080/yskjApp/webApp/dataInfo/quotationData.do',{
+				mui.ajax(url + '/yskjApp/webApp/dataInfo/quotationData.do',{
 					data:{},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型

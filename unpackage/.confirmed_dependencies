@@ -137,7 +137,8 @@
 	"fwsc.html": {
 		"refer": [
 			"page/tax.html",
-			"page/financial.html"
+			"page/financial.html",
+			"page/added.html"
 		],
 		"resources": [
 			"css/fwsc.css",
@@ -429,6 +430,11 @@
 	"page/notice_center_list.html": {
 		"refer": [
 			"page/notice_center_detail.html"
+		]
+	},
+	"page/added.html": {
+		"refer": [
+			"page/liJiShenQing.html"
 		]
 	}
 }
