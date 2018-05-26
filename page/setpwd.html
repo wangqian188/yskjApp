@@ -78,17 +78,18 @@
 				if(ymm != '' && xmm != '' && qrmm != ''){
 					if(ymm.length<6||xmm.length<6||qrmm.length<6){
 						mui.toast('密码至少输入6位',{ duration:'3000', type:'div' });
+						return;
+					}else{
 						if(!pwdReg.test(xmm) || !pwdReg.test(qrmm)){
 							mui.toast('密码为6-16位字母、数字组合',{ duration:'3000', type:'div' });
+						}else{
+							if(xmm == qrmm){
+								setpwd();
+							}else{
+								mui.toast('两次输入密码不一致',{ duration:'3000', type:'div' });
+								return;
+							}							
 						}
-						return;
-					}else{
-					if(xmm == qrmm){
-						setpwd();
-					}else{
-						mui.toast('两次输入密码不一致',{ duration:'3000', type:'div' });
-						return;
-					}
 					}
 					
 				}else{
