@@ -52,7 +52,7 @@ function galleryImgs() {
     // 从相册中选择图片
     mui.toast("请从相册中选择图片(最多五张)");
     plus.gallery.pick(function(e) {
-    	if (e.files.length >= 5) {
+    	if (e.files.length > 5) {
 		    mui.toast('请选择您的报修图片(最多五张)');
 		    return false;
 		}
