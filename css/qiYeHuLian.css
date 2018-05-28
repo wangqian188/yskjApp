@@ -6,7 +6,7 @@
 .huiyuanqiyr{margin-left: 0.146666rem;font-size: 0.44rem;color: #333333;}
 .xindongfang{height: 4.946666rem;}
 .xindongfang ul{overflow-y: hidden;overflow-x: auto;white-space: nowrap;height: 4.4rem;}
-.xindongfang ul li{margin-left:8px;margin-top:8px;box-shadow:0px 0px 8px #dedede;width: 5.893333rem;height: 4.053333rem;margin-right: 0.4rem;display: inline-block;}
+.xindongfang ul li{border-radius: 0.066666rem;overflow: hidden;margin-left:8px;margin-top:8px;box-shadow:0px 0px 0.106666rem #dedede;width: 5.893333rem;height: 4.053333rem;margin-right: 0.4rem;display: inline-block;}
 .qiyehuilianyyi{height: 2.653333rem;display: flex;justify-content: center;align-items: center;}
 .qiyehuilianyyi div{width: 2.333333rem;height: 0.946666rem;}
 .qiyehuilianyyi div img{width: 100%;height: 100%;}
