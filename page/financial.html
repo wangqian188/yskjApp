@@ -128,15 +128,22 @@
 			mui.init();
 			//fwscType 1、工商税务，2、增值服务，3、定制装修，4金融服务
 			$('.fast_sq').click(function(){
-				mui.openWindow({ 
-					url:'liJiShenQing.html', //需要打开页面的url地址 
-					id:'liJiShenQing',  //需要打开页面的url页面id
-					extras:{fwscType:4}
-				});
-				var main = plus.webview.getWebviewById('liJiShenQing');
-				mui.fire(main, "applyNow",{
-				    fwscType:4
-				})
+				if(localStorage.getItem('lostate')){
+					mui.openWindow({ 
+						url:'liJiShenQing.html', //需要打开页面的url地址 
+						id:'liJiShenQing',  //需要打开页面的url页面id
+						extras:{fwscType:4}
+					});
+					var main = plus.webview.getWebviewById('liJiShenQing');
+					mui.fire(main, "applyNow",{
+					    fwscType:4
+					})
+				}else{
+					mui.openWindow({
+						url: './login.html', 
+						id:'login'
+					});
+				}
 			});
 			window.addEventListener('customEvent2', function(event) {
 			    // mui.fire()传过来的额外的参数，在event.detail中；

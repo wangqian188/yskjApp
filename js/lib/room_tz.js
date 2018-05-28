@@ -199,6 +199,7 @@ function sendyzm(){
 //退租提交
 var clicktag = 0;
 $('.wt_btn').click(function(){
+	house_news = $('#house_news').val();
 	if(telnumber == '' && yzm == '' && user_name == '' && house_news == '' && house_date == ''){
 		return;
 	}else{
@@ -210,6 +211,10 @@ $('.wt_btn').click(function(){
 			if(telnumber==''){
 				mui.alert('手机号不能为空', '提示', function(){},'div');
 				return;
+			}else{
+				if(!checkPhone('tel')){
+					return;
+				}
 			}
 			if(yzm==''){
 				mui.alert('验证码不能为空', '提示', function(){},'div');
@@ -230,7 +235,7 @@ $('.wt_btn').click(function(){
 			clicktag = 1;
 			yz_house_wt();
 		}else{
-			if(telnumber != '' || yzm != '' || user_name != '' || house_news != '' || house_date != ''){
+			if(telnumber == '' || yzm == '' || user_name == '' || house_news == '' || house_date == ''){
 				return;
 			}else{				
 				setTimeout(function () { clicktag = 0; }, 5000);

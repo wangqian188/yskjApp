@@ -145,7 +145,7 @@
 				if($('.fwscPhone').val()==''){
 					mui.alert('请填写手机号码', '提示', function(){});
 					return false;
-				}else if(!(/^1[34578]\d{9}$/.test($('.fwscPhone').val()))){
+				}else if(!(/^1[345786]\d{9}$/.test($('.fwscPhone').val()))){
 					mui.alert('请确认填写手机号是否正确', '提示', function(){});
    		           return false;
 				}
@@ -218,7 +218,8 @@
 									'name':name,
 									'phone':phone,
 									'type':type,
-									'memo':memo
+									'memo':memo,
+									'uid': localStorage.getItem('user_id')
 								},
 								dataType:'json',//服务器返回json格式数据
 								type:'post',//HTTP请求类型

@@ -796,7 +796,8 @@
 					"css/style_a_d.css"
 				],
 				"refer": [
-					"page/liJiShenQing.html"
+					"page/liJiShenQing.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},
@@ -910,7 +911,8 @@
 					"img/gongShangZhuCe.png"
 				],
 				"refer": [
-					"page/wYaoZhuCe.html"
+					"page/wYaoZhuCe.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},
@@ -937,7 +939,8 @@
 					"css/style_a_d.css"
 				],
 				"refer": [
-					"page/liJiShenQing.html"
+					"page/liJiShenQing.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},
@@ -978,7 +981,8 @@
 					"js/lib/jquery.lazyload.min.js"
 				],
 				"refer": [
-					"page/liJiShenQing.html"
+					"page/liJiShenQing.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},

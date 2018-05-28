@@ -97,17 +97,10 @@
 				(function(index){
 					fwli[i].addEventListener('tap',function(){
 						//打开关于页面
-						if(localStorage.getItem('lostate')){
-							mui.openWindow({
-								url: toUrl[index], 
-								id:'fw'+index
-							});
-						}else{
-							mui.openWindow({
-								url: './page/login.html', 
-								id:'login'
-							});
-						}
+						mui.openWindow({
+							url: toUrl[index], 
+							id:'fw'+index
+						});
 					})
 				})(i)
 			}

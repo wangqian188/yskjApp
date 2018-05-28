@@ -80,12 +80,14 @@ document.getElementById("house_ms").addEventListener('input',function(){
 });
 
 //提交按钮样式变换
-function btnzt(){
-	if(telnumber != '' || user_name != '' || house_news != '' || qy_name != '' || house_ms != ''){
-		$('.btn').css({'background':'#2b70d8'});
-	}else{
-		$('.btn').css({'background':'#d2d2d2'});
-	}
+function checkPhone(id){
+   var phone = document.getElementById(id).value;
+   if(!(/^1[345786]\d{9}$/.test(phone))){
+   		mui.alert('请确认填写手机号是否正确', '提示', function(){});
+   		return false;
+   }else{
+   		return true;
+   }
 }
 //手机号码验证
 function checkPhone(id){
@@ -119,7 +121,9 @@ $('.wt_btn').click(function(){
 				mui.alert('手机号不能为空', '提示', function(){},'div');
 				return;
 			}else{
-				checkPhone('tel');
+				if(!checkPhone('tel')){
+					return;
+				}
 			}
 			if(qy_name == ''){
 				mui.alert('企业名称不能为空', '提示', function(){},'div');

@@ -32,7 +32,7 @@
 		    <div class="wt_jbxx">
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>姓名</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入真实姓名" id="user_name">
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入真实姓名" id="user_name" onkeyup="this.value=this.value.replace(/^\s+|\s+$/g,'')">
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>手机号</label>
@@ -48,14 +48,14 @@
 		    <div class="wt_fwxx">
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>房屋信息</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入楼盘名称及所在区域" id="house_news">
+		    	    <input type="text" class="mui-input-clear" placeholder="请输入楼盘名称及所在区域" id="house_news" onkeyup="this.value=this.value.replace(/^\s+|\s+$/g,'')">
 		    	</div>
 		    </div>
 		    <!--房屋描述-->
 		    <div class="wt_fwms">
 		    	<p class="wt_fwms_bt">房屋描述</p>
 		    	<p class="wt_texar">
-		    		<textarea name="" rows="" cols="" placeholder="请描述一下房屋基本信息" id="house_ms"></textarea>
+		    		<textarea name="" rows="" cols="" placeholder="请描述一下房屋基本信息" id="house_ms" onkeyup="this.value=this.value.replace(/^\s+|\s+$/g,'')"></textarea>
 		    		<span class="wt_texar_count"><i id="textareaCount">0</i>/200</span>
 		    	</p>
 		    </div>

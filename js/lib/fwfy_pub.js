@@ -212,6 +212,10 @@ $('.wt_btn').click(function(){
 			if(telnumber==''){
 				mui.alert('手机号不能为空', '提示', function(){},'div');
 				return;
+			}else{
+				if(!checkPhone('tel')){
+					return;
+				}
 			}
 			if(yzm==''){
 				mui.alert('验证码不能为空', '提示', function(){},'div');
@@ -243,6 +247,7 @@ $('.wt_btn').click(function(){
 function yz_house_wt(){
 	var code = $('#hqyzm').val();
 	house_ms = $('#house_ms').val();
+	house_news = $('#house_news').val();
 	mui.ajax(url+'/yskjApp/appYskj/V1/compServiceCode.do',{
 		data:{
 			'code':code,

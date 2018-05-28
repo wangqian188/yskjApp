@@ -114,6 +114,8 @@ function checkPhone(id){
    if(!(/^1[345786]\d{9}$/.test(phone))){
    		mui.alert('请确认填写手机号是否正确', '提示', function(){});
    		return false;
+   }else{
+   		return true;
    }
 }
 //生成cookie
@@ -137,7 +139,9 @@ $('.wt_btn').click(function(){
 				mui.alert('手机号不能为空', '提示', function(){},'div');
 				return;
 			}else{
-				checkPhone('tel');
+				if(!checkPhone('tel')){
+					return;
+				}
 			}
 			if(qy_name == ''){
 				mui.alert('企业名称不能为空', '提示', function(){},'div');

@@ -37,11 +37,18 @@
 			mui.init();
 			//fwscType 1、工商税务，2、增值服务，3、定制装修，4金融服务
 			$('.woyaochuce').click(function(){
-				mui.openWindow({ 
-					url:'wYaoZhuCe.html?fwscType=1', //需要打开页面的url地址 
-					id:'wYaoZhuCe',  //需要打开页面的url页面id
-                    extras:{fwscType:1}
-				});
+				if(localStorage.getItem('lostate')){
+					mui.openWindow({ 
+						url:'wYaoZhuCe.html?fwscType=1', //需要打开页面的url地址 
+						id:'wYaoZhuCe',  //需要打开页面的url页面id
+	                    extras:{fwscType:1}
+					});
+				}else{
+					mui.openWindow({
+						url: './login.html', 
+						id:'login'
+					});
+				}
 			});
 			window.addEventListener('customEvent', function(event) {
 			    // mui.fire()传过来的额外的参数，在event.detail中；

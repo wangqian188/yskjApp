@@ -231,7 +231,6 @@
 //			});
 			(function(){
 				var find_houseObj = localStorage.getItem('find_houseObj');
-				alert(find_houseObj);
 				area = JSON.parse(find_houseObj).house_mj;//面积
 				price_zj = JSON.parse(find_houseObj).house_fund;//资金预算
 				zc = JSON.parse(find_houseObj).iszc;//是否注册
@@ -1446,9 +1445,7 @@
 			
 			//监听首页底部选项卡的事件(隐藏选项卡)
 			function jiantingindex(){
-				alert(22222);
 				var index = plus.webview.getWebviewById('index');
-				alert(index);
 				mui.fire(index, "jiantingishoyeindex",{
 				    text3:this.text1
 				})

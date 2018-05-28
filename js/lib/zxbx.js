@@ -142,6 +142,10 @@ $('.wt_btn').click(function(){
 			if(telnumber==''){
 				mui.alert('手机号不能为空', '提示', function(){},'div');
 				return;
+			}else{
+				if(!checkPhone('tel')){
+					return;
+				}
 			}
 			if(yzm==''){
 				mui.alert('验证码不能为空', '提示', function(){},'div');
@@ -180,6 +184,7 @@ function yz_house_wt(){
 	
 }
 function pic_tijiao(){
+	alert(JSON.stringify(arr_src));
 	var code = $('#hqyzm').val();
 	house_ms = $('#house_ms').val();
 	house_news = $('#house_news').val();
