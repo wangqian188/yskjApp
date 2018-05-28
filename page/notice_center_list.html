@@ -115,7 +115,7 @@
 			function dthqdata(){
 				mui.ajax(Interface_url + '/yskjApp/webApp/dataInfo/getMessageByUserId',{
 				data:{"id":localStorage.getItem("user_id"),"page":String(xial),"pagesize":"10"},
-				dataType:'json',//服务器返回json格式数据
+				dataType:'json',//服务器返回json格式数据123
 				type:'post',//HTTP请求类型
 				timeout:10000,//超时时间设置为10秒；
 				headers:{'Content-Type':'application/json'},	              
@@ -145,7 +145,6 @@
 								}else if(data[i].typeName == '服务商城'){
 									string += '<span class="repair_cssstyle repair_img4"></span>';
 								}else if(data[i].typeName == '房源委托'){
-									alert(data[i].typeName);
 									string += '<span class="repair_cssstyle repair_img5"></span>';
 								}
 								string += '<span class="repair_font">'+data[i].typeName+'</span></p>';

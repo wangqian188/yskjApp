@@ -62,19 +62,19 @@
 					<div class="qiyehulxqfb qiyehuldis">
 						<p class="qiehul_p">
 							<span class="xxingmspan fangywidt">企业名称：</span>
-							<span class="sansspan"></span>
+							<span class="sansspan qymingcxv"></span>
 						</p>
 						<p>
 							<span class="xxingmspan fangywidt">所属行业：</span>
-							<span class="sansspan"></span>
+							<span class="sansspan suoshyxvqi"></span>
 						</p>
 						<p>
 							<span class="xxingmspan fangywidt">需求预算：</span>
-							<span class="sansspan">10000元</span>
+							<span class="sansspan xvysxq"></span>
 						</p>
 						<p>
 							<span class="xxingmspan shoujihwid">有效期：</span>
-							<span class="sansspan">10天</span>
+							<span class="sansspan yxqxq"></span>
 						</p>
 					</div>
 					
@@ -307,7 +307,11 @@
 				            	}else{
 				//          		在线报修   物业对接   房屋凭证      房屋费用是一个页面
 //				            		alert('设备报修///在线报修');
-									var array = data[0].pic.split(";");
+				            		if(data[0].pic == null){
+				            			
+				            		}else{
+				            			var array = data[0].pic.split(";");
+				            		}
 				            		$('.fuwushench').removeClass('qiyehuldis');
 				        			$('.zaixianbaoxius').removeClass('qiyehuldis');
 				        			$(".detail_lag h1").html(data[0].typeName==null?"无":data[0].typeName);
@@ -317,10 +321,11 @@
 									$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
 					            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
 					            	$(".content_class").html(data[0].memo==''?"无":data[0].memo);
-					            	if(array.length == 1){
+					            	if(array.length == 1 && data[0].pic != null){
 										var str = '<span class="menchwei_img"><img src="'+img_url+data[0].pic+'" width="100%" height="100%"/></span>';
 					            		$('.menchwei_p').append(str);
-									}else if(array.length > 1){
+									}else if(array.length > 1 && data[0].pic != null){
+										var array = data[0].pic.split(";");
 										for(var i=0;i<array.length;i++){
 											var str = '<span class="menchwei_img"><img src="'+img_url+array[i]+'" width="100%" height="100%"/></span>';
 											$('.menchwei_p').append(str);
@@ -356,8 +361,10 @@
 									$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
 									$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
 //				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);
-				        			$(".fabu_qiuqi").html(data[0].enterpriseName==''?"无":data[0].enterpriseName);
-				        			$(".fabu_qiuqi_hey").html(data[0].demandType==''?"无":data[0].demandType);
+				        			$(".qymingcxv").html(data[0].enterpriseName==''?"无":data[0].enterpriseName);
+				        			$(".suoshyxvqi").html(data[0].demandType==''?"无":data[0].demandType);
+				        			$(".xvysxq").html(data[0].budget==''?"无":data[0].budget+'元');
+				        			$(".yxqxq").html(data[0].effectiveTime==null?"无":data[0].effectiveTime+'天');
 				        			$(".fangyuanweituo h1").html("发布服务");
 				        			$(".fangdewnzi").html(data[0].demandDesc==''?"无":data[0].demandDesc);
 				            	}else if(type == 3){
