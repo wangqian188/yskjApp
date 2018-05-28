@@ -36,12 +36,12 @@
 						</p>
 						<p class="fw_name">装修定制</p>
 					</li>
-					<li>
+					<!--<li>
 						<p class="fw_ion">
 							<img src="http://47.92.145.21:81/yskjapp\servicemall\fourservices\mall_finance.png" alt="" />
 						</p>
 						<p class="fw_name">金融服务</p>
-					</li>
+					</li>-->
 					<li>
 						<p class="fw_ion">
 							<img src="http://47.92.145.21:81/yskjapp\servicemall\fourservices\mall_addservice.png" alt="" />
@@ -59,7 +59,7 @@
 					<img src="http://47.92.145.21:81/yskjapp\servicemall\recommend\hotservice2.png"/>
 				</div>
 				<div class="rmtj_pic yiny" style="margin-top: 0.533333rem;" id="jrfw">
-					<img src="http://47.92.145.21:81/yskjapp\servicemall\recommend\hotservice3.png"/>
+					<img src="http://116.62.68.26/yskjapp\servicemall\recommend\hotservice3.png"/>
 				</div>
 			</div>
 			<div class="zxsj_box" style="padding-bottom: 1rem;">
@@ -91,7 +91,7 @@
 		</div>
 		<script type="text/javascript">
 			mui.init()
-			var toUrl = ['./page/tax.html','./page/fitup.html','./page/financial.html','./page/added.html']
+			var toUrl = ['./page/tax.html','./page/fitup.html'/*,'./page/financial.html'*/,'./page/added.html']
 			var fwli = $('.fw li');
 			for (var i=0; i<fwli.length; i++) {
 				(function(index){
@@ -105,7 +105,7 @@
 				})(i)
 			}
 			//
-			if(localStorage.getItem('lostate')){
+			if(localStorage.getItem('lostate') == 1){
 				$('#gssw').click(function(){
 					mui.openWindow({
 						url: toUrl[0], 
