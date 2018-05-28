@@ -31,7 +31,7 @@ mui.plusReady(function() {})
        //上传单张图片
 function galleryImg() {
     //每次拍摄或选择图片前清空数组对象
-    f1.splice(0, f1.length);
+//  f1.splice(0, f1.length);
 //          document.getElementsByClassName("showimg")[0].innerHTML = null;
     // 从相册中选择图片
     mui.toast("请从相册中选择图片");
@@ -47,16 +47,15 @@ function galleryImg() {
 
 function galleryImgs() {
     //每次拍摄或选择图片前清空数组对象
-    f1.splice(0, f1.length);
+//  f1.splice(0, f1.length);
 	//document.getElementsByClassName("showimg")[0].innerHTML = null;
     // 从相册中选择图片
-    mui.toast("请从相册中选择图片");
+    mui.toast("请从相册中选择图片(最多五张)");
     plus.gallery.pick(function(e) {
-    	
-		//  if (e.files.length != 20) {
-		//     mui.toast('请选择身份证正面和背面照片共两张');
-		//     return false;
-		//  }
+    	if (e.files.length >= 5) {
+		    mui.toast('请选择您的报修图片(最多五张)');
+		    return false;
+		}
         for (var i in e.files) {
             showImg(e.files[i]);
         }
@@ -71,7 +70,7 @@ function galleryImgs() {
 // 拍照添加文件
 function cameraimages() {
     //每次拍摄或选择图片前清空数组对象
-    f1.splice(0, f1.length);
+//  f1.splice(0, f1.length);
 //  document.getElementsByClassName("showimg")[0].innerHTML = null;
     var cmr = plus.camera.getCamera();
     cmr.captureImage(function(p) {
@@ -156,7 +155,6 @@ function imgupgrade() {
     	var  imgArray=[];//通过逗号分割到新的编码
     	var newImgbase = f1[i].split(",")[1];
         imgArray.push(newImgbase);//放到imgArray数组里面
-//      alert(i+'tupian');
         picupload(imgArray,i);
     }
 }

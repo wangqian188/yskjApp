@@ -218,6 +218,7 @@ function pic_tijiao(){
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
+							f1.splice(0, f1.length);
 							mui.toast('已提交成功，我们将会尽快为您处理',{ duration:2000, type:'div' });
 							setTimeout(function(){
 								mui.back();								

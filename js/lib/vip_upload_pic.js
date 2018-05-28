@@ -55,10 +55,10 @@ function galleryImgs() {
     mui.toast("请从相册中选择您的企业logo图片");
     plus.gallery.pick(function(e) {
     	
-		  if (e.files.length != 1) {
-		     mui.toast('请选择您的企业logo图片');
-		     return false;
-		  }
+	  if (e.files.length != 1) {
+	     mui.toast('请选择您的企业logo图片');
+	     return false;
+	  }
         for (var i in e.files) {
             showImg(e.files[i]);
         }
