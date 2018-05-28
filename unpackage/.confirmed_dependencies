@@ -97,7 +97,8 @@
 			"page/financial.html",
 			"page/loupan.html",
 			"page/topNewsInfo.html",
-			"page/latest_datas.html"
+			"page/latest_datas.html",
+			"page/added.html"
 		],
 		"resources": [
 			"img/yzwt.png",

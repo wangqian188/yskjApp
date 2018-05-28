@@ -344,7 +344,8 @@
 					"page/wt_house.html",
 					"page/financial.html",
 					"page/loupan.html",
-					"page/latest_datas.html"
+					"page/latest_datas.html",
+					"page/added.html"
 				],
 				"priority": 0
 			},

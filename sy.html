@@ -34,7 +34,7 @@
 			    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播)11 -->
 			    <div class="mui-slider-item mui-slider-item-duplicate">
 			      <a href="#">
-			        <img src="http://116.62.68.26/yskjapp/indeximg/banner/banner4.png">
+			        <img src="http://116.62.68.26/yskjapp/indeximg/banner/banner3.png">
 			      </a>
 			    </div>
 			    <!-- 第一张 -->
@@ -53,12 +53,6 @@
 			    <div class="mui-slider-item">
 			      <a href="#" class="banner3">
 			        <img src="http://116.62.68.26/yskjapp/indeximg/banner/banner3.png">
-			      </a>
-			    </div>
-			    <!-- 第四张 -->
-			    <div class="mui-slider-item">
-			      <a href="#" class="banner4">
-			        <img src="http://116.62.68.26/yskjapp/indeximg/banner/banner4.png">
 			      </a>
 			    </div>
 			    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
@@ -213,13 +207,6 @@
 				    		<a href="javascript:void(0)">
 				    			<div class="img">
 				    				<img src="http://116.62.68.26/yskjapp/indeximg/upgradeservice/renovation.png" alt="">
-				    			</div>
-				    		</a>
-				    	</li>
-				    	<li>
-				    		<a href="javascript:void(0)">
-				    			<div class="img">
-				    				<img src="http://116.62.68.26/yskjapp/indeximg/upgradeservice/finance.png" alt="">
 				    			</div>
 				    		</a>
 				    	</li>
@@ -742,23 +729,6 @@
 					id:'fwsc.html',
 				});
 			});
-			//首页轮播图跳转
-			$('.banner4').click(function(){//跳转委托房源
-				mui.openWindow({
-					url:'./page/financial.html',
-					id:'fw2',
-				});
-			});
-			// post测试请求地址 http://test.dongyixueyuan.com/link_app/post
-			/*mui.post('http://116.62.68.26:8080/yhcms/web/jcsj/getHotBuilding.do',
-				function(data){ //data为服务器端返回数据
-					
-					//自己的逻辑
-					alert(121212);
-					console.log(555555);
-					console.info(123465);
-				},'json'
-			);*/
 			function yzwt(e){//获取验证码变色
 				e.value=e.value.replace(/\D/g,'');
 				if(e.value != ''){
