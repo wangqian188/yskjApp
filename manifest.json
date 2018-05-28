@@ -389,7 +389,8 @@
 					"page/financial.html",
 					"page/tax.html",
 					"page/added.html",
-					"page/fitup.html"
+					"page/fitup.html",
+					"page/login.html"
 				],
 				"priority": 0
 			},

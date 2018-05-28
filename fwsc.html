@@ -97,32 +97,62 @@
 				(function(index){
 					fwli[i].addEventListener('tap',function(){
 						//打开关于页面
-						mui.openWindow({
-							url: toUrl[index], 
-							id:'fw'+index
-						});
+						if(localStorage.getItem('lostate')){
+							mui.openWindow({
+								url: toUrl[index], 
+								id:'fw'+index
+							});
+						}else{
+							mui.openWindow({
+								url: './page/login.html', 
+								id:'login'
+							});
+						}
 					})
 				})(i)
 			}
 			//
-			$('#gssw').click(function(){
-				mui.openWindow({
-					url: toUrl[0], 
-					id:'fw0'
+			if(localStorage.getItem('lostate')){
+				$('#gssw').click(function(){
+					mui.openWindow({
+						url: toUrl[0], 
+						id:'fw0'
+					});
 				});
-			});
-			$('#zxdz').click(function(){
-				mui.openWindow({
-					url: toUrl[1], 
-					id:'fw1'
+				$('#zxdz').click(function(){
+					mui.openWindow({
+						url: toUrl[1], 
+						id:'fw1'
+					});
 				});
-			});
-			$('#jrfw').click(function(){
-				mui.openWindow({
-					url: toUrl[2], 
-					id:'fw2'
+				$('#jrfw').click(function(){
+					mui.openWindow({
+						url: toUrl[2], 
+						id:'fw2'
+					});
 				});
-			});
+			}else{
+				$('#gssw').click(function(){
+					mui.openWindow({
+						url: './page/login.html', 
+						id:'login'
+					});
+				});
+				$('#zxdz').click(function(){
+					mui.openWindow({
+						url: './page/login.html', 
+						id:'login'
+					});
+				});
+				$('#jrfw').click(function(){
+					mui.openWindow({
+						url: './page/login.html', 
+						id:'login'
+					});
+				});
+			}
+			
+			
 			//接收参数刷新
 			window.addEventListener('fwsc_jz', function(event) {
 			    // mui.fire()传过来的额外的参数，在event.detail中；

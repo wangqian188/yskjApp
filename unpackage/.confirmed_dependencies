@@ -138,7 +138,9 @@
 		"refer": [
 			"page/tax.html",
 			"page/financial.html",
-			"page/added.html"
+			"page/added.html",
+			"page/login.html",
+			"page/fitup.html"
 		],
 		"resources": [
 			"css/fwsc.css",
