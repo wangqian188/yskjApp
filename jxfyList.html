@@ -206,6 +206,7 @@
 			 * 下拉刷新具体业务实现
 			 */
 			function pulldownRefresh() {
+				mui('#pullrefresh').pullRefresh().setStopped(true);
 				xial = 1;
 				setTimeout(function() {
 					$('.listUl').html('');
@@ -688,7 +689,6 @@
 						}else{
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
-							mui('#pullrefresh').pullRefresh().setStopped(false);
 							var index = plus.webview.getWebviewById('index');
 							zhezhaoxiaoshi();
 							mui.fire(index, "weizhi1",{
@@ -780,6 +780,7 @@
 								/*document.querySelector('.fypics').innerHTML=string;*/
 								$('.listUl').append(string);
 							}
+							mui('#pullrefresh').pullRefresh().setStopped(false);
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 10)); //参数为true代表没有更多数据了。
 						}
 //						//首页数据

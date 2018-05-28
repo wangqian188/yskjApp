@@ -40,8 +40,8 @@
 							<div class="xiaokuai">1500以上</div>
 						</div>
 						<div class="xuanxingshuzi">
-							<div class="xiaokuaiyishang pingangm lpmianjiaru"><input type="text" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
-							<div class="xiaokuaiyishang pingangm lpmianjiachu"><input type="text" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
+							<div class="xiaokuaiyishang pingangm lpmianjiaru"><input type="number" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
+							<div class="xiaokuaiyishang pingangm lpmianjiachu"><input type="number" onfocus="lphuoqvjiadian()" placeholder="㎡" /></div>
 						</div>
 					</div>
 					<div class="mjqyfm zjqy">
@@ -59,8 +59,8 @@
 							<div class="xiaokzujin">15以上</div>
 						</div>
 						<div class="xuanxingshuzi">
-							<div class="xiaokuaiyishang pingangm lpzujinru"><input type="text" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
-							<div class="xiaokuaiyishang pingangm lpzujinchu"><input type="text" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
+							<div class="xiaokuaiyishang pingangm lpzujinru"><input type="number" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
+							<div class="xiaokuaiyishang pingangm lpzujinchu"><input type="number" onfocus="lpzujinhuoqvjiadian()" placeholder="元" /></div>
 						</div>
 					</div>
 					<div class="mjqyfm">
@@ -174,6 +174,7 @@
 			 * 下拉刷新具体业务实现
 			 */
 			function pulldownRefresh() {
+				mui('#pullrefresh').pullRefresh().setStopped(true);
 				xial = 1;
 				setTimeout(function() {
 					$('.listUl').html('');
@@ -249,7 +250,6 @@
 									/*for(var j=0;j<cq.length;j++){
 										cq[j].className = 'xiaokchuaq';
 									}*/
-									alert(tagcq);
 									if(tagcq == 'cqss'){
 										cq[index].className = "xiaokuaisss tesebiaqidange";
 										var strs = $(this).attr("id");
@@ -327,7 +327,6 @@
 							tag = "mianjiqv";
 							tagzj = 'zujinxx';
 							tagcq = "cqss";
-							alert(tagcq);
 			
 							//筛选中输入input框的条件
 							mijdianjstatus = 1;
@@ -600,7 +599,7 @@
 //							    idxid:4//1位置
 //							})
 							//点击位置遮罩层取消遮罩层要改变样式
-							var main = plus.webview.getWebviewById('loupan.html');
+							var main = plus.webview.getWebviewById('loupan');
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
@@ -611,21 +610,19 @@
 					}else{
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
-							mui('#pullrefresh').pullRefresh().setStopped(false);
 //							var index = plus.webview.getWebviewById('index');
 							zhezhaoxiaoshi();
 //							mui.fire(index, "weizhi1",{
 //							    idxid:4//1位置
 //							})
 							//点击位置遮罩层取消遮罩层要改变样式
-							var main = plus.webview.getWebviewById('loupan.html');
+							var main = plus.webview.getWebviewById('loupan');
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
 							xial++;
 							var data = data.buildings;
 							var string = '';
-							
 							for(var i=0;i<data.length;i++){
 								var datatese = [];
 								datatese = data[i].label.split(',');
@@ -655,6 +652,7 @@
 								$('.listUl').append(string);
 							}
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data.length < 10)); //参数为true代表没有更多数据了。
+							mui('#pullrefresh').pullRefresh().setStopped(false);
 						}
 //						//首页数据
 //						var main = plus.webview.getWebviewById('sy.html');
@@ -800,7 +798,7 @@
 //				    idxid:2//1位置
 //				})
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('loupan.html');
+				var main = plus.webview.getWebviewById('loupan');
 				mui.fire(main, "weizhifh",{
 				    idxfh:1//1位置
 				})
@@ -812,7 +810,7 @@
 				$(".zhezhaoce").removeClass("zhezhaocdisbalo");
 				zhezhaoxiaoshiww();
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('loupan.html');
+				var main = plus.webview.getWebviewById('loupan');
 				mui.fire(main, "weizhifh",{
 				    idxfh:1//1位置
 				})
@@ -824,7 +822,7 @@
 				$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 				zhezhaoxiaoshiww();
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('loupan.html');
+				var main = plus.webview.getWebviewById('loupan');
 				mui.fire(main, "saixuanfh",{
 				    idxsxfh:1//1位置
 				})
@@ -869,7 +867,7 @@
 //				    idxid:4//1位置
 //				})
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('loupan.html');
+				var main = plus.webview.getWebviewById('loupan');
 				mui.fire(main, "saixuanfh",{
 				    idxsxfh:1//1位置
 				})
@@ -1006,7 +1004,7 @@
 					});
 					$('#sel2').html('');
 					$('#sel3').html('');
-					var main = plus.webview.getWebviewById('loupan.html');
+					var main = plus.webview.getWebviewById('loupan');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -1083,7 +1081,7 @@
 					district ='';
 					fdcode = '';
 					text1 = '位置';
-					var main = plus.webview.getWebviewById('loupan.html');
+					var main = plus.webview.getWebviewById('loupan');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -1135,7 +1133,7 @@
 						district = districtages;
 					}
 					fdcode = '';
-					var main = plus.webview.getWebviewById('loupan.html');
+					var main = plus.webview.getWebviewById('loupan');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text2
 					})
@@ -1143,7 +1141,7 @@
 				}else{
 					district = '';
 					fdcode = id;
-					var main = plus.webview.getWebviewById('loupan.html');
+					var main = plus.webview.getWebviewById('loupan');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text3
 					})
@@ -1203,7 +1201,7 @@
 					station = '';
 					district = '';
 					fdcode = '';
-					var main = plus.webview.getWebviewById('loupan.html');
+					var main = plus.webview.getWebviewById('loupan');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -1255,7 +1253,7 @@
 						lineid = lineageg;
 					}
 					station = '';
-					var main = plus.webview.getWebviewById('loupan.html');
+					var main = plus.webview.getWebviewById('loupan');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text2
 					})
@@ -1263,7 +1261,7 @@
 				}else{
 					lineid = '';
 					station = id;
-					var main = plus.webview.getWebviewById('loupan.html');
+					var main = plus.webview.getWebviewById('loupan');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text3
 					})
