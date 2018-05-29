@@ -25,6 +25,10 @@ var picker = new mui.PopPicker({
 });
 picker.setData(arr);
 picker.pickers[0].setSelectedIndex(0);
+var picker1 = new mui.PopPicker({
+	layer: 1
+});
+picker1.pickers[0].setSelectedIndex(0);
 //目标区域的弹出框选择
 function sshy(){//
 	picker.show(function(SelectedItem) {
@@ -37,9 +41,9 @@ function sshy(){//
 qy();//区域
 //目标区域的弹出框选择
 function szqy(){
-	picker.setData(areaArr);
-	picker.pickers[0].setSelectedIndex(0);
-	picker.show(function(SelectedItem) {
+	picker1.setData(areaArr);
+	picker1.pickers[0].setSelectedIndex(0);
+	picker1.show(function(SelectedItem) {
 		var sel_val = picker.getSelectedItems();
 		$('#add_area').val(sel_val[0].text);
 		add_area = $('#add_area').val();
