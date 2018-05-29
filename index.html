@@ -115,10 +115,10 @@
 		 //选项卡点击事件
 		mui('.mui-bar-tab').on('tap', 'a', function(e) {
 			//点击菜单切换清空精选房源搜索条件
-			var main1 = plus.webview.getWebviewById('jxfyList');
-			mui.fire(main1, "sousuochuac",{
-			    lpname:''//搜索条件
-			})
+//			var main1 = plus.webview.getWebviewById('jxfyList');
+//			mui.fire(main1, "sousuochuac",{
+//			    lpname:''//搜索条件
+//			})
 			var targetTab = this.getAttribute('href');
 			if (targetTab == activeTab) {
 				return;

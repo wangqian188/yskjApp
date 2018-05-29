@@ -70,7 +70,7 @@
 		  	$('.sousu').click(function(){
 		  		//精选房源上面搜索框的值传到搜索页面
 				var jxfsszhi = '';
-				if($('.sousuwenzi').html() == '请输入楼盘关键字搜索'){
+				if($('.sousuwenzi').html() == '请输入楼盘、区域、商圈'){
 					jxfsszhi = '';
 				}else{
 					jxfsszhi = $('.sousuwenzi').html();
@@ -285,7 +285,7 @@
 			window.addEventListener("ssqvxiaofanhui", function (e) {
 			    //获得事件参数
 			    var qvx = e.detail.qvx;
-				$('.sousuwenzi').html('请输入楼盘关键字搜索');
+				$('.sousuwenzi').html('请输入楼盘、区域、商圈');
 			});
 			
 			//位置内容的改变
