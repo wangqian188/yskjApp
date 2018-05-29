@@ -82,7 +82,7 @@ document.getElementById("house_ms").addEventListener('input',function(){
 //提交按钮样式变换
 //提交按钮样式变换
 function btnzt(){
-	if(user_name=='' || telnumber=='' || qy_name == '' || house_news=='' || house_ms == ''){
+	if(user_name != '' || telnumber != '' || qy_name != '' || house_news != '' || house_ms != ''){
 		$('.btn').css({'background':'#2b70d8'});
 	}else{
 		$('.btn').css({'background':'#d2d2d2'});
@@ -205,7 +205,9 @@ function yz_house_wt(){
 						}
 					}
 				}else{
-					mui.alert(data.message);
+					//信息处理成功
+//					mui.alert(data.message);
+//					mui.toast('暂无数据',{ duration:2000, type:'div' });
 				}
 			},
 			error:function(xhr,type,errorThrown){

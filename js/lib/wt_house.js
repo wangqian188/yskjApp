@@ -48,7 +48,7 @@ document.getElementById("hqyzm").addEventListener('input',function(){
 });
 //提交按钮样式变换
 function btnzt(){
-	if(telnumber != '' && yzm != '' && user_name != '' && house_news != ''){
+	if(telnumber != '' || yzm != '' || user_name != '' || house_news != ''){
 		$('.btn').css({'background':'#ffba26'});
 	}else{
 		$('.btn').css({'background':'#d2d2d2'});
@@ -129,28 +129,48 @@ function sendyzm(){
 	});	
 }
 //委托房源提交
+var clicktag = 0;
 $('.wt_btn').click(function(){
-	if(user_name==''){
-		mui.alert('姓名不能为空', '提示', function(){},'div');
-		return;
-	}
-	if(telnumber==''){
-		mui.alert('手机号不能为空', '提示', function(){},'div');
+	if(user_name=='' && telnumber=='' && yzm=='' && house_news==''){
 		return;
 	}else{
-		if(!checkPhone('tel')){
-			return;
+		if(clicktag == 0){
+			if(user_name==''){
+				mui.alert('姓名不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(telnumber==''){
+				mui.alert('手机号不能为空', '提示', function(){},'div');
+				return;
+			}else{
+				if(!checkPhone('tel')){
+					return;
+				}
+			}
+			if(yzm==''){
+				mui.alert('验证码不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(house_news==''){
+				mui.alert('房屋信息不能为空', '提示', function(){},'div');
+				return;
+			}
+			if(!localStorage.getItem('cookyezhi')){
+				mui.alert('请重新获取验证码', '提示', function(){},'div');
+				return;
+			}
+			clicktag = 1;
+			yz_house_wt();
+		}else{
+			if(user_name=='' || telnumber=='' || yzm=='' || house_news==''){
+				return;
+			}else{
+				setTimeout(function () { clicktag = 0; }, 5000);
+				mui.toast('已提交，请勿重复提交！',{ duration:'2000', type:'div' });
+				return;
+			}
 		}
 	}
-	if(yzm==''){
-		mui.alert('验证码不能为空', '提示', function(){},'div');
-		return;
-	}
-	if(house_news==''){
-		mui.alert('房屋信息不能为空', '提示', function(){},'div');
-		return;
-	}
-	yz_house_wt();
 });
 //验证并委托方法
 function yz_house_wt(){
@@ -183,6 +203,7 @@ function yz_house_wt(){
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
+							localStorage.removeItem('cookyezhi');
 							mui.toast('委托成功，我们将会与您联系',{ duration:2000, type:'div' });
 							setTimeout(function(){
 								mui.back();								

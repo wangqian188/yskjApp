@@ -7,7 +7,7 @@
 	"id": "YSKJ",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "幼狮空间",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.0.0",/*应用版本名称*/
+		"name": "2.0.0",/*应用版本名称*/
 		"code": "1"
 	},
 	"description": "",/*应用描述信息*/
@@ -205,25 +205,25 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "C:/Users/Administrator/Desktop/设计图/App/启动页/ipone5.png","retina55":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png","retina47":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png","retina35":"C:/Users/Administrator/Desktop/设计图/App/启动页/ipone4.png","retina55l":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png","iphonex":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png","iphonexl":"C:/Users/Administrator/Desktop/设计图/App/启动页/welcome.png"
+						"retina40": "C:/Users/yuan/Desktop/app配置文件测试/ipone5.png","retina55":"C:/Users/yuan/Desktop/app配置文件测试/welcome1.png","retina47":"C:/Users/yuan/Desktop/app配置文件测试/welcome1.png","retina35":"C:/Users/yuan/Desktop/app配置文件测试/ipone4.png","retina55l":"C:/Users/yuan/Desktop/app配置文件测试/welcome1.png","iphonex":"C:/Users/yuan/Desktop/app配置文件测试/welcome.png","iphonexl":"C:/Users/yuan/Desktop/app配置文件测试/welcome.png"
 					},
 					"ipad": {
-						"portrait": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad竖屏启动图片，分辨率：768x1004*/
-						"portrait-retina": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
-						"landscape": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad横屏启动图片，分辨率：1024x748*/
-						"landscape-retina": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
-						"portrait7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
-						"portrait-retina7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
-						"landscape7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
-						"landscape-retina7": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png"
+						"portrait": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png"
 					}
 				},
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": "C:/Users/Administrator/Desktop/设计图/App/启动页/welcome1.png"
+					"hdpi": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "C:/Users/yuan/Desktop/app配置文件测试/welcome1.png"
 				}
 			}
 		},"ads":{"rp":false,"splash":false,"push":false},"adid":""

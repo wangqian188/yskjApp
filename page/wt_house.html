@@ -41,7 +41,7 @@
 		    	</div>
 		    	<div class="mui-input-row wt_inpsty">
 		    	    <label>验证码</label>
-		    	    <input type="text" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="6"  id="hqyzm">
+		    	    <input type="text" class="mui-input" placeholder="请输入验证码" autocomplete="off" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="6"  id="hqyzm">
 		    	</div>
 		    </div>
 		    <!--房屋信息-->
@@ -55,7 +55,7 @@
 		    <div class="wt_fwms">
 		    	<p class="wt_fwms_bt">房屋描述</p>
 		    	<p class="wt_texar">
-		    		<textarea name="" rows="" cols="" placeholder="请描述一下房屋基本信息" id="house_ms" onkeyup="this.value=this.value.replace(/^\s+|\s+$/g,'')"></textarea>
+		    		<textarea name="" rows="" cols="" placeholder="请描述一下房屋基本信息" id="house_ms" onkeyup="this.value=this.value.replace(/^\s+|\s+$/g,'')" oninput="checkLength()" maxlength="200"></textarea>
 		    		<span class="wt_texar_count"><i id="textareaCount">0</i>/200</span>
 		    	</p>
 		    </div>
@@ -75,17 +75,20 @@
 	</body>
 	<script>
 		$(function(){  
-			//控制文本域输入字数
-	        $('textarea').keyup(function(event) {  
-	            var maxLength = 200;  
+	      //控制文本域输入字数
+	          $('textarea').keyup(function(event) {  
+	             checkLength();
+	          });  
+	      });  
+	      function checkLength(){
+	        var maxLength = 200;  
 	            var len = $('textarea').val().length;  
 	            $('#textareaCount').html(len);  
 	            if(parseInt($('#textareaCount').text()) > 200){  
 	                $('#textareaCount').html('200');  
-	                var res = $(this).val().substring(0,200);  
-	                $(this).val(res);  
+	                //var res = $(this).val().substring(0,200);  
+	                //$(this).val(res);  
 	            }  
-	        });  
-	    });  
+	      }  
 	</script>
 </html>
