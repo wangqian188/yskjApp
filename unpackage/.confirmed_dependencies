@@ -1,461 +1,461 @@
 {
-	"wd.html": {
-		"refer": [
-			"page/login.html",
-			"page/myset.html",
-			"page/mycollection.html",
-			"page/sfrz.html",
-			"page/person.html",
-			"page/repairs_bx.html",
-			"page/wode_fangyang.html",
-			"page/notice_center.html",
-			"page/wode_guanjia.html"
-		],
-		"resources": [
-			"img/wode_fangyuan.png",
-			"img/wode_guanjian.png",
-			"img/wode/tongzhi_center.png",
-			"img/wode/hsoufuwu.png",
-			"img/wode/getong.png",
-			"img/wode/zaixian_img.png",
-			"img/per.png",
-			"img/wode/wuye_duijie.png",
-			"img/wd_bg.png",
-			"img/sz.png",
-			"img/wode/fangwu_fwiyoong.png",
-			"img/wode/fangwu_pingzhjang.png",
-			"img/head_img.png",
-			"img/fav.png",
-			"css/wd.css",
-			"js/lib/flexible_css.js",
-			"fonts/mui.ttf",
-			"css/style.css",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"index.html": {
-		"resources": [
-			"sy.html",
-			"css/style_a_d.css",
-			"css/iconfont.css",
-			"css/style.css",
-			"css/a_fringe.css",
-			"fwsc.html",
-			"jxfy.html"
-		],
-		"refer": [
-			"qyhl.html",
-			"sy.html",
-			"wd.html",
-			"jxfy.html",
-			"fwsc.html"
-		]
-	},
-	"jxfy.html": {
-		"resources": [
-			"jxfyList.html",
-			"css/jxfy.css",
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"jxfyList.html",
-			"page/search.html"
-		]
-	},
-	"welcome.html": {
-		"refer": [
-			"index.html"
-		],
-		"resources": [
-			"js/lib/flexible_css.js",
-			"img/w2.png",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/lib/castapp.js",
-			"img/w3.png",
-			"js/mui.min.js",
-			"img/w1.png",
-			"css/mui.min.css",
-			"js/lib/flexible.js"
-		]
-	},
-	"sy.html": {
-		"refer": [
-			"page/search.html",
-			"page/loupan_detail.html",
-			"page/steward.html",
-			"page/tax.html",
-			"page/fyTail.html",
-			"page/acreage_mj.html",
-			"page/login.html",
-			"page/find_house.html",
-			"page/wt_house.html",
-			"page/saleFuWu.html",
-			"page/financial.html",
-			"page/loupan.html",
-			"page/topNewsInfo.html",
-			"page/latest_datas.html",
-			"page/added.html"
-		],
-		"resources": [
-			"img/yzwt.png",
-			"img/toll_pic1.png",
-			"img/qy_icon.png",
-			"img/mj_icon.png",
-			"js/lib/version.js",
-			"css/sy.css",
-			"img/jjr_icon.png",
-			"js/lib/sy.js",
-			"img/toll_pic2.png",
-			"img/gj_icon.png",
-			"img/tt_icon.png",
-			"js/lib/flexible_css.js",
-			"fonts/mui.ttf",
-			"css/style.css",
-			"js/lib/castapp.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js",
-			"css/a_fringe.css",
-			"img/data_ion.png"
-		]
-	},
-	"page/search.html": {
-		"refer": [
-			"jxfy.html"
-		]
-	},
-	"page/tax.html": {
-		"refer": [
-			"page/wYaoZhuCe.html",
-			"page/login.html"
-		]
-	},
-	"fwsc.html": {
-		"refer": [
-			"page/tax.html",
-			"page/financial.html",
-			"page/added.html",
-			"page/login.html",
-			"page/fitup.html"
-		],
-		"resources": [
-			"css/fwsc.css",
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"css/style.css",
-			"js/lib/flexible.js",
-			"css/a_fringe.css"
-		]
-	},
-	"page/mycollection.html": {
-		"resources": [
-			"page/mysc_list.html"
-		],
-		"refer": [
-			"page/mysc_list.html"
-		]
-	},
-	"jxfyList.html": {
-		"refer": [
-			"page/fyTail.html"
-		],
-		"resources": [
-			"css/jxfyList.css",
-			"img/fylistqierl.png"
-		]
-	},
-	"page/find_house.html": {
-		"refer": [
-			"page/find_fang.html",
-			"jxfy1.html"
-		]
-	},
-	"jxfy1.html": {
-		"resources": [
-			"jxfyList1.html"
-		],
-		"refer": [
-			"jxfyList1.html",
-			"page/search1.html"
-		]
-	},
-	"page/loupan.html": {
-		"resources": [
-			"page/loupanList.html"
-		],
-		"refer": [
-			"page/loupanList.html",
-			"page/search.html",
-			"page/searchLoupan.html"
-		]
-	},
-	"page/loupanList.html": {
-		"refer": [
-			"page/loupan_detail.html"
-		]
-	},
-	"jxfyList1.html": {
-		"refer": [
-			"page/fyTail.html"
-		]
-	},
-	"page/repairs_bx.html": {
-		"refer": [
-			"page/relet_xz.html",
-			"page/room_change.html",
-			"page/room_tz.html",
-			"page/forms_kjcmt.html",
-			"page/forms_zxbx.html",
-			"page/forms_zxbx1.html",
-			"page/forms_zxbx2.html",
-			"page/forms_zxbx3.html",
-			"page/forms_fwpz.html",
-			"page/forms_fwfy.html",
-			"page/login.html"
-		],
-		"resources": [
-			"img/repairs_pic/zxbx1_ion.png",
-			"js/lib/flexible_css.js",
-			"img/repairs_pic/zxbx3_ion.png",
-			"img/repairs_pic/fwfy2_ion.png",
-			"img/repairs_pic/zxbx2_ion.png",
-			"img/repairs_pic/gjfw_h.png",
-			"img/repairs_pic/fwpz3_ion.png",
-			"img/repairs_pic/house_tf.png",
-			"img/repairs_pic/slgj_ion.png",
-			"img/repairs_pic/fwfy3_ion.png",
-			"img/repairs_pic/fwfy1_ion.png",
-			"img/repairs_pic/house_hf.png",
-			"img/repairs_pic/ktzl_ion.png",
-			"js/lib/jquery-1.10.2.min.js",
-			"img/repairs_pic/djdl_ion.png",
-			"img/repairs_pic/fwfy4_ion.png",
-			"img/repairs_pic/house_xz.png",
-			"js/mui.min.js",
-			"img/repairs_pic/mcwx_ion.png",
-			"js/lib/flexible.js",
-			"img/repairs_pic/fwpz1_ion.png",
-			"img/repairs_pic/fwpz2_ion.png",
-			"css/repairs_bx.css",
-			"css/a_fringe.css",
-			"css/style_a_d.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"page/forms_zxbx.html": {
-		"refer": [
-			"testimg.html"
-		]
-	},
-	"page/wode_fangyang.html": {
-		"resources": [
-			"page/wode_fang_list.html"
-		],
-		"refer": [
-			"page/wode_fang_list.html"
-		]
-	},
-	"page/sfrz.html": {
-		"refer": [
-			"page/person.html"
-		]
-	},
-	"page/person.html": {
-		"refer": [
-			"page/sfrz.html",
-			"page/add_sfz.html",
-			"page/gh_tel.html"
-		]
-	},
-	"page/login.html": {
-		"refer": [
-			"page/fast_zc.html",
-			"page/wj_pwd.html",
-			"page/wechat_log.html"
-		],
-		"resources": [
-			"js/lib/flexible_css.js",
-			"css/style_a_d.css",
-			"js/lib/sha1.js",
-			"css/login.css",
-			"fonts/mui.ttf",
-			"img/third_dl_ion.png",
-			"img/login_pic.png",
-			"js/lib/md5.js",
-			"js/lib/form_yz.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"img/ycmm.png",
-			"css/mui.min.css",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"qyhl.html": {
-		"refer": [
-			"page/add_vip.html",
-			"page/fb_ser.html",
-			"page/fb_need.html",
-			"page/more_qy.html",
-			"page/qy_detail.html",
-			"page/login.html"
-		],
-		"resources": [
-			"img/tab_bg1.png",
-			"img/qiyefuwutitle.png",
-			"fonts/mui.ttf",
-			"img/qyhl/add_vip.png",
-			"img/huityuanicon.png",
-			"css/qiYeHuLian.css",
-			"img/beijignicon.png",
-			"img/qiyehulian.png",
-			"js/lib/app_config.js",
-			"js/lib/flexible_css.js",
-			"css/style_a_d.css",
-			"css/style.css",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/lib/flexible.js",
-			"css/a_fringe.css",
-			"img/qyhl/fb_ion1.png",
-			"img/qyhl/fb_ion2.png",
-			"img/tab_bg.png"
-		]
-	},
-	"page/add_vip.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"img/repairs_pic/z_add.png",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.picker.min.js",
-			"css/relet_xz.css",
-			"css/wt_house.css",
-			"js/mui.min.js",
-			"css/pickers/mui.dtpicker.css",
-			"js/lib/flexible.js",
-			"css/pickers/mui.picker.min.css",
-			"js/lib/relet_xz.js",
-			"js/lib/app_config.js",
-			"css/style_a_d.css",
-			"css/a_fringe.css"
-		]
-	},
-	"page/relet_xz.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.picker.min.js",
-			"css/relet_xz.css",
-			"css/wt_house.css",
-			"js/mui.min.js",
-			"css/pickers/mui.dtpicker.css",
-			"js/lib/flexible.js",
-			"css/pickers/mui.picker.min.css",
-			"js/lib/relet_xz.js",
-			"js/lib/app_config.js"
-		]
-	},
-	"page/room_tz.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.picker.min.js",
-			"js/mui.min.js",
-			"js/lib/room_tz.js",
-			"js/lib/flexible.js",
-			"js/lib/app_config.js",
-			"css/wt_house.css",
-			"css/pickers/mui.dtpicker.css",
-			"css/pickers/mui.picker.min.css"
-		]
-	},
-	"page/fb_ser.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.picker.min.js",
-			"css/wt_house.css",
-			"js/mui.min.js",
-			"js/lib/room_tz.js",
-			"css/pickers/mui.dtpicker.css",
-			"js/lib/flexible.js",
-			"css/pickers/mui.picker.min.css",
-			"js/lib/app_config.js",
-			"css/style_a_d.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/a_fringe.css",
-			"js/lib/fb_ser.js"
-		]
-	},
-	"page/room_change.html": {
-		"resources": [
-			"js/lib/flexible_css.js",
-			"js/lib/jquery-1.10.2.min.js",
-			"js/mui.picker.min.js",
-			"css/relet_xz.css",
-			"js/mui.min.js",
-			"js/lib/room_change.js",
-			"js/lib/flexible.js",
-			"css/room_change.css",
-			"js/lib/app_config.js",
-			"css/wt_house.css",
-			"css/pickers/mui.dtpicker.css",
-			"css/pickers/mui.picker.min.css",
-			"css/style_a_d.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/a_fringe.css"
-		]
-	},
-	"page/more_qy.html": {
-		"refer": [
-			"page/qy_detail.html"
-		]
-	},
-	"page/notice_center.html": {
-		"resources": [
-			"page/notice_center_list.html"
-		],
-		"refer": [
-			"page/notice_center_list.html"
-		]
-	},
-	"page/notice_center_list.html": {
-		"refer": [
-			"page/notice_center_detail.html"
-		]
-	},
-	"page/added.html": {
-		"refer": [
-			"page/liJiShenQing.html",
-			"page/login.html"
-		]
-	},
-	"page/myset.html": {
-		"refer": [
-			"page/setpwd.html"
-		]
-	},
-	"page/fitup.html": {
-		"refer": [
-			"page/liJiShenQing.html",
-			"page/login.html"
-		]
-	},
-	"page/financial.html": {
-		"refer": [
-			"page/login.html"
-		]
-	}
+  "wd.html": {
+    "refer": [
+      "page/login.html",
+      "page/myset.html",
+      "page/mycollection.html",
+      "page/sfrz.html",
+      "page/person.html",
+      "page/repairs_bx.html",
+      "page/wode_fangyang.html",
+      "page/notice_center.html",
+      "page/wode_guanjia.html"
+    ],
+    "resources": [
+      "img/wode_fangyuan.png",
+      "img/wode_guanjian.png",
+      "img/wode/tongzhi_center.png",
+      "img/wode/hsoufuwu.png",
+      "img/wode/getong.png",
+      "img/wode/zaixian_img.png",
+      "img/per.png",
+      "img/wode/wuye_duijie.png",
+      "img/wd_bg.png",
+      "img/sz.png",
+      "img/wode/fangwu_fwiyoong.png",
+      "img/wode/fangwu_pingzhjang.png",
+      "img/head_img.png",
+      "img/fav.png",
+      "css/wd.css",
+      "js/lib/flexible_css.js",
+      "fonts/mui.ttf",
+      "css/style.css",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/lib/flexible.js",
+      "js/lib/app_config.js"
+    ]
+  },
+  "index.html": {
+    "resources": [
+      "sy.html",
+      "css/style_a_d.css",
+      "css/iconfont.css",
+      "css/style.css",
+      "css/a_fringe.css",
+      "fwsc.html",
+      "jxfy.html"
+    ],
+    "refer": [
+      "qyhl.html",
+      "sy.html",
+      "wd.html",
+      "jxfy.html",
+      "fwsc.html"
+    ]
+  },
+  "jxfy.html": {
+    "resources": [
+      "jxfyList.html",
+      "css/jxfy.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "jxfyList.html",
+      "page/search.html"
+    ]
+  },
+  "welcome.html": {
+    "refer": [
+      "index.html"
+    ],
+    "resources": [
+      "js/lib/flexible_css.js",
+      "img/w2.png",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/lib/castapp.js",
+      "img/w3.png",
+      "js/mui.min.js",
+      "img/w1.png",
+      "css/mui.min.css",
+      "js/lib/flexible.js"
+    ]
+  },
+  "sy.html": {
+    "refer": [
+      "page/search.html",
+      "page/loupan_detail.html",
+      "page/steward.html",
+      "page/tax.html",
+      "page/fyTail.html",
+      "page/acreage_mj.html",
+      "page/login.html",
+      "page/find_house.html",
+      "page/wt_house.html",
+      "page/saleFuWu.html",
+      "page/financial.html",
+      "page/loupan.html",
+      "page/topNewsInfo.html",
+      "page/latest_datas.html",
+      "page/added.html"
+    ],
+    "resources": [
+      "img/yzwt.png",
+      "img/toll_pic1.png",
+      "img/qy_icon.png",
+      "img/mj_icon.png",
+      "js/lib/version.js",
+      "css/sy.css",
+      "img/jjr_icon.png",
+      "js/lib/sy.js",
+      "img/toll_pic2.png",
+      "img/gj_icon.png",
+      "img/tt_icon.png",
+      "js/lib/flexible_css.js",
+      "fonts/mui.ttf",
+      "css/style.css",
+      "js/lib/castapp.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/lib/flexible.js",
+      "js/lib/app_config.js",
+      "css/a_fringe.css",
+      "img/data_ion.png"
+    ]
+  },
+  "page/search.html": {
+    "refer": [
+      "jxfy.html"
+    ]
+  },
+  "page/tax.html": {
+    "refer": [
+      "page/wYaoZhuCe.html",
+      "page/login.html"
+    ]
+  },
+  "fwsc.html": {
+    "refer": [
+      "page/tax.html",
+      "page/financial.html",
+      "page/added.html",
+      "page/login.html",
+      "page/fitup.html"
+    ],
+    "resources": [
+      "css/fwsc.css",
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/lib/flexible.js",
+      "css/a_fringe.css"
+    ]
+  },
+  "page/mycollection.html": {
+    "resources": [
+      "page/mysc_list.html"
+    ],
+    "refer": [
+      "page/mysc_list.html"
+    ]
+  },
+  "jxfyList.html": {
+    "refer": [
+      "page/fyTail.html"
+    ],
+    "resources": [
+      "css/jxfyList.css",
+      "img/fylistqierl.png"
+    ]
+  },
+  "page/find_house.html": {
+    "refer": [
+      "page/find_fang.html",
+      "jxfy1.html"
+    ]
+  },
+  "jxfy1.html": {
+    "resources": [
+      "jxfyList1.html"
+    ],
+    "refer": [
+      "jxfyList1.html",
+      "page/search1.html"
+    ]
+  },
+  "page/loupan.html": {
+    "resources": [
+      "page/loupanList.html"
+    ],
+    "refer": [
+      "page/loupanList.html",
+      "page/search.html",
+      "page/searchLoupan.html"
+    ]
+  },
+  "page/loupanList.html": {
+    "refer": [
+      "page/loupan_detail.html"
+    ]
+  },
+  "jxfyList1.html": {
+    "refer": [
+      "page/fyTail.html"
+    ]
+  },
+  "page/repairs_bx.html": {
+    "refer": [
+      "page/relet_xz.html",
+      "page/room_change.html",
+      "page/room_tz.html",
+      "page/forms_kjcmt.html",
+      "page/forms_zxbx.html",
+      "page/forms_zxbx1.html",
+      "page/forms_zxbx2.html",
+      "page/forms_zxbx3.html",
+      "page/forms_fwpz.html",
+      "page/forms_fwfy.html",
+      "page/login.html"
+    ],
+    "resources": [
+      "img/repairs_pic/zxbx1_ion.png",
+      "js/lib/flexible_css.js",
+      "img/repairs_pic/zxbx3_ion.png",
+      "img/repairs_pic/fwfy2_ion.png",
+      "img/repairs_pic/zxbx2_ion.png",
+      "img/repairs_pic/gjfw_h.png",
+      "img/repairs_pic/fwpz3_ion.png",
+      "img/repairs_pic/house_tf.png",
+      "img/repairs_pic/slgj_ion.png",
+      "img/repairs_pic/fwfy3_ion.png",
+      "img/repairs_pic/fwfy1_ion.png",
+      "img/repairs_pic/house_hf.png",
+      "img/repairs_pic/ktzl_ion.png",
+      "js/lib/jquery-1.10.2.min.js",
+      "img/repairs_pic/djdl_ion.png",
+      "img/repairs_pic/fwfy4_ion.png",
+      "img/repairs_pic/house_xz.png",
+      "js/mui.min.js",
+      "img/repairs_pic/mcwx_ion.png",
+      "js/lib/flexible.js",
+      "img/repairs_pic/fwpz1_ion.png",
+      "img/repairs_pic/fwpz2_ion.png",
+      "css/repairs_bx.css",
+      "css/a_fringe.css",
+      "css/style_a_d.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ]
+  },
+  "page/forms_zxbx.html": {
+    "refer": [
+      "testimg.html"
+    ]
+  },
+  "page/wode_fangyang.html": {
+    "resources": [
+      "page/wode_fang_list.html"
+    ],
+    "refer": [
+      "page/wode_fang_list.html"
+    ]
+  },
+  "page/sfrz.html": {
+    "refer": [
+      "page/person.html"
+    ]
+  },
+  "page/person.html": {
+    "refer": [
+      "page/sfrz.html",
+      "page/add_sfz.html",
+      "page/gh_tel.html"
+    ]
+  },
+  "page/login.html": {
+    "refer": [
+      "page/fast_zc.html",
+      "page/wj_pwd.html",
+      "page/wechat_log.html"
+    ],
+    "resources": [
+      "js/lib/flexible_css.js",
+      "css/style_a_d.css",
+      "js/lib/sha1.js",
+      "css/login.css",
+      "fonts/mui.ttf",
+      "img/third_dl_ion.png",
+      "img/login_pic.png",
+      "js/lib/md5.js",
+      "js/lib/form_yz.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "img/ycmm.png",
+      "css/mui.min.css",
+      "js/lib/flexible.js",
+      "js/lib/app_config.js"
+    ]
+  },
+  "qyhl.html": {
+    "refer": [
+      "page/add_vip.html",
+      "page/fb_ser.html",
+      "page/fb_need.html",
+      "page/more_qy.html",
+      "page/qy_detail.html",
+      "page/login.html"
+    ],
+    "resources": [
+      "img/tab_bg1.png",
+      "img/qiyefuwutitle.png",
+      "fonts/mui.ttf",
+      "img/qyhl/add_vip.png",
+      "img/huityuanicon.png",
+      "css/qiYeHuLian.css",
+      "img/beijignicon.png",
+      "img/qiyehulian.png",
+      "js/lib/app_config.js",
+      "js/lib/flexible_css.js",
+      "css/style_a_d.css",
+      "css/style.css",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/lib/flexible.js",
+      "css/a_fringe.css",
+      "img/qyhl/fb_ion1.png",
+      "img/qyhl/fb_ion2.png",
+      "img/tab_bg.png"
+    ]
+  },
+  "page/add_vip.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "img/repairs_pic/z_add.png",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.picker.min.js",
+      "css/relet_xz.css",
+      "css/wt_house.css",
+      "js/mui.min.js",
+      "css/pickers/mui.dtpicker.css",
+      "js/lib/flexible.js",
+      "css/pickers/mui.picker.min.css",
+      "js/lib/relet_xz.js",
+      "js/lib/app_config.js",
+      "css/style_a_d.css",
+      "css/a_fringe.css"
+    ]
+  },
+  "page/relet_xz.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.picker.min.js",
+      "css/relet_xz.css",
+      "css/wt_house.css",
+      "js/mui.min.js",
+      "css/pickers/mui.dtpicker.css",
+      "js/lib/flexible.js",
+      "css/pickers/mui.picker.min.css",
+      "js/lib/relet_xz.js",
+      "js/lib/app_config.js"
+    ]
+  },
+  "page/room_tz.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.picker.min.js",
+      "js/mui.min.js",
+      "js/lib/room_tz.js",
+      "js/lib/flexible.js",
+      "js/lib/app_config.js",
+      "css/wt_house.css",
+      "css/pickers/mui.dtpicker.css",
+      "css/pickers/mui.picker.min.css"
+    ]
+  },
+  "page/fb_ser.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.picker.min.js",
+      "css/wt_house.css",
+      "js/mui.min.js",
+      "js/lib/room_tz.js",
+      "css/pickers/mui.dtpicker.css",
+      "js/lib/flexible.js",
+      "css/pickers/mui.picker.min.css",
+      "js/lib/app_config.js",
+      "css/style_a_d.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/a_fringe.css",
+      "js/lib/fb_ser.js"
+    ]
+  },
+  "page/room_change.html": {
+    "resources": [
+      "js/lib/flexible_css.js",
+      "js/lib/jquery-1.10.2.min.js",
+      "js/mui.picker.min.js",
+      "css/relet_xz.css",
+      "js/mui.min.js",
+      "js/lib/room_change.js",
+      "js/lib/flexible.js",
+      "css/room_change.css",
+      "js/lib/app_config.js",
+      "css/wt_house.css",
+      "css/pickers/mui.dtpicker.css",
+      "css/pickers/mui.picker.min.css",
+      "css/style_a_d.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/a_fringe.css"
+    ]
+  },
+  "page/more_qy.html": {
+    "refer": [
+      "page/qy_detail.html"
+    ]
+  },
+  "page/notice_center.html": {
+    "resources": [
+      "page/notice_center_list.html"
+    ],
+    "refer": [
+      "page/notice_center_list.html"
+    ]
+  },
+  "page/notice_center_list.html": {
+    "refer": [
+      "page/notice_center_detail.html"
+    ]
+  },
+  "page/added.html": {
+    "refer": [
+      "page/liJiShenQing.html",
+      "page/login.html"
+    ]
+  },
+  "page/myset.html": {
+    "refer": [
+      "page/setpwd.html"
+    ]
+  },
+  "page/fitup.html": {
+    "refer": [
+      "page/liJiShenQing.html",
+      "page/login.html"
+    ]
+  },
+  "page/financial.html": {
+    "refer": [
+      "page/login.html"
+    ]
+  }
 }

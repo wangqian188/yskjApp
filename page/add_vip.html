@@ -132,7 +132,7 @@
 			<div class="wt_fwms" style="border-bottom:0px solid red !important;padding-bottom: 0.666666rem;height: 4.666666rem;">
 		    	<p class="wt_fwms_bt">经营范围</p>
 		    	<p class="wt_texar" style="height: 2.866666rem;">
-		    		<textarea name="" rows="" cols="" placeholder="请输入经营范围" id="jyfw"></textarea>
+		    		<textarea name="" rows="" cols="" placeholder="请输入经营范围" id="jyfw" oninput="jyfwCheckLength()" maxlength="50"></textarea>
 		    		<span class="wt_texar_count"><i id="textareaCount">0</i>/50</span>
 		    	</p>
 		   </div>
@@ -140,7 +140,7 @@
 			<div class="wt_fwms" style="border-bottom:0px solid red !important;padding-bottom: 0.666666rem;height: 5.466666rem;">
 		    	<p class="wt_fwms_bt">企业简介</p>
 		    	<p class="wt_texar" style="height: 3.733333rem">
-		    		<textarea name="" rows="" cols="" placeholder="请输入企业简介" id="qyjj"></textarea>
+		    		<textarea name="" rows="" cols="" placeholder="请输入企业简介" id="qyjj" oninput="qyjjCheckLength()" maxlength="500"></textarea>
 		    		<span class="wt_texar_count"><i id="textareaCount1">0</i>/500</span>
 		    	</p>
 		   </div>
@@ -167,35 +167,41 @@
 		<script src="../js/lib/add_vip.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$(function(){  
-				//控制文本域输入字数
-			    $('#jyfw').keyup(function(event) {  
-			        var maxLength = 50;  
-			        var len = $('#jyfw').val().length;  
-			        jyfw = $('#jyfw').val();
-			        btnzt();
-			        $('#textareaCount').html(len);  
-			        if(parseInt($('#textareaCount').text()) > 50){  
-			            $('#textareaCount').html('50');  
-			            var res = $(this).val().substring(0,50);  
-			            $(this).val(res);  
-			        }  
-			    });  
-			});
-			$(function(){  
-				//控制文本域输入字数
-			    $('#qyjj').keyup(function(event) {  
-			        var maxLength = 500;  
-			        var len = $('#qyjj').val().length;  
-			        qyjj = $('#qyjj').val();
-			        btnzt();
-			        $('#textareaCount1').html(len);  
-			        if(parseInt($('#textareaCount').text()) > 500){  
-			            $('#textareaCount1').html('500');  
-			            var res = $(this).val().substring(0,500);  
-			            $(this).val(res);  
-			        }  
-			    });  
-			});
+		        //控制文本域输入字数
+		          $('#jyfw').keyup(function(event) {  
+		                jyfwCheckLength();
+		          });  
+		      });
+		      function jyfwCheckLength(){
+		        var maxLength = 50;  
+		            var len = $('#jyfw').val().length;  
+		            jyfw = $('#jyfw').val();
+		            btnzt();
+		            $('#textareaCount').html(len);  
+		            if(parseInt($('#textareaCount').text()) > 50){  
+		                $('#textareaCount').html('50');  
+		                //var res = $(this).val().substring(0,50);  
+		                //$(this).val(res);  
+		            }
+		      }
+		      $(function(){  
+		        //控制文本域输入字数
+		          $('#qyjj').keyup(function(event) {  
+		                qyjjCheckLength();
+		          });  
+		      });
+		      function qyjjCheckLength(){
+		        var maxLength = 500;  
+		            var len = $('#qyjj').val().length;  
+		            qyjj = $('#qyjj').val();
+		            btnzt();
+		            $('#textareaCount1').html(len);  
+		            if(parseInt($('#textareaCount').text()) > 500){  
+		                $('#textareaCount1').html('500');  
+		                //var res = $(this).val().substring(0,500);  
+		                //$(this).val(res);  
+		            }
+		      }
 		</script>
 	</body>
 </html>

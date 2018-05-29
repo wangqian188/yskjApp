@@ -108,7 +108,7 @@ document.getElementById("house_news").addEventListener('input',function(){
 });
 //提交按钮样式变换
 function btnzt(){
-	if(telnumber != '' || user_name != '' || qy_name != '' || qy_tel != '' || qy_bt != '' || qy_logo != '' || house_news != '' || add_area != '' || jyfw != '' || qyjj != ''){
+	if(telnumber != '' || user_name != '' || qy_name != '' || qy_tel != '' || qy_logo != '' || house_news != '' || add_area != '' || jyfw != '' || qyjj != ''){
 		$('.btn').css({'background':'#2b70d8'});
 	}else{
 		$('.btn').css({'background':'#d2d2d2'});
@@ -133,7 +133,7 @@ function createcookie(){
 //委托房源提交
 var clicktag = 0;
 $('.wt_btn').click(function(){
-	if(user_name=='' && telnumber=='' && qy_name == ''&& qy_tel == ''&& qy_bt == ''&& f1.length == '0' && house_news==''&& add_area == ''&& jyfw == ''&& qyjj == ''){
+	if(user_name=='' && telnumber=='' && qy_name == ''&& qy_tel == ''&& f1.length == '0' && house_news==''&& add_area == ''&& jyfw == ''&& qyjj == ''){
 		return;
 	}else{
 		if(clicktag == 0){
@@ -151,10 +151,6 @@ $('.wt_btn').click(function(){
 			}
 			if(qy_tel == ''){
 				mui.alert('企业电话不能为空', '提示', function(){},'div');
-				return;
-			}
-			if(qy_bt == ''){
-				mui.alert('企业网址不能为空', '提示', function(){},'div');
 				return;
 			}
 			if(f1.length == '0'){
@@ -180,7 +176,7 @@ $('.wt_btn').click(function(){
 			clicktag = 1;
 			yz_house_wt();
 		}else{
-			if(user_name=='' || telnumber=='' || qy_name == ''|| qy_tel == '' || qy_bt == '' || f1.length == '0' || house_news=='' || add_area == '' || jyfw == '' || qyjj == ''){
+			if(user_name=='' || telnumber=='' || qy_name == ''|| qy_tel == '' || f1.length == '0' || house_news=='' || add_area == '' || jyfw == '' || qyjj == ''){
 				return;
 			}else{				
 				setTimeout(function () { clicktag = 0; }, 5000);
@@ -304,7 +300,7 @@ function qy(){
 					}
 				}else{
 //					mui.alert(data.message);
-					mui.toast('暂无数据',{ duration:2000, type:'div' });
+//					mui.toast('暂无数据',{ duration:2000, type:'div' });
 				}
 			},
 			error:function(xhr,type,errorThrown){

@@ -236,7 +236,7 @@ function yz_house_wt(){
 					}
 				}else{
 //					mui.alert(data.message);
-					//mui.toast('暂无数据',{ duration:2000, type:'div' });
+//					mui.toast('暂无数据',{ duration:2000, type:'div' });
 				}
 			},
 			error:function(xhr,type,errorThrown){
