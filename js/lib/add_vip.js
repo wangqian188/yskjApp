@@ -44,7 +44,7 @@ function szqy(){
 	picker1.setData(areaArr);
 	picker1.pickers[0].setSelectedIndex(0);
 	picker1.show(function(SelectedItem) {
-		var sel_val = picker.getSelectedItems();
+		var sel_val = picker1.getSelectedItems();
 		$('#add_area').val(sel_val[0].text);
 		add_area = $('#add_area').val();
 		btnzt();

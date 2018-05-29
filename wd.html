@@ -101,7 +101,7 @@
 			    		<p>我的收藏</p>
 			    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
 			    	</li>
-			    	<li id="wdsc" class="tolink wode_fangyuanlist" style="display: none;">
+			    	<li id="wdsc" class="tolink">
 			    		<span class="wd_icon">
 			    			<img src="img/wode_fangyuan.png" alt="" />
 			    		</span>
@@ -136,7 +136,6 @@
 			var lostate = localStorage.getItem('lostate');
 			if(lostate == null){
 				$('.after_service').css('display','block');
-				$('.wode_fangyuanlist').css('display','flex');
 			}
 			(function(){
 				
@@ -366,7 +365,6 @@
 							var userData = data.data;
 							//将手机号中间加密
 							var type = userData.typeid;
-							
 							//售后服务这块判断登没有登录
 							if(lostate==1 && type==2){
 								$('.after_service').css('display','none');
@@ -399,8 +397,6 @@
 								$('.dlcz').css('display','none');
 								$('.wrz').css('display','none');
 								$('.yrz').css('display','block');
-							}else{
-								$('.wode_fangyuanlist').css('display','flex');
 							}
 							return;
 						}else{
@@ -428,6 +424,7 @@
 			//判断他的登录方式
 			if(localStorage.getItem('weinxin_shouquan')){
 				showuserinfo();
+				gainUser();
 			}else{
 				takeuser();
 			}

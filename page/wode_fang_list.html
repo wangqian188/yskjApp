@@ -63,8 +63,9 @@
 		<script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js" ></script>
 		<script src="../js/lib/app_config.js"></script>
 		<script>
+			//1 渠道用户 2 业主用户 3 客户用户
 			var user_type = localStorage.getItem('user_type');
-			if(user_type == 1 || user_type == 3){
+			if(user_type == 1){
 				$('.wode_fangyukb').removeClass('wode_fyblank_displaynone');
 				$('.wode_fangyukb').addClass('wode_fyblank_display');
 				$('.wode_fangyukbnr').removeClass('wode_fangneirong_display');

@@ -105,7 +105,7 @@ body{
 }
 .bancgird{
 	display: flex;
-	width: 5px;
+	width: 0.066666rem;
 	height: 0.426666rem;
 	background: url(../img/wode/hsoufuwu.png) no-repeat center;
 	background-size: 100% auto;

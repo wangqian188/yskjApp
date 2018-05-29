@@ -250,6 +250,7 @@
 		//点击登陆
 		$('.btn').click(function(){
 			if(telnumber!='' && yzm!=''){
+				localStorage.setItem('weinxin_shouquan',1);
 				checkoutyzm(yzm);//验证码校验方法
 			}else{
 				if(telnumber == ''){

@@ -29,14 +29,14 @@
 	<body>
 		<header class="mui-bar mui-bar-nav wd-header_p ipx_public_h1">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left a_d"></a>
-		    <h1 class="mui-title">修改身份证</h1>
+		    <h1 class="mui-title">修改公司名称</h1>
 		    <span class="save" onclick="save()">保存</span>
 		</header>
 		<div class="mui-content per_zt ipx_per_zt">
 		   <ul class="per_news">
 		    	<li>
 		    		<div class="mui-input-row" style="width: 100%;">
-				        <input type="text" class="mui-input-clear add_n" placeholder="请输入身份证号码">
+				        <input type="text" class="mui-input-clear add_n" placeholder="请输入公司名称">
 				    </div>
 		    	</li>
 		    </ul>
@@ -77,6 +77,7 @@
 								 gsname=userData.gsname;
 								 xmname=userData.xmname;
 								 card=userData.card;
+								 $(".add_n").val(gsname);
 								  if(card!=null&&card!=""){
 								 	$(".add_n").val(card);
 								 	//$(".mui-title").html("修改身份证号");

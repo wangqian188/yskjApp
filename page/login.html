@@ -221,7 +221,6 @@
 		            if (!s.authResult) { 
 		                s.login(function(e) {
 		                    mui.toast("登录认证成功！");
-		                    localStorage.setItem('weinxin_shouquan',1);
 		                    authUserInfo(type); 
 		//                  mui.openWindow({
 		//						url: 'login.html', 
@@ -343,6 +342,7 @@
 						success:function(data){
 							if(data.success == true && data.flag == 2){
 								//直接登录
+								localStorage.setItem('weinxin_shouquan',1);								
 								huoqv_yonghuxix();
 								
 							}else if(data.success == true && data.flag == 1){
