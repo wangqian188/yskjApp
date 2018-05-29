@@ -387,28 +387,28 @@
 								if(demandType == '文化'){
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/1.png';
 								}
-								if(demandType == '咨询'){
+								else if(demandType == '咨询'){
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/2.png';
 								}
-								if(demandType == '传媒'){
+								else if(demandType == '传媒'){
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/3.png';
 								}
-								if(demandType == '互联'){
+								else if(demandType == '互联'){
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/4.png';
 								}
-								if(demandType == '教育'){
+								else if(demandType == '教育'){
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/5.png';
 								}
-								if(demandType == '金融'){
+								else if(demandType == '金融'){
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/6.png';
 								}
-								if(demandType == '科教'){
+								else if(demandType == '科教'){
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/7.png';
 								}
-								if(demandType == '旅游'){
+								else if(demandType == '旅游'){
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/8.png';
 								}
-								if(demandType == '其他'){
+								else {
 									imgUrl = 'http://omc.urskongjian.com:81/yskjapp/qyhl_type/9.png';
 								}
 								//budget
@@ -434,7 +434,7 @@
 		    				    dhtml+=demandDesc;
 		    			        dhtml+='</div><div class="lijicx">';
 		    			        if(status!=2){
-									dhtml+='<span class="lijiztti">';
+									dhtml+='<span class="lijiztti lijiztti1">';
 			    				    //调用手机通讯录
 			    				    dhtml+='<a class="a_d" href="tel:';
 			    				    dhtml+=butlerPhone;
@@ -461,7 +461,7 @@
 						for(var j=0;j<le;j++){
 							if(data[j].type == 4){
 								$('.shijanrq').eq(j).css('display','none');
-								$('.lijiztti').eq(j).css('display','none');
+								$('.lijiztti1').eq(j).css('display','none');
 							}
 						}
 						

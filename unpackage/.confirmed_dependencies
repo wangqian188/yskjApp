@@ -68,7 +68,8 @@
 	},
 	"sy.html": {
 		"refer": [
-			"page/wt_house.html"
+			"page/wt_house.html",
+			"page/loupan.html"
 		]
 	},
 	"page/mysc_list.html": {
@@ -77,6 +78,24 @@
 		]
 	},
 	"jxfyList.html": {
+		"refer": [
+			"page/fyTail.html"
+		]
+	},
+	"page/loupanList.html": {
+		"refer": [
+			"page/loupan_detail.html"
+		]
+	},
+	"page/loupan.html": {
+		"resources": [
+			"page/loupanList.html"
+		],
+		"refer": [
+			"page/loupanList.html"
+		]
+	},
+	"page/wode_fang_list.html": {
 		"refer": [
 			"page/fyTail.html"
 		]
