@@ -103,13 +103,13 @@
 			function save(){
 				var add_name=$(".add_n").val();
 				if(add_name!=""){
-					 var reg = /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/;
-                if(!reg.test(add_name)){
-//              	alert("身份证输入不合法");
-                	mui.alert("身份证输入不合法", '提示',function(){});
-                    $(".add_n").val("");
-                    return  false;
-                }
+//					 var reg = /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/;
+//              if(!reg.test(add_name)){
+////              	alert("身份证输入不合法");
+//              	mui.alert("身份证输入不合法", '提示',function(){});
+//                  $(".add_n").val("");
+//                  return  false;
+//              }
 					card=add_name;
 				mui.ajax(Interface_url+'/yhcms/web/qduser/updateAppUserName.do',{
 					data:{
@@ -154,7 +154,7 @@
 				});
 				}else{
 //					alert("身份证号不能为空");
-					mui.alert("身份证号不能为空", '提示',function(){});
+					mui.alert("公司名称不能为空", '提示',function(){});
 				}
 				
 			}
