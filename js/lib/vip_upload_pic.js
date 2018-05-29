@@ -132,6 +132,10 @@ function showImg(url) {
                         rotate: 0,
                         callback: function(data, width, height) {
                             f1.push(data);
+						 	if(f1.length==1){
+						 		var addimg = document.getElementById('add_img');
+						 		addimg.style.display = 'none';
+						 	}
                             _img_.src = data;
                             var oDiv = document.createElement('div');//新建元素
                             var oSpan = document.createElement('span');
@@ -209,5 +213,7 @@ function fun1(){
 			f1.splice(i,1);
 		}
 	}
+	var addimg = document.getElementById('add_img');
+	addimg.style.display = 'block';
 	$(this).parent().css('display','none');
 }

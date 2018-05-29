@@ -224,7 +224,7 @@ $('.wt_btn').click(function(){
 				mui.alert('请选择现租房源', '提示', function(){},'div');
 				return;
 			}
-			if(house_date==''){
+			if(house_date=='' || house_date==null){
 				mui.alert('请选择退租时间', '提示', function(){},'div');
 				return;
 			}
@@ -235,10 +235,10 @@ $('.wt_btn').click(function(){
 			clicktag = 1;
 			yz_house_wt();
 		}else{
-			if(telnumber == '' || yzm == '' || user_name == '' || house_news == '' || house_date == ''){
+			if(telnumber == '' || yzm == '' || user_name == '' || house_news == '' || house_date == '' || house_date == null){
 				return;
 			}else{				
-				setTimeout(function () { clicktag = 0; }, 5000);
+				setTimeout(function () { clicktag = 0; }, 3000);
 				mui.toast('已提交，请勿重复提交！',{ duration:'2000', type:'div' });
 				return;
 			}
