@@ -29,10 +29,10 @@
 		    </h1>
 		</header>
 		<div class="mui-content wd_zt">
-			<div class="after_service">
+			<div class="after_service" style="display: none;">
 	    		<p class="wode_sale">
 	    			<span class="bancgird"></span>
-	    			<span class="wode_diyigewenzi">售后服务</span>
+	    			<span class="wode_diyigewenzi">管家服务</span>
 	    		</p>
 	    		<p class="wode_inmg">
 	    			<span id="1" class="shebeiweixiu hetong_img"></span>
@@ -64,7 +64,7 @@
 		    		<p>我的收藏</p>
 		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
 		    	</li>
-		    	<li id="wdsc" class="tolink">
+		    	<li id="wdsc" class="tolink wode_fangyuanlist" style="display: none;">
 		    		<span class="wd_icon">
 		    			<img src="img/wode_fangyuan.png" alt="" />
 		    		</span>
@@ -96,6 +96,10 @@
 		<script type="text/javascript">
 			var cookie=JSON.parse(localStorage.getItem('cookxs_yh'));
 			var lostate = localStorage.getItem('lostate');
+			if(lostate == null){
+				$('.after_service').css('display','block');
+				$('.wode_fangyuanlist').css('display','flex');
+			}
 			(function(){
 				
 			   checkSubmit();
@@ -339,6 +343,7 @@
 							}else{
 								$('.ljdl').html(userData.name);
 							}
+							//1 渠道用户 2 业主用户 3 客户用户
 							if(type==1){
 								$('.dlcz').css('display','none');
 								$('.yrz').css('display','none');
@@ -349,11 +354,15 @@
 								$('.wrz').css('display','none');
 								$('.yrz').css('display','none');
 								$('.sh').css('display','block');
+							}else{
+								$('.after_service').css('display','block');
 							}
 							if(type==3){
 								$('.dlcz').css('display','none');
 								$('.wrz').css('display','none');
 								$('.yrz').css('display','block');
+							}else{
+								$('.wode_fangyuanlist').css('display','flex');
 							}
 							return;
 						}else{
