@@ -193,7 +193,7 @@
 					}*/
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
 				 	mui('#pullrefresh').pullRefresh().refresh(true);
-				}, 0);
+				}, 2500);
 			}
 
 			/**
@@ -683,7 +683,7 @@
 				});
 			}
 			
-			
+			//下拉刷新的方法
 			function dthqdatashuxian(district,fdcode,lineid,station,area,price_dj,label,jiagesanshu,search){
 				console.log('---------------------------------------分割线--------------------------------------');
 				console.log(district);
@@ -758,6 +758,7 @@
 							xial = 2;
 							var data = data.buildings;
 							var string = '';
+							$('.listUl').html('');
 							for(var i=0;i<data.length;i++){
 								var datatese = [];
 								datatese = data[i].label.split(',');

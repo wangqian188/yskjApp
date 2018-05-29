@@ -603,7 +603,8 @@
 					"css/style_a_d.css"
 				],
 				"refer": [
-					"page/login.html"
+					"page/login.html",
+					"page/qierlyun.html"
 				],
 				"priority": 0
 			},
@@ -1290,6 +1291,13 @@
 				"resources": [],
 				"refer": [
 					"page/notice_center_detail.html"
+				],
+				"priority": 0
+			},
+			"page/wode_fang_list.html": {
+				"resources": [],
+				"refer": [
+					"page/fyTail.html"
 				],
 				"priority": 0
 			}

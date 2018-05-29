@@ -273,7 +273,8 @@
 		"refer": [
 			"page/sfrz.html",
 			"page/add_sfz.html",
-			"page/gh_tel.html"
+			"page/gh_tel.html",
+			"page/add_name.html"
 		]
 	},
 	"page/login.html": {
@@ -456,6 +457,21 @@
 	"page/financial.html": {
 		"refer": [
 			"page/login.html"
+		]
+	},
+	"page/fyTail.html": {
+		"refer": [
+			"page/qierlyun.html"
+		]
+	},
+	"page/mysc_list.html": {
+		"refer": [
+			"page/fyTail.html"
+		]
+	},
+	"page/wode_fang_list.html": {
+		"refer": [
+			"page/fyTail.html"
 		]
 	}
 }

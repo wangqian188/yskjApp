@@ -391,11 +391,28 @@
 //				  id:'add_name4'
 //				});
 //			});
-			//渲染用户信息
+			//渲染用户信息（微信登录）
 			function showuserinfo(){
 				var data = JSON.parse(localStorage.getItem('userInfos'));
+				var type = JSON.parse(localStorage.getItem('user_type'));
 		    	$('#headImage').attr('src',data.headimgurl);
 		    	$('.ljdl').html(data.nickname);
+		    	if(type==1){
+					$('.dlcz').css('display','none');
+					$('.yrz').css('display','none');
+					$('.wrz').css('display','block');
+				}
+				if(type==2){
+					$('.dlcz').css('display','none');
+					$('.wrz').css('display','none');
+					$('.yrz').css('display','none');
+					$('.sh').css('display','block');
+				}
+				if(type==3){
+					$('.dlcz').css('display','none');
+					$('.wrz').css('display','none');
+					$('.yrz').css('display','block');
+				}
 			}
 
 	        //售后服务的点击事件
