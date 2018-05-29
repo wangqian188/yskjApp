@@ -223,7 +223,7 @@
                 lp_id = self.lpid;
                 localStorage.setItem('lp_id',self.lpid);
                 detailData(lp_id);
-                detailDataHouses(lp_id,page,lp_leibie,lp_leib);
+                detailDataHousesmore(lp_id,page,lp_leibie,lp_leib);
             });
 			
 			//tab切换
@@ -286,6 +286,60 @@
 			var data=[];
 			var lp_str = '';//模板字符//
 			/*楼盘数据*/
+			function  detailDataHousesmore(id,page,lp_leibie,lp_leib){
+
+				if(id == '' || id == undefined){
+					id = localStorage.getItem('lp_id');
+				}
+				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getZdLpxq.do',{
+					data:{
+						"parameters":{
+							"building_id":id,
+							"curr_page":page,
+							"items_perpage":"5",
+							"area":lp_leib,
+							"real":lp_leibie
+						},
+						"foreEndType":2,
+						"code":"30000002"
+						},
+					dataType:'json',//服务器返回json格式数据
+					type:'post',//HTTP请求类型
+					timeout:10000,//超时时间设置为10秒；
+					headers:{'Content-Type':'application/json'},	              
+					success:function(data){
+						if(data.success){
+							var lp_data = data.data.houses;
+							console.log(lp_data);
+							if(lp_data == [] || lp_data == ''){
+//								mui.toast("没有更多数据了",{ duration:'2000', type:'div' });
+							}
+							for (var i=0; i<lp_data.length; i++) {
+								if(lp_data[i].cloudscape == ''){
+									if(lp_data[i].fjzt == ''){
+										lp_str = '<li class="listtail" onclick="linktodetail('+lp_data[i].id+')"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
+									}else{
+										lp_str = '<li class="listtail" onclick="linktodetail('+lp_data[i].id+')"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
+									}
+								}else{
+									if(lp_data[i].fjzt == ''){
+										lp_str = '<li class="listtail" onclick="linktodetail('+lp_data[i].id+')"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="qieryun lpxiqgdqierl"></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
+									}else{
+										lp_str = '<li class="listtail" onclick="linktodetail('+lp_data[i].id+')"><div class="fy_pic"><img src="'+img_url+lp_data[i].housing_icon+'" alt="" /></div><div class="qieryun lpxiqgdqierl"></div><div class="fy_xx"><p class="zdh">'+lp_data[i].zdh+"-"+lp_data[i].fybh+'</p><p class="md_price"><span class="d_price"><i>'+lp_data[i].daily_price+'</i>元/m²/天</span><span class="m_price"><i>'+lp_data[i].monthly_price+'</i>元/月</span></p><p class="qt"><span>'+lp_data[i].housing_area+'m²</span><span>'+lp_data[i].workstation+'个工位</span><span style="color:#2b70d8;">'+lp_data[i].fjzt+'</span></p></div></li><li class="zx"></li>';
+									}
+								}
+								$('.ss_bt').append(lp_str);
+							}
+						}else{
+							mui.alert(data.message);
+						}
+					},
+					error:function(xhr,type,errorThrown){
+						//异常处理；
+						console.log(type);
+					}
+				});
+			}
 			function  detailDataHouses(id,page,lp_leibie,lp_leib){
 
 				if(id == '' || id == undefined){
