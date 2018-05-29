@@ -13,22 +13,58 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/wd.css"/>
 	</head>
+	<style type="text/css">
+		.mui-bar{
+			position: initial;
+		}
+		.wd_zt{
+			top: 0;
+			overflow: hidden;
+		}
+		.wd_tel{
+			padding-bottom: 0.666666rem;
+		}
+		.my_type{
+			margin-bottom: 0.266666rem;
+			border: 1px solid #e5e5e5;
+		}
+		.my_type li{
+			position: relative;
+			margin-bottom: 0!important;
+			border-top: none;
+		}
+		.my_type li::after{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			content: '';
+			display: block;
+			width: 9.6rem;
+			border-bottom: 1px solid #e5e5e5;
+		}
+		.my_type li:last-child::after{
+			display: none;
+		}
+	</style>
 	<body>
-		<header class="mui-bar mui-bar-nav bg-color1">
-		    <h1 class="mui-title wd_h">
-		    	<p class="head_img">
-		    		<img src="img/head_img.png" id="headImage"/>
-		    	</p>
-		    	<p class="user_news" id="login">
-					<span class="ljdl">立即登录</span>
-					<span class="dlcz">登录后可进行更多操作</span>
-					<span class="wrz" style="display: none;">普通用户 <!--<span class="jt">＞</span>--></span> 
-					<span class="yrz" style="display: none;">租户</span>
-					<span class="sh" style="display: none;">业主</span>
-		    	</p>
-		    </h1>
+		<header class="mui-bar mui-bar-transparent bg-color-bg bar-h-s has-topbar-h">
+		    <h1 class="mui-title"></h1>
 		</header>
 		<div class="mui-content wd_zt">
+			<header class="mui-bar mui-bar-nav bg-color1">
+			    <h1 class="mui-title wd_h">
+			    	<p class="head_img">
+			    		<img src="img/head_img.png" id="headImage"/>
+			    	</p>
+			    	<p class="user_news" id="login">
+						<span class="ljdl">立即登录</span>
+						<span class="dlcz">登录后可进行更多操作</span>
+						<span class="wrz" style="display: none;">普通用户 <!--<span class="jt">＞</span>--></span> 
+						<span class="yrz" style="display: none;">租户</span>
+						<span class="sh" style="display: none;">业主</span>
+			    	</p>
+			    </h1>
+			</header>
 			<div class="after_service" style="display: none;">
 	    		<p class="wode_sale">
 	    			<span class="bancgird"></span>
@@ -57,27 +93,29 @@
 		    		<p>通知中心</p>
 		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
 		    	</li>
-		    	<li id="wdsc" class="tolink">
-		    		<span class="wd_icon">
-		    			<img src="img/fav.png" alt="" />
-		    		</span>
-		    		<p>我的收藏</p>
-		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
-		    	</li>
-		    	<li id="wdsc" class="tolink wode_fangyuanlist" style="display: none;">
-		    		<span class="wd_icon">
-		    			<img src="img/wode_fangyuan.png" alt="" />
-		    		</span>
-		    		<p>我的房源</p>
-		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
-		    	</li>
-		    	<li id="wdsc" class="tolink">
-		    		<span class="wd_icon">
-		    			<img src="img/wode_guanjian.png" alt="" />
-		    		</span>
-		    		<p>我的管家</p>
-		    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
-		    	</li>
+		    	<ul class="my_type">
+			    	<li id="wdsc" class="tolink">
+			    		<span class="wd_icon">
+			    			<img src="img/fav.png" alt="" />
+			    		</span>
+			    		<p>我的收藏</p>
+			    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+			    	</li>
+			    	<li id="wdsc" class="tolink wode_fangyuanlist" style="display: none;">
+			    		<span class="wd_icon">
+			    			<img src="img/wode_fangyuan.png" alt="" />
+			    		</span>
+			    		<p>我的房源</p>
+			    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+			    	</li>
+			    	<li id="wdsc" class="tolink">
+			    		<span class="wd_icon">
+			    			<img src="img/wode_guanjian.png" alt="" />
+			    		</span>
+			    		<p>我的管家</p>
+			    		<span class="mui-icon mui-icon-arrowright wd_con"></span>
+			    	</li>
+		    	</ul>
 		    	<li id="sz" class="tolink">
 		    		<span class="wd_icon">
 		    			<img src="img/sz.png" alt="" />
