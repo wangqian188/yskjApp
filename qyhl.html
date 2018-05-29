@@ -22,12 +22,14 @@
 				bottom: 0.506666rem;
 				width: 2.56rem;
 				height: 0.8rem;
-				line-height: 0.8rem;
 				background: url(img/qyhl/add_vip.png) no-repeat center;
 				background-size: 100% auto;
 				font-size: 0.373333rem;
 				color: #fff;
 				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 			.huiyuanqyyi{
 				display: flex;
@@ -109,7 +111,7 @@
 		</header>
 		<div class="mui-content">
 			<div class="qiyehulimg" style="position: relative;">
-				<div class="add_vip">加入会员</div>
+				<div class="add_vip"><span>加入会员</span></div>
 			</div>
 		  	<div class="qiyehuler">
 			    <div class="huiyuanqyyi">
@@ -411,9 +413,9 @@
 								}
 								//budget
 							    var budget=(data[i].budget==null?"":data[i].budget);
-							    var status=(data[i].status==null?"":data[i].status);
+							    var status= data[i].type;
 								dhtml+='<li'; 
-								if(status==2){
+								if(status==4){
 									dhtml+=' class="hechhez"';
 								}
 								dhtml+='>';
@@ -449,13 +451,20 @@
 		    				    dhtml+='</span></div>';
 		    				    dhtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;" > </div>';
 		    			        //dhtml+='<div style="background: url('+imgUrl+' ) no-repeat;" > </div>';
-		    			        if(status==2){
-		    			        dhtml+='<div class="dacheghezuo"></div>';
+		    			        if(status==4){
+		    			        	dhtml+='<div class="dacheghezuo"></div>';
 		    			        }
 		    			        dhtml+="</li>";
 							}
 						}
 						$(".dclass").html(dhtml);
+						for(var j=0;j<le;j++){
+							if(data[j].type == 4){
+								$('.shijanrq').eq(j).css('display','none');
+								$('.lijiztti').eq(j).css('display','none');
+							}
+						}
+						
 					}else{
 						mui.alert("取消失败："+data.message);
 					}

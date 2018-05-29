@@ -46,12 +46,16 @@
 			"page/relet_xz.html",
 			"page/forms_kjcmt.html",
 			"page/forms_fwfy.html",
-			"page/room_change.html"
+			"page/room_change.html",
+			"page/forms_zxbx2.html",
+			"page/room_tz.html",
+			"page/forms_zxbx3.html"
 		]
 	},
 	"qyhl.html": {
 		"refer": [
-			"page/fb_need.html"
+			"page/fb_need.html",
+			"page/qy_detail.html"
 		]
 	},
 	"page/mycollection.html": {
@@ -65,6 +69,16 @@
 	"sy.html": {
 		"refer": [
 			"page/wt_house.html"
+		]
+	},
+	"page/mysc_list.html": {
+		"refer": [
+			"page/fyTail.html"
+		]
+	},
+	"jxfyList.html": {
+		"refer": [
+			"page/fyTail.html"
 		]
 	}
 }
