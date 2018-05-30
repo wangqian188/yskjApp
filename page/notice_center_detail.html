@@ -207,7 +207,7 @@
             detailData();
             /*通知中心的数据*/
 			function detailData(){
-				mui.ajax(Interface_url+'/yskjApp/webApp/dataInfo/getMessageInfoByUserId',{
+				mui.ajax(url+'/yskjApp/webApp/dataInfo/getMessageInfoByUserId',{
 					data:{"id":String(notice_id),"bussinessType":String(buess_type),"type":String(type)},
 					dataType:'json',//服务器返回json格式数据
 					type:'post',//HTTP请求类型
@@ -322,12 +322,12 @@
 					            	$(".fangjian_xinxi").html(data[0].repairHouse==''?"无":data[0].repairHouse);
 					            	$(".content_class").html(data[0].memo==''?"无":data[0].memo);
 					            	if(array.length == 1 && data[0].pic != null){
-										var str = '<span class="menchwei_img"><img src="'+img_url+data[0].pic+'" width="100%" height="100%"/></span>';
+										var str = '<span class="menchwei_img"><img src="'+data[0].pic+'" width="100%" height="100%"/></span>';
 					            		$('.menchwei_p').append(str);
 									}else if(array.length > 1 && data[0].pic != null){
 										var array = data[0].pic.split(";");
 										for(var i=0;i<array.length;i++){
-											var str = '<span class="menchwei_img"><img src="'+img_url+array[i]+'" width="100%" height="100%"/></span>';
+											var str = '<span class="menchwei_img"><img src="'+array[i]+'" width="100%" height="100%"/></span>';
 											$('.menchwei_p').append(str);
 										}
 									}
@@ -378,7 +378,7 @@
 									$(".sale_xingmu").html(data[0].categoryName==null?"无":data[0].categoryName);
 									$(".sub_time").html(data[0].createTime==null?"无":data[0].createTime);
 //				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);//
-				        			$(".qy_logo img").attr('src',img_url + data[0].logoImg==null?"无":data[0].logoImg);
+				        			$(".qy_logo img").attr('src',data[0].logoImg==null?"无":data[0].logoImg);
 				        			$(".cmpate").html(data[0].enterpriseName==null?"无":data[0].enterpriseName);
 				        			$(".wangzhi").html(data[0].enterpriseWebsite==null?"无":data[0].enterpriseWebsite);
 				        			$(".qy_phone").html(data[0].enterprisePhone==null?"无":data[0].enterprisePhone);
