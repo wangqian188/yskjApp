@@ -158,6 +158,11 @@ $('.wt_btn').click(function(){
 			if(yxq_date == ''){
 				mui.alert('有效期不能为空', '提示', function(){},'div');
 				return;
+			}else{
+				if(yxq_date>30){
+					mui.alert('有效期不能超过30天', '提示', function(){},'div');
+					return;
+				}
 			}
 			if(house_ms == ''){
 				mui.alert('请填写需求描述', '提示', function(){},'div');
