@@ -7,10 +7,10 @@ var arr = [
 {value:'wh',text:'文化'},
 {value:'zx',text:'咨询'},
 {value:'cm',text:'传媒'},
-{value:'hl',text:'互联'},
+{value:'hl',text:'互联网'},
 {value:'jy',text:'教育'},
 {value:'jr',text:'金融'},
-{value:'kj',text:'科教'},
+{value:'kj',text:'科技'},
 {value:'ly',text:'旅游'},
 {value:'qt',text:'其他'}
 ];

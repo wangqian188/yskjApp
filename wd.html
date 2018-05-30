@@ -374,11 +374,16 @@
 							var phone = userData.phone;
 							var reg = /^(\d{3})\d{4}(\d{4})$/;
 							phone = phone.replace(reg, "$1****$2");
-							if(userData.name == null || userData.name == 'null' || userData.name == ''){
-								$('.ljdl').html(phone);
+							if(localStorage.getItem('weinxin_shouquan')){
+								
 							}else{
-								$('.ljdl').html(userData.name);
+								if(userData.name == null || userData.name == 'null' || userData.name == ''){
+									$('.ljdl').html(phone);
+								}else{
+									$('.ljdl').html(userData.name);
+								}
 							}
+							
 							//1 渠道用户 2 业主用户 3 客户用户
 							if(type==1){
 								$('.dlcz').css('display','none');
