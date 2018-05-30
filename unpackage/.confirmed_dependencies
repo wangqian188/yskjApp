@@ -69,7 +69,8 @@
 	"sy.html": {
 		"refer": [
 			"page/wt_house.html",
-			"page/loupan.html"
+			"page/loupan.html",
+			"page/topNewsInfo.html"
 		]
 	},
 	"page/mysc_list.html": {

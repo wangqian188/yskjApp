@@ -415,16 +415,16 @@
 							    var budget=(data[i].budget==null?"":data[i].budget);
 							    var status= data[i].type;
 								dhtml+='<li'; 
-								if(status==4){
+								if(status==5){
 									dhtml+=' class="hechhez"';
 								}
 								dhtml+='>';
 		    			        dhtml+='<div class="beijmggj">';
 		    				    dhtml+='<span class="guojilxgs"></span>';
 		    				    dhtml+='<span class="xitongruanjianhuise">';
-		    				    dhtml+=enterpriseName;
+		    				    dhtml+=demandType;
 		    				    dhtml+='</span>';
-		    				    if(status==1&&budget!=""){
+		    				    if(status==4&&budget!=""){
 		    				    	dhtml+='<span class="ycsahan">';
 		    				    	dhtml+='预算:￥';
 		    				    	dhtml+=budget;
@@ -451,7 +451,7 @@
 		    				    dhtml+='</span></div>';
 		    				    dhtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;" > </div>';
 		    			        //dhtml+='<div style="background: url('+imgUrl+' ) no-repeat;" > </div>';
-		    			        if(status==4){
+		    			        if(status==5){
 		    			        	dhtml+='<div class="dacheghezuo"></div>';
 		    			        }
 		    			        dhtml+="</li>";
@@ -459,7 +459,7 @@
 						}
 						$(".dclass").html(dhtml);
 						for(var j=0;j<le;j++){
-							if(data[j].type == 4){
+							if(data[j].type == 5){
 								$('.shijanrq').eq(j).css('display','none');
 								$('.lijiztti1').eq(j).css('display','none');
 							}
