@@ -363,7 +363,7 @@
 //				        			$(".fangjian_xinxi").html(data[0].house==''?"无":data[0].house);
 				        			$(".qymingcxv").html(data[0].enterpriseName==''?"无":data[0].enterpriseName);
 				        			$(".suoshyxvqi").html(data[0].demandType==''?"无":data[0].demandType);
-				        			$(".xvysxq").html(data[0].budget==''?"无":data[0].budget+'元');
+				        			$(".xvysxq").html(data[0].budget==null?"无":data[0].budget+'元');
 				        			$(".yxqxq").html(data[0].effectiveTime==null?"无":data[0].effectiveTime+'天');
 				        			$(".fangyuanweituo h1").html("发布服务");
 				        			$(".fangdewnzi").html(data[0].demandDesc==''?"无":data[0].demandDesc);
