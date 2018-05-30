@@ -95,19 +95,19 @@
 	width: 1.533333rem;
 }
 .online_bx li:nth-child(1) span:last-child{
-	background: url(../img/repairs_pic/mcwx_ion.png)no-repeat left center;
+	background: url(../img/repairs_pic/mcwx_ion.png)no-repeat center;
 	background-size: auto 100%;
 }
 .online_bx li:nth-child(2) span:last-child{
-	background: url(../img/repairs_pic/djdl_ion.png)no-repeat left center;
+	background: url(../img/repairs_pic/djdl_ion.png)no-repeat center;
 	background-size: auto 100%;
 }
 .online_bx li:nth-child(3) span:last-child{
-	background: url(../img/repairs_pic/ktzl_ion.png)no-repeat left center;
+	background: url(../img/repairs_pic/ktzl_ion.png)no-repeat center;
 	background-size: auto 100%;
 }
 .online_bx li:nth-child(4) span:last-child{
-	background: url(../img/repairs_pic/slgj_ion.png)no-repeat left center;
+	background: url(../img/repairs_pic/slgj_ion.png)no-repeat center;
 	background-size: auto 100%;
 }
 /*物业对接*/
@@ -168,21 +168,21 @@
 /*房屋费用*/
 .fwdy_nav li:nth-child(1) span:last-child{
 	height: 0.666666rem!important;
-	background: url(../img/repairs_pic/fwfy1_ion.png)no-repeat left center;
+	background: url(../img/repairs_pic/fwfy1_ion.png)no-repeat center;
 	background-size: auto 100%;
 }
 .fwdy_nav li:nth-child(2) span:last-child{
 	height: 0.8rem!important;
-	background: url(../img/repairs_pic/fwfy2_ion.png)no-repeat left center;
+	background: url(../img/repairs_pic/fwfy2_ion.png)no-repeat center;
 	background-size: auto 100%;
 }
 .fwdy_nav li:nth-child(3) span:last-child{
 	height: 0.8rem;
-	background: url(../img/repairs_pic/fwfy3_ion.png)no-repeat left center;
+	background: url(../img/repairs_pic/fwfy3_ion.png)no-repeat center;
 	background-size: auto 100%;
 }
 .fwdy_nav li:nth-child(4) span:last-child{
 	height: 0.533333rem!important;
-	background: url(../img/repairs_pic/fwfy4_ion.png)no-repeat left center;
+	background: url(../img/repairs_pic/fwfy4_ion.png)no-repeat center;
 	background-size: auto 100%;
 }
