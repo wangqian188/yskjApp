@@ -78,10 +78,10 @@ var hy_arr = [
 {value:'wh',text:'文化'},
 {value:'zx',text:'咨询'},
 {value:'cm',text:'传媒'},
-{value:'hl',text:'互联'},
+{value:'hl',text:'互联网'},
 {value:'jy',text:'教育'},
 {value:'jr',text:'金融'},
-{value:'kj',text:'科教'},
+{value:'kj',text:'科技'},
 {value:'ly',text:'旅游'},
 {value:'qt',text:'其他'}
 ];
@@ -123,7 +123,7 @@ function clks(idx){
 }
 //列表数据请求
 function vip_list(){
-	mui.ajax(Interface_url + '/yskjApp/webApp/dataInfo/listMemberEnterprise.do',{
+	mui.ajax(url + '/yskjApp/webApp/dataInfo/listMemberEnterprise.do',{
 		data:{
 			'industry': sel_industry,//行业
 			'location': sel_location//区域
@@ -141,7 +141,7 @@ function vip_list(){
 				}
 				var str = '';
 				for (var i=0; i<allData.length; i++) {
-					str += '<li style="background: url('+img_url+allData[i].logoImg+')no-repeat center;background-size: 100% auto;" onclick="list_detail('+allData[i].id+')"><div class="qy_news"><p class="qy_name">'+allData[i].enterpriseName+'</p><p class="qy_tip"><span></span><span>'+allData[i].ranges+'</span></p></div></li>';
+					str += '<li style="background: url('+allData[i].logoImg+')no-repeat center;background-size: 100% auto;" onclick="list_detail('+allData[i].id+')"><div class="qy_news"><p class="qy_name">'+allData[i].enterpriseName+'</p><p class="qy_tip"><span></span><span>'+allData[i].ranges+'</span></p></div></li>';
 					
 				}
 				$('#vip_list').append(str);

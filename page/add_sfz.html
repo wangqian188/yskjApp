@@ -36,7 +36,7 @@
 		   <ul class="per_news">
 		    	<li>
 		    		<div class="mui-input-row" style="width: 100%;">
-				        <input type="text" class="mui-input-clear add_n" placeholder="请输入公司名称">
+				        <input type="text" class="mui-input-clear add_n" placeholder="请输入公司名称" onchange="gongsoname()">
 				    </div>
 		    	</li>
 		    </ul>
@@ -103,6 +103,7 @@
 			function save(){
 				var add_name=$(".add_n").val();
 				if(add_name!=""){
+					
 //					 var reg = /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/;
 //              if(!reg.test(add_name)){
 ////              	alert("身份证输入不合法");
@@ -110,48 +111,65 @@
 //                  $(".add_n").val("");
 //                  return  false;
 //              }
-					card=add_name;
-				mui.ajax(Interface_url+'/yhcms/web/qduser/updateAppUserName.do',{
-					data:{
-						"parameters":
-						{"card":'',
-						"gsid":gsid,
-						"gsname":card,
-						"xmname":xmname,
-						"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
-						"name":name,
-						"phone":phone
+					mui.ajax(Interface_url+'/yhcms/web/qduser/addCompany.do',{
+						data:{"gsname":add_name,"xmname":""},
+						dataType:'json',//服务器返回json格式数据
+						type:'post',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒；
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+							if(data.success){
+								mui.ajax(Interface_url+'/yhcms/web/qduser/updateAppUserName.do',{
+									data:{
+										"parameters":
+										{"card":card,
+										"gsid":data.companyId,
+										"gsname":add_name,
+										"xmname":"",
+										"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
+										"name":name,
+										"phone":phone
+										},
+										"foreEndType":2,
+										"code":"2"
+										},
+									dataType:'json',//服务器返回json格式数据
+									type:'post',//HTTP请求类型
+									timeout:10000,//超时时间设置为10秒；
+									headers:{'Content-Type':'application/json'},	              
+									success:function(data){
+										//服务器返回响应，根据响应结果，分析是否登录成功；
+										if(data.success){
+											mui.alert(data.message);
+											var person = plus.webview.getWebviewById('person0');
+										    // 执行相应的事件
+										    mui.fire(person, 'per_loc', {
+										    	'p_loc':1
+										    });
+											//成功后返回至服务商城页面
+											mui.openWindow({
+												url: 'person.html', 
+												id:"person0"
+											});
+										}else{
+											mui.alert(data.message);
+										}
+									},
+									error:function(xhr,type,errorThrown){
+										//异常处理；
+										console.log(type);
+									}
+								});
+							}else{
+								mui.alert(data.message);
+							}
 						},
-						"foreEndType":2,
-						"code":"2"
-						},
-					dataType:'json',//服务器返回json格式数据
-					type:'post',//HTTP请求类型
-					timeout:10000,//超时时间设置为10秒；
-					headers:{'Content-Type':'application/json'},	              
-					success:function(data){
-						//服务器返回响应，根据响应结果，分析是否登录成功；
-						if(data.success){
-							mui.alert(data.message);
-							var person = plus.webview.getWebviewById('person0');
-						    // 执行相应的事件
-						    mui.fire(person, 'per_loc', {
-						    	'p_loc':1
-						    });
-							//成功后返回至服务商城页面
-							mui.openWindow({
-								url: 'person.html', 
-								id:"person0"
-							});
-						}else{
-							mui.alert(data.message);
+						error:function(xhr,type,errorThrown){
+							//异常处理；
+							console.log(type);
 						}
-					},
-					error:function(xhr,type,errorThrown){
-						//异常处理；
-						console.log(type);
-					}
-				});
+					});
 				}else{
 //					alert("身份证号不能为空");
 					mui.alert("公司名称不能为空", '提示',function(){});

@@ -185,7 +185,7 @@ function picupload(imgArray,num){
 		success:function(data){
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.success){
-				arr_src.push(data.data);
+				arr_src.push(img_url + data.data);
 				qy_logo = arr_src[0];//企业logo
 				var upload_sus = '1';
 //				alert(f1.length);
