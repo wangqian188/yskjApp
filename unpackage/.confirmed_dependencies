@@ -75,7 +75,8 @@
 			"page/wt_house.html",
 			"page/loupan.html",
 			"page/topNewsInfo.html",
-			"page/find_house.html"
+			"page/find_house.html",
+			"page/loupan_detail.html"
 		]
 	},
 	"page/mysc_list.html": {
@@ -134,6 +135,11 @@
 	"page/notice_center_list.html": {
 		"refer": [
 			"page/notice_center_detail.html"
+		]
+	},
+	"page/login.html": {
+		"refer": [
+			"page/wechat_log.html"
 		]
 	}
 }

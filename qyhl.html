@@ -279,7 +279,6 @@
 				success:function(data){
 					if(data.success){
 						var data=data.data;
-						console.log(JSON.stringify(data));
 						var le=data.length;
 						var shtml="";
 						if(le!=0){
@@ -341,7 +340,7 @@
 //		    				    shtml+=createTime;
 //		    				    shtml+='</span>';
 		    			        shtml+='</div>';
-		    			        shtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;" > </div> </li>';
+		    			        shtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;border-radius:0.066666rem;overflow: hidden;" > </div> </li>';
 							}
 						}
 						$(".sclass").html(shtml);
@@ -449,7 +448,7 @@
 		    			        
 		    				    dhtml+=dtDay;
 		    				    dhtml+='</span></div>';
-		    				    dhtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;" > </div>';
+		    				    dhtml+='<div style="width: 2.773333rem;height: 3.226666rem;position: absolute;top: -0.16rem;right: -0.213333rem;background:  url('+imgUrl+' ) no-repeat;background-size: 100% 100%;box-shadow:0px 0px 18px #dedede;border-radius:0.066666rem;overflow: hidden;" > </div>';
 		    			        //dhtml+='<div style="background: url('+imgUrl+' ) no-repeat;" > </div>';
 		    			        if(status==5){
 		    			        	dhtml+='<div class="dacheghezuo"></div>';
