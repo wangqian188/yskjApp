@@ -250,7 +250,6 @@
 		//点击登陆
 		$('.btn').click(function(){
 			if(telnumber!='' && yzm!=''){
-				localStorage.setItem('weinxin_shouquan',1);
 				checkoutyzm(yzm);//验证码校验方法
 			}else{
 				if(telnumber == ''){
@@ -295,7 +294,6 @@
             if (!s.authResult) { 
                 s.login(function(e) {
                     mui.toast("登录认证成功！");
-                    localStorage.setItem('weinxin_shouquan',1);
                     authUserInfo(type); 
 //                  mui.openWindow({
 //						url: 'login.html', 
@@ -448,6 +446,7 @@
 				success:function(data){
 					if(data.success){
 						localStorage.setItem('signout_monitor',1);
+						localStorage.setItem('weinxin_shouquan',1);
 						signin();//登陆
 					}else{
 						mui.toast(data.message);
