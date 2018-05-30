@@ -78,8 +78,8 @@
 								 xmname=userData.xmname;
 								 card=userData.card;
 								 $(".add_n").val(gsname);
-								  if(card!=null&&card!=""){
-								 	$(".add_n").val(card);
+								  if(gsname!=null&&gsname!=""){
+								 	$(".add_n").val(gsname);
 								 	//$(".mui-title").html("修改身份证号");
 								 }
 								 
@@ -114,9 +114,9 @@
 				mui.ajax(Interface_url+'/yhcms/web/qduser/updateAppUserName.do',{
 					data:{
 						"parameters":
-						{"card":card,
+						{"card":'',
 						"gsid":gsid,
-						"gsname":gsname,
+						"gsname":card,
 						"xmname":xmname,
 						"cookie":JSON.parse(localStorage.getItem('cookxs_yh')),
 						"name":name,

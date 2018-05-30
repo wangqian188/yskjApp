@@ -30,7 +30,8 @@
 			"page/wode_fangyang.html",
 			"page/login.html",
 			"page/repairs_bx.html",
-			"page/mycollection.html"
+			"page/mycollection.html",
+			"page/person.html"
 		]
 	},
 	"page/wode_fangyang.html": {
@@ -106,6 +107,18 @@
 	"page/myset.html": {
 		"refer": [
 			"page/disclaimer.html"
+		]
+	},
+	"fwsc.html": {
+		"refer": [
+			"page/fitup.html",
+			"page/tax.html",
+			"page/added.html"
+		]
+	},
+	"page/person.html": {
+		"refer": [
+			"page/add_sfz.html"
 		]
 	}
 }

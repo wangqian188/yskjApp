@@ -23,7 +23,7 @@
 		    <ul class="per_news">
 		    	<li>
 		    		<span class="p_nane">头像</span>
-		    		<span class="p_pic"><img src="../img/head_img.png"/></span>
+		    		<span class="p_pic"><img src=""/></span>
 		    	</li>
 		    	<li id="add_name" class="tolink">
 		    		<span class="p_nane">姓名</span>
@@ -162,9 +162,9 @@
 								/*if(xmname!=null&&xmname!=""){
 								    $(".xmname").html(xmname);	
 								}*/
-								if(card!=null&&card!=""&&card!="null"){
-									$(".card").html(card);	
-								}
+//								if(card!=null&&card!=""&&card!="null"){
+//									$(".card").html(card);	
+//								}
 							}else{
 								mui.alert(data.message+'范德萨发');
 							}
@@ -179,6 +179,14 @@
 						url: '../wd.html', 
 						id:'wd'
 					});
+				}
+			}
+			//登陆头像
+			if(localStorage.getItem('lostate') == '1'){
+				if(localStorage.getItem('userInfos')){
+					$('.p_pic img').attr('src',JSON.parse(localStorage.getItem('userInfos')).headimgurl);
+				}else{
+					$('.p_pic img').attr('src','../img/head_img.png');
 				}
 			}
 			
