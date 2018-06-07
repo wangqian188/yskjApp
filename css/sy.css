@@ -1,7 +1,9 @@
 #slider{
 	/*轮播图高度*/
 	/*height: 5.813333rem;*/
-	height: 7.133333rem;
+	max-height: 7.133333rem;
+	height: auto;
+	
 }
 .zxsj_box{
 	/*最新数据*/
