@@ -152,7 +152,7 @@
 			<!--daiceshishiyong-->
 			<div class="ystt_box">
 				<div class="tit">升级服务</div>
-				<div>
+
 					<ul class="grab">
 				    	<li>
 				    		<a href="javascript:void(0)">
@@ -176,7 +176,7 @@
 				    		</a>
 				    	</li>
 				    </ul>
-				</div>
+
 			</div>
 			<!--<div class="sy_kfion">
 				<p><a href="tel:400-078-8800"></a></p>
@@ -194,7 +194,16 @@
 			mui.plusReady(function(){
 				var ua = navigator.userAgent.toLowerCase();           
 				if(networkLink()){
-					
+					//控制版本更新
+					if(!sessionStorage.getItem('version')){
+						if(/iphone|ipad|ipod/.test(ua)) {    //苹果手机  
+							//苹果
+						}
+						if(/android/.test(ua)){
+							//安卓
+							version();							
+						}
+					}
 				}else{
 					return;
 				}
