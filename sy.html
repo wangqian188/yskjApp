@@ -14,6 +14,7 @@
 		<script type="text/javascript" src="js/lib/sy.js"></script>
 		<script src="js/lib/app_config.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/a_fringe.css"/>
+		<script src="js/lib/version.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<style type="text/css">
 		.mui-input-row:nth-child(2) .mui-input-clear~.mui-icon-clear{right: 25%!important;}
@@ -186,6 +187,7 @@
 				<span class="sy_shion"></span>
 				售后服务
 			</div>-->
+			
 		</div>
 		<script type="text/javascript" src="js/lib/castapp.js" ></script>
 		<script type="text/javascript">
@@ -277,7 +279,6 @@
 		<script type="text/javascript">
 			mui.init();
 			var area = document.getElementsByClassName('tt_news')[0];
-			console.log($('.tt_news li').height());
 			var iliHeight = $('.tt_news li').height();//单行滚动的高度  
 			var speed = 50;//滚动的速度  
 			var time;  
@@ -294,7 +295,6 @@
 					if(data.success){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						var data = data.data;
-						console.log(data);
 						var string = '';
 						for(var i=0;i<data.length;i++){
 							string = '<li onclick=topNewsInfo(\''+data[i].url+'\')><p>'+data[i].title+'</p><p>'+data[i].content+'</p></li>';
@@ -321,7 +321,7 @@
 			    }else{  
 			        area.scrollTop++;  
 			        if(area.scrollTop >= area.scrollHeight/2){  
-			            area.scrollTop = 0;
+			            area.scrollTop = 2;
 			        }  
 			    }  
 			}  
@@ -399,9 +399,7 @@
 				success:function(data){
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					if(data.success){
-						console.log(data)
 						var data = data.data;
-						console.log(data)
 						var string = '';
 						for(var i=0;i<data.length;i++){
 							if(data[i].cloudscape == ''){
@@ -764,7 +762,6 @@
 					success:function(data){
 						//服务器返回响应，根据响应结果，分析是否登录成功；
 						if(data.success){
-							console.log(JSON.stringify(data));
 							$('.latest_data_tit').html(data.data.memo);
 							$('.latest_data p:last-child').html(data.data.value);
 							latest_data_url = data.data.url;
@@ -837,6 +834,7 @@
 					}
 				});
 			}
+
 		</script>
 	</body>
 </html>

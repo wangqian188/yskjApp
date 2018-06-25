@@ -263,7 +263,9 @@
 					"page/repairs_bx.html",
 					"page/wode_fangyang.html",
 					"page/notice_center.html",
-					"page/wode_guanjia.html"
+					"page/wode_guanjia.html",
+					"page/pullrefresh_main.html",
+					"page/my_sc_main.html"
 				],
 				"priority": 0
 			},
@@ -320,7 +322,8 @@
 					"page/financial.html",
 					"page/loupan.html",
 					"page/latest_datas.html",
-					"page/added.html"
+					"page/added.html",
+					"page/map_ditu.html"
 				],
 				"priority": 0
 			},
@@ -739,7 +742,8 @@
 				],
 				"refer": [
 					"page/fyTail.html",
-					"page/map.html"
+					"page/map.html",
+					"page/map_dh.html"
 				],
 				"priority": 0
 			},
@@ -1270,6 +1274,27 @@
 				"priority": 0
 			},
 			"page/wode_fang_list.html": {
+				"resources": [],
+				"refer": [
+					"page/fyTail.html"
+				],
+				"priority": 0
+			},
+			"page/pullrefresh_main.html": {
+				"resources": [
+					"page/pullrefresh_sub.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/my_sc_main.html": {
+				"resources": [
+					"page/my_sc_list.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/my_sc_list.html": {
 				"resources": [],
 				"refer": [
 					"page/fyTail.html"
