@@ -1,7 +1,12 @@
 {
 	"index.html": {
 		"resources": [
-			"sy.html"
+			"sy.html",
+			"css/style_a_d.css",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/style.css",
+			"css/a_fringe.css"
 		],
 		"refer": [
 			"qyhl.html",
@@ -13,7 +18,8 @@
 	},
 	"jxfy.html": {
 		"resources": [
-			"jxfyList.html"
+			"jxfyList.html",
+			"css/jxfy.css"
 		],
 		"refer": [
 			"jxfyList.html",
@@ -23,6 +29,12 @@
 	"welcome.html": {
 		"refer": [
 			"index.html"
+		],
+		"resources": [
+			"img/w2.png",
+			"img/w3.png",
+			"img/w1.png",
+			"css/mui.min.css"
 		]
 	},
 	"wd.html": {
@@ -36,6 +48,16 @@
 			"page/notice_center.html",
 			"page/pullrefresh_main.html",
 			"page/my_sc_main.html"
+		],
+		"resources": [
+			"img/wode/tongzhi_center.png",
+			"img/wode_fangyuan.png",
+			"img/sz.png",
+			"img/wode_guanjian.png",
+			"img/fav.png",
+			"img/per.png",
+			"img/head_img.png",
+			"css/wd.css"
 		]
 	},
 	"page/wode_fangyang.html": {
@@ -66,6 +88,13 @@
 			"page/add_vip.html",
 			"page/login.html",
 			"page/more_qy.html"
+		],
+		"resources": [
+			"css/style_a_d.css",
+			"img/qyhl/fb_ion1.png",
+			"img/qyhl/fb_ion2.png",
+			"img/qyhl/add_vip.png",
+			"css/qiYeHuLian.css"
 		]
 	},
 	"page/mycollection.html": {
@@ -86,7 +115,18 @@
 			"page/login.html",
 			"page/loupan_detail.html",
 			"page/latest_datas.html",
-			"page/map_ditu.html"
+			"page/map_ditu.html",
+			"page/fyTail.html"
+		],
+		"resources": [
+			"img/yzwt.png",
+			"img/toll_pic1.png",
+			"css/sy.css",
+			"img/toll_pic2.png",
+			"css/mui.min.css",
+			"css/style.css",
+			"img/tt_icon.png",
+			"css/a_fringe.css"
 		]
 	},
 	"page/mysc_list.html": {
@@ -97,6 +137,12 @@
 	"jxfyList.html": {
 		"refer": [
 			"page/fyTail.html"
+		],
+		"resources": [
+			"css/jxfyList.css",
+			"css/sy.css",
+			"css/mui.min.css",
+			"css/style.css"
 		]
 	},
 	"page/loupanList.html": {
@@ -127,6 +173,9 @@
 			"page/fitup.html",
 			"page/tax.html",
 			"page/added.html"
+		],
+		"resources": [
+			"css/fwsc.css"
 		]
 	},
 	"page/person.html": {
@@ -182,7 +231,8 @@
 	"page/fyTail.html": {
 		"refer": [
 			"page/qierlyun.html",
-			"page/login.html"
+			"page/login.html",
+			"page/map_dh.html"
 		]
 	},
 	"jxfy1.html": {
@@ -196,6 +246,12 @@
 	"page/find_house.html": {
 		"refer": [
 			"jxfy1.html"
+		]
+	},
+	"page/map_dh.html": {
+		"resources": [
+			"js/mui.js",
+			"css/mui.css"
 		]
 	}
 }

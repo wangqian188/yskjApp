@@ -7,8 +7,8 @@
 	"id": "YSKJ",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "亮狮",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "2.0.1",/*应用版本名称*/
-		"code": "3"
+		"name": "2.0.2",/*应用版本名称*/
+		"code": "4"
 	},
 	"description": "",/*应用描述信息*/
 	"icons": {
@@ -105,7 +105,7 @@
 		},
 		"NativeObj": {
 			"description": "原生对象"
-		},"OAuth":{},"Share":{},"Push":{}
+		},"OAuth":{},"Share":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -115,7 +115,7 @@
 		},
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
-		"distribute": {"plugins":{"push":{"igexin":{"appid":"gtlATivvNW8Gaa1i1rU8nA","appkey":"EdtcPhhAU48Eio4l0ANvY7","appsecret":"uCtdWdW4cM94E7HQcWfEn4"}},"share":{"weixin":{"appid":"wx0071d36adda001ec","appsecret":"883da840f29fed60591f28b3b6f569f3","description":"可选，微信分享"}},"oauth":{"weixin":{"appid":"wx0071d36adda001ec","appsecret":"883da840f29fed60591f28b3b6f569f3"}}},
+		"distribute": {"plugins":{"push":{},"share":{"weixin":{"appid":"wx0071d36adda001ec","appsecret":"883da840f29fed60591f28b3b6f569f3","description":"可选，微信分享"}},"oauth":{"weixin":{"appid":"wx0071d36adda001ec","appsecret":"883da840f29fed60591f28b3b6f569f3"}}},
 			"apple": {
 				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
 				"mobileprovision": "",/*iOS应用打包配置文件*/
@@ -131,7 +131,7 @@
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
 				"ImmersedStatusbar": true,
-				"permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.GET_TASKS\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+				"permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
 			},
 			"orientation": [
 				"portrait-primary",
@@ -151,7 +151,7 @@
 						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
 						
 						
-						"app@2x":"unpackage/res/icons/120x120.png","app@3x":"unpackage/res/icons/180x180.png","settings@3x":"unpackage/res/icons/87x87.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","spotlight@3x":"unpackage/res/icons/120x120.png","notification@3x":"unpackage/res/icons/60x60.png","notification@2x":"unpackage/res/icons/40x40.png","retina8":"unpackage/res/icons/180x180.png","retina7":"unpackage/res/icons/120x120.png","settings-retina":"unpackage/res/icons/58x58.png","settings-retina8":"unpackage/res/icons/87x87.png","spotlight-retina7":"unpackage/res/icons/80x80.png"
+						"app@2x":"unpackage/res/icons/120x120.png","app@3x":"unpackage/res/icons/180x180.png","settings@3x":"unpackage/res/icons/87x87.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","spotlight@3x":"unpackage/res/icons/120x120.png","notification@3x":"unpackage/res/icons/60x60.png","notification@2x":"unpackage/res/icons/40x40.png"
 					},
 					"ipad": {
 						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
@@ -163,7 +163,7 @@
 						/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
 						/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
 						/*iPad设置页面程序图标，分辨率：29x29*/
-						"app":"unpackage/res/icons/76x76.png","app@2x":"unpackage/res/icons/152x152.png","settings":"unpackage/res/icons/29x29.png","proapp@2x":"unpackage/res/icons/167x167.png","spotlight":"unpackage/res/icons/40x40.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","notification":"unpackage/res/icons/20x20.png","notification@2x":"unpackage/res/icons/40x40.png","retina7":"unpackage/res/icons/152x152.png","normal7":"unpackage/res/icons/76x76.png","settings-retina":"unpackage/res/icons/58x58.png","settings-normal":"unpackage/res/icons/29x29.png","spotlight-normal7":"unpackage/res/icons/40x40.png","spotlight-retina7":"unpackage/res/icons/80x80.png"
+						"app":"unpackage/res/icons/76x76.png","app@2x":"unpackage/res/icons/152x152.png","settings":"unpackage/res/icons/29x29.png","proapp@2x":"unpackage/res/icons/167x167.png","spotlight":"unpackage/res/icons/40x40.png","settings@2x":"unpackage/res/icons/58x58.png","spotlight@2x":"unpackage/res/icons/80x80.png","notification":"unpackage/res/icons/20x20.png","notification@2x":"unpackage/res/icons/40x40.png"
 					},"appstore":"unpackage/res/icons/1024x1024.png"
 				},
 				"android": {
@@ -582,7 +582,8 @@
 				],
 				"refer": [
 					"page/login.html",
-					"page/qierlyun.html"
+					"page/qierlyun.html",
+					"page/map_dh.html"
 				],
 				"priority": 0
 			},
@@ -1300,13 +1301,18 @@
 					"page/fyTail.html"
 				],
 				"priority": 0
+			},
+			"page/map_dh.html": {
+				"resources": [
+					"js/mui.js",
+					"css/mui.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
-			"resources": [
-				"js/mui.js",
-				"css/mui.css"
-			]
+			"resources": []
 		}
 	},
 	"unpackage":[
