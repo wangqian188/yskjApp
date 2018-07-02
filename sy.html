@@ -777,27 +777,7 @@
 				});
 			}
 			latest_data();
-			//下拉刷新
-//			window.onload = function(){
-//			    window.addEventListener('touchstart', touchstart, false);
-//			    window.addEventListener('touchmove', touchMove, false);
-//			}
-//			var _start = 0; 
-//			var _end = 0;
-//			function touchstart(event) {
-//			    var touch = event.targetTouches[0];
-//			    _start = touch.pageY; 
-//			}
-//			function touchMove(event){ 
-//			    var touch = event.targetTouches[0]; 
-//			    _end = ( touch.pageY - _start); 
-//			    //下滑才执行操作 
-//			    if(_end > 200){     //200即手机下滑屏幕的距离，超过200则执行刷新动作
-////			    	location.reload();
-//					var wobj = plus.webview.getWebviewById("sy.html");
-//					wobj.reload(true);
-//			    } 
-//			}
+			
 			function huoqv_yonghuxix(){
 				var cookie=JSON.parse(localStorage.getItem('cookxs_yh'));
 				mui.ajax(url + '/yskjApp/appYskj/V1/landState.do',{
@@ -837,7 +817,7 @@
 					}
 				});
 			}
-			
+			//下拉刷新配置
 			mui.init({
 				swipeBack: false,
 				pullRefresh: {
