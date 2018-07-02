@@ -500,7 +500,7 @@
 													h_img+=v2;
 												} 
 												h_img+=' <div class="mui-slider-item">';
-												h_img+='<a href="#">';
+												h_img+='<a href="#" class="mui-content-padded" style="margin: 0rem;">';
 												h_img+='<img src="'+img_url+ims+'" alt="" />';
 												h_img+=' </a> </div>';
 												
@@ -510,6 +510,25 @@
 											
 										}
 										$(".mui-slider-loop").html(h_img);
+										
+										//图片放大和缩小
+										// 获取图片地址列表
+									  	var images = document.querySelectorAll('.mui-content-padded img');
+									  	var urls = [];
+									  	for(var i = 0; i < images.length; i++) {
+										    urls.push(images[i].src);
+									  	}
+									  	// 监听图片的点击
+									  	mui('body').on('tap', 'img', function() {
+										    // 查询图片在列表中的位置
+										    // 由于dom节点列表是伪数组，需要处理一下
+										    var index = [].slice.call(images).indexOf(this);
+										    plus.nativeUI.previewImage(urls, {
+										      current: index,
+										      loop: true,
+										      indicator: 'number'
+										  	});
+										});
 										/*图片自动轮播*/
 									ca.init();
 									castapp.pictureScroll({
