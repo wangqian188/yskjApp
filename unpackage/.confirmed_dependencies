@@ -47,7 +47,10 @@
 			"page/person.html",
 			"page/notice_center.html",
 			"page/pullrefresh_main.html",
-			"page/my_sc_main.html"
+			"page/my_sc_main.html",
+			"webpage/my_sc_main.html",
+			"webpage/my_history_main.html",
+			"page/wode_guanjia.html"
 		],
 		"resources": [
 			"img/wode/tongzhi_center.png",
@@ -160,7 +163,8 @@
 	},
 	"page/wode_fang_list.html": {
 		"refer": [
-			"page/fyTail.html"
+			"page/fyTail.html",
+			"page/wt_house.html"
 		]
 	},
 	"page/myset.html": {
@@ -180,7 +184,9 @@
 	},
 	"page/person.html": {
 		"refer": [
-			"page/add_sfz.html"
+			"page/add_sfz.html",
+			"page/add_name.html",
+			"page/gh_tel.html"
 		]
 	},
 	"page/notice_center.html": {
@@ -252,6 +258,27 @@
 		"resources": [
 			"js/mui.js",
 			"css/mui.css"
+		]
+	},
+	"webpage/my_sc_main.html": {
+		"resources": [
+			"webpage/my_sc_list.html"
+		],
+		"refer": [
+			"webpage/my_sc_list.html"
+		]
+	},
+	"webpage/my_history_main.html": {
+		"resources": [
+			"webpage/my_history_list.html"
+		],
+		"refer": [
+			"webpage/my_history_list.html"
+		]
+	},
+	"webpage/my_history_list.html": {
+		"refer": [
+			"page/fyTail.html"
 		]
 	}
 }

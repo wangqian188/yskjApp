@@ -265,7 +265,9 @@
 					"page/notice_center.html",
 					"page/wode_guanjia.html",
 					"page/pullrefresh_main.html",
-					"page/my_sc_main.html"
+					"page/my_sc_main.html",
+					"webpage/my_sc_main.html",
+					"webpage/my_history_main.html"
 				],
 				"priority": 0
 			},
@@ -1277,7 +1279,8 @@
 			"page/wode_fang_list.html": {
 				"resources": [],
 				"refer": [
-					"page/fyTail.html"
+					"page/fyTail.html",
+					"page/wt_house.html"
 				],
 				"priority": 0
 			},
@@ -1308,6 +1311,27 @@
 					"css/mui.css"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"webpage/my_sc_main.html": {
+				"resources": [
+					"webpage/my_sc_list.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"webpage/my_history_main.html": {
+				"resources": [
+					"webpage/my_history_list.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"webpage/my_history_list.html": {
+				"resources": [],
+				"refer": [
+					"page/fyTail.html"
+				],
 				"priority": 0
 			}
 		},
