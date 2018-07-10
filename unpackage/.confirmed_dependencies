@@ -119,7 +119,8 @@
 			"page/loupan_detail.html",
 			"page/latest_datas.html",
 			"page/map_ditu.html",
-			"page/fyTail.html"
+			"page/fyTail.html",
+			"page/tax.html"
 		],
 		"resources": [
 			"img/yzwt.png",
@@ -258,6 +259,9 @@
 		"resources": [
 			"js/mui.js",
 			"css/mui.css"
+		],
+		"refer": [
+			"page/map_dh_z.html"
 		]
 	},
 	"webpage/my_sc_main.html": {

@@ -1310,7 +1310,9 @@
 					"js/mui.js",
 					"css/mui.css"
 				],
-				"refer": [],
+				"refer": [
+					"page/map_dh_z.html"
+				],
 				"priority": 0
 			},
 			"webpage/my_sc_main.html": {
