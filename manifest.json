@@ -267,7 +267,8 @@
 					"page/pullrefresh_main.html",
 					"page/my_sc_main.html",
 					"webpage/my_sc_main.html",
-					"webpage/my_history_main.html"
+					"webpage/my_history_main.html",
+					"webpage/add_user.html"
 				],
 				"priority": 0
 			},

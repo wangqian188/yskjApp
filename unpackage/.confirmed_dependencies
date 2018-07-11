@@ -50,7 +50,8 @@
 			"page/my_sc_main.html",
 			"webpage/my_sc_main.html",
 			"webpage/my_history_main.html",
-			"page/wode_guanjia.html"
+			"page/wode_guanjia.html",
+			"webpage/add_user.html"
 		],
 		"resources": [
 			"img/wode/tongzhi_center.png",
