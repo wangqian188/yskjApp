@@ -248,7 +248,8 @@
 			"jxfyList1.html"
 		],
 		"refer": [
-			"jxfyList1.html"
+			"jxfyList1.html",
+			"page/search1.html"
 		]
 	},
 	"page/find_house.html": {
@@ -284,6 +285,11 @@
 	"webpage/my_history_list.html": {
 		"refer": [
 			"page/fyTail.html"
+		]
+	},
+	"webpage/add_user.html": {
+		"refer": [
+			"webpage/user_add.html"
 		]
 	}
 }

@@ -1336,6 +1336,13 @@
 					"page/fyTail.html"
 				],
 				"priority": 0
+			},
+			"webpage/add_user.html": {
+				"resources": [],
+				"refer": [
+					"webpage/user_add.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {
