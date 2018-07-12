@@ -143,6 +143,10 @@
 		<!--下拉刷新容器-->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
+				
+				<!--推荐房源的提示信息-->
+				<div class="tuijianfay tuijianfaydis">未搜到对应房源，为您推荐一下房源</div>
+				
 				<!--数据列表-->
 				<!--<ul class="mui-table-view mui-table-view-chevron">-->
 					<!--特价房源-->
@@ -217,6 +221,7 @@
 			var mijdianjstatus = 1;//筛选中输入input框的条件的状态
 			var zujindianjstatus = 1;//筛选中输入input框的条件的状态
 			var house_kongzt = false;//搜索为空的显示状态
+			var suosceStatus = 1;
 			//我要找房条件监听查找
 //			window.addEventListener("find_house1", function (e) {
 //				alert('监听！！！！！！！！！！！！')
@@ -662,6 +667,7 @@
 			function dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiagesanshu,search,price_zj){
 //				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getWxLbFyxx1.do',{
 				mui.ajax(Interface_url+'/yhcms/web/lpjbxx/getAppIntelHouse.do',{
+//				mui.ajax('https://yhcms.tunnel.qydev.com/yhcms/web/lpjbxx/getAppIntelHouse.do',{
 				data:{
 					"parameters":
 						{
@@ -682,7 +688,7 @@
 							"zc":zc,
 							"fjzt":fjzt,
 							"items_perpage":10
-						},"foreEndType":2,"code":"30000001"},
+						},"sourceStatus":suosceStatus,"foreEndType":2,"code":"30000001"},
 				dataType:'json',//服务器返回json格式数据
 				type:'post',//HTTP请求类型
 				timeout:10000,//超时时间设置为10秒；
@@ -690,6 +696,11 @@
 				success:function(data){
 					//服务器返回响应，根据响应结果，分析是否登录成功；
 					if(data.success){
+						if(data.isRecommend){
+							$(".tuijianfay").addClass("tuijianfaydis");
+						}else{
+							$(".tuijianfay").removeClass("tuijianfaydis");
+						}
 						if(data.data.length == 0){
 							$(".zhezhaoceshx").addClass("zhezhaocdisplayshx");
 							$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
@@ -700,7 +711,7 @@
 							    idxid:4//1位置
 							})
 							//点击位置遮罩层取消遮罩层要改变样式
-							var main = plus.webview.getWebviewById('jxfy1.html');
+							var main = plus.webview.getWebviewById('jxfy1');
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
@@ -723,7 +734,7 @@
 							    idxid:4//1位置
 							})
 							//点击位置遮罩层取消遮罩层要改变样式
-							var main = plus.webview.getWebviewById('jxfy1.html');
+							var main = plus.webview.getWebviewById('jxfy1');
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
@@ -882,7 +893,7 @@
 							    idxid:4//1位置
 							})
 							//点击位置遮罩层取消遮罩层要改变样式
-							var main = plus.webview.getWebviewById('jxfy1.html');
+							var main = plus.webview.getWebviewById('jxfy1');
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
@@ -905,7 +916,7 @@
 							    idxid:4//1位置
 							})
 							//点击位置遮罩层取消遮罩层要改变样式
-							var main = plus.webview.getWebviewById('jxfy1.html');
+							var main = plus.webview.getWebviewById('jxfy1');
 							mui.fire(main, "saixuanfh",{
 							    idxsxfh:1//1位置
 							})
@@ -1142,7 +1153,7 @@
 				    idxid:2//1位置
 				})
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('jxfy1.html');
+				var main = plus.webview.getWebviewById('jxfy1');
 				mui.fire(main, "weizhifh",{
 				    idxfh:1//1位置
 				})
@@ -1154,7 +1165,7 @@
 				$(".zhezhaoce").removeClass("zhezhaocdisbalo");
 				zhezhaoxiaoshiww();
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('jxfy1.html');
+				var main = plus.webview.getWebviewById('jxfy1');
 				mui.fire(main, "weizhifh",{
 				    idxfh:1//1位置
 				})
@@ -1166,7 +1177,7 @@
 				$(".zhezhaoceshx").removeClass("zhezhaocdisbaloshx");
 				zhezhaoxiaoshiww();
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('jxfy1.html');
+				var main = plus.webview.getWebviewById('jxfy1');
 				mui.fire(main, "saixuanfh",{
 				    idxsxfh:1//1位置
 				})
@@ -1211,7 +1222,7 @@
 				    idxid:4//1位置
 				})
 				//点击位置遮罩层取消遮罩层要改变样式
-				var main = plus.webview.getWebviewById('jxfy1.html');
+				var main = plus.webview.getWebviewById('jxfy1');
 				mui.fire(main, "saixuanfh",{
 				    idxsxfh:1//1位置
 				})
@@ -1304,9 +1315,15 @@
 			    //获得事件参数
 			    var lpname = e.detail.lpname;
 				search = lpname;
+				suosceStatus = 2;
+				area = '';
+				price_zj = '';
+				price_dj = '';
+				zc = '';
 				$('.listUl').html('');
 				huifuupjiazaidata();
 				xial = 1;
+				
 				dthqdata(district,fdcode,lineid,station,area,price_dj,chqxz,jiangejt,search,price_zj);
 			});
 			
@@ -1347,7 +1364,7 @@
 					});
 					$('#sel2').html('');
 					$('#sel3').html('');
-					var main = plus.webview.getWebviewById('jxfy1.html');
+					var main = plus.webview.getWebviewById('jxfy1');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -1423,7 +1440,7 @@
 					district ='';
 					fdcode = '';
 					text1 = '位置';
-					var main = plus.webview.getWebviewById('jxfy1.html');
+					var main = plus.webview.getWebviewById('jxfy1');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -1474,7 +1491,7 @@
 						district = districtages;
 					}
 					fdcode = '';
-					var main = plus.webview.getWebviewById('jxfy1.html');
+					var main = plus.webview.getWebviewById('jxfy1');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text2
 					})
@@ -1483,7 +1500,7 @@
 					districtages = district;
 					district = '';
 					fdcode = id;
-					var main = plus.webview.getWebviewById('jxfy1.html');
+					var main = plus.webview.getWebviewById('jxfy1');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text3
 					})
@@ -1542,7 +1559,7 @@
 					station = '';
 					district = '';
 					fdcode = '';
-					var main = plus.webview.getWebviewById('jxfy1.html');
+					var main = plus.webview.getWebviewById('jxfy1');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text1
 					})
@@ -1594,7 +1611,7 @@
 						lineid = lineageg;
 					}
 					station = '';
-					var main = plus.webview.getWebviewById('jxfy1.html');
+					var main = plus.webview.getWebviewById('jxfy1');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text2
 					})
@@ -1603,7 +1620,7 @@
 					lineageg = lineid;
 					lineid = '';
 					station = id;
-					var main = plus.webview.getWebviewById('jxf1y.html');
+					var main = plus.webview.getWebviewById('jxfy1');
 					mui.fire(main, "weizhineirong",{
 					    text3:this.text3
 					})
